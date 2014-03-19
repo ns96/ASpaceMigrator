@@ -1,0 +1,329 @@
+/**
+Demo Beanshell script to demonstrate importing excel data programatically
+into an Archives Space Instance
+
+It is executed within the data migration tool
+
+@author Nathan Stevens
+@version 1.0 03/19/2014
+
+Specify the mapping functionality the script provides. change # to @ to 
+specify that a certain record type is supported
+
+@name
+@subject
+@accession
+@digitalobject
+@resource
+*/
+
+// import Java classes we need
+import org.json.*;
+import org.apache.poi.xssf.usermodel.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import org.nyu.edu.dlts.utils.*;
+
+// Method to return a Java date object
+Date getDate(String dateString) {
+	DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+	return df.parse(dateString);
+}
+
+
+// Method to get the cell data by providing a column number
+String getCellDataByNumber(int column) {
+	cell = record.getCell(column);
+	
+	if(cell != null) {
+		return cell.toString();
+	} else {
+		return "";
+	}	
+}
+
+// Method to get the data in a certain column 
+String getCellData(char column) {
+	getCellDataByNumber(MapperUtil.getColumnNumber(column));	
+}
+
+// Method to convert the subject record
+void convertSubject() {
+	// add the source
+	recordJS.put("source", getCellData('C'));
+	
+	// add the terms now
+	termsJA = new JSONArray();
+	
+	termType = getCellData('B');
+
+	for(int i = 3; i <= 5; i++) {
+		termJS = new JSONObject();	
+		termJS.put("term", getCellDataByNumber(i));
+    		termJS.put("term_type",termType);
+    		termJS.put("vocabulary", recordJS.getString("vocabulary"));
+    		termsJA.put(termJS);
+    }
+    	
+	recordJS.put("terms", termsJA);
+}
+
+
+// Method to convert the subject record
+void convertName() {
+	// holds name information
+	namesJA = new JSONArray();
+	namesJS = new JSONObject();
+
+	// add the contact information
+    contactsJA = new JSONArray();
+    contactsJS = new JSONObject();
+    
+    String[] info = getCellData('H').split("\\s*,\\s*");
+    
+    contactsJS.put("address_1", info[0]);
+    contactsJS.put("city", info[1]);
+    contactsJS.put("region", info[2]);
+    contactsJS.put("country", "USA");
+    contactsJS.put("post_code", info[3]);
+    contactsJA.put(contactsJS);
+    recordJS.put("agent_contacts", contactsJA);
+    
+    // add information for the name type
+    nameSource = getCellData('C');
+    nameRule = getCellData('D');
+
+    // set values for abstract_name.rb schema
+    namesJS.put("dates", getCellData('G'));
+    namesJS.put("source", nameSource);
+    namesJS.put("rules", nameRule);
+    	
+    // get the agent type
+	type = getCellData('B');
+	
+    if(type.equalsIgnoreCase("person")) {
+    		// set the agent type
+    		recordJS.put("agent_type", "agent_person");
+    	
+    		primaryName = getCellData('E');
+    		
+    		// set values for name_person.rb schema
+    		namesJS.put("primary_name", primaryName);
+    		namesJS.put("name_order", "direct");
+    		
+    		// set the name value for the contact information
+    		contactsJS.put("name", primaryName);
+    } else if(type.equalsIgnoreCase("family")) {
+    		// set the agent type
+    		recordJS.put("agent_type", "agent_family");
+    		
+    		// set values for name_family.rb schema
+    		familyName = getCellData('E');
+    		
+    		namesJS.put("family_name", familyName);
+    		
+    		// set the contact name
+    		contactsJS.put("name", familyName);
+    } else {
+    		// set the agent type
+    		recordJS.put("agent_type", "agent_corporate_entity");
+    	
+    		String primaryName = getCellData('E');
+    	
+    		// set values for name_corporate_entity.rb schema
+    		namesJS.put("primary_name", primaryName);
+    	
+    		// set the contact name
+    		contactsJS.put("name", primaryName);
+    }
+    
+    // add the names array and names json objects to main record
+    namesJA.put(namesJS);
+    recordJS.put("names", namesJA);	
+}
+
+// Method to convert an accession record
+void convertAccession() {
+	recordJS.put("title", getCellData('C'));
+	
+	date = getDate(getCellData('D'));
+	recordJS.put("accession_date", date);
+	
+	// get the ids and make them unique if we in DEBUG mode
+	String[] ids = getCellData('B').split("\\.");
+	
+	recordJS.put("id_0", ids[0]);
+	recordJS.put("id_1", ids[1]);
+	recordJS.put("id_2", ids[2]);
+	recordJS.put("id_3", ids[3]);
+	
+	// add the linked subjects and names data. This is not used
+	// by aspace, just by the data migrator to create the links
+	recordJS.put("linked_subjects", getCellData('F'));
+	recordJS.put("linked_names", getCellData('G'));
+	
+	/*TODO add a general note*/
+}
+
+// Method to convert a digital object record
+void convertDigitalObject() {
+	recordJS.put("digital_object_id", getCellData('C'));
+	recordJS.put("title", getCellData('D'));
+	
+	MapperUtil.addDate(recordJS, getCellData('F') , "digitized");
+		
+	fileVersionsJA = new JSONArray();
+	MapperUtil.addFileVersion(fileVersionsJA, getCellData('G'), getCellData('H'), "none", "none");
+	recordJS.put("file_versions", fileVersionsJA);
+	
+	// set the digital object type
+	recordJS.put("digital_object_type", "mixed_materials");
+	
+	// set the restrictions apply
+	recordJS.put("publish", true);
+	
+	// add the linked subjects and names data. This is not used
+	// by aspace, just by the data migrator to create the links
+	recordJS.put("linked_subjects", getCellData('I'));
+	recordJS.put("linked_names", getCellData('J'));
+	
+	/* TODO Add Notes */
+	//addDigitalObjectNotes(record, json);	
+}
+
+// Method to convert a digital object component
+void convertDigitalObjectComponent() {
+	recordJS.put("component_id", getCellData('C'));
+	recordJS.put("title", getCellData('D'));
+	
+	fileVersionsJA = new JSONArray();
+	MapperUtil.addFileVersion(fileVersionsJA, getCellData('G'), getCellData('H'), "none", "none");
+	recordJS.put("file_versions", fileVersionsJA);
+	
+	// add the linked subjects and names data. This is not used
+	// by aspace, just by the data migrator to create the links
+	recordJS.put("linked_subjects", getCellData('I'));
+	recordJS.put("linked_names", getCellData('J'));
+}
+
+// Method to convert a resource record
+void convertResource() {
+	// check to make sure we have a title
+	String title = getCellData('E');
+	recordJS.put("title", title);
+	
+	// add the language code
+	recordJS.put("language", getCellData('F'));
+	
+	// add the extent array containing
+	extentJA = new JSONArray();
+	MapperUtil.addExtent(extentJA, "whole", getCellData('G'), getCellData('H'));
+	recordJS.put("extents", extentJA);
+	
+	// add the date array containing the dates json objects
+	dateJA = new JSONArray();
+	MapperUtil.addDateExpression(dateJA, getCellData('I'));
+	recordJS.put("dates", dateJA);
+	
+	// get the ids and make them unique if we in DEBUG mode
+	String[] ids = getCellData('C').split("\\.");
+	
+	recordJS.put("id_0", ids[0]);
+	recordJS.put("id_1", ids[1]);
+	recordJS.put("id_2", ids[2]);
+	recordJS.put("id_3", ids[3]);
+	
+	// set the level to collection
+	recordJS.put("level", "collection");
+	
+	// set the type to papers
+	recordJS.put("resource_type", "papers");
+	
+	// set the publish flag to true
+	recordJS.put("publish", true);
+	
+	// add the linked subjects, names, and accession data. This is not used
+	// by aspace, just by the data migrator to create the links
+	recordJS.put("linked_subjects", getCellData('J'));
+	recordJS.put("linked_names", getCellData('K'));
+	recordJS.put("linked_accessions", getCellData('L'));
+	
+	// add the instance now
+	recordJS.put("analog_instances", getCellData('M'));
+	recordJS.put("digital_instances", getCellData('N'));
+	
+	// TO-DO add the notes
+	//addResourceNotes(record, json);		
+}
+
+// Method to convert a resource record
+void convertResourceComponent() {
+	// check to make sure we have a title
+	String title = getCellData('E');
+	recordJS.put("title", title);
+	
+	// add the language code
+	recordJS.put("language", getCellData('F'));
+	
+	// add the extent array containing
+	extentJA = new JSONArray();
+	MapperUtil.addExtent(extentJA, "whole", getCellData('G'), getCellData('H'));
+	recordJS.put("extents", extentJA);
+	
+	// add the date array containing the dates json objects
+	dateJA = new JSONArray();
+	MapperUtil.addDateExpression(dateJA, getCellData('I'));
+	recordJS.put("dates", dateJA);
+	
+	// add the level
+	recordJS.put("level", getCellData('D'));
+	
+	// add the component id
+	recordJS.put("component_id", getCellData('C'));
+	
+	// set the publish flag to true
+	recordJS.put("publish", true);
+	
+	// add the linked subjects, names, and accession data. This is not used
+	// by aspace, just by the data migrator to create the links
+	recordJS.put("linked_subjects", getCellData('J'));
+	recordJS.put("linked_names", getCellData('K'));
+	recordJS.put("linked_accessions", getCellData('L'));
+	
+	// add the instance now
+	recordJS.put("analog_instances", getCellData('M'));
+	recordJS.put("digital_instances", getCellData('N'));
+}
+
+/*
+ * This is where code execution starts by first checking that the record 
+ * is not null. then it checks the type of record.
+ * All functions being called must be above this point.
+ */
+if(record != null) {	
+    if (recordType.equals("subject")) {
+    		print("\nConverting Subject ...\n");
+    		convertSubject();
+    } else if(recordType.equals("name")) {
+    		print("\nConverting Name ...\n");
+    		convertName();
+    } else if(recordType.equals("accession")) {
+    		print("\nConverting Accession ...\n");
+    		convertAccession();
+    } else if(recordType.equals("digitalObject")) {
+    		print("\nConverting Digital Object ...\n");
+    		convertDigitalObject();
+    } else if(recordType.equals("digitalObjectComponent")) {
+    		print("\nConverting Digital Object Component ...\n");
+    		convertDigitalObjectComponent();
+    } else if(recordType.equals("resource")) {
+    		print("\nConverting Resource ...\n");
+    		convertResource();
+    } else if(recordType.equals("resourceComponent")) {
+    		print("\nConverting Resource Component...\n");
+    		convertResourceComponent();
+    } else {
+    		// print error message to say that the record type is not supported
+    		print("Record not supported ... " + recordType);
+    }
+}
