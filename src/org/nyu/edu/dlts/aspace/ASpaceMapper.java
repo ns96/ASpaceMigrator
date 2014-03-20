@@ -11,6 +11,9 @@ import org.nyu.edu.dlts.utils.MapperUtil;
 import org.nyu.edu.dlts.utils.RandomString;
 import org.python.util.PythonInterpreter;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import java.util.*;
 
 /**
@@ -28,6 +31,7 @@ public class ASpaceMapper {
     // Used to specify the type of mapper scripts
     public static final String BEANSHELL_SCRIPT = "BeanShell";
     public static final String JYTHON_SCRIPT = "Jython";
+    public static final String JAVASCRIPT_SCRIPT = "JavaScript";
 
     // The utility class used to map to ASpace Enums
     private EnumUtil enumUtil = new EnumUtil();
@@ -44,6 +48,7 @@ public class ASpaceMapper {
     // The Beanshell and Jyphon interpreters
     private Interpreter bsi = null;
     private PythonInterpreter pyi = null;
+    private ScriptEngine jsi = null;
 
     // some code used for testing
     private boolean makeUnique = false;
@@ -105,9 +110,16 @@ public class ASpaceMapper {
         if(mapperScriptType.equals(BEANSHELL_SCRIPT)) {
             bsi = new Interpreter();
             pyi = null;
-        } else {
+            jsi = null;
+        } else if(mapperScriptType.equals(JYTHON_SCRIPT)) {
             pyi = new PythonInterpreter();
             bsi = null;
+            jsi = null;
+        } else {
+            ScriptEngineManager manager = new ScriptEngineManager();
+            jsi = manager.getEngineByName("javascript");
+            bsi = null;
+            pyi = null;
         }
     }
 
@@ -117,6 +129,7 @@ public class ASpaceMapper {
     public void destroyInterpreter() {
         bsi = null;
         pyi = null;
+        jsi = null;
     }
 
     /**
@@ -136,7 +149,7 @@ public class ASpaceMapper {
      * @param recordJS
      * @return
      */
-    private void runInterpreter(XSSFRow headerRow, XSSFRow record, JSONObject recordJS, String recordType) throws EvalError {
+    private void runInterpreter(XSSFRow headerRow, XSSFRow record, JSONObject recordJS, String recordType) throws EvalError, ScriptException {
         if (bsi != null) {
             bsi.set("header", headerRow);
             bsi.set("record", record);
@@ -149,6 +162,12 @@ public class ASpaceMapper {
             pyi.set("recordJS", recordJS);
             pyi.set("recordType", recordType);
             pyi.exec(mapperScript);
+        } else if(jsi != null) {
+            jsi.put("header", headerRow);
+            jsi.put("record", record);
+            jsi.put("recordJS", recordJS);
+            jsi.put("recordType", recordType);
+            jsi.eval(mapperScript);
         }
     }
 

@@ -1544,8 +1544,10 @@ public class ASpaceCopy implements PrintConsole {
         String currentDirectory  = System.getProperty("user.dir");
 
         File excelFile = new File(currentDirectory +"/sample_data/Sample Ingest Data.xlsx");
+
         File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/commands/mapper.bsh");
         File pyiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/commands/mapper.py");
+        File jsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/commands/mapper.js");
 
         ASpaceCopy aspaceCopy = new ASpaceCopy("http://localhost:8089", "admin", "admin");
 
@@ -1557,6 +1559,7 @@ public class ASpaceCopy implements PrintConsole {
             // load the mapper scripts
             String bsiMapperScript = FileManager.readTextData(bsiMapperScriptFile);
             String pyiMapperScript = FileManager.readTextData(pyiMapperScriptFile);
+            String jsiMapperScript = FileManager.readTextData(jsiMapperScriptFile);
 
             /**
              * Create a new instance for HSSFWorkBook Class
@@ -1568,7 +1571,7 @@ public class ASpaceCopy implements PrintConsole {
             XSSFWorkbook workBook = new XSSFWorkbook(fileInputStream);
             aspaceCopy.setWorkbook(workBook);
 
-            // test the mapper scripts
+            /* test the mapper scripts
             System.out.println("Test mapping excel file using BeanShell");
 
             aspaceCopy.setMapperScriptType(ASpaceMapper.BEANSHELL_SCRIPT);
@@ -1589,9 +1592,14 @@ public class ASpaceCopy implements PrintConsole {
             System.out.println("\n\n");
             aspaceCopy.copyResourceRecords("4,5");
 
-            System.out.println("\n\nTest mapping excel file using Pythonn\n\n");
+            System.out.println("\n\nTest mapping excel file using Python\n\n");
             aspaceCopy.setMapperScriptType(ASpaceMapper.JYTHON_SCRIPT);
             aspaceCopy.setMapperScript(pyiMapperScript);
+            aspaceCopy.copySubjectRecords(0); */
+
+            System.out.println("\n\nTest mapping excel file using Javascript\n\n");
+            aspaceCopy.setMapperScriptType(ASpaceMapper.JAVASCRIPT_SCRIPT);
+            aspaceCopy.setMapperScript(jsiMapperScript);
             aspaceCopy.copySubjectRecords(0);
 
         } catch (Exception e) {

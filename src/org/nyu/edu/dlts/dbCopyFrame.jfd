@@ -80,7 +80,7 @@
              <class>com.jgoodies.forms.layout.FormLayout</class> 
              <void method="setProperty"> 
               <string>$columnSpecs</string> 
-              <string>default:grow, labelcompgap, default:grow</string> 
+              <string>default, labelcompgap, default:grow, labelcompgap, default:grow, labelcompgap, default:grow</string> 
              </void> 
              <void method="setProperty"> 
               <string>$rowSpecs</string> 
@@ -92,10 +92,33 @@
             </void> 
             <void method="add"> 
              <object class="com.jformdesigner.model.FormComponent"> 
+              <string>javax.swing.JLabel</string> 
+              <void method="setProperty"> 
+               <string>text</string> 
+               <string>Select Mapper Script Type</string> 
+              </void> 
+              <void property="name"> 
+               <string>label9</string> 
+              </void> 
+             </object> 
+             <object class="com.jformdesigner.model.FormLayoutConstraints"> 
+              <class>com.jgoodies.forms.layout.CellConstraints</class> 
+              <void method="setProperty"> 
+               <string>gridX</string> 
+               <int>1</int> 
+              </void> 
+              <void method="setProperty"> 
+               <string>gridY</string> 
+               <int>1</int> 
+              </void> 
+             </object> 
+            </void> 
+            <void method="add"> 
+             <object class="com.jformdesigner.model.FormComponent"> 
               <string>javax.swing.JRadioButton</string> 
               <void method="setProperty"> 
                <string>text</string> 
-               <string>Beanshell (Java) Mapper Script</string> 
+               <string>Beanshell</string> 
               </void> 
               <void method="setProperty"> 
                <string>$buttonGroup</string> 
@@ -123,7 +146,7 @@
               <class>com.jgoodies.forms.layout.CellConstraints</class> 
               <void method="setProperty"> 
                <string>gridX</string> 
-               <int>1</int> 
+               <int>3</int> 
               </void> 
               <void method="setProperty"> 
                <string>gridY</string> 
@@ -136,7 +159,7 @@
               <string>javax.swing.JRadioButton</string> 
               <void method="setProperty"> 
                <string>text</string> 
-               <string>Jython (Python) Mapper Script</string> 
+               <string>Jython</string> 
               </void> 
               <void method="setProperty"> 
                <string>$buttonGroup</string> 
@@ -160,7 +183,32 @@
               <class>com.jgoodies.forms.layout.CellConstraints</class> 
               <void method="setProperty"> 
                <string>gridX</string> 
-               <int>3</int> 
+               <int>5</int> 
+              </void> 
+             </object> 
+            </void> 
+            <void method="add"> 
+             <object class="com.jformdesigner.model.FormComponent"> 
+              <string>javax.swing.JRadioButton</string> 
+              <void method="setProperty"> 
+               <string>text</string> 
+               <string>Javascript</string> 
+              </void> 
+              <void method="setProperty"> 
+               <string>$buttonGroup</string> 
+               <object class="com.jformdesigner.model.FormReference"> 
+                <string>buttonGroup1</string> 
+               </object> 
+              </void> 
+              <void property="name"> 
+               <string>javascriptRadioButton</string> 
+              </void> 
+             </object> 
+             <object class="com.jformdesigner.model.FormLayoutConstraints"> 
+              <class>com.jgoodies.forms.layout.CellConstraints</class> 
+              <void method="setProperty"> 
+               <string>gridX</string> 
+               <int>7</int> 
               </void> 
               <void method="setProperty"> 
                <string>gridY</string> 

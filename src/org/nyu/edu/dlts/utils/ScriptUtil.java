@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 public class ScriptUtil {
     public static final String BEANSHELL_SCRIPT = "mapper.bsh";
     public static final String JYTHON_SCRIPT = "mapper.py";
+    public static final String JAVASCRIPT_SCRIPT = "mapper.js";
 
     /**
      * Method to return the String of a script that is stored in the classpath. This just calls the
@@ -35,6 +36,16 @@ public class ScriptUtil {
      */
     public static String getTextForJythonScript() {
         return getTextForBuiltInScript("commands/", JYTHON_SCRIPT);
+    }
+
+    /**
+     * Method to return the String of a script that is stored in the classpath. This just calls the
+     * default package where scripts are stored relative to the dbCopyFrame class
+     *
+     * @return
+     */
+    public static String getTextForJavascriptScript() {
+        return getTextForBuiltInScript("commands/", JAVASCRIPT_SCRIPT);
     }
 
     /**

@@ -18,6 +18,8 @@ import org.nyu.edu.dlts.aspace.ASpaceClient;
 import org.python.util.PythonInterpreter;
 
 import java.awt.*;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -117,11 +119,18 @@ public class CodeViewerDialog extends JDialog {
                 bsi.set("record", new String("Test"));
                 bsi.set("recordType", "test");
                 bsi.eval(getCurrentScript());
-            } else {
+            } else if (textArea.getSyntaxEditingStyle().equals(RSyntaxTextArea.SYNTAX_STYLE_PYTHON)) {
                 PythonInterpreter pyi = new PythonInterpreter();
                 pyi.set("record", new String("Test"));
                 pyi.set("recordType", "test");
                 pyi.exec(getCurrentScript());
+            } else {
+                // must be java script
+                ScriptEngineManager manager = new ScriptEngineManager();
+                ScriptEngine jsi = manager.getEngineByName("javascript");
+                jsi.put("record", new String("Test"));
+                jsi.put("recordType", "test");
+                jsi.eval(getCurrentScript());
             }
 
             messageTextArea.setText("No Syntax Errors Found ...");

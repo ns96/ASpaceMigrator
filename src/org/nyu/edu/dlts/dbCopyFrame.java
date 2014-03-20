@@ -34,6 +34,7 @@ public class dbCopyFrame extends JFrame {
     // used for viewing the mapper scripts
     private CodeViewerDialog codeViewerDialogBeanshell;
     private CodeViewerDialog codeViewerDialogJython;
+    private CodeViewerDialog codeViewerDialogJavascript;
 
     // stores any migration errors
     private String migrationErrors = "";
@@ -302,37 +303,44 @@ public class dbCopyFrame extends JFrame {
 
         if(file.exists()) {
             mapperScript = FileManager.readTextData(file);
+            indicateSupportedRecords();
 
-            // now indicate what's supported by this mapper script
-            if(mapperScript.contains(ASpaceMapper.NAME_MAPPER)) {
-                namesLabel.setText("supported");
-            } else {
-                namesLabel.setText("not supported");
-            }
+        }
+    }
 
-            if(mapperScript.contains(ASpaceMapper.SUBJECT_MAPPER)) {
-                subjectsLabel.setText("supported");
-            } else {
-                subjectsLabel.setText("not supported");
-            }
+    /**
+     * Method to indicate which type of records are supported by a certain script
+     */
+    private void indicateSupportedRecords() {
+        // now indicate what's supported by this mapper script
+        if (mapperScript.contains(ASpaceMapper.NAME_MAPPER)) {
+            namesLabel.setText("supported");
+        } else {
+            namesLabel.setText("not supported");
+        }
 
-            if(mapperScript.contains(ASpaceMapper.ACCESSION_MAPPER)) {
-                accessionsLabel.setText("supported");
-            } else {
-                accessionsLabel.setText("not supported");
-            }
+        if (mapperScript.contains(ASpaceMapper.SUBJECT_MAPPER)) {
+            subjectsLabel.setText("supported");
+        } else {
+            subjectsLabel.setText("not supported");
+        }
 
-            if(mapperScript.contains(ASpaceMapper.DIGITAL_OBJECT_MAPPER)) {
-                digitalObjectLabel.setText("supported");
-            } else {
-                digitalObjectLabel.setText("not supported");
-            }
+        if (mapperScript.contains(ASpaceMapper.ACCESSION_MAPPER)) {
+            accessionsLabel.setText("supported");
+        } else {
+            accessionsLabel.setText("not supported");
+        }
 
-            if(mapperScript.contains(ASpaceMapper.RESOURCE_MAPPER)) {
-                resourcesLabel.setText("supported");
-            } else {
-                resourcesLabel.setText("not supported");
-            }
+        if (mapperScript.contains(ASpaceMapper.DIGITAL_OBJECT_MAPPER)) {
+            digitalObjectLabel.setText("supported");
+        } else {
+            digitalObjectLabel.setText("not supported");
+        }
+
+        if (mapperScript.contains(ASpaceMapper.RESOURCE_MAPPER)) {
+            resourcesLabel.setText("supported");
+        } else {
+            resourcesLabel.setText("not supported");
         }
     }
 
@@ -344,6 +352,7 @@ public class dbCopyFrame extends JFrame {
     public void updateMapperScript(String text) {
         mapperScript = text;
         mapperScriptTextField.setText("Script Loaded From Editor ...");
+        indicateSupportedRecords();
     }
 
     /**
@@ -376,7 +385,7 @@ public class dbCopyFrame extends JFrame {
             codeViewerDialogBeanshell.setTitle("BeanShell Mapper Script Editor");
             codeViewerDialogBeanshell.pack();
             codeViewerDialogBeanshell.setVisible(true);
-        } else {
+        } else if (pythonRadioButton.isSelected()) {
             if(mapperScript.isEmpty()) {
                 mapperScript = ScriptUtil.getTextForJythonScript();
             }
@@ -391,6 +400,21 @@ public class dbCopyFrame extends JFrame {
             codeViewerDialogJython.setTitle("Jython Mapper Script Editor");
             codeViewerDialogJython.pack();
             codeViewerDialogJython.setVisible(true);
+        } else {
+            if(mapperScript.isEmpty()) {
+                mapperScript = ScriptUtil.getTextForJavascriptScript();
+            }
+
+            // must be a python script
+            if (codeViewerDialogJavascript == null) {
+                codeViewerDialogJavascript = new CodeViewerDialog(this, SyntaxConstants.SYNTAX_STYLE_JAVASCRIPT, mapperScript, true, false);
+            } else {
+                codeViewerDialogJavascript.setCurrentScript(mapperScript);
+            }
+
+            codeViewerDialogJavascript.setTitle("Javascript Mapper Script Editor");
+            codeViewerDialogJavascript.pack();
+            codeViewerDialogJavascript.setVisible(true);
         }
     }
 
@@ -429,8 +453,10 @@ public class dbCopyFrame extends JFrame {
         contentPanel = new JPanel();
         apiLabel = new JLabel();
         panel4 = new JPanel();
+        label9 = new JLabel();
         beanShellRadioButton = new JRadioButton();
         pythonRadioButton = new JRadioButton();
+        javascriptRadioButton = new JRadioButton();
         loadExcelFileButton = new JButton();
         excelTextField = new JTextField();
         loadMapperScriptButton = new JButton();
@@ -547,30 +573,42 @@ public class dbCopyFrame extends JFrame {
                 {
                     panel4.setLayout(new FormLayout(
                         new ColumnSpec[] {
+                            FormFactory.DEFAULT_COLSPEC,
+                            FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
+                            new ColumnSpec(ColumnSpec.FILL, Sizes.DEFAULT, FormSpec.DEFAULT_GROW),
+                            FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
                             new ColumnSpec(ColumnSpec.FILL, Sizes.DEFAULT, FormSpec.DEFAULT_GROW),
                             FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
                             new ColumnSpec(ColumnSpec.FILL, Sizes.DEFAULT, FormSpec.DEFAULT_GROW)
                         },
                         RowSpec.decodeSpecs("default")));
 
+                    //---- label9 ----
+                    label9.setText("Select Mapper Script Type");
+                    panel4.add(label9, cc.xy(1, 1));
+
                     //---- beanShellRadioButton ----
-                    beanShellRadioButton.setText("Beanshell (Java) Mapper Script");
+                    beanShellRadioButton.setText("Beanshell");
                     beanShellRadioButton.setSelected(true);
                     beanShellRadioButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                             beanShellRadioButtonActionPerformed();
                         }
                     });
-                    panel4.add(beanShellRadioButton, cc.xy(1, 1));
+                    panel4.add(beanShellRadioButton, cc.xy(3, 1));
 
                     //---- pythonRadioButton ----
-                    pythonRadioButton.setText("Jython (Python) Mapper Script");
+                    pythonRadioButton.setText("Jython");
                     pythonRadioButton.addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                             pythonRadioButtonActionPerformed();
                         }
                     });
-                    panel4.add(pythonRadioButton, cc.xy(3, 1));
+                    panel4.add(pythonRadioButton, cc.xy(5, 1));
+
+                    //---- javascriptRadioButton ----
+                    javascriptRadioButton.setText("Javascript");
+                    panel4.add(javascriptRadioButton, cc.xy(7, 1));
                 }
                 contentPanel.add(panel4, cc.xywh(3, 1, 7, 1));
 
@@ -903,6 +941,7 @@ public class dbCopyFrame extends JFrame {
         ButtonGroup buttonGroup1 = new ButtonGroup();
         buttonGroup1.add(beanShellRadioButton);
         buttonGroup1.add(pythonRadioButton);
+        buttonGroup1.add(javascriptRadioButton);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
@@ -913,8 +952,10 @@ public class dbCopyFrame extends JFrame {
     private JPanel contentPanel;
     private JLabel apiLabel;
     private JPanel panel4;
+    private JLabel label9;
     private JRadioButton beanShellRadioButton;
     private JRadioButton pythonRadioButton;
+    private JRadioButton javascriptRadioButton;
     private JButton loadExcelFileButton;
     private JTextField excelTextField;
     private JButton loadMapperScriptButton;
