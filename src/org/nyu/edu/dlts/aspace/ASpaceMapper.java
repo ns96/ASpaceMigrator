@@ -46,10 +46,10 @@ public class ASpaceMapper {
     private PythonInterpreter pyi = null;
 
     // some code used for testing
-    private boolean makeUnique = true;
+    private boolean makeUnique = false;
 
     // initialize the random string generators for use when unique ids are needed
-    private RandomString randomString = new RandomString(3);
+    private RandomString randomString = new RandomString(4);
 
     // used to store errors
     private ASpaceCopy aspaceCopy;
@@ -117,6 +117,15 @@ public class ASpaceMapper {
     public void destroyInterpreter() {
         bsi = null;
         pyi = null;
+    }
+
+    /**
+     * Used to to generate random ids
+     *
+     * @param makeUnique
+     */
+    public void setMakeUnique(boolean makeUnique) {
+        this.makeUnique = makeUnique;
     }
 
     /**
@@ -283,6 +292,13 @@ public class ASpaceMapper {
 
         runInterpreter(header, record, recordJS, "accession");
 
+        if(makeUnique) {
+            recordJS.put("id_0", randomString.nextString());
+            recordJS.put("id_1", randomString.nextString());
+            recordJS.put("id_2", randomString.nextString());
+            recordJS.put("id_3", randomString.nextString());
+        }
+
         return recordJS;
     }
 
@@ -302,6 +318,10 @@ public class ASpaceMapper {
         MapperUtil.addExternalId(recordId, recordJS, "digitalObject");
 
         runInterpreter(header, record, recordJS, "digitalObject");
+
+        if(makeUnique) {
+            recordJS.put("digital_object_id", "Digital Object ID ##" + randomString.nextString());
+        }
 
         return recordJS;
     }
@@ -341,6 +361,13 @@ public class ASpaceMapper {
 
         runInterpreter(header, record, recordJS, "resource");
 
+        if(makeUnique) {
+            recordJS.put("id_0", randomString.nextString());
+            recordJS.put("id_1", randomString.nextString());
+            recordJS.put("id_2", randomString.nextString());
+            recordJS.put("id_3", randomString.nextString());
+        }
+
         return recordJS;
     }
 
@@ -362,6 +389,10 @@ public class ASpaceMapper {
 
         runInterpreter(header, record, recordJS, "resourceComponent");
 
+        if(makeUnique) {
+            recordJS.put("component_id", "Component ID ##" + randomString.nextString());
+        }
+
         return recordJS;
     }
 
@@ -373,14 +404,5 @@ public class ASpaceMapper {
      */
     public void setCurrentResourceRecordIdentifier(String identifier) {
         this.currentResourceRecordIdentifier = identifier;
-    }
-
-    /**
-     * Method to test the conversion without having to startup the gui
-     *
-     * @param args
-     */
-    public static void main(String[] args) throws JSONException {
-        // test code goes here
     }
 }

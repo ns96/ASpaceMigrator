@@ -421,7 +421,7 @@ public class ASpaceCopy implements PrintConsole {
                 uri = uri + "/" + id;
 
                 // now add the event objects
-                //addEvents(accession, repoURI, uri);
+                addEvents(recordId, accessionJS, repoURI, uri);
 
                 accessionURIMap.put(recordId, uri);
                 print("Copied Accession: " + recordId + " :: " + id);
@@ -438,6 +438,24 @@ public class ASpaceCopy implements PrintConsole {
 
         // refresh the interpreter to prevent heap space error
         freeMemory();
+    }
+
+    /**
+     * Method to add events object to an accession object
+     *
+     * @param recordId
+     * @param accessionJS
+     * @param accessionURI
+     */
+    private void addEvents(String recordId, JSONObject accessionJS, String repoURI, String accessionURI) throws Exception {
+        String uri = repoURI + ASpaceClient.EVENT_ENDPOINT;
+        String agentURI = repositoryAgentURIMap.get(repoURI);
+
+        ArrayList<JSONObject> eventList = MapperUtil.getAccessionEvents(accessionJS, agentURI, accessionURI);
+
+        for (JSONObject eventJS: eventList) {
+            String id = saveRecord(uri, eventJS.toString(), "Accession Event->" + recordId);
+        }
     }
 
     /**
@@ -1503,6 +1521,7 @@ public class ASpaceCopy implements PrintConsole {
      */
     public void setDeveloperMode(boolean developerMode) {
         this.developerMode = developerMode;
+        mapper.setMakeUnique(developerMode);
     }
 
     /**
@@ -1522,9 +1541,11 @@ public class ASpaceCopy implements PrintConsole {
      * @param args
      */
     public static void main(String[] args) throws JSONException {
-        File excelFile = new File("/Users/nathan/Downloads/Sample Ingest Data.xlsx");
-        File bsiMapperScriptFile = new File("/Users/nathan/IdeaProjects/GitRepo/ASpaceMigrator/src/org/nyu/edu/dlts/commands/mapper.bsh");
-        File pyiMapperScriptFile = new File("/Users/nathan/IdeaProjects/GitRepo/ASpaceMigrator/src/org/nyu/edu/dlts/commands/mapper.py");
+        String currentDirectory  = System.getProperty("user.dir");
+
+        File excelFile = new File(currentDirectory +"/sample_data/Sample Ingest Data.xlsx");
+        File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/commands/mapper.bsh");
+        File pyiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/commands/mapper.py");
 
         ASpaceCopy aspaceCopy = new ASpaceCopy("http://localhost:8089", "admin", "admin");
 
@@ -1547,7 +1568,7 @@ public class ASpaceCopy implements PrintConsole {
             XSSFWorkbook workBook = new XSSFWorkbook(fileInputStream);
             aspaceCopy.setWorkbook(workBook);
 
-            /* test the mapper scripts
+            // test the mapper scripts
             System.out.println("Test mapping excel file using BeanShell");
 
             aspaceCopy.setMapperScriptType(ASpaceMapper.BEANSHELL_SCRIPT);
@@ -1566,7 +1587,7 @@ public class ASpaceCopy implements PrintConsole {
             aspaceCopy.copyDigitalObjectRecords(3);
 
             System.out.println("\n\n");
-            aspaceCopy.copyResourceRecords("4,5");*/
+            aspaceCopy.copyResourceRecords("4,5");
 
             System.out.println("\n\nTest mapping excel file using Pythonn\n\n");
             aspaceCopy.setMapperScriptType(ASpaceMapper.JYTHON_SCRIPT);

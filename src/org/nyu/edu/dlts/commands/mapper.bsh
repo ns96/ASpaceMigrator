@@ -162,6 +162,14 @@ void convertAccession() {
 	recordJS.put("linked_subjects", getCellData('F'));
 	recordJS.put("linked_names", getCellData('G'));
 	
+	// add the processed and right transfer date
+	dateString = getDate(getCellData('H')).toString();
+	recordJS.put("processed_date", dateString);
+	
+	dateString = getDate(getCellData('I')).toString();
+	recordJS.put("rights_transferred_date", dateString);
+	recordJS.put("rights_transferred_note", getCellData('J'));
+	
 	/*TODO add a general note*/
 }
 

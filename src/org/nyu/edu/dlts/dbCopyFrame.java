@@ -263,41 +263,17 @@ public class dbCopyFrame extends JFrame {
 
         CodeViewerDialog codeViewerDialog = new CodeViewerDialog(this, SyntaxConstants.SYNTAX_STYLE_JAVASCRIPT, recordJSON, true, true);
         codeViewerDialog.setTitle("REST ENDPOINT URI: " + uri);
-        codeViewerDialog.setASpaceClient(aspaceClient);
         codeViewerDialog.pack();
         codeViewerDialog.setVisible(true);
     }
 
     /**
-     * This will allow multiple records to submit for testing.
-     */
-    private void testRecordButtonActionPerformed() {
-        try {
-            if(aspaceClient == null) {
-                String host = hostTextField.getText().trim();
-                String admin = adminTextField.getText();
-                String adminPassword = adminPasswordTextField.getText();
-
-                aspaceClient = new ASpaceClient(host, admin, adminPassword);
-                aspaceClient.getSession();
-            }
-
-            CodeViewerDialog codeViewerDialog = new CodeViewerDialog(this, SyntaxConstants.SYNTAX_STYLE_JAVASCRIPT, "", true, true);
-            codeViewerDialog.setTitle("Post Record To ASpace");
-            codeViewerDialog.setASpaceClient(aspaceClient);
-            codeViewerDialog.pack();
-            codeViewerDialog.setVisible(true);
-        } catch (Exception e) {
-            consoleTextArea.setText(getStackTrace(e));
-        }
-    }
-
-    /**
      * Method to get the string from a stack trace
+     *
      * @param throwable The exception
      * @return the string representation of the stack trace
      */
-    private String getStackTrace(Throwable throwable) {
+    public static String getStackTrace(Throwable throwable) {
         StringWriter sw = new StringWriter();
         PrintWriter pw = new PrintWriter(sw);
         throwable.printStackTrace(pw);
@@ -367,7 +343,7 @@ public class dbCopyFrame extends JFrame {
      */
     public void updateMapperScript(String text) {
         mapperScript = text;
-        mapperScriptTextField.setText("Loaded Script From Editor ...");
+        mapperScriptTextField.setText("Script Loaded From Editor ...");
     }
 
     /**
@@ -407,7 +383,7 @@ public class dbCopyFrame extends JFrame {
 
             // must be a python script
             if (codeViewerDialogJython == null) {
-                codeViewerDialogJython = new CodeViewerDialog(this, SyntaxConstants.SYNTAX_STYLE_JAVA, mapperScript, true, false);
+                codeViewerDialogJython = new CodeViewerDialog(this, SyntaxConstants.SYNTAX_STYLE_PYTHON, mapperScript, true, false);
             } else {
                 codeViewerDialogJython.setCurrentScript(mapperScript);
             }
@@ -436,6 +412,14 @@ public class dbCopyFrame extends JFrame {
         }
 
         return repository;
+    }
+
+    private void beanShellRadioButtonActionPerformed() {
+        mapperScript = "";
+    }
+
+    private void pythonRadioButtonActionPerformed() {
+        mapperScript = "";
     }
 
     private void initComponents() {
@@ -497,7 +481,6 @@ public class dbCopyFrame extends JFrame {
         paramsLabel = new JLabel();
         paramsTextField = new JTextField();
         viewRecordButton = new JButton();
-        testRecordButton = new JButton();
         buttonBar = new JPanel();
         errorLogButton = new JButton();
         saveErrorsLabel = new JLabel();
@@ -507,7 +490,7 @@ public class dbCopyFrame extends JFrame {
         CellConstraints cc = new CellConstraints();
 
         //======== this ========
-        setTitle("Archives Space Excel Data Migrator v0.1 (03-19-2014)");
+        setTitle("Archives Space Excel Migrator v0.1 (03-20-2014)");
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
@@ -573,10 +556,20 @@ public class dbCopyFrame extends JFrame {
                     //---- beanShellRadioButton ----
                     beanShellRadioButton.setText("Beanshell (Java) Mapper Script");
                     beanShellRadioButton.setSelected(true);
+                    beanShellRadioButton.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            beanShellRadioButtonActionPerformed();
+                        }
+                    });
                     panel4.add(beanShellRadioButton, cc.xy(1, 1));
 
                     //---- pythonRadioButton ----
                     pythonRadioButton.setText("Jython (Python) Mapper Script");
+                    pythonRadioButton.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            pythonRadioButtonActionPerformed();
+                        }
+                    });
                     panel4.add(pythonRadioButton, cc.xy(3, 1));
                 }
                 contentPanel.add(panel4, cc.xywh(3, 1, 7, 1));
@@ -783,7 +776,7 @@ public class dbCopyFrame extends JFrame {
                 contentPanel.add(textField1, cc.xywh(5, 13, 5, 1));
 
                 //---- developerModeCheckBox ----
-                developerModeCheckBox.setText("Developer Mode (names/subjects records are copied only once and IDs are randomized)");
+                developerModeCheckBox.setText("Developer Mode (names/subjects records are copied only once, and IDs are randomized)");
                 contentPanel.add(developerModeCheckBox, cc.xywh(1, 15, 5, 1));
 
                 //---- outputConsoleLabel ----
@@ -837,16 +830,7 @@ public class dbCopyFrame extends JFrame {
                         viewRecordButtonActionPerformed();
                     }
                 });
-                contentPanel.add(viewRecordButton, cc.xywh(7, 21, 2, 1));
-
-                //---- testRecordButton ----
-                testRecordButton.setText("  Test  ");
-                testRecordButton.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        testRecordButtonActionPerformed();
-                    }
-                });
-                contentPanel.add(testRecordButton, cc.xy(9, 21));
+                contentPanel.add(viewRecordButton, cc.xywh(7, 21, 3, 1));
             }
             dialogPane.add(contentPanel, BorderLayout.CENTER);
 
@@ -981,7 +965,6 @@ public class dbCopyFrame extends JFrame {
     private JLabel paramsLabel;
     private JTextField paramsTextField;
     private JButton viewRecordButton;
-    private JButton testRecordButton;
     private JPanel buttonBar;
     private JButton errorLogButton;
     private JLabel saveErrorsLabel;

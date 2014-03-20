@@ -215,10 +215,18 @@
               <string>javax.swing.JButton</string> 
               <void method="setProperty"> 
                <string>text</string> 
-               <string>Post Record</string> 
+               <string>Evaluate Syntax</string> 
               </void> 
               <void property="name"> 
-               <string>postToASpaceButton</string> 
+               <string>evaluateButton</string> 
+              </void> 
+              <void method="addEvent"> 
+               <object class="com.jformdesigner.model.FormEvent"> 
+                <string>java.awt.event.ActionListener</string> 
+                <string>actionPerformed</string> 
+                <string>evaluateButtonActionPerformed</string> 
+                <boolean>false</boolean> 
+               </object> 
               </void> 
              </object> 
              <object class="com.jformdesigner.model.FormLayoutConstraints"> 

@@ -23,7 +23,7 @@ from java.text import SimpleDateFormat
 
 # function that return a Java Data Object
 def getDate(dateString):
-	df = new SimpleDateFormat("MM/dd/yyyy");
+	df = SimpleDateFormat("MM/dd/yyyy");
 	return df.parse(dateString)
 	
 # function to get the data in a certain column 

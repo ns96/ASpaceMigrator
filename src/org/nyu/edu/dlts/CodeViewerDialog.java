@@ -5,13 +5,17 @@
 package org.nyu.edu.dlts;
 
 import java.awt.event.*;
+
+import bsh.Interpreter;
 import com.jgoodies.forms.factories.*;
 import com.jgoodies.forms.layout.*;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.json.JSONException;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rtextarea.RTextScrollPane;
 import org.json.JSONObject;
 import org.nyu.edu.dlts.aspace.ASpaceClient;
+import org.python.util.PythonInterpreter;
 
 import java.awt.*;
 import javax.swing.*;
@@ -25,11 +29,8 @@ import javax.swing.border.*;
 public class CodeViewerDialog extends JDialog {
     private RSyntaxTextArea textArea;
     private boolean editable = false;
-
-
-    private ASpaceClient aspaceClient;
-
     private dbCopyFrame dbcopyFrame;
+    private String scriptType = "";
 
     /**
      * Constructor which code is past in
@@ -69,8 +70,6 @@ public class CodeViewerDialog extends JDialog {
         setLocation(dbcopyFrame.getLocationOnScreen());
     }
 
-
-
     /**
      * Method to set the script that is displayed
      *
@@ -101,49 +100,34 @@ public class CodeViewerDialog extends JDialog {
     }
 
     /**
-     * Method to store a json record to test against
-     */
-    private void postButtonActionPerformed() {
-        String testHost = "http";
-        String jsonText = textArea.getText();
-
-        try {
-            String message = "";
-
-            message = aspaceClient.post(testHost, jsonText, null, "Test Record");
-
-            messageTextArea.append(message + "\n");
-        } catch(Exception e) {
-            if(e instanceof JSONException) {
-                messageTextArea.setText("Invalid JSON Record");
-            } else {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    /**
-     * Method to delete a record on the ASpace backend.  This is really for development purposes
-     */
-    private void deleteButtonActionPerformed() {
-        try {
-            JSONObject jsonObject = new JSONObject(textArea.getText());
-            String uri = jsonObject.getString("uri");
-            String message = aspaceClient.deleteRecord(uri);
-            messageTextArea.setText(message);
-        } catch (JSONException e) {
-            messageTextArea.setText("Invalid JSON record");
-        } catch (Exception e) {
-            messageTextArea.setText("Error deleting JSON record");
-            e.printStackTrace();
-        }
-    }
-
-    /**
      * Updated the script in the main program
      */
     private void updateButtonActionPerformed() {
         dbcopyFrame.updateMapperScript(textArea.getText());
+    }
+
+    /**
+     * Method to evalute the syntax of the script.
+     * Basically try running and see if any syntax errors occur
+     */
+    private void evaluateButtonActionPerformed() {
+        try {
+            if(textArea.getSyntaxEditingStyle().equals(RSyntaxTextArea.SYNTAX_STYLE_JAVA)) {
+                Interpreter bsi = new Interpreter();
+                bsi.set("record", new String("Test"));
+                bsi.set("recordType", "test");
+                bsi.eval(getCurrentScript());
+            } else {
+                PythonInterpreter pyi = new PythonInterpreter();
+                pyi.set("record", new String("Test"));
+                pyi.set("recordType", "test");
+                pyi.exec(getCurrentScript());
+            }
+
+            messageTextArea.setText("No Syntax Errors Found ...");
+        } catch(Exception e) {
+            messageTextArea.setText("Error Occurred:\n" + dbCopyFrame.getStackTrace(e));
+        }
     }
 
     private void initComponents() {
@@ -158,7 +142,7 @@ public class CodeViewerDialog extends JDialog {
         openButton = new JButton();
         saveButton = new JButton();
         updateButton = new JButton();
-        postToASpaceButton = new JButton();
+        evaluateButton = new JButton();
         okButton = new JButton();
         CellConstraints cc = new CellConstraints();
 
@@ -228,9 +212,14 @@ public class CodeViewerDialog extends JDialog {
                     });
                     recordTestPanel.add(updateButton, cc.xy(5, 1));
 
-                    //---- postToASpaceButton ----
-                    postToASpaceButton.setText("Post Record");
-                    recordTestPanel.add(postToASpaceButton, cc.xy(9, 1));
+                    //---- evaluateButton ----
+                    evaluateButton.setText("Evaluate Syntax");
+                    evaluateButton.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            evaluateButtonActionPerformed();
+                        }
+                    });
+                    recordTestPanel.add(evaluateButton, cc.xy(9, 1));
                 }
                 buttonBar.add(recordTestPanel, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
@@ -266,17 +255,7 @@ public class CodeViewerDialog extends JDialog {
     private JButton openButton;
     private JButton saveButton;
     private JButton updateButton;
-    private JButton postToASpaceButton;
+    private JButton evaluateButton;
     private JButton okButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
-
-
-    /**
-     * Method to setup the ASpace client
-     *
-     * @param aspaceClient
-     */
-    public void setASpaceClient(ASpaceClient aspaceClient) {
-        this.aspaceClient = aspaceClient;
-    }
 }

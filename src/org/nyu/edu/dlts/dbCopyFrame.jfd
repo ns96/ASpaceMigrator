@@ -14,7 +14,7 @@
       </object> 
       <void method="setProperty"> 
        <string>title</string> 
-       <string>Archives Space Excel Data Migrator v0.1 (03-19-2014)</string> 
+       <string>Archives Space Excel Migrator v0.1 (03-20-2014)</string> 
       </void> 
       <void method="add"> 
        <object class="com.jformdesigner.model.FormContainer"> 
@@ -110,6 +110,14 @@
               <void property="name"> 
                <string>beanShellRadioButton</string> 
               </void> 
+              <void method="addEvent"> 
+               <object class="com.jformdesigner.model.FormEvent"> 
+                <string>java.awt.event.ActionListener</string> 
+                <string>actionPerformed</string> 
+                <string>beanShellRadioButtonActionPerformed</string> 
+                <boolean>false</boolean> 
+               </object> 
+              </void> 
              </object> 
              <object class="com.jformdesigner.model.FormLayoutConstraints"> 
               <class>com.jgoodies.forms.layout.CellConstraints</class> 
@@ -138,6 +146,14 @@
               </void> 
               <void property="name"> 
                <string>pythonRadioButton</string> 
+              </void> 
+              <void method="addEvent"> 
+               <object class="com.jformdesigner.model.FormEvent"> 
+                <string>java.awt.event.ActionListener</string> 
+                <string>actionPerformed</string> 
+                <string>pythonRadioButtonActionPerformed</string> 
+                <boolean>false</boolean> 
+               </object> 
               </void> 
              </object> 
              <object class="com.jformdesigner.model.FormLayoutConstraints"> 
@@ -1164,7 +1180,7 @@
             <string>javax.swing.JCheckBox</string> 
             <void method="setProperty"> 
              <string>text</string> 
-             <string>Developer Mode (names/subjects records are copied only once and IDs are randomized)</string> 
+             <string>Developer Mode (names/subjects records are copied only once, and IDs are randomized)</string> 
             </void> 
             <void property="name"> 
              <string>developerModeCheckBox</string> 
@@ -1404,38 +1420,7 @@
             </void> 
             <void method="setProperty"> 
              <string>gridWidth</string> 
-             <int>2</int> 
-            </void> 
-           </object> 
-          </void> 
-          <void method="add"> 
-           <object class="com.jformdesigner.model.FormComponent"> 
-            <string>javax.swing.JButton</string> 
-            <void method="setProperty"> 
-             <string>text</string> 
-             <string>  Test  </string> 
-            </void> 
-            <void property="name"> 
-             <string>testRecordButton</string> 
-            </void> 
-            <void method="addEvent"> 
-             <object class="com.jformdesigner.model.FormEvent"> 
-              <string>java.awt.event.ActionListener</string> 
-              <string>actionPerformed</string> 
-              <string>testRecordButtonActionPerformed</string> 
-              <boolean>false</boolean> 
-             </object> 
-            </void> 
-           </object> 
-           <object class="com.jformdesigner.model.FormLayoutConstraints"> 
-            <class>com.jgoodies.forms.layout.CellConstraints</class> 
-            <void method="setProperty"> 
-             <string>gridX</string> 
-             <int>9</int> 
-            </void> 
-            <void method="setProperty"> 
-             <string>gridY</string> 
-             <int>21</int> 
+             <int>3</int> 
             </void> 
            </object> 
           </void> 

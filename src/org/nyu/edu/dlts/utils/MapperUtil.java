@@ -504,6 +504,129 @@ public class MapperUtil {
     }
 
     /**
+     * Method to get an event object Accession processed info
+     *
+     *
+     * @param accessionJS
+     * @param accessionURI
+     * @param agentURI
+     * @return
+     */
+    public static ArrayList<JSONObject> getAccessionEvents(JSONObject accessionJS, String agentURI, String accessionURI) throws Exception {
+        ArrayList<JSONObject> eventsList = new ArrayList<JSONObject>();
+        JSONObject eventJS;
+
+        if(accessionJS.has("processed_date")) {
+            eventJS = new JSONObject();
+            eventJS.put("event_type", "processed");
+            addEventDate(eventJS, accessionJS.getString("processed_date") ,"single", "event");
+            addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
+            eventsList.add(eventJS);
+        }
+
+        if(accessionJS.has("acknowledgement_sent_date")) {
+            eventJS = new JSONObject();
+            eventJS.put("event_type", "acknowledgement_sent");
+            addEventDate(eventJS, accessionJS.getString("acknowledgement_sent_date"), "single", "event");
+            addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
+            eventsList.add(eventJS);
+        }
+
+        if(accessionJS.has("agreement_signed_date")) {
+            eventJS = new JSONObject();
+            eventJS.put("event_type", "agreement_signed");
+            addEventDate(eventJS, accessionJS.getString("agreement_signed_date"), "single", "event");
+            addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
+            eventsList.add(eventJS);
+        }
+
+        if(accessionJS.has("agreement_sent_date")) {
+            eventJS = new JSONObject();
+            eventJS.put("event_type", "agreement_sent");
+            addEventDate(eventJS, accessionJS.getString("agreement_sent_date"), "single", "event");
+            addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
+            eventsList.add(eventJS);
+        }
+
+        if(accessionJS.has("cataloged_date")) {
+            eventJS = new JSONObject();
+            eventJS.put("event_type", "cataloged");
+            addEventDate(eventJS, accessionJS.getString("cataloged_date") , "single", "event");
+            addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
+            eventsList.add(eventJS);
+        }
+
+        if(accessionJS.has("processing_started_date")) {
+            eventJS = new JSONObject();
+            eventJS.put("event_type", "processing_started");
+            addEventDate(eventJS, accessionJS.getString("processing_started_date"), "single", "event");
+            addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
+            eventsList.add(eventJS);
+        }
+
+        if(accessionJS.has("rights_transferred_date")) {
+            eventJS = new JSONObject();
+            eventJS.put("event_type", "rights_transferred");
+
+            if(accessionJS.has("rights_transferred_note")) {
+                eventJS.put("outcome_note", accessionJS.get("rights_transferred_note"));
+            }
+
+            addEventDate(eventJS, accessionJS.getString("rights_transferred_date"), "single", "event");
+            addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
+            eventsList.add(eventJS);
+        }
+
+        return eventsList;
+    }
+
+    /**
+     * Method to add a date object
+     *
+     * @param eventJS
+     * @param dateString
+     * @param dateType
+     * @param dateLabel
+     */
+    public static void addEventDate(JSONObject eventJS, String dateString, String dateType, String dateLabel) throws Exception {
+        JSONObject dateJS = new JSONObject();
+        dateJS.put("date_type", dateType);
+        dateJS.put("label", dateLabel);
+        dateJS.put("begin", dateString);
+        dateJS.put("end", dateString);
+        eventJS.put("date", dateJS);
+    }
+
+    /**
+     * Method to add the event linked record
+     *
+     * @param uri
+     * @param eventJS
+     * @throws Exception
+     */
+    public static void addEventLinkedRecordAndAgent(JSONObject eventJS, String agentURI, String uri) throws Exception {
+        // add a dummy linked agent so record can save
+        JSONArray linkedAgentsJA = new JSONArray();
+        JSONObject linkedAgentJS = new JSONObject();
+
+        linkedAgentJS.put("role", "recipient");
+        linkedAgentJS.put("ref", agentURI);
+        linkedAgentsJA.put(linkedAgentJS);
+
+        eventJS.put("linked_agents", linkedAgentsJA);
+
+        // add the linked to the record
+        JSONArray linkedRecordsJA = new JSONArray();
+        JSONObject linkedRecordJS = new JSONObject();
+
+        linkedRecordJS.put("role", "source");
+        linkedRecordJS.put("ref", uri);
+        linkedRecordsJA.put(linkedRecordJS);
+
+        eventJS.put("linked_records", linkedRecordsJA);
+    }
+
+    /**
      * Method to return the column number given a character
      *
      * @param column
