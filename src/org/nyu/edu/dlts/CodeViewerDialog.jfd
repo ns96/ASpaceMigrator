@@ -57,7 +57,7 @@
               <string>javax.swing.JTextArea</string> 
               <void method="setProperty"> 
                <string>rows</string> 
-               <int>4</int> 
+               <int>6</int> 
               </void> 
               <void method="setProperty"> 
                <string>editable</string> 
@@ -144,6 +144,10 @@
                <string>text</string> 
                <string>Open</string> 
               </void> 
+              <void method="setProperty"> 
+               <string>enabled</string> 
+               <boolean>false</boolean> 
+              </void> 
               <void property="name"> 
                <string>openButton</string> 
               </void> 
@@ -166,6 +170,10 @@
               <void method="setProperty"> 
                <string>text</string> 
                <string>Save</string> 
+              </void> 
+              <void method="setProperty"> 
+               <string>enabled</string> 
+               <boolean>false</boolean> 
               </void> 
               <void property="name"> 
                <string>saveButton</string> 

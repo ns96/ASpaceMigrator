@@ -18,6 +18,7 @@ import org.nyu.edu.dlts.aspace.ASpaceClient;
 import org.python.util.PythonInterpreter;
 
 import java.awt.*;
+import java.io.File;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.swing.*;
@@ -33,6 +34,7 @@ public class CodeViewerDialog extends JDialog {
     private boolean editable = false;
     private dbCopyFrame dbcopyFrame;
     private String scriptType = "";
+    private File scriptFile = null;
 
     /**
      * Constructor which code is past in
@@ -73,6 +75,13 @@ public class CodeViewerDialog extends JDialog {
     }
 
     /**
+     * Set the script file
+     */
+    public void setScriptFile(File scriptFile) {
+        this.scriptFile = scriptFile;
+    }
+
+    /**
      * Method to set the script that is displayed
      *
      * @param script
@@ -109,7 +118,7 @@ public class CodeViewerDialog extends JDialog {
     }
 
     /**
-     * Method to evalute the syntax of the script.
+     * Method to evaluate the syntax of the script.
      * Basically try running and see if any syntax errors occur
      */
     private void evaluateButtonActionPerformed() {
@@ -173,7 +182,7 @@ public class CodeViewerDialog extends JDialog {
                 {
 
                     //---- messageTextArea ----
-                    messageTextArea.setRows(4);
+                    messageTextArea.setRows(6);
                     messageTextArea.setEditable(false);
                     scrollPane1.setViewportView(messageTextArea);
                 }
@@ -206,10 +215,12 @@ public class CodeViewerDialog extends JDialog {
 
                     //---- openButton ----
                     openButton.setText("Open");
+                    openButton.setEnabled(false);
                     recordTestPanel.add(openButton, cc.xy(1, 1));
 
                     //---- saveButton ----
                     saveButton.setText("Save");
+                    saveButton.setEnabled(false);
                     recordTestPanel.add(saveButton, cc.xy(3, 1));
 
                     //---- updateButton ----

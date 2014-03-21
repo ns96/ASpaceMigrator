@@ -20,6 +20,7 @@ import java.util.Iterator;
 
 /**
  * Created by IntelliJ IDEA.
+ *
  * User: Nathan Stevens
  *
  * Date: 03/03/14
@@ -79,7 +80,6 @@ public class ASpaceCopy implements PrintConsole {
     // specify the current record type and ID in case we have fetal error during migration
     private String currentRecordType = "";
     private String currentRecordIdentifier = "";
-    private String currentRecordDBID = "";
 
     // These fields are used to track of the number of messages posted to the output console
     // in order to prevent memory usage errors
@@ -121,13 +121,10 @@ public class ASpaceCopy implements PrintConsole {
     private final String RECORD_TOTAL_KEY = "copyProgress";
 
     // An Array List for storing the total number of main records transferred
-    ArrayList<String> recordTotals = new ArrayList<String>();
+    private ArrayList<String> recordTotals = new ArrayList<String>();
 
     // Specifies whether or not to simulate the REST calls
     private boolean simulateRESTCalls = false;
-
-    // Specifies whether to delete the previously saved resource records. Useful for testing purposes
-    private boolean deleteSavedResources = false;
 
     // Specify whether to run in developer mode in which the Names are Subjects records are copied once
     // and the ids for Accessions, Digital Objects, and Resource records are randomized in order to
@@ -266,6 +263,54 @@ public class ASpaceCopy implements PrintConsole {
 
         // return the repo id
         return repositoryURIMap.get(repoID);
+    }
+
+    /**
+     * Method to copy the location records
+     *
+     * @throws Exception
+     */
+    public void copyLocationRecords(int sheetNumber) throws Exception {
+        print("Copying Location records ...");
+
+        // load the current spreadsheet from the work book
+        XSSFSheet xssfSheet = workBook.getSheetAt(sheetNumber);
+        XSSFRow headerRow = null;
+        ArrayList<XSSFRow> rowList = getRowData(headerRow, xssfSheet);
+
+        int total = rowList.size();
+        int count = 0;
+        int success = 0;
+
+        /**
+         * Iterate the row data of the spreadsheet
+         */
+        for (XSSFRow xssfRow : rowList) {
+            if (stopCopy) return;
+            String recordId = getFullRecordID(xssfSheet, xssfRow);
+
+            JSONObject recordJS = mapper.convertLocation(headerRow, xssfRow);
+            String jsonText = recordJS.toString();
+
+            String id = saveRecord(ASpaceClient.LOCATION_ENDPOINT, jsonText, "Location->" + recordId);
+
+            if (!id.equalsIgnoreCase(NO_ID)) {
+                String uri = ASpaceClient.LOCATION_ENDPOINT + "/" + id;
+                locationURIMap.put(getRecordID(xssfRow), uri);
+                print("Copied Location: " + recordId + " :: " + id);
+                success++;
+            } else {
+                print("Fail -- Location: " + recordId);
+            }
+
+            count++;
+            updateProgress("Locations", total, count);
+        }
+
+        updateRecordTotals("Locations", total, success);
+
+        // refresh the database connection to prevent heap space error
+        freeMemory();
     }
 
     /**
@@ -410,8 +455,7 @@ public class ASpaceCopy implements PrintConsole {
             addNames(recordId, accessionJS);
 
             // add an instance that holds the location information
-            //addInstance(recordId, accessionJS);
-
+            addLocationInstance(recordId, accessionJS);
 
             String repoURI = getRepositoryURI();
             String uri = repoURI + ASpaceClient.ACCESSION_ENDPOINT;
@@ -421,9 +465,9 @@ public class ASpaceCopy implements PrintConsole {
                 uri = uri + "/" + id;
 
                 // now add the event objects
-                addEvents(recordId, accessionJS, repoURI, uri);
+                addAccessionEvents(recordId, accessionJS, repoURI, uri);
 
-                accessionURIMap.put(recordId, uri);
+                accessionURIMap.put(getRecordID(xssfRow), uri);
                 print("Copied Accession: " + recordId + " :: " + id);
                 success++;
             } else {
@@ -441,13 +485,45 @@ public class ASpaceCopy implements PrintConsole {
     }
 
     /**
+     * Method to add a dummy instance to the accession json object in order to store
+     * the location information
+     *
+     * @param recordJS
+     * @throws Exception
+     */
+    public void addLocationInstance(String recordId, JSONObject recordJS) throws Exception {
+        // check to see if there are link subjects
+        if(!recordJS.has("location_id") || recordJS.getString("location_id").isEmpty()) {
+            return;
+        }
+
+        String locationId = recordJS.getString("location_id").replace(".0", "");
+
+        // now add a dummy instance record to store location
+        JSONArray instancesJA = new JSONArray();
+
+        String locationURI = locationURIMap.get(locationId);
+        if(locationURI != null) {
+            String locationNote = "";
+            if(recordJS.has("location_note")) {
+                locationNote = recordJS.getString("location_note");
+            }
+
+            JSONObject instanceJS = MapperUtil.createAccessionInstance(recordId, locationURI, locationNote);
+            instancesJA.put(instanceJS);
+        }
+
+        recordJS.put("instances", instancesJA);
+    }
+
+    /**
      * Method to add events object to an accession object
      *
      * @param recordId
      * @param accessionJS
      * @param accessionURI
      */
-    private void addEvents(String recordId, JSONObject accessionJS, String repoURI, String accessionURI) throws Exception {
+    private void addAccessionEvents(String recordId, JSONObject accessionJS, String repoURI, String accessionURI) throws Exception {
         String uri = repoURI + ASpaceClient.EVENT_ENDPOINT;
         String agentURI = repositoryAgentURIMap.get(repoURI);
 
@@ -577,7 +653,7 @@ public class ASpaceCopy implements PrintConsole {
 
         for(String ns: sa) {
             try {
-                int sheetNumber = Integer.parseInt(ns);
+                int sheetNumber = Integer.parseInt(ns) - 1;
 
                 XSSFSheet xssfSheet = workBook.getSheetAt(sheetNumber);
                 getRelatedRowData(relatedRowDataMap, headerRow, xssfSheet);
@@ -596,11 +672,6 @@ public class ASpaceCopy implements PrintConsole {
      */
     public void copyResourceRecords(HashMap<String, RelatedRowData> relatedRowDataMap, XSSFRow headerRow) throws Exception {
         currentRecordType = "Resource Record";
-
-        // first delete previously saved resource records if that option was selected by user
-        if(deleteSavedResources) {
-            deleteSavedResources();
-        }
 
         // update the progress bar now to indicate the records are being loaded
         updateProgress("Resource Records", 0, 0);
@@ -642,9 +713,8 @@ public class ASpaceCopy implements PrintConsole {
             // get the at resource identifier to see if to only copy a specified resource
             // and to use for trouble shooting purposes
             currentRecordIdentifier = "DB ID: " + resourceTitle;
-            currentRecordDBID = dbId;
 
-            // set the atId in the mapper object
+            // set the excel Id in the mapper object
             mapper.setCurrentResourceRecordIdentifier(resourceTitle);
 
             if (resourceURIMap.containsKey(dbId)) {
@@ -842,7 +912,6 @@ public class ASpaceCopy implements PrintConsole {
             String[] sa = recordJS.getString("analog_instances").split("\n");
 
             for (String instances : sa) {
-                // TODO implement support for locations
                 String locationURI = null;
 
                 // get the information for the instance record
@@ -853,7 +922,15 @@ public class ASpaceCopy implements PrintConsole {
                 if (info1[0].contains("-")) {
                     String[] info2 = info1[0].split("\\s*-\\s*");
                     instanceType = info2[0];
-                    barcode = info2[1];
+
+                    if(!info2[1].equals("0")) {
+                        barcode = info2[1];
+                    }
+
+                    // we have location information so load it
+                    if(info2.length == 3) {
+                        locationURI = locationURIMap.get(info2[2]);
+                    }
                 } else {
                     instanceType = info1[0];
                 }
@@ -1107,43 +1184,6 @@ public class ASpaceCopy implements PrintConsole {
     private void updateResourceURIMap(String oldIdentifier, String uri) {
         resourceURIMap.put(oldIdentifier, uri);
         saveURIMaps();
-    }
-
-    /**
-     * Method to delete any previously saved resource records on the ASpace backend.
-     * Useful for testing purposes, but not much else
-     */
-    private void deleteSavedResources() {
-        print("\nNumber of Resources to Delete: " + resourceURIMap.size());
-        ArrayList<String> deletedKeys = new ArrayList<String>();
-
-        // initialize the progress bar
-        updateProgress("Resource", resourceURIMap.size(), -1);
-
-        int count = 1;
-        for(String key: resourceURIMap.keySet()) {
-            try {
-                String uri = resourceURIMap.get(key);
-                print("Deleting Resource: " + uri);
-
-                String message = aspaceClient.deleteRecord(uri);
-                print(message + "\n");
-                deletedKeys.add(key);
-
-                // update the progress bar
-                updateProgress("Resource", 0, count);
-                count++;
-            } catch (Exception e) {
-                e.printStackTrace();
-                print("Error deleting ... \n" + e.getMessage());
-            }
-        }
-
-        // remove the deleted keys now, since we can't modify a
-        // hashmap while we still iterating over it
-        for(String key: deletedKeys) {
-            resourceURIMap.remove(key);
-        }
     }
 
     /**
@@ -1457,7 +1497,7 @@ public class ASpaceCopy implements PrintConsole {
     /**
      * Method to load the save URI maps
      */
-    public void loadURIMaps() {
+    public boolean loadURIMaps() {
         try {
             HashMap uriMap  = (HashMap) FileManager.getUriMapData(uriMapFile);
 
@@ -1473,16 +1513,15 @@ public class ASpaceCopy implements PrintConsole {
                 recordTotals = (ArrayList<String>)uriMap.get(RECORD_TOTAL_KEY);
             }
 
-            /* load the caches resource records
-            String key = archonClient.getHost() + ArchonClient.COLLECTION_ENDPOINT;
-            if(uriMap.containsKey(key)) {
-                String jsonText = (String)uriMap.get(key);
-                cachedResourcesJS = new JSONObject(jsonText);
-            }*/
-
             print("Loaded URI Maps");
         } catch (Exception e) {
             print("Unable to load URI map file: " + uriMapFile.getName());
+        }
+
+        if(!locationURIMap.isEmpty() || !subjectURIMap.isEmpty() || !nameURIMap.isEmpty()) {
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -1503,15 +1542,6 @@ public class ASpaceCopy implements PrintConsole {
      */
     public void setSimulateRESTCalls(boolean simulateRESTCalls) {
         this.simulateRESTCalls = simulateRESTCalls;
-    }
-
-    /**
-     * Method to specify whether to delete the save resources.
-     *
-     * @param deleteSavedResources
-     */
-    public void setDeleteSavedResources(boolean deleteSavedResources) {
-        this.deleteSavedResources = deleteSavedResources;
     }
 
     /**
@@ -1545,13 +1575,11 @@ public class ASpaceCopy implements PrintConsole {
 
         File excelFile = new File(currentDirectory +"/sample_data/Sample Ingest Data.xlsx");
 
-        File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/commands/mapper.bsh");
-        File pyiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/commands/mapper.py");
-        File jsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/commands/mapper.js");
+        File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.bsh");
+        File pyiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.py");
+        File jsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.js");
 
         ASpaceCopy aspaceCopy = new ASpaceCopy("http://localhost:8089", "admin", "admin");
-
-        //aspaceCopy.loadURIMaps();
 
         aspaceCopy.setSimulateRESTCalls(true);
 
@@ -1571,36 +1599,39 @@ public class ASpaceCopy implements PrintConsole {
             XSSFWorkbook workBook = new XSSFWorkbook(fileInputStream);
             aspaceCopy.setWorkbook(workBook);
 
-            /* test the mapper scripts
+            // test the mapper scripts
             System.out.println("Test mapping excel file using BeanShell");
 
             aspaceCopy.setMapperScriptType(ASpaceMapper.BEANSHELL_SCRIPT);
             aspaceCopy.setMapperScript(bsiMapperScript);
 
             System.out.println("\n\n");
-            aspaceCopy.copySubjectRecords(0);
+            aspaceCopy.copyLocationRecords(0);
 
             System.out.println("\n\n");
-            aspaceCopy.copyNameRecords(1);
+            aspaceCopy.copySubjectRecords(1);
 
             System.out.println("\n\n");
-            aspaceCopy.copyAccessionRecords(2);
+            aspaceCopy.copyNameRecords(2);
 
             System.out.println("\n\n");
-            aspaceCopy.copyDigitalObjectRecords(3);
+            aspaceCopy.copyAccessionRecords(3);
 
             System.out.println("\n\n");
-            aspaceCopy.copyResourceRecords("4,5");
+            aspaceCopy.copyDigitalObjectRecords(4);
+
+            System.out.println("\n\n");
+            aspaceCopy.copyResourceRecords("5,6");
 
             System.out.println("\n\nTest mapping excel file using Python\n\n");
             aspaceCopy.setMapperScriptType(ASpaceMapper.JYTHON_SCRIPT);
             aspaceCopy.setMapperScript(pyiMapperScript);
-            aspaceCopy.copySubjectRecords(0); */
+            aspaceCopy.copySubjectRecords(1);
 
             System.out.println("\n\nTest mapping excel file using Javascript\n\n");
             aspaceCopy.setMapperScriptType(ASpaceMapper.JAVASCRIPT_SCRIPT);
             aspaceCopy.setMapperScript(jsiMapperScript);
-            aspaceCopy.copySubjectRecords(0);
+            aspaceCopy.copySubjectRecords(1);
 
         } catch (Exception e) {
             e.printStackTrace();

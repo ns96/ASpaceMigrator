@@ -25,7 +25,7 @@ public class ScriptUtil {
      * @return
      */
     public static String getTextForBeanShellScript() {
-        return getTextForBuiltInScript("commands/", BEANSHELL_SCRIPT);
+        return getTextForBuiltInScript("scripts/", BEANSHELL_SCRIPT);
     }
 
     /**
@@ -35,7 +35,7 @@ public class ScriptUtil {
      * @return
      */
     public static String getTextForJythonScript() {
-        return getTextForBuiltInScript("commands/", JYTHON_SCRIPT);
+        return getTextForBuiltInScript("scripts/", JYTHON_SCRIPT);
     }
 
     /**
@@ -45,7 +45,7 @@ public class ScriptUtil {
      * @return
      */
     public static String getTextForJavascriptScript() {
-        return getTextForBuiltInScript("commands/", JAVASCRIPT_SCRIPT);
+        return getTextForBuiltInScript("scripts/", JAVASCRIPT_SCRIPT);
     }
 
     /**

@@ -71,7 +71,6 @@ public class ASpaceMapper {
     public static final String USER_MAPPER = "@user";
     public static final String ACCESSION_MAPPER = "@accession";
     public static final String RESOURCE_MAPPER = "@resource";
-    public static final String COMPONENT_MAPPER = "@component";
     public static final String DIGITAL_OBJECT_MAPPER = "@digitalobject";
     public static final String NOTE_MAPPER = "@note";
 
@@ -247,6 +246,28 @@ public class ASpaceMapper {
         }
 
         return json.toString();
+    }
+
+    /**
+     * Method to convert a location record
+     *
+     *
+     * @param record
+     * @param header
+     * @return
+     * @throws Exception
+     */
+    public JSONObject convertLocation(XSSFRow header, XSSFRow record) throws Exception {
+        // Main json object
+        JSONObject recordJS = new JSONObject();
+
+        // add the record Id as an external ID
+        String recordId = record.getCell(0).toString().replace(".0", "");
+        MapperUtil.addExternalId(recordId, recordJS, "location");
+
+        runInterpreter(header, record, recordJS, "location");
+
+        return recordJS;
     }
 
     /**

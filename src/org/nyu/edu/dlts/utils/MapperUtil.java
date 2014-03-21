@@ -306,7 +306,7 @@ public class MapperUtil {
      * @return
      * @throws Exception
      */
-    public JSONObject createAccessionInstance(String accessionId, String locationURI, String locationNote) throws Exception {
+    public static JSONObject createAccessionInstance(String accessionId, String locationURI, String locationNote) throws Exception {
         JSONObject instanceJS = new JSONObject();
 
         // set the type

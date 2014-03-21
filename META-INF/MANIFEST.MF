@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Class-Path: poi-3.9-20121203.jar forms-1.0.5.jar commons-codec-1.4.jar
+  jetty-servlet-7.6.13.v20130916.jar xmlpublic.jar commons-digester-1.
+ 7.jar jgoodies-uif-lite.jar commons-io-1.3.1.jar jgoodies-common-1.1.
+ 1.jar commons-collections-3.1.jar xbean.jar servlet-api-2.5.jar jetty
+ -server-7.6.13.v20130916.jar commons-logging-1.0.4.jar commons-beanut
+ ils-core.jar resolver.jar commons-discovery-0.2.jar poi-ooxml-schemas
+ -3.9-20121203.jar log4j-1.2.9.jar dom4j-1.6.1.jar jsr173_1.0_api.jar 
+ commons-httpclient-3.1.jar jetty-util-7.6.13.v20130916.jar rsyntaxtex
+ tarea.jar poi-ooxml-3.9-20121203.jar org.json.jar commons-lang-2.4.ja
+ r bsh-2.1.8.jar jython-2.7-b1.jar
+Main-Class: org.nyu.edu.dlts.dbCopyFrame
+
