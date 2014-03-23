@@ -54,7 +54,15 @@ public class dbCopyFrame extends JFrame {
     private File scriptFile = null;
 
     // used for loading mapper scripts and excel file
-    final JFileChooser fc = new JFileChooser();
+    private final JFileChooser fc = new JFileChooser();
+
+    // booleans to which track if certain records are supported
+    private boolean supportsLocations = false;
+    private boolean supportsSubjects = false;
+    private boolean supportsNames = false;
+    private boolean supportsAccessions = false;
+    private boolean supportsDigitalObjects = false;
+    private boolean supportsResources = false;
 
     /**
      * The main constructor
@@ -204,19 +212,19 @@ public class dbCopyFrame extends JFrame {
                     // the locations, subjects, names records since they should already be in the
                     // database
                     if(!developerMode || !globalRecordsExists) {
-                        if(!copyStopped && locationsSheet >= 0) ascopy.copyLocationRecords(locationsSheet);
-                        if(!copyStopped && subjectsSheet >= 0) ascopy.copySubjectRecords(subjectsSheet);
-                        if(!copyStopped && namesSheet >= 0) ascopy.copyNameRecords(namesSheet);
+                        if(!copyStopped && locationsSheet >= 0 && supportsLocations) ascopy.copyLocationRecords(locationsSheet);
+                        if(!copyStopped && subjectsSheet >= 0 && supportsSubjects) ascopy.copySubjectRecords(subjectsSheet);
+                        if(!copyStopped && namesSheet >= 0 && supportsNames) ascopy.copyNameRecords(namesSheet);
                     }
 
-                    if(!copyStopped && accessionSheet > 0) ascopy.copyAccessionRecords(accessionSheet);
-                    if(!copyStopped && digitalObjectSheet > 0) ascopy.copyDigitalObjectRecords(digitalObjectSheet);
+                    if(!copyStopped && accessionSheet >= 0 && supportsAccessions) ascopy.copyAccessionRecords(accessionSheet);
+                    if(!copyStopped && digitalObjectSheet >= 0 && supportsDigitalObjects) ascopy.copyDigitalObjectRecords(digitalObjectSheet);
 
                     // save the record maps for possible future use
                     ascopy.saveURIMaps();
 
                     String resourcesSheets = resourcesTextField.getText().trim();
-                    if(!copyStopped && !resourcesSheets.isEmpty()) {
+                    if(!copyStopped && !resourcesSheets.isEmpty() && supportsResources) {
                         ascopy.copyResourceRecords(resourcesSheets);
                     }
 
@@ -356,38 +364,50 @@ public class dbCopyFrame extends JFrame {
         // now indicate what's supported by this mapper script
         if (script.contains(ASpaceMapper.LOCATION_MAPPER)) {
             locationsLabel.setText("supported");
+            supportsLocations = true;
         } else {
             locationsLabel.setText("not supported");
+            supportsLocations = false;
         }
 
         if (script.contains(ASpaceMapper.SUBJECT_MAPPER)) {
             subjectsLabel.setText("supported");
+            supportsSubjects = true;
         } else {
             subjectsLabel.setText("not supported");
+            supportsSubjects = false;
         }
 
         if (script.contains(ASpaceMapper.NAME_MAPPER)) {
             namesLabel.setText("supported");
+            supportsNames = true;
         } else {
             namesLabel.setText("not supported");
+            supportsNames = false;
         }
 
         if (script.contains(ASpaceMapper.ACCESSION_MAPPER)) {
             accessionsLabel.setText("supported");
+            supportsAccessions = true;
         } else {
             accessionsLabel.setText("not supported");
+            supportsAccessions = false;
         }
 
         if (script.contains(ASpaceMapper.DIGITAL_OBJECT_MAPPER)) {
             digitalObjectLabel.setText("supported");
+            supportsDigitalObjects = true;
         } else {
             digitalObjectLabel.setText("not supported");
+            supportsDigitalObjects = false;
         }
 
         if (script.contains(ASpaceMapper.RESOURCE_MAPPER)) {
             resourcesLabel.setText("supported");
+            supportsResources = true;
         } else {
             resourcesLabel.setText("not supported");
+            supportsResources = false;
         }
     }
 
@@ -546,6 +566,7 @@ public class dbCopyFrame extends JFrame {
         loadMapperScriptButton = new JButton();
         mapperScriptTextField = new JTextField();
         editScriptButton = new JButton();
+        separator2 = new JSeparator();
         panel5 = new JPanel();
         createRepositoryCheckBox = new JCheckBox();
         repoShortNameTextField = new JTextField();
@@ -573,6 +594,7 @@ public class dbCopyFrame extends JFrame {
         label8 = new JLabel();
         resourcesTextField = new JTextField();
         resourcesLabel = new JLabel();
+        separator1 = new JSeparator();
         copyToASpaceButton = new JButton();
         hostLabel = new JLabel();
         hostTextField = new JTextField();
@@ -602,7 +624,7 @@ public class dbCopyFrame extends JFrame {
         CellConstraints cc = new CellConstraints();
 
         //======== this ========
-        setTitle("Archives Space Excel Migrator v0.1 (03-21-2014)");
+        setTitle("Archives Space Excel Migrator v0.1 (03-24-2014)");
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
@@ -632,7 +654,11 @@ public class dbCopyFrame extends JFrame {
                         FormFactory.LINE_GAP_ROWSPEC,
                         FormFactory.DEFAULT_ROWSPEC,
                         FormFactory.LINE_GAP_ROWSPEC,
+                        FormFactory.DEFAULT_ROWSPEC,
+                        FormFactory.LINE_GAP_ROWSPEC,
                         new RowSpec(RowSpec.TOP, Sizes.DEFAULT, FormSpec.NO_GROW),
+                        FormFactory.LINE_GAP_ROWSPEC,
+                        FormFactory.DEFAULT_ROWSPEC,
                         FormFactory.LINE_GAP_ROWSPEC,
                         FormFactory.DEFAULT_ROWSPEC,
                         FormFactory.LINE_GAP_ROWSPEC,
@@ -738,6 +764,7 @@ public class dbCopyFrame extends JFrame {
                     }
                 });
                 contentPanel.add(editScriptButton, cc.xy(9, 5));
+                contentPanel.add(separator2, cc.xywh(1, 7, 9, 1));
 
                 //======== panel5 ========
                 {
@@ -775,7 +802,7 @@ public class dbCopyFrame extends JFrame {
                     repoURLTextField.setText("http://repository.url.org");
                     panel5.add(repoURLTextField, cc.xy(1, 9));
                 }
-                contentPanel.add(panel5, cc.xy(1, 7));
+                contentPanel.add(panel5, cc.xy(1, 9));
 
                 //======== panel2 ========
                 {
@@ -868,7 +895,8 @@ public class dbCopyFrame extends JFrame {
                     resourcesLabel.setText("not supported");
                     panel2.add(resourcesLabel, cc.xy(3, 7));
                 }
-                contentPanel.add(panel2, cc.xywh(3, 7, 7, 1));
+                contentPanel.add(panel2, cc.xywh(3, 9, 7, 1));
+                contentPanel.add(separator1, cc.xywh(1, 11, 9, 1));
 
                 //---- copyToASpaceButton ----
                 copyToASpaceButton.setText("Copy To Archives Space");
@@ -877,53 +905,53 @@ public class dbCopyFrame extends JFrame {
                         CopyToASpaceButtonActionPerformed();
                     }
                 });
-                contentPanel.add(copyToASpaceButton, cc.xy(1, 9));
+                contentPanel.add(copyToASpaceButton, cc.xy(1, 13));
 
                 //---- hostLabel ----
                 hostLabel.setText("Archives Space Host");
-                contentPanel.add(hostLabel, cc.xywh(3, 9, 2, 1));
+                contentPanel.add(hostLabel, cc.xywh(3, 13, 2, 1));
 
                 //---- hostTextField ----
                 hostTextField.setText("http://localhost:8089");
-                contentPanel.add(hostTextField, cc.xywh(5, 9, 5, 1));
+                contentPanel.add(hostTextField, cc.xywh(5, 13, 5, 1));
 
                 //---- simulateCheckBox ----
                 simulateCheckBox.setText("Simulate REST Calls");
                 simulateCheckBox.setSelected(true);
-                contentPanel.add(simulateCheckBox, cc.xy(1, 11));
+                contentPanel.add(simulateCheckBox, cc.xy(1, 15));
 
                 //---- adminLabel ----
                 adminLabel.setText("Administrator User ID");
-                contentPanel.add(adminLabel, cc.xy(3, 11));
+                contentPanel.add(adminLabel, cc.xy(3, 15));
 
                 //---- adminTextField ----
                 adminTextField.setText("admin");
-                contentPanel.add(adminTextField, cc.xywh(5, 11, 2, 1));
+                contentPanel.add(adminTextField, cc.xywh(5, 15, 2, 1));
 
                 //---- adminPasswordLabel ----
                 adminPasswordLabel.setText("Password");
-                contentPanel.add(adminPasswordLabel, cc.xy(7, 11));
+                contentPanel.add(adminPasswordLabel, cc.xy(7, 15));
 
                 //---- adminPasswordTextField ----
                 adminPasswordTextField.setText("admin");
-                contentPanel.add(adminPasswordTextField, cc.xy(9, 11));
+                contentPanel.add(adminPasswordTextField, cc.xy(9, 15));
 
                 //---- label2 ----
                 label2.setText("Target Repository URI");
-                contentPanel.add(label2, cc.xy(3, 13));
+                contentPanel.add(label2, cc.xy(3, 17));
 
                 //---- repositoryURITextField ----
                 repositoryURITextField.setText("/repositories/2");
-                contentPanel.add(repositoryURITextField, cc.xywh(5, 13, 5, 1));
+                contentPanel.add(repositoryURITextField, cc.xywh(5, 17, 5, 1));
 
                 //---- developerModeCheckBox ----
                 developerModeCheckBox.setText("Developer Mode (location/names/subjects records are copied only once, and IDs are randomized)");
-                contentPanel.add(developerModeCheckBox, cc.xywh(1, 15, 9, 1));
+                contentPanel.add(developerModeCheckBox, cc.xywh(1, 19, 9, 1));
 
                 //---- outputConsoleLabel ----
                 outputConsoleLabel.setText("Output Console:");
-                contentPanel.add(outputConsoleLabel, cc.xy(1, 17));
-                contentPanel.add(copyProgressBar, cc.xywh(3, 17, 7, 1));
+                contentPanel.add(outputConsoleLabel, cc.xy(1, 21));
+                contentPanel.add(copyProgressBar, cc.xywh(3, 21, 7, 1));
 
                 //======== scrollPane1 ========
                 {
@@ -932,7 +960,7 @@ public class dbCopyFrame extends JFrame {
                     consoleTextArea.setRows(12);
                     scrollPane1.setViewportView(consoleTextArea);
                 }
-                contentPanel.add(scrollPane1, cc.xywh(1, 19, 9, 1));
+                contentPanel.add(scrollPane1, cc.xywh(1, 23, 9, 1));
 
                 //---- recordURIComboBox ----
                 recordURIComboBox.setModel(new DefaultComboBoxModel(new String[] {
@@ -948,7 +976,7 @@ public class dbCopyFrame extends JFrame {
                     "/config/enumerations"
                 }));
                 recordURIComboBox.setEditable(true);
-                contentPanel.add(recordURIComboBox, cc.xy(1, 21));
+                contentPanel.add(recordURIComboBox, cc.xy(1, 25));
 
                 //======== panel1 ========
                 {
@@ -962,7 +990,7 @@ public class dbCopyFrame extends JFrame {
                     paramsTextField.setColumns(20);
                     panel1.add(paramsTextField);
                 }
-                contentPanel.add(panel1, cc.xywh(3, 21, 3, 1));
+                contentPanel.add(panel1, cc.xywh(3, 25, 3, 1));
 
                 //---- viewRecordButton ----
                 viewRecordButton.setText("View");
@@ -971,7 +999,7 @@ public class dbCopyFrame extends JFrame {
                         viewRecordButtonActionPerformed();
                     }
                 });
-                contentPanel.add(viewRecordButton, cc.xywh(7, 21, 3, 1));
+                contentPanel.add(viewRecordButton, cc.xywh(7, 25, 3, 1));
             }
             dialogPane.add(contentPanel, BorderLayout.CENTER);
 
@@ -1064,6 +1092,7 @@ public class dbCopyFrame extends JFrame {
     private JButton loadMapperScriptButton;
     private JTextField mapperScriptTextField;
     private JButton editScriptButton;
+    private JSeparator separator2;
     private JPanel panel5;
     private JCheckBox createRepositoryCheckBox;
     private JTextField repoShortNameTextField;
@@ -1091,6 +1120,7 @@ public class dbCopyFrame extends JFrame {
     private JLabel label8;
     private JTextField resourcesTextField;
     private JLabel resourcesLabel;
+    private JSeparator separator1;
     private JButton copyToASpaceButton;
     private JLabel hostLabel;
     private JTextField hostTextField;

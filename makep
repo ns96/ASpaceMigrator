@@ -1,0 +1,21 @@
+#!/bin/sh
+# simple script to build prgram distrubution 
+
+# delete the directory with old distribution
+rm -rv dist/ASpaceMigrator
+
+# create new directory
+mkdir dist/ASpaceMigrator
+mkdir dist/ASpaceMigrator/lib
+mkdir dist/ASpaceMigrator/sample_data
+mkdir dist/ASpaceMigrator/logs
+
+# copy the needed files
+cp -v out/artifacts/ASpaceMigrator_jar/* dist/ASpaceMigrator/lib
+cp -v sample_data/* dist/ASpaceMigrator/sample_data
+cp -v run.* dist/ASpaceMigrator
+
+# create a zip of the source code
+cd dist
+
+zip -vr ASpaceMigrator.zip ASpaceMigrator -x "*.svn*" "*.DS_Store*"
