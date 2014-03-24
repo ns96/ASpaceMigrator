@@ -138,7 +138,7 @@ public class dbCopyFrame extends JFrame {
 
                 try {
                     // print the connection message
-                    consoleTextArea.append("Excel File Opened ...");
+                    consoleTextArea.append("Excel File Opened ...\n");
 
                     String host = hostTextField.getText().trim();
                     String admin = adminTextField.getText();
@@ -170,11 +170,11 @@ public class dbCopyFrame extends JFrame {
 
                     // try getting the session and only continue if a valid session is return;
                     if(!simulateRESTCalls && !ascopy.getSession()) {
-                        consoleTextArea.append("No session, nothing to do ...\n");
+                        consoleTextArea.append("\nNo Archives Space backend session, nothing to do ...\n");
                         reEnableCopyButtons();
                         return;
                     } else {
-                        consoleTextArea.append("Administrator authenticated ...\n");
+                        consoleTextArea.append("\nAdministrator authenticated ...\n");
                     }
 
                     // set the progress bar from doing it's thing since the ascopy class is going to take over
@@ -784,6 +784,7 @@ public class dbCopyFrame extends JFrame {
 
                     //---- createRepositoryCheckBox ----
                     createRepositoryCheckBox.setText("Create Repository");
+                    createRepositoryCheckBox.setSelected(true);
                     panel5.add(createRepositoryCheckBox, cc.xy(1, 1));
 
                     //---- repoShortNameTextField ----
@@ -939,13 +940,10 @@ public class dbCopyFrame extends JFrame {
                 //---- label2 ----
                 label2.setText("Target Repository URI");
                 contentPanel.add(label2, cc.xy(3, 17));
-
-                //---- repositoryURITextField ----
-                repositoryURITextField.setText("/repositories/2");
                 contentPanel.add(repositoryURITextField, cc.xywh(5, 17, 5, 1));
 
                 //---- developerModeCheckBox ----
-                developerModeCheckBox.setText("Developer Mode (location/names/subjects records are copied only once, and IDs are randomized)");
+                developerModeCheckBox.setText("Developer Mode (locations/names/subjects records are copied only once, and IDs are randomized)");
                 contentPanel.add(developerModeCheckBox, cc.xywh(1, 19, 9, 1));
 
                 //---- outputConsoleLabel ----
@@ -1067,12 +1065,6 @@ public class dbCopyFrame extends JFrame {
         contentPane.add(dialogPane, BorderLayout.CENTER);
         pack();
         setLocationRelativeTo(getOwner());
-
-        //---- buttonGroup1 ----
-        ButtonGroup buttonGroup1 = new ButtonGroup();
-        buttonGroup1.add(beanShellRadioButton);
-        buttonGroup1.add(pythonRadioButton);
-        buttonGroup1.add(javascriptRadioButton);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 

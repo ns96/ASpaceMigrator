@@ -214,7 +214,7 @@ public class ASpaceClient {
                     response = responseJA.getJSONObject(responseJA.length() -1);
 
                     errorBuffer.append("Endpoint: ").append(post.getURI()).append("\n").
-                        append("AT Identifier:").append(atId).append("\n").
+                        append("Record Identifier:").append(atId).append("\n").
                         append(statusMessage).append("\n\n").append(response.toString(2)).append("\n");
 
                     throw new Exception(response.toString(2));
@@ -229,8 +229,9 @@ public class ASpaceClient {
 
                 if(id == null || id.trim().isEmpty()) {
                     errorBuffer.append("Endpoint: ").append(post.getURI()).append("\n").
-                        append("AT Identifier:").append(atId).append("\n").
-                        append(statusMessage).append("\n\n").append(response.toString(2)).append("\n");
+                            append("Record Identifier:").append(atId).append("\n").
+                            append(statusMessage).append("\n\n").append(response.toString(2)).append("\n").
+                            append(jsonText).append("\n");
 
                     throw new Exception(response.toString(2));
                 }
@@ -243,7 +244,7 @@ public class ASpaceClient {
                 }
 
                 errorBuffer.append("Endpoint: ").append(post.getURI()).append("\n").
-                        append("AT Identifier:").append(atId).append("\n").
+                        append("Record Identifier:").append(atId).append("\n").
                         append(statusMessage).append("\n\n").append(responseBody).append("\n");
 
                 post.releaseConnection();

@@ -121,12 +121,6 @@
                <string>Beanshell</string> 
               </void> 
               <void method="setProperty"> 
-               <string>$buttonGroup</string> 
-               <object class="com.jformdesigner.model.FormReference"> 
-                <string>buttonGroup1</string> 
-               </object> 
-              </void> 
-              <void method="setProperty"> 
                <string>selected</string> 
                <boolean>true</boolean> 
               </void> 
@@ -161,12 +155,6 @@
                <string>text</string> 
                <string>Jython</string> 
               </void> 
-              <void method="setProperty"> 
-               <string>$buttonGroup</string> 
-               <object class="com.jformdesigner.model.FormReference"> 
-                <string>buttonGroup1</string> 
-               </object> 
-              </void> 
               <void property="name"> 
                <string>pythonRadioButton</string> 
               </void> 
@@ -193,12 +181,6 @@
               <void method="setProperty"> 
                <string>text</string> 
                <string>Javascript</string> 
-              </void> 
-              <void method="setProperty"> 
-               <string>$buttonGroup</string> 
-               <object class="com.jformdesigner.model.FormReference"> 
-                <string>buttonGroup1</string> 
-               </object> 
               </void> 
               <void property="name"> 
                <string>javascriptRadioButton</string> 
@@ -422,6 +404,10 @@
               <void method="setProperty"> 
                <string>text</string> 
                <string>Create Repository</string> 
+              </void> 
+              <void method="setProperty"> 
+               <string>selected</string> 
+               <boolean>true</boolean> 
               </void> 
               <void property="name"> 
                <string>createRepositoryCheckBox</string> 
@@ -1299,10 +1285,6 @@
           <void method="add"> 
            <object class="com.jformdesigner.model.FormComponent"> 
             <string>javax.swing.JTextField</string> 
-            <void method="setProperty"> 
-             <string>text</string> 
-             <string>/repositories/2</string> 
-            </void> 
             <void property="name"> 
              <string>repositoryURITextField</string> 
             </void> 
@@ -1328,7 +1310,7 @@
             <string>javax.swing.JCheckBox</string> 
             <void method="setProperty"> 
              <string>text</string> 
-             <string>Developer Mode (location/names/subjects records are copied only once, and IDs are randomized)</string> 
+             <string>Developer Mode (locations/names/subjects records are copied only once, and IDs are randomized)</string> 
             </void> 
             <void property="name"> 
              <string>developerModeCheckBox</string> 
@@ -1793,24 +1775,6 @@
        <object class="java.awt.Dimension"> 
         <int>785</int> 
         <int>570</int> 
-       </object> 
-      </void> 
-     </object> 
-    </void> 
-    <void method="add"> 
-     <object class="com.jformdesigner.model.FormNonVisual"> 
-      <string>javax.swing.ButtonGroup</string> 
-      <void property="name"> 
-       <string>buttonGroup1</string> 
-      </void> 
-     </object> 
-     <object class="com.jformdesigner.model.FormLayoutConstraints"> 
-      <null/> 
-      <void method="setProperty"> 
-       <string>location</string> 
-       <object class="java.awt.Point"> 
-        <int>0</int> 
-        <int>580</int> 
        </object> 
       </void> 
      </object> 

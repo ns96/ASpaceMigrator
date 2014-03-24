@@ -315,7 +315,7 @@ public class MapperUtil {
         // add the container now
         JSONObject containerJS = new JSONObject();
 
-        containerJS.put("type_1", "item");
+        containerJS.put("type_1", "object");
         containerJS.put("indicator_1", accessionId);
 
         Date date = new Date(); // this is need to have valid container_location json record
@@ -344,7 +344,7 @@ public class MapperUtil {
      * @param extent
      * @throws Exception
      */
-    public static void addExtent(JSONArray extentJA, String portion, String type, String extent) throws Exception {
+    public static void addExtent(JSONArray extentJA, String portion, String extent, String type) throws Exception {
         JSONObject extentJS = new JSONObject();
         extentJS.put("portion", portion);
         extentJS.put("extent_type", type);
@@ -519,7 +519,7 @@ public class MapperUtil {
         if(accessionJS.has("processed_date")) {
             eventJS = new JSONObject();
             eventJS.put("event_type", "processed");
-            addEventDate(eventJS, accessionJS.getString("processed_date") ,"single", "event");
+            addEventDate(eventJS, accessionJS.get("processed_date") ,"single", "event");
             addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
             eventsList.add(eventJS);
         }
@@ -527,7 +527,7 @@ public class MapperUtil {
         if(accessionJS.has("acknowledgement_sent_date")) {
             eventJS = new JSONObject();
             eventJS.put("event_type", "acknowledgement_sent");
-            addEventDate(eventJS, accessionJS.getString("acknowledgement_sent_date"), "single", "event");
+            addEventDate(eventJS, accessionJS.get("acknowledgement_sent_date"), "single", "event");
             addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
             eventsList.add(eventJS);
         }
@@ -535,7 +535,7 @@ public class MapperUtil {
         if(accessionJS.has("agreement_signed_date")) {
             eventJS = new JSONObject();
             eventJS.put("event_type", "agreement_signed");
-            addEventDate(eventJS, accessionJS.getString("agreement_signed_date"), "single", "event");
+            addEventDate(eventJS, accessionJS.get("agreement_signed_date"), "single", "event");
             addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
             eventsList.add(eventJS);
         }
@@ -543,7 +543,7 @@ public class MapperUtil {
         if(accessionJS.has("agreement_sent_date")) {
             eventJS = new JSONObject();
             eventJS.put("event_type", "agreement_sent");
-            addEventDate(eventJS, accessionJS.getString("agreement_sent_date"), "single", "event");
+            addEventDate(eventJS, accessionJS.get("agreement_sent_date"), "single", "event");
             addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
             eventsList.add(eventJS);
         }
@@ -551,7 +551,7 @@ public class MapperUtil {
         if(accessionJS.has("cataloged_date")) {
             eventJS = new JSONObject();
             eventJS.put("event_type", "cataloged");
-            addEventDate(eventJS, accessionJS.getString("cataloged_date") , "single", "event");
+            addEventDate(eventJS, accessionJS.get("cataloged_date"), "single", "event");
             addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
             eventsList.add(eventJS);
         }
@@ -559,20 +559,20 @@ public class MapperUtil {
         if(accessionJS.has("processing_started_date")) {
             eventJS = new JSONObject();
             eventJS.put("event_type", "processing_started");
-            addEventDate(eventJS, accessionJS.getString("processing_started_date"), "single", "event");
+            addEventDate(eventJS, accessionJS.get("processing_started_date"), "single", "event");
             addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
             eventsList.add(eventJS);
         }
 
-        if(accessionJS.has("rights_transferred_date")) {
+        if(accessionJS.has("copyright_transfer_date")) {
             eventJS = new JSONObject();
-            eventJS.put("event_type", "rights_transferred");
+            eventJS.put("event_type", "copyright_transfer");
 
-            if(accessionJS.has("rights_transferred_note")) {
-                eventJS.put("outcome_note", accessionJS.get("rights_transferred_note"));
+            if(accessionJS.has("copyright_transfer_note")) {
+                eventJS.put("outcome_note", accessionJS.get("copyright_transfer_note"));
             }
 
-            addEventDate(eventJS, accessionJS.getString("rights_transferred_date"), "single", "event");
+            addEventDate(eventJS, accessionJS.get("copyright_transfer_date"), "single", "event");
             addEventLinkedRecordAndAgent(eventJS, agentURI, accessionURI);
             eventsList.add(eventJS);
         }
@@ -584,16 +584,15 @@ public class MapperUtil {
      * Method to add a date object
      *
      * @param eventJS
-     * @param dateString
+     * @param date
      * @param dateType
      * @param dateLabel
      */
-    public static void addEventDate(JSONObject eventJS, String dateString, String dateType, String dateLabel) throws Exception {
+    public static void addEventDate(JSONObject eventJS, Object date, String dateType, String dateLabel) throws Exception {
         JSONObject dateJS = new JSONObject();
         dateJS.put("date_type", dateType);
         dateJS.put("label", dateLabel);
-        dateJS.put("begin", dateString);
-        dateJS.put("end", dateString);
+        dateJS.put("expression", date.toString());
         eventJS.put("date", dateJS);
     }
 

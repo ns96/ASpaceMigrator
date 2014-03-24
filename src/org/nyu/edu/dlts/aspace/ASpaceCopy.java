@@ -1231,7 +1231,8 @@ public class ASpaceCopy implements PrintConsole {
             // Make sure we don't try to print out a batch import record since they can
             // be thousands of lines long
             if(endpoint.contains(ASpaceClient.BATCH_IMPORT_ENDPOINT)) {
-                print("Route: " + endpoint + "\nBatch Record Length: " + jsonText.length() + " bytes");
+                print("Route: " + endpoint + "\nBatch Record Length: " +
+                        jsonText.length() + " bytes\n" + jsonText);
             } else {
                 print("Route: " + endpoint + "\n" + jsonText);
             }
@@ -1244,9 +1245,9 @@ public class ASpaceCopy implements PrintConsole {
             }
         } catch (Exception e) {
             if(endpoint.contains(ASpaceClient.BATCH_IMPORT_ENDPOINT)) {
-                print("Error saving batch import record ...");
+                print("Error saving batch import record ...\n" + jsonText);
             } else {
-                print("Error saving record " + jsonText);
+                print("Error saving record" + jsonText);
             }
 
             incrementErrorCount();

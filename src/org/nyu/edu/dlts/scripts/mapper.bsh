@@ -5,7 +5,7 @@ into an Archives Space Instance
 It is executed within the data migration tool
 
 @author Nathan Stevens
-@version 1.0 03/21/2014
+@version 1.0 03/24/2014
 
 Specify the mapping functionality the script provides. change # to @ to 
 specify that a certain record type is supported
@@ -121,6 +121,7 @@ void convertName() {
     		// set values for name_person.rb schema
     		namesJS.put("primary_name", primaryName);
     		namesJS.put("name_order", "direct");
+    		namesJS.put("sort_name", primaryName);
     		
     		// set the name value for the contact information
     		contactsJS.put("name", primaryName);
@@ -132,6 +133,7 @@ void convertName() {
     		familyName = getCellData('E');
     		
     		namesJS.put("family_name", familyName);
+    		namesJS.put("sort_name", familyName);
     		
     		// set the contact name
     		contactsJS.put("name", familyName);
@@ -143,6 +145,7 @@ void convertName() {
     	
     		// set values for name_corporate_entity.rb schema
     		namesJS.put("primary_name", primaryName);
+    		namesJS.put("sort_name", primaryName);
     	
     		// set the contact name
     		contactsJS.put("name", primaryName);
@@ -174,12 +177,12 @@ void convertAccession() {
 	recordJS.put("linked_names", getCellData('G'));
 	
 	// add the processed and right transfer date
-	dateString = getDate(getCellData('H')).toString();
-	recordJS.put("processed_date", dateString);
+	date = getDate(getCellData('H'));
+	recordJS.put("processed_date", date);
 	
-	dateString = getDate(getCellData('I')).toString();
-	recordJS.put("rights_transferred_date", dateString);
-	recordJS.put("rights_transferred_note", getCellData('J'));
+	date = getDate(getCellData('I'));
+	recordJS.put("copyright_transfer_date", date);
+	recordJS.put("copyright_transfer_note", getCellData('J'));
 	
 	// add the location id and location note
 	recordJS.put("location_id", getCellData('K'));
@@ -288,15 +291,19 @@ void convertResourceComponent() {
 	// add the language code
 	recordJS.put("language", getCellData('F'));
 	
-	// add the extent array containing
-	extentJA = new JSONArray();
-	MapperUtil.addExtent(extentJA, "whole", getCellData('G'), getCellData('H'));
-	recordJS.put("extents", extentJA);
+	// add the extent array if needed
+	if(!getCellData('G').isEmpty() && !getCellData('H').isEmpty()) {
+		extentJA = new JSONArray();
+		MapperUtil.addExtent(extentJA, "whole", getCellData('G'), getCellData('H'));
+		recordJS.put("extents", extentJA);
+	}
 	
-	// add the date array containing the dates json objects
-	dateJA = new JSONArray();
-	MapperUtil.addDateExpression(dateJA, getCellData('I'));
-	recordJS.put("dates", dateJA);
+	// add the date array if needed
+	if(!getCellData('I').isEmpty()) {
+		dateJA = new JSONArray();
+		MapperUtil.addDateExpression(dateJA, getCellData('I'));
+		recordJS.put("dates", dateJA);
+	}
 	
 	// add the level
 	recordJS.put("level", getCellData('D'));
