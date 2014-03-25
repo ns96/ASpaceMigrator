@@ -124,6 +124,12 @@
                <string>selected</string> 
                <boolean>true</boolean> 
               </void> 
+              <void method="setProperty"> 
+               <string>$buttonGroup</string> 
+               <object class="com.jformdesigner.model.FormReference"> 
+                <string>buttonGroup1</string> 
+               </object> 
+              </void> 
               <void property="name"> 
                <string>beanShellRadioButton</string> 
               </void> 
@@ -155,6 +161,12 @@
                <string>text</string> 
                <string>Jython</string> 
               </void> 
+              <void method="setProperty"> 
+               <string>$buttonGroup</string> 
+               <object class="com.jformdesigner.model.FormReference"> 
+                <string>buttonGroup1</string> 
+               </object> 
+              </void> 
               <void property="name"> 
                <string>pythonRadioButton</string> 
               </void> 
@@ -181,6 +193,12 @@
               <void method="setProperty"> 
                <string>text</string> 
                <string>Javascript</string> 
+              </void> 
+              <void method="setProperty"> 
+               <string>$buttonGroup</string> 
+               <object class="com.jformdesigner.model.FormReference"> 
+                <string>buttonGroup1</string> 
+               </object> 
               </void> 
               <void property="name"> 
                <string>javascriptRadioButton</string> 
@@ -1775,6 +1793,24 @@
        <object class="java.awt.Dimension"> 
         <int>785</int> 
         <int>570</int> 
+       </object> 
+      </void> 
+     </object> 
+    </void> 
+    <void method="add"> 
+     <object class="com.jformdesigner.model.FormNonVisual"> 
+      <string>javax.swing.ButtonGroup</string> 
+      <void property="name"> 
+       <string>buttonGroup1</string> 
+      </void> 
+     </object> 
+     <object class="com.jformdesigner.model.FormLayoutConstraints"> 
+      <null/> 
+      <void method="setProperty"> 
+       <string>location</string> 
+       <object class="java.awt.Point"> 
+        <int>0</int> 
+        <int>580</int> 
        </object> 
       </void> 
      </object> 

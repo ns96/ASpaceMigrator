@@ -1065,6 +1065,12 @@ public class dbCopyFrame extends JFrame {
         contentPane.add(dialogPane, BorderLayout.CENTER);
         pack();
         setLocationRelativeTo(getOwner());
+
+        //---- buttonGroup1 ----
+        ButtonGroup buttonGroup1 = new ButtonGroup();
+        buttonGroup1.add(beanShellRadioButton);
+        buttonGroup1.add(pythonRadioButton);
+        buttonGroup1.add(javascriptRadioButton);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
