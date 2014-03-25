@@ -624,7 +624,7 @@ public class dbCopyFrame extends JFrame {
         CellConstraints cc = new CellConstraints();
 
         //======== this ========
-        setTitle("Archives Space Excel Migrator v0.1 (03-24-2014)");
+        setTitle("Archives Space Excel Migrator v0.2.0 (03-25-2014)");
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
@@ -943,7 +943,7 @@ public class dbCopyFrame extends JFrame {
                 contentPanel.add(repositoryURITextField, cc.xywh(5, 17, 5, 1));
 
                 //---- developerModeCheckBox ----
-                developerModeCheckBox.setText("Developer Mode (locations/names/subjects records are copied only once, and IDs are randomized)");
+                developerModeCheckBox.setText("Developer Mode (Locations/Names/Subjects are copied once and random IDs are used other records)");
                 contentPanel.add(developerModeCheckBox, cc.xywh(1, 19, 9, 1));
 
                 //---- outputConsoleLabel ----

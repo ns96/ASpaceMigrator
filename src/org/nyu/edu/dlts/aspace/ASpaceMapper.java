@@ -378,6 +378,10 @@ public class ASpaceMapper {
 
         runInterpreter(header, record, recordJS, "digitalObjectComponent");
 
+        if(makeUnique) {
+            recordJS.put("component_id", "DO Component ID ##" + randomString.nextString());
+        }
+
         return recordJS;
 
     }

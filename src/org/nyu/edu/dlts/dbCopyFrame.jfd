@@ -14,7 +14,7 @@
       </object> 
       <void method="setProperty"> 
        <string>title</string> 
-       <string>Archives Space Excel Migrator v0.1 (03-24-2014)</string> 
+       <string>Archives Space Excel Migrator v0.2.0 (03-25-2014)</string> 
       </void> 
       <void method="add"> 
        <object class="com.jformdesigner.model.FormContainer"> 
@@ -1310,7 +1310,7 @@
             <string>javax.swing.JCheckBox</string> 
             <void method="setProperty"> 
              <string>text</string> 
-             <string>Developer Mode (locations/names/subjects records are copied only once, and IDs are randomized)</string> 
+             <string>Developer Mode (Locations/Names/Subjects are copied once and random IDs are used other records)</string> 
             </void> 
             <void property="name"> 
              <string>developerModeCheckBox</string> 

@@ -111,6 +111,7 @@ public class ASpaceCopy implements PrintConsole {
 
     // keys use to store objects in hash map
     private final String REPOSITORY_KEY = "repositoryURIMap";
+    private final String REPOSITORY_AGENT_KEY = "repositoryAgentURIMap";
     private final String LOCATION_KEY = "locationURIMap";
     private final String USER_KEY = "userURIMap";
     private final String SUBJECT_KEY = "subjectURIMap";
@@ -224,8 +225,8 @@ public class ASpaceCopy implements PrintConsole {
         // these are used to update the progress bar
         int success = 0;
 
-        String shortName = repository.getString("Name");
-        String repoID = repository.getString("ShortName");
+        String shortName = repository.getString("ShortName");
+        String repoID = shortName;
 
         if (!repositoryURIMap.containsKey(repoID)) {
             String jsonText;
@@ -717,7 +718,7 @@ public class ASpaceCopy implements PrintConsole {
             // set the excel Id in the mapper object
             mapper.setCurrentResourceRecordIdentifier(resourceTitle);
 
-            if (resourceURIMap.containsKey(dbId)) {
+            if (resourceURIMap.containsKey(dbId) && !developerMode) {
                 print("Not Copied: Resource already in database " + resourceTitle);
                 updateProgress("Resource Records", total, count);
                 continue;
@@ -1475,6 +1476,8 @@ public class ASpaceCopy implements PrintConsole {
 
         // only save maps we are going to need,
         // or we not generating from ASpace backend data
+        uriMap.put(REPOSITORY_KEY, repositoryURIMap);
+        uriMap.put(REPOSITORY_AGENT_KEY, repositoryAgentURIMap);
         uriMap.put(LOCATION_KEY, locationURIMap);
         uriMap.put(SUBJECT_KEY, subjectURIMap);
         uriMap.put(NAME_KEY, nameURIMap);
@@ -1502,6 +1505,8 @@ public class ASpaceCopy implements PrintConsole {
         try {
             HashMap uriMap  = (HashMap) FileManager.getUriMapData(uriMapFile);
 
+            repositoryURIMap = (HashMap<String,String>)uriMap.get(REPOSITORY_KEY);
+            repositoryAgentURIMap = (HashMap<String,String>)uriMap.get(REPOSITORY_AGENT_KEY);
             locationURIMap = (HashMap<String,String>)uriMap.get(LOCATION_KEY);
             subjectURIMap = (HashMap<String,String>)uriMap.get(SUBJECT_KEY);
             nameURIMap = (HashMap<String,String>)uriMap.get(NAME_KEY);
