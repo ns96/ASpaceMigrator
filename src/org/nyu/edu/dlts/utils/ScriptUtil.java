@@ -35,7 +35,7 @@ public class ScriptUtil {
      *
      * @return
      */
-    public static String getTextForRubyScript() {
+    public static String getTextForJRubyScript() {
         return getTextForBuiltInScript("scripts/", JRUBY_SCRIPT);
     }
 

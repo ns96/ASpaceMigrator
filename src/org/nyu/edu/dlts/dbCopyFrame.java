@@ -31,7 +31,7 @@ import java.io.StringWriter;
  * @author Nathan Stevens
  */
 public class dbCopyFrame extends JFrame {
-    public static final String VERSION = "Archives Space Excel Data Migrator v0.3.0 (04-01-2014)";
+    public static final String VERSION = "Archives Space Excel Data Migrator v0.3.1 (04-01-2014)";
 
     // used for viewing the mapper scripts
     private CodeViewerDialog codeViewerDialogBeanshell;
@@ -323,7 +323,6 @@ public class dbCopyFrame extends JFrame {
             recordJSON = e.toString();
         }
 
-
         CodeViewerDialog codeViewerDialog = new CodeViewerDialog(this, SyntaxConstants.SYNTAX_STYLE_JAVASCRIPT, recordJSON, true, true);
         codeViewerDialog.setTitle("REST ENDPOINT URI: " + uri);
         codeViewerDialog.pack();
@@ -460,7 +459,7 @@ public class dbCopyFrame extends JFrame {
             codeViewerDialogBeanshell.setVisible(true);
         } else if (jrubyRadioButton.isSelected()) {
             if(mapperScript.isEmpty()) {
-                mapperScript = ScriptUtil.getTextForRubyScript();
+                mapperScript = ScriptUtil.getTextForJRubyScript();
             }
 
             // must be a python script
@@ -472,7 +471,7 @@ public class dbCopyFrame extends JFrame {
 
             codeViewerDialogJruby.setScriptFile(scriptFile);
 
-            codeViewerDialogJruby.setTitle("Jruby Mapper Script Editor");
+            codeViewerDialogJruby.setTitle("JRuby Mapper Script Editor");
             codeViewerDialogJruby.pack();
             codeViewerDialogJruby.setVisible(true);
         } else if (pythonRadioButton.isSelected()) {
@@ -537,6 +536,7 @@ public class dbCopyFrame extends JFrame {
      */
     private void clearMapperScript() {
         mapperScript = "";
+        defaultMapperScript = "";
         scriptFile = null;
     }
 
@@ -546,19 +546,25 @@ public class dbCopyFrame extends JFrame {
      * @return
      */
     private String getMapperScriptType() {
+        String mapperScriptType = "";
+
         if(beanShellRadioButton.isSelected()) {
             defaultMapperScript = ScriptUtil.getTextForBeanShellScript();
-            return ASpaceMapper.BEANSHELL_SCRIPT;
+            mapperScriptType = ASpaceMapper.BEANSHELL_SCRIPT;
         } else if(jrubyRadioButton.isSelected()) {
-            defaultMapperScript = ScriptUtil.getTextForRubyScript();
-            return ASpaceMapper.JRUBY_SCRIPT;
+            defaultMapperScript = ScriptUtil.getTextForJRubyScript();
+            mapperScriptType = ASpaceMapper.JRUBY_SCRIPT;
         } else if(pythonRadioButton.isSelected()) {
             defaultMapperScript = ScriptUtil.getTextForJythonScript();
-            return ASpaceMapper.JYTHON_SCRIPT;
+            mapperScriptType = ASpaceMapper.JYTHON_SCRIPT;
         } else {
             defaultMapperScript = ScriptUtil.getTextForJavascriptScript();
-            return ASpaceMapper.JAVASCRIPT_SCRIPT;
+            mapperScriptType = ASpaceMapper.JAVASCRIPT_SCRIPT;
         }
+
+        System.out.println("Mapper Script Type: " + mapperScriptType);
+
+        return mapperScriptType;
     }
 
     /**
