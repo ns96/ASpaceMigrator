@@ -18,6 +18,8 @@
 #
 
 # import Java classes we need
+require 'java'
+
 java_import org.json.JSONObject
 java_import org.json.JSONArray
 java_import org.apache.poi.xssf.usermodel.XSSFRow

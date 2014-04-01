@@ -31,7 +31,7 @@ import java.io.StringWriter;
  * @author Nathan Stevens
  */
 public class dbCopyFrame extends JFrame {
-    public static final String VERSION = "Archives Space Excel Data Migrator v0.3.1 (04-01-2014)";
+    public static final String VERSION = "Archives Space Excel Data Migrator v0.3.2 (04-01-2014)";
 
     // used for viewing the mapper scripts
     private CodeViewerDialog codeViewerDialogBeanshell;
