@@ -31,8 +31,11 @@ import java.io.StringWriter;
  * @author Nathan Stevens
  */
 public class dbCopyFrame extends JFrame {
+    public static final String VERSION = "Archives Space Excel Data Migrator v0.3.0 (04-01-2014)";
+
     // used for viewing the mapper scripts
     private CodeViewerDialog codeViewerDialogBeanshell;
+    private CodeViewerDialog codeViewerDialogJruby;
     private CodeViewerDialog codeViewerDialogJython;
     private CodeViewerDialog codeViewerDialogJavascript;
 
@@ -69,6 +72,7 @@ public class dbCopyFrame extends JFrame {
      */
     public dbCopyFrame() {
         initComponents();
+        setTitle(VERSION);
         setSampleDataFilename();
     }
 
@@ -454,6 +458,23 @@ public class dbCopyFrame extends JFrame {
             codeViewerDialogBeanshell.setTitle("BeanShell Mapper Script Editor");
             codeViewerDialogBeanshell.pack();
             codeViewerDialogBeanshell.setVisible(true);
+        } else if (jrubyRadioButton.isSelected()) {
+            if(mapperScript.isEmpty()) {
+                mapperScript = ScriptUtil.getTextForRubyScript();
+            }
+
+            // must be a python script
+            if (codeViewerDialogJruby == null) {
+                codeViewerDialogJruby = new CodeViewerDialog(this, SyntaxConstants.SYNTAX_STYLE_RUBY, mapperScript, true, false);
+            } else {
+                codeViewerDialogJruby.setCurrentScript(mapperScript);
+            }
+
+            codeViewerDialogJruby.setScriptFile(scriptFile);
+
+            codeViewerDialogJruby.setTitle("Jruby Mapper Script Editor");
+            codeViewerDialogJruby.pack();
+            codeViewerDialogJruby.setVisible(true);
         } else if (pythonRadioButton.isSelected()) {
             if(mapperScript.isEmpty()) {
                 mapperScript = ScriptUtil.getTextForJythonScript();
@@ -476,7 +497,7 @@ public class dbCopyFrame extends JFrame {
                 mapperScript = ScriptUtil.getTextForJavascriptScript();
             }
 
-            // must be a python script
+            // must be a javascript
             if (codeViewerDialogJavascript == null) {
                 codeViewerDialogJavascript = new CodeViewerDialog(this, SyntaxConstants.SYNTAX_STYLE_JAVASCRIPT, mapperScript, true, false);
             } else {
@@ -528,6 +549,9 @@ public class dbCopyFrame extends JFrame {
         if(beanShellRadioButton.isSelected()) {
             defaultMapperScript = ScriptUtil.getTextForBeanShellScript();
             return ASpaceMapper.BEANSHELL_SCRIPT;
+        } else if(jrubyRadioButton.isSelected()) {
+            defaultMapperScript = ScriptUtil.getTextForRubyScript();
+            return ASpaceMapper.JRUBY_SCRIPT;
         } else if(pythonRadioButton.isSelected()) {
             defaultMapperScript = ScriptUtil.getTextForJythonScript();
             return ASpaceMapper.JYTHON_SCRIPT;
@@ -559,6 +583,7 @@ public class dbCopyFrame extends JFrame {
         panel4 = new JPanel();
         label9 = new JLabel();
         beanShellRadioButton = new JRadioButton();
+        jrubyRadioButton = new JRadioButton();
         pythonRadioButton = new JRadioButton();
         javascriptRadioButton = new JRadioButton();
         loadExcelFileButton = new JButton();
@@ -624,7 +649,7 @@ public class dbCopyFrame extends JFrame {
         CellConstraints cc = new CellConstraints();
 
         //======== this ========
-        setTitle("Archives Space Excel Migrator v0.2.0 (03-25-2014)");
+        setTitle("Archives Space Excel Data Migrator");
         Container contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
@@ -689,6 +714,8 @@ public class dbCopyFrame extends JFrame {
                             FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
                             new ColumnSpec(ColumnSpec.FILL, Sizes.DEFAULT, FormSpec.DEFAULT_GROW),
                             FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
+                            FormFactory.DEFAULT_COLSPEC,
+                            FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
                             new ColumnSpec(ColumnSpec.FILL, Sizes.DEFAULT, FormSpec.DEFAULT_GROW),
                             FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
                             new ColumnSpec(ColumnSpec.FILL, Sizes.DEFAULT, FormSpec.DEFAULT_GROW)
@@ -696,7 +723,7 @@ public class dbCopyFrame extends JFrame {
                         RowSpec.decodeSpecs("default")));
 
                     //---- label9 ----
-                    label9.setText("Select Mapper Script Type");
+                    label9.setText("Select Script Type");
                     panel4.add(label9, cc.xy(1, 1));
 
                     //---- beanShellRadioButton ----
@@ -709,6 +736,15 @@ public class dbCopyFrame extends JFrame {
                     });
                     panel4.add(beanShellRadioButton, cc.xy(3, 1));
 
+                    //---- jrubyRadioButton ----
+                    jrubyRadioButton.setText("JRuby");
+                    jrubyRadioButton.addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            clearMapperScript();
+                        }
+                    });
+                    panel4.add(jrubyRadioButton, cc.xy(5, 1));
+
                     //---- pythonRadioButton ----
                     pythonRadioButton.setText("Jython");
                     pythonRadioButton.addActionListener(new ActionListener() {
@@ -716,7 +752,7 @@ public class dbCopyFrame extends JFrame {
                             clearMapperScript();
                         }
                     });
-                    panel4.add(pythonRadioButton, cc.xy(5, 1));
+                    panel4.add(pythonRadioButton, cc.xy(7, 1));
 
                     //---- javascriptRadioButton ----
                     javascriptRadioButton.setText("Javascript");
@@ -725,7 +761,7 @@ public class dbCopyFrame extends JFrame {
                             clearMapperScript();
                         }
                     });
-                    panel4.add(javascriptRadioButton, cc.xy(7, 1));
+                    panel4.add(javascriptRadioButton, cc.xy(9, 1));
                 }
                 contentPanel.add(panel4, cc.xywh(3, 1, 7, 1));
 
@@ -1069,6 +1105,7 @@ public class dbCopyFrame extends JFrame {
         //---- buttonGroup1 ----
         ButtonGroup buttonGroup1 = new ButtonGroup();
         buttonGroup1.add(beanShellRadioButton);
+        buttonGroup1.add(jrubyRadioButton);
         buttonGroup1.add(pythonRadioButton);
         buttonGroup1.add(javascriptRadioButton);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -1083,6 +1120,7 @@ public class dbCopyFrame extends JFrame {
     private JPanel panel4;
     private JLabel label9;
     private JRadioButton beanShellRadioButton;
+    private JRadioButton jrubyRadioButton;
     private JRadioButton pythonRadioButton;
     private JRadioButton javascriptRadioButton;
     private JButton loadExcelFileButton;

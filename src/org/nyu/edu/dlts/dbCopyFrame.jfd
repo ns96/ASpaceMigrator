@@ -14,7 +14,7 @@
       </object> 
       <void method="setProperty"> 
        <string>title</string> 
-       <string>Archives Space Excel Migrator v0.2.0 (03-25-2014)</string> 
+       <string>Archives Space Excel Data Migrator</string> 
       </void> 
       <void method="add"> 
        <object class="com.jformdesigner.model.FormContainer"> 
@@ -80,7 +80,7 @@
              <class>com.jgoodies.forms.layout.FormLayout</class> 
              <void method="setProperty"> 
               <string>$columnSpecs</string> 
-              <string>default, labelcompgap, default:grow, labelcompgap, default:grow, labelcompgap, default:grow</string> 
+              <string>default, labelcompgap, default:grow, labelcompgap, default, labelcompgap, default:grow, labelcompgap, default:grow</string> 
              </void> 
              <void method="setProperty"> 
               <string>$rowSpecs</string> 
@@ -95,7 +95,7 @@
               <string>javax.swing.JLabel</string> 
               <void method="setProperty"> 
                <string>text</string> 
-               <string>Select Mapper Script Type</string> 
+               <string>Select Script Type</string> 
               </void> 
               <void property="name"> 
                <string>label9</string> 
@@ -159,6 +159,43 @@
               <string>javax.swing.JRadioButton</string> 
               <void method="setProperty"> 
                <string>text</string> 
+               <string>JRuby</string> 
+              </void> 
+              <void method="setProperty"> 
+               <string>$buttonGroup</string> 
+               <object class="com.jformdesigner.model.FormReference"> 
+                <string>buttonGroup1</string> 
+               </object> 
+              </void> 
+              <void property="name"> 
+               <string>jrubyRadioButton</string> 
+              </void> 
+              <void method="addEvent"> 
+               <object class="com.jformdesigner.model.FormEvent"> 
+                <string>java.awt.event.ActionListener</string> 
+                <string>actionPerformed</string> 
+                <string>clearMapperScript</string> 
+                <boolean>false</boolean> 
+               </object> 
+              </void> 
+             </object> 
+             <object class="com.jformdesigner.model.FormLayoutConstraints"> 
+              <class>com.jgoodies.forms.layout.CellConstraints</class> 
+              <void method="setProperty"> 
+               <string>gridX</string> 
+               <int>5</int> 
+              </void> 
+              <void method="setProperty"> 
+               <string>gridY</string> 
+               <int>1</int> 
+              </void> 
+             </object> 
+            </void> 
+            <void method="add"> 
+             <object class="com.jformdesigner.model.FormComponent"> 
+              <string>javax.swing.JRadioButton</string> 
+              <void method="setProperty"> 
+               <string>text</string> 
                <string>Jython</string> 
               </void> 
               <void method="setProperty"> 
@@ -183,7 +220,7 @@
               <class>com.jgoodies.forms.layout.CellConstraints</class> 
               <void method="setProperty"> 
                <string>gridX</string> 
-               <int>5</int> 
+               <int>7</int> 
               </void> 
              </object> 
             </void> 
@@ -216,7 +253,7 @@
               <class>com.jgoodies.forms.layout.CellConstraints</class> 
               <void method="setProperty"> 
                <string>gridX</string> 
-               <int>7</int> 
+               <int>9</int> 
               </void> 
               <void method="setProperty"> 
                <string>gridY</string> 
@@ -1791,7 +1828,7 @@
       <void method="setProperty"> 
        <string>size</string> 
        <object class="java.awt.Dimension"> 
-        <int>785</int> 
+        <int>815</int> 
         <int>570</int> 
        </object> 
       </void> 

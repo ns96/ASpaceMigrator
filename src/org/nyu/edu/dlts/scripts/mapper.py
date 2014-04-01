@@ -9,11 +9,12 @@
 # Specify the mapping functionality the script provides. change # to @ to 
 # specify that a certain record type is supported
 #
-#@name
+##location
+##name
 #@subject
-#@accession
-#@digitalobject
-#@resource
+##accession
+##digitalobject
+##resource
 
 # import the Java classes we need now
 from org.json import *

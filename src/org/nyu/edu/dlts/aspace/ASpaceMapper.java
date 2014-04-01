@@ -30,6 +30,7 @@ public class ASpaceMapper {
 
     // Used to specify the type of mapper scripts
     public static final String BEANSHELL_SCRIPT = "BeanShell";
+    public static final String JRUBY_SCRIPT = "Jruby";
     public static final String JYTHON_SCRIPT = "Jython";
     public static final String JAVASCRIPT_SCRIPT = "JavaScript";
 
@@ -45,9 +46,10 @@ public class ASpaceMapper {
     // the script mapper script
     private String mapperScript = null;
 
-    // The Beanshell and Jyphon interpreters
+    // The script interpreters
     private Interpreter bsi = null;
     private PythonInterpreter pyi = null;
+    private ScriptEngine jri = null;
     private ScriptEngine jsi = null;
 
     // some code used for testing
@@ -108,16 +110,25 @@ public class ASpaceMapper {
     public void initializeScriptInterpreter() {
         if(mapperScriptType.equals(BEANSHELL_SCRIPT)) {
             bsi = new Interpreter();
+            jri = null;
             pyi = null;
+            jsi = null;
+        } else if(mapperScriptType.equals(JRUBY_SCRIPT)) {
+            ScriptEngineManager manager = new ScriptEngineManager();
+            jri = manager.getEngineByName("jruby");
+            pyi = null;
+            bsi = null;
             jsi = null;
         } else if(mapperScriptType.equals(JYTHON_SCRIPT)) {
             pyi = new PythonInterpreter();
             bsi = null;
+            jri = null;
             jsi = null;
         } else {
             ScriptEngineManager manager = new ScriptEngineManager();
             jsi = manager.getEngineByName("javascript");
             bsi = null;
+            jri = null;
             pyi = null;
         }
     }
@@ -127,6 +138,7 @@ public class ASpaceMapper {
      */
     public void destroyInterpreter() {
         bsi = null;
+        jri = null;
         pyi = null;
         jsi = null;
     }
@@ -155,6 +167,12 @@ public class ASpaceMapper {
             bsi.set("recordJS", recordJS);
             bsi.set("recordType", recordType);
             bsi.eval(mapperScript);
+        } else if(jri != null) {
+            jri.put("header", headerRow);
+            jri.put("record", record);
+            jri.put("recordJS", recordJS);
+            jri.put("recordType", recordType);
+            jri.eval(mapperScript);
         } else if(pyi != null) {
             pyi.set("header", headerRow);
             pyi.set("record", record);

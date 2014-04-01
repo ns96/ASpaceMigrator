@@ -141,7 +141,7 @@ void convertName() {
     		// set the agent type
     		recordJS.put("agent_type", "agent_corporate_entity");
     	
-    		String primaryName = getCellData('E');
+    		primaryName = getCellData('E');
     	
     		// set values for name_corporate_entity.rb schema
     		namesJS.put("primary_name", primaryName);
@@ -164,7 +164,7 @@ void convertAccession() {
 	recordJS.put("accession_date", date);
 	
 	// get the ids and make them unique if we in DEBUG mode
-	String[] ids = getCellData('B').split("\\.");
+	ids = getCellData('B').split("\\.");
 	
 	recordJS.put("id_0", ids[0]);
 	recordJS.put("id_1", ids[1]);
@@ -235,7 +235,7 @@ void convertDigitalObjectComponent() {
 // Method to convert a resource record
 void convertResource() {
 	// check to make sure we have a title
-	String title = getCellData('E');
+	title = getCellData('E');
 	recordJS.put("title", title);
 	
 	// add the language code
@@ -252,7 +252,7 @@ void convertResource() {
 	recordJS.put("dates", dateJA);
 	
 	// get the ids and make them unique if we in DEBUG mode
-	String[] ids = getCellData('C').split("\\.");
+	ids = getCellData('C').split("\\.");
 	
 	recordJS.put("id_0", ids[0]);
 	recordJS.put("id_1", ids[1]);
@@ -285,7 +285,7 @@ void convertResource() {
 // Method to convert a resource record
 void convertResourceComponent() {
 	// check to make sure we have a title
-	String title = getCellData('E');
+	title = getCellData('E');
 	recordJS.put("title", title);
 	
 	// add the language code

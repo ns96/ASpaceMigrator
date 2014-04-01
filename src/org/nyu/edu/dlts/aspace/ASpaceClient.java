@@ -437,6 +437,22 @@ public class ASpaceClient {
     }
 
     /**
+     * Method to return information about the archives space backend
+     *
+     * @return
+     */
+    public String getArchivesSpaceInformation() {
+        String info = "Unknown Archives Space Version ...";
+        try {
+            info = get("", null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return info;
+    }
+
+    /**
      * Method to return a record as formatted json
      *
      * @param uri

@@ -10,11 +10,12 @@ It is executed within the data migration tool
 Specify the mapping functionality the script provides. change # to @ to 
 specify that a certain record type is supported
 
-@name
+#location
 @subject
-@accession
-@digitalobject
-@resource
+#name
+#accession
+#digitalobject
+#resource
 */
 
 // import Java classes we need
@@ -28,7 +29,6 @@ function getDate(dateString) {
 	df = new SimpleDateFormat("MM/dd/yyyy");
 	return df.parse(dateString);
 }
-
 
 // Method to get the cell data by providing a column number
 function getCellDataByNumber(column) {

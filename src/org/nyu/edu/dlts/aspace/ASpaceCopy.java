@@ -8,6 +8,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.nyu.edu.dlts.dbCopyFrame;
 import org.nyu.edu.dlts.models.RelatedRowData;
 import org.nyu.edu.dlts.utils.*;
 
@@ -137,6 +138,9 @@ public class ASpaceCopy implements PrintConsole {
 
     // used to set the repository where records should be copied
     private String repositoryURI = "";
+
+    // store information about the ASpace version
+    private String aspaceInformation = "";
 
     /**
      * The main constructor, used when running as a stand alone application
@@ -1174,7 +1178,13 @@ public class ASpaceCopy implements PrintConsole {
      * @return
      */
     public boolean getSession() {
-        return aspaceClient.getSession();
+        boolean connected = aspaceClient.getSession();
+
+        if(connected) {
+            aspaceInformation = aspaceClient.getArchivesSpaceInformation();
+        }
+
+        return connected;
     }
 
     /** Method to add to resource map in a thread safe manner
@@ -1365,7 +1375,8 @@ public class ASpaceCopy implements PrintConsole {
         String errorMessage = "RECORD CONVERSION ERRORS/WARNINGS ( " + errorsAndWarnings + " ) ::\n\n" + errorBuffer.toString() +
                 "\n\n\nRECORD SAVE ERRORS ( " + aspaceErrorCount + " ) ::\n\n" + aspaceClient.getErrorMessages() +
                 "\n\nTOTAL COPY TIME: " + stopWatch.getPrettyTime() +
-                "\n\nNUMBER OF RECORDS COPIED: \n" + getTotalRecordsCopiedMessage();
+                "\n\nNUMBER OF RECORDS COPIED: \n" + getTotalRecordsCopiedMessage() +
+                "\n\n" + getSystemInformation();
 
         return errorMessage;
     }
@@ -1399,7 +1410,8 @@ public class ASpaceCopy implements PrintConsole {
 
         String message = errorMessages +
                 "\n\nRunning for: " + stopWatch.getPrettyTime() +
-                "\n\nCurrent # of Records Copied: \n" + totalRecordsCopied;
+                "\n\nCurrent # of Records Copied: \n" + totalRecordsCopied +
+                "\n\n" + getSystemInformation();
 
         return message;
     }
@@ -1416,6 +1428,15 @@ public class ASpaceCopy implements PrintConsole {
         }
 
         return totalRecordsCopied;
+    }
+
+    /**
+     * Method to return information about the ASpace and Migration tool version
+     *
+     * @return
+     */
+    public String getSystemInformation() {
+        return dbCopyFrame.VERSION + "\n" + aspaceInformation;
     }
 
     /**
@@ -1582,6 +1603,7 @@ public class ASpaceCopy implements PrintConsole {
         File excelFile = new File(currentDirectory +"/sample_data/Sample Ingest Data.xlsx");
 
         File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.bsh");
+        File jriMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.rb");
         File pyiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.py");
         File jsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.js");
 
@@ -1592,6 +1614,7 @@ public class ASpaceCopy implements PrintConsole {
         try {
             // load the mapper scripts
             String bsiMapperScript = FileManager.readTextData(bsiMapperScriptFile);
+            String jriMapperScript = FileManager.readTextData(jriMapperScriptFile);
             String pyiMapperScript = FileManager.readTextData(pyiMapperScriptFile);
             String jsiMapperScript = FileManager.readTextData(jsiMapperScriptFile);
 
@@ -1639,6 +1662,27 @@ public class ASpaceCopy implements PrintConsole {
             aspaceCopy.setMapperScript(jsiMapperScript);
             aspaceCopy.copySubjectRecords(1);
 
+            System.out.println("\n\nTest mapping excel file using JRuby\n\n");
+            aspaceCopy.setMapperScriptType(ASpaceMapper.JRUBY_SCRIPT);
+            aspaceCopy.setMapperScript(jriMapperScript);
+
+            System.out.println("\n\n");
+            aspaceCopy.copyLocationRecords(0);
+
+            System.out.println("\n\n");
+            aspaceCopy.copySubjectRecords(1);
+
+            System.out.println("\n\n");
+            aspaceCopy.copyNameRecords(2);
+
+            System.out.println("\n\n");
+            aspaceCopy.copyAccessionRecords(3);
+
+            System.out.println("\n\n");
+            aspaceCopy.copyDigitalObjectRecords(4);
+
+            System.out.println("\n\n");
+            aspaceCopy.copyResourceRecords("5,6");
         } catch (Exception e) {
             e.printStackTrace();
         }

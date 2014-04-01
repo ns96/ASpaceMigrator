@@ -128,6 +128,11 @@ public class CodeViewerDialog extends JDialog {
                 bsi.set("record", new String("Test"));
                 bsi.set("recordType", "test");
                 bsi.eval(getCurrentScript());
+            } else if (textArea.getSyntaxEditingStyle().equals(RSyntaxTextArea.SYNTAX_STYLE_RUBY)) {
+                ScriptEngineManager manager = new ScriptEngineManager();
+                ScriptEngine jri = manager.getEngineByName("jruby");
+                jri.put("recordType", "test");
+                jri.eval(getCurrentScript());
             } else if (textArea.getSyntaxEditingStyle().equals(RSyntaxTextArea.SYNTAX_STYLE_PYTHON)) {
                 PythonInterpreter pyi = new PythonInterpreter();
                 pyi.set("record", new String("Test"));

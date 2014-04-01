@@ -15,6 +15,7 @@ import java.io.InputStreamReader;
  */
 public class ScriptUtil {
     public static final String BEANSHELL_SCRIPT = "mapper.bsh";
+    public static final String JRUBY_SCRIPT = "mapper.rb";
     public static final String JYTHON_SCRIPT = "mapper.py";
     public static final String JAVASCRIPT_SCRIPT = "mapper.js";
 
@@ -26,6 +27,16 @@ public class ScriptUtil {
      */
     public static String getTextForBeanShellScript() {
         return getTextForBuiltInScript("scripts/", BEANSHELL_SCRIPT);
+    }
+
+    /**
+     * Method to return the String of a script that is stored in the classpath. This just calls the
+     * default package where scripts are stored relative to the dbCopyFrame class
+     *
+     * @return
+     */
+    public static String getTextForRubyScript() {
+        return getTextForBuiltInScript("scripts/", JRUBY_SCRIPT);
     }
 
     /**
