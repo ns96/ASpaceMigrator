@@ -87,6 +87,7 @@ public class ASpaceMapper {
      */
     public ASpaceMapper(ASpaceCopy aspaceCopy) {
         this.aspaceCopy = aspaceCopy;
+        MapperUtil.aspaceCopy = aspaceCopy;
     }
 
     /**
@@ -196,6 +197,8 @@ public class ASpaceMapper {
      */
     public String getCorporateAgent(JSONObject repository) throws JSONException {
         // Main json object, agent_person.rb schema
+        String primaryName = repository.getString("ShortName");
+
         JSONObject agentJS = new JSONObject();
         agentJS.put("agent_type", "agent_corporate_entity");
 
@@ -207,7 +210,7 @@ public class ASpaceMapper {
         JSONArray contactsJA = new JSONArray();
         JSONObject contactsJS = new JSONObject();
 
-        contactsJS.put("name", repository.get("Name"));
+        contactsJS.put("name", primaryName);
         contactsJS.put("address_1", "Address 1");
         contactsJS.put("address_2", "Address 2");
         contactsJS.put("city", "City");
@@ -228,7 +231,6 @@ public class ASpaceMapper {
         agentJS.put("agent_contacts", contactsJA);
 
         // add the names object
-        String primaryName = repository.getString("Name");
         namesJS.put("source", "local");
         namesJS.put("primary_name", primaryName);
         namesJS.put("sort_name", primaryName);
@@ -246,7 +248,7 @@ public class ASpaceMapper {
      * @return
      * @throws Exception
      */
-    public String convertRepository(JSONObject record, String agentURI) throws Exception {
+    public String convertRepository(JSONObject record) throws Exception {
         // Main json object
         JSONObject json = new JSONObject();
 
@@ -258,10 +260,6 @@ public class ASpaceMapper {
         json.put("name", MapperUtil.fixEmptyString(record.getString("Name")));
         json.put("org_code", record.get("Code"));
         json.put("url", MapperUtil.fixUrl(record.getString("URL")));
-
-        if(agentURI != null) {
-            json.put("agent_representation", MapperUtil.getReferenceObject(agentURI));
-        }
 
         return json.toString();
     }

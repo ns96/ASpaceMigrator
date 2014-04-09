@@ -8,6 +8,7 @@ import org.nyu.edu.dlts.aspace.ASpaceCopy;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -28,8 +29,11 @@ public class MapperUtil {
     private static RandomString randomStringLong = new RandomString(6);
     private static RandomString randomString = new RandomString(3);
 
-    // used to send errors to the UI;
+    // used to send errors to the UI and add custom enums
     public static ASpaceCopy aspaceCopy;
+
+    // used when adding dynamic enums
+    public static HashMap<String, JSONObject> dynamicEnums;
 
     /**
      * Method to return a unique id, in cases where ASpace needs a unique id but AT doesn't
@@ -240,22 +244,22 @@ public class MapperUtil {
         JSONObject instanceJS = new JSONObject();
 
         // set the type
-        instanceJS.put("instance_type", instanceType);
+        instanceJS.put("instance_type", normalizeEnumValue("instance_instance_type", instanceType));
 
         // add the container now
         JSONObject containerJS = new JSONObject();
 
-        containerJS.put("type_1", type1);
+        containerJS.put("type_1", normalizeEnumValue("container_type", type1));
         containerJS.put("indicator_1", indicator1);
         containerJS.put("barcode_1", barcode);
 
         if(!type2.isEmpty()) {
-            containerJS.put("type_2", type2);
+            containerJS.put("type_2", normalizeEnumValue("container_type", type2));
             containerJS.put("indicator_2", indicator2);
         }
 
         if(!type3.isEmpty()) {
-            containerJS.put("type_3", type3);
+            containerJS.put("type_3", normalizeEnumValue("container_type",type3));
             containerJS.put("indicator_3", indicator3);
         }
 
@@ -347,7 +351,7 @@ public class MapperUtil {
     public static void addExtent(JSONArray extentJA, String portion, String extent, String type) throws Exception {
         JSONObject extentJS = new JSONObject();
         extentJS.put("portion", portion);
-        extentJS.put("extent_type", type);
+        extentJS.put("extent_type", normalizeEnumValue("extent_extent_type", type));
         extentJS.put("number", extent);
         extentJA.put(extentJS);
     }
@@ -381,23 +385,6 @@ public class MapperUtil {
         dateJS.put("end", end);
         dateJA.put(dateJS);
     }
-
-    /**
-     * Method to add a bulk date
-     * @param dateJA
-     * @param begin
-     * @param end
-     * @throws Exception
-     */
-    public static void addBulkDate(JSONArray dateJA, String label, String begin, String end) throws Exception {
-        JSONObject dateJS = new JSONObject();
-        dateJS.put("date_type", "bulk");
-        dateJS.put("label", label);
-        dateJS.put("begin", begin);
-        dateJS.put("end", end);
-        dateJA.put(dateJS);
-    }
-
 
     /**
      * Add an external document to the JSON object
@@ -682,6 +669,38 @@ public class MapperUtil {
             url = "http://" + url;
             return  url;
         }
+    }
+
+    /**
+     * Method to normalize, and add to the aspace enum list if necessary.
+     *
+     * @param enumName
+     * @param value
+     * @return
+     */
+    public static String normalizeEnumValue(String enumName, String value) {
+        String enumValue = value.toLowerCase().replace(" ", "_");
+
+        if (dynamicEnums != null) {
+            JSONObject enumJS = dynamicEnums.get(enumName);
+
+            if (enumJS != null) {
+                try {
+                    JSONArray valuesJA = enumJS.getJSONArray("values");
+
+                    // Do string comparison to see if has the value or not.
+                    // Not the most efficient way to do this, but it works
+                    if (!valuesJA.toString().contains("\"" + enumValue + "\"")) {
+                        valuesJA.put(enumValue);
+                        aspaceCopy.updateDynamicEnum(enumJS);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return enumValue;
     }
 
     /**

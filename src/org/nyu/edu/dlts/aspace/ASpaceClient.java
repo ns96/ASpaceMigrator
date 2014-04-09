@@ -419,15 +419,6 @@ public class ASpaceClient {
     }
 
     /**
-     * Method to load the admin groups only
-     *
-     * @return
-     */
-    public JSONArray loadAdminGroups() {
-        return loadRepositoryGroups(ADMIN_REPOSITORY_ENDPOINT);
-    }
-
-    /**
      * Method to get any error messages that occurred while talking to the AT backend
      *
      * @return String containing error messages
@@ -458,7 +449,7 @@ public class ASpaceClient {
      * @param uri
      * @return
      */
-    public String getRecordAsJSON(String uri, String paramString) {
+    public String getRecordAsJSONString(String uri, String paramString) {
         try {
             NameValuePair[] params = getParams(paramString);
 
@@ -472,6 +463,27 @@ public class ASpaceClient {
                     JSONObject json = new JSONObject(jsonText);
                     return json.toString(4);
                 }
+            }
+        } catch (Exception e) {
+            errorBuffer.append(e.toString());
+        }
+
+        return null;
+    }
+
+     /**
+     * Method to get a record as a json object
+     *
+     * @param endpoint
+     * @return
+     */
+    public JSONObject getRecordAsJSON(String endpoint) {
+        try {
+            String jsonText = get(endpoint, null);
+
+            if (jsonText != null && !jsonText.isEmpty()) {
+                JSONObject json = new JSONObject(jsonText);
+                return json;
             }
         } catch (Exception e) {
             errorBuffer.append(e.toString());
@@ -523,11 +535,5 @@ public class ASpaceClient {
      */
     public synchronized void appendToErrorBuffer(String errorMessage) {
         errorBuffer.append(errorMessage);
-    }
-
-    // convert from internal Java String format -> UTF-8
-    private String convertToUTF8(String input) throws UnsupportedEncodingException {
-        String out = new String(input.getBytes("UTF-8"), "ISO-8859-1");
-        return out;
     }
 }

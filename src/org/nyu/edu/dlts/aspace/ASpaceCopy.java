@@ -182,7 +182,7 @@ public class ASpaceCopy implements PrintConsole {
     private void init() {
         print("Starting record copy ... ");
 
-        // set the error buffer for the mapper
+        // create the the mapper object
         mapper = new ASpaceMapper(this);
 
         // set the file that contains the record map
@@ -216,6 +216,31 @@ public class ASpaceCopy implements PrintConsole {
     }
 
     /**
+     * Method to update the dynamic enum
+     *
+     * @param updatedEnumJS
+     * @throws Exception
+     */
+    public void updateDynamicEnum(JSONObject updatedEnumJS) throws Exception {
+        String endpoint = updatedEnumJS.getString("uri");
+        String jsonText = updatedEnumJS.toString();
+        String name = updatedEnumJS.getString("name");
+
+        String id = saveRecord(endpoint, jsonText, "Dynamic Enum->" + endpoint);
+
+        if (!id.equalsIgnoreCase(NO_ID)) {
+            // need to get the update enum from the database so we can perform more updates
+            // if needed
+            JSONObject currentEnumJS = aspaceClient.getRecordAsJSON(endpoint);
+            MapperUtil.dynamicEnums.put(name, currentEnumJS);
+
+            print("Updated Dynamic Enum: " + endpoint);
+        } else {
+            print("Fail to update dynamic Enum:" + endpoint);
+        }
+    }
+
+    /**
      * Method to copy the repository records
      *
      * @throws Exception
@@ -245,7 +270,7 @@ public class ASpaceCopy implements PrintConsole {
                 agentURI = ASpaceClient.AGENT_CORPORATE_ENTITY_ENDPOINT + "/" + id;
             }
 
-            jsonText = mapper.convertRepository(repository, agentURI);
+            jsonText = mapper.convertRepository(repository);
             id = saveRecord(ASpaceClient.REPOSITORY_ENDPOINT, jsonText, "Repository->" + shortName);
 
             if (!id.equalsIgnoreCase(NO_ID)) {
@@ -1182,6 +1207,10 @@ public class ASpaceCopy implements PrintConsole {
 
         if(connected) {
             aspaceInformation = aspaceClient.getArchivesSpaceInformation();
+
+            // load the dynamic enums
+            HashMap<String, JSONObject> dynamicEnums = aspaceClient.loadDynamicEnums();
+            MapperUtil.dynamicEnums = dynamicEnums;
         }
 
         return connected;
@@ -1608,19 +1637,25 @@ public class ASpaceCopy implements PrintConsole {
         File jsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.js");
 
         ASpaceCopy aspaceCopy = new ASpaceCopy("http://localhost:8089", "admin", "admin");
+        aspaceCopy.getSession();
 
-        aspaceCopy.setSimulateRESTCalls(true);
+        //aspaceCopy.setSimulateRESTCalls(true);
 
         try {
+            // test add custom extent data
+            MapperUtil.addExtent(new JSONArray(), "whole", "1.5", "Custom Extent 1");
+
             // load the mapper scripts
             String bsiMapperScript = FileManager.readTextData(bsiMapperScriptFile);
             String jriMapperScript = FileManager.readTextData(jriMapperScriptFile);
             String pyiMapperScript = FileManager.readTextData(pyiMapperScriptFile);
             String jsiMapperScript = FileManager.readTextData(jsiMapperScriptFile);
 
+
             /**
              * Create a new instance for HSSFWorkBook Class
              */
+            /*
             System.out.println("Loading excel file " + excelFile);
 
             // set the work book
@@ -1683,6 +1718,7 @@ public class ASpaceCopy implements PrintConsole {
 
             System.out.println("\n\n");
             aspaceCopy.copyResourceRecords("5,6");
+            */
         } catch (Exception e) {
             e.printStackTrace();
         }

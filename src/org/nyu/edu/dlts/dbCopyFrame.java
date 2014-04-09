@@ -31,7 +31,7 @@ import java.io.StringWriter;
  * @author Nathan Stevens
  */
 public class dbCopyFrame extends JFrame {
-    public static final String VERSION = "Archives Space Excel Data Migrator v0.3.2 (04-01-2014)";
+    public static final String VERSION = "Archives Space Excel Data Migrator v0.4.0 (04-09-2014)";
 
     // used for viewing the mapper scripts
     private CodeViewerDialog codeViewerDialogBeanshell;
@@ -314,7 +314,7 @@ public class dbCopyFrame extends JFrame {
                 aspaceClient.getSession();
             }
 
-            recordJSON = aspaceClient.getRecordAsJSON(uri, paramsTextField.getText());
+            recordJSON = aspaceClient.getRecordAsJSONString(uri, paramsTextField.getText());
 
             if(recordJSON == null || recordJSON.isEmpty()) {
                 recordJSON = aspaceClient.getErrorMessages();

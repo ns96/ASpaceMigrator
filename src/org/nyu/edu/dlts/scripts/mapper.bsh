@@ -5,7 +5,7 @@ into an Archives Space Instance
 It is executed within the data migration tool
 
 @author Nathan Stevens
-@version 1.0 03/24/2014
+@version 1.0 04/09/2014
 
 Specify the mapping functionality the script provides. change # to @ to 
 specify that a certain record type is supported
@@ -187,6 +187,13 @@ void convertAccession() {
 	// add the location id and location note
 	recordJS.put("location_id", getCellData('K'));
 	recordJS.put("location_note", getCellData('L'));
+	
+	// add the extent array if needed
+	if(!getCellData('M').isEmpty() && !getCellData('N').isEmpty()) {
+		extentJA = new JSONArray();
+		MapperUtil.addExtent(extentJA, "whole", getCellData('M'), getCellData('N'));
+		recordJS.put("extents", extentJA);
+	}
 	
 	/*TODO add a general note*/
 }
