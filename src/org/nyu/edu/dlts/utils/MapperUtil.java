@@ -613,6 +613,34 @@ public class MapperUtil {
     }
 
     /**
+     * Method to create and link a single name record. It just calls the same method in
+     * the ascopy object
+     *
+     * @param recordJS
+     * @param role
+     * @param nameType
+     * @param primaryName
+     * @param source
+     */
+    public static void addName(JSONObject recordJS, String role, String nameType, String primaryName, String source) throws Exception {
+        aspaceCopy.createAndAddName(recordJS, role.toLowerCase(), nameType.toLowerCase(), primaryName.trim(), source.toLowerCase());
+    }
+
+    /**
+     * Method to create and add a single subject. It just calls the same method in
+     * the ascopy object
+     *
+     * @param recordJS
+     * @param source
+     * @param termType
+     * @param terms
+     * @throws Exception
+     */
+    public static void addSubject(JSONObject recordJS, String source, String termType, String terms) throws Exception {
+        aspaceCopy.createAndAddSubject(recordJS, source.toLowerCase(), termType.toLowerCase(), terms.trim());
+    }
+
+    /**
      * Method to return the column number given a character
      *
      * @param column
@@ -693,6 +721,11 @@ public class MapperUtil {
                     if (!valuesJA.toString().contains("\"" + enumValue + "\"")) {
                         valuesJA.put(enumValue);
                         aspaceCopy.updateDynamicEnum(enumJS);
+
+                        // sleep for 5 seconds since ASpace seems to need sometime before the newly
+                        // added enum propagates to all places, even though it returns the newly created record
+                        // fine???
+                        Thread.sleep(5000);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -701,15 +734,5 @@ public class MapperUtil {
         }
 
         return enumValue;
-    }
-
-    /**
-     * Main method to test this class
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        System.out.println("Character Number A: " + getColumnNumber('A'));
-        System.out.println("Character Number Z: " + getColumnNumber('Z'));
     }
 }

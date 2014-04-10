@@ -310,6 +310,42 @@ public class ASpaceMapper {
     }
 
     /**
+     * Method to create the most basic subject record
+     *
+     * @param source
+     * @param termType String delimitted by -- for the various terms
+     * @param terms
+     *
+     * @return
+     * @throws Exception
+     */
+    public JSONObject createSubject(String source, String termType, String terms) throws Exception {
+        // Main json object
+        JSONObject recordJS = new JSONObject();
+
+        // set the subject source
+        recordJS.put("source", source);
+
+        String[] sa = terms.split("\\s*--\\s*");
+        JSONArray termsJA = new JSONArray();
+
+        for(String term: sa) {
+            JSONObject termJS = new JSONObject();
+
+            termJS.put("term", term);
+            termJS.put("term_type",termType);
+            termJS.put("vocabulary", vocabularyURI);
+
+            termsJA.put(termJS);
+        }
+
+        recordJS.put("terms", termsJA);
+        recordJS.put("vocabulary", vocabularyURI);
+
+        return recordJS;
+    }
+
+    /**
      * Method to convert a name record
      *
      * @param  header
@@ -326,6 +362,57 @@ public class ASpaceMapper {
         MapperUtil.addExternalId(recordId, recordJS, "name");
 
         runInterpreter(header, record, recordJS, "name");
+
+        return recordJS;
+    }
+
+    /**
+     * Method to create the most basic name record possible
+     *
+     * @param type
+     * @param primaryName
+     * @param nameSource
+     * @return
+     * @throws Exception
+     */
+    public JSONObject createName(String type, String primaryName, String nameSource) throws Exception {
+        // holds name information
+        JSONObject recordJS = new JSONObject();
+        JSONArray namesJA = new JSONArray();
+        JSONObject namesJS = new JSONObject();
+
+        // add the contact information
+        JSONArray contactsJA = new JSONArray();
+        JSONObject contactsJS = new JSONObject();
+        contactsJS.put("name", primaryName);
+        contactsJA.put(contactsJS);
+        recordJS.put("agent_contacts", contactsJA);
+
+        String nameRule = "dacs";
+
+        // set values for abstract_name.rb schema
+        namesJS.put("source", nameSource);
+        namesJS.put("rules", nameRule);
+
+        // get the agent type
+        if (type.equalsIgnoreCase("person")) {
+            recordJS.put("agent_type", "agent_person");
+            namesJS.put("primary_name", primaryName);
+            namesJS.put("name_order", "direct");
+            namesJS.put("sort_name", primaryName);
+        } else if (type.equalsIgnoreCase("family")) {
+            recordJS.put("agent_type", "agent_family");
+            namesJS.put("family_name", primaryName);
+            namesJS.put("sort_name", primaryName);
+        } else {
+            recordJS.put("agent_type", "agent_corporate_entity");
+            namesJS.put("primary_name", primaryName);
+            namesJS.put("sort_name", primaryName);
+        }
+
+        // add the names array and names json objects to main record
+        namesJA.put(namesJS);
+        recordJS.put("names", namesJA);
 
         return recordJS;
     }

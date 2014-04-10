@@ -3,6 +3,7 @@ package org.nyu.edu.dlts.utils;
 import org.nyu.edu.dlts.dbCopyFrame;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 

@@ -31,7 +31,7 @@ import java.io.StringWriter;
  * @author Nathan Stevens
  */
 public class dbCopyFrame extends JFrame {
-    public static final String VERSION = "Archives Space Excel Data Migrator v0.4.0 (04-09-2014)";
+    public static final String VERSION = "Archives Space Excel Data Migrator v0.4.0 (04-10-2014)";
 
     // used for viewing the mapper scripts
     private CodeViewerDialog codeViewerDialogBeanshell;
@@ -73,17 +73,35 @@ public class dbCopyFrame extends JFrame {
     public dbCopyFrame() {
         initComponents();
         setTitle(VERSION);
-        setSampleDataFilename();
+        setSampleDataFilename(null);
     }
 
     /**
-     * Assume we running in the same directory as the jar file
+     * Assume we running in the same directory the java binary was executed from
      */
-
-    private void setSampleDataFilename() {
+    private void setSampleDataFilename(String dataFilename) {
         String currentDirectory  = System.getProperty("user.dir");
-        String excelFilename = currentDirectory +"/sample_data/Sample Ingest Data.xlsx";
+
+        String excelFilename = "";
+        if(dataFilename == null) {
+            excelFilename = currentDirectory + "/sample_data/Sample Ingest Data.xlsx";
+        } else {
+            excelFilename = dataFilename;
+        }
+
         excelTextField.setText(excelFilename);
+    }
+
+    /**
+     * A convenience method used during deveopement to load a different data file and mapper script
+     *
+     * @param mapperScriptFilename
+     * @param dataFilename
+     */
+    public void setSampleDataAndMapperScriptFilename(String dataFilename, String mapperScriptFilename) {
+        setSampleDataFilename(dataFilename);
+        mapperScriptTextField.setText(mapperScriptFilename);
+        loadMapperScript();
     }
 
     /**
@@ -1196,6 +1214,14 @@ public class dbCopyFrame extends JFrame {
      */
     public static void main(String[] args) {
         dbCopyFrame frame = new dbCopyFrame();
+
+        /* START OF DEBUG CODE */
+        String currentDirectory  = System.getProperty("user.dir");
+        String excelFilename = currentDirectory +"/sample_data/Sample_WGC--Mapped.xlsx";
+        String mapperScriptFilename = currentDirectory + "/src/org/nyu/edu/dlts/scripts/accession_mapper.bsh";
+        frame.setSampleDataAndMapperScriptFilename(excelFilename, mapperScriptFilename);
+        /* END OF DEBUG */
+
         frame.pack();
         frame.setVisible(true);
     }

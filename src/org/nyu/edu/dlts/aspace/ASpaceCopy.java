@@ -344,6 +344,38 @@ public class ASpaceCopy implements PrintConsole {
     }
 
     /**
+     * Method to copy a single subject record
+     *
+     * @param source
+     * @param termType
+     * @param terms
+     */
+    public String copySubject(String source, String termType, String terms) throws Exception {
+        print("Copying Subject record ...");
+
+        // first check to see if this subject doesn't already exist
+        if(subjectURIMap.containsKey(terms)) {
+            return subjectURIMap.get(terms);
+        }
+
+        JSONObject recordJS = mapper.createSubject(source, termType, terms);
+        String jsonText = recordJS.toString();
+
+        String id = saveRecord(ASpaceClient.SUBJECT_ENDPOINT, jsonText, "Subject->" + terms);
+        String uri = null;
+
+        if (!id.equalsIgnoreCase(NO_ID)) {
+            uri = ASpaceClient.SUBJECT_ENDPOINT + "/" + id;
+            subjectURIMap.put(terms, uri);
+            print("Copied Subject: " + terms + " :: " + id);
+        } else {
+            print("Fail -- Subject: " + terms);
+        }
+
+        return uri;
+    }
+
+    /**
      * Method to copy the subject records
      *
      * @throws Exception
@@ -389,6 +421,52 @@ public class ASpaceCopy implements PrintConsole {
 
         // refresh the database connection to prevent heap space error
         freeMemory();
+    }
+
+    /**
+     * Method to create a simple name record
+     *
+     * @param nameType
+     * @param primaryName
+     * @param source
+     * @return
+     */
+    public String copyNameRecord(String nameType, String primaryName, String source) throws Exception {
+        print("Copying Name record ...");
+
+        // first check to see if this name doesn't already exist
+        if(nameURIMap.containsKey(primaryName)) {
+            return nameURIMap.get(primaryName);
+        }
+
+        JSONObject recordJS = mapper.createName(nameType, primaryName, source);
+
+        String jsonText = recordJS.toString();
+
+        // based on the type of name copy to the correct location
+        String type = recordJS.getString("agent_type");
+        String id;
+        String uri;
+
+        if (type.equals("agent_person")) {
+            id = saveRecord(ASpaceClient.AGENT_PEOPLE_ENDPOINT, jsonText, "Name_Person->" + primaryName);
+            uri = ASpaceClient.AGENT_PEOPLE_ENDPOINT + "/" + id;
+        } else if (type.equals("agent_family")) {
+            id = saveRecord(ASpaceClient.AGENT_FAMILY_ENDPOINT, jsonText, "Name_Family->" + primaryName);
+            uri = ASpaceClient.AGENT_FAMILY_ENDPOINT + "/" + id;
+        } else { // must be a corporate name
+            id = saveRecord(ASpaceClient.AGENT_CORPORATE_ENTITY_ENDPOINT, jsonText, "Name_Corporate->" + primaryName);
+            uri = ASpaceClient.AGENT_CORPORATE_ENTITY_ENDPOINT + "/" + id;
+        }
+
+        if (!id.equalsIgnoreCase(NO_ID)) {
+            nameURIMap.put(primaryName, uri);
+            print("Copied Name: " + primaryName + " :: " + id);
+        } else {
+            print("Failed -- Name: " + primaryName);
+        }
+
+        return uri;
     }
 
     /**
@@ -882,6 +960,39 @@ public class ASpaceCopy implements PrintConsole {
     }
 
     /**
+     * Method to create and add a single subject record
+     *
+     * @param recordJS
+     * @param source
+     * @param termType
+     * @param terms
+     * @throws Exception
+     */
+    public void createAndAddSubject(JSONObject recordJS, String source, String termType, String terms) throws Exception {
+        // get or create the JSONArray which hold the subject link.
+        JSONArray subjectsJA = new JSONArray();
+
+        if(recordJS.has("subjects")) {
+            subjectsJA = recordJS.getJSONArray("subjects");
+        }
+
+        String subjectURI = copySubject(source, termType, terms);
+
+        if (subjectURI != null) {
+            subjectsJA.put(MapperUtil.getReferenceObject(subjectURI));
+
+            if (debug) print("Added subject to record");
+        } else {
+            print("No mapped subject found ...");
+        }
+
+        // if we had any subjects add them parent json record
+        if (subjectsJA.length() != 0) {
+            recordJS.put("subjects", subjectsJA);
+        }
+    }
+
+    /**
      * Add the names to the ASpace record
      *
      * @param recordId
@@ -918,6 +1029,42 @@ public class ASpaceCopy implements PrintConsole {
             } else {
                 print("No mapped name found ...");
             }
+        }
+
+        // if we had any subjects add them parent json record
+        if (linkedAgentsJA.length() != 0) {
+            recordJS.put("linked_agents", linkedAgentsJA);
+        }
+    }
+
+    /**
+     * Method to create and link a single name record
+     *
+     * @param recordJS
+     * @param role
+     * @param nameType
+     * @param primaryName
+     * @param source
+     */
+    public void createAndAddName(JSONObject recordJS, String role, String nameType, String primaryName, String source) throws Exception {
+        // get or create the JSONArray which hold the name link.
+        JSONArray linkedAgentsJA = new JSONArray();
+        if(recordJS.has("linked_agents")) {
+            linkedAgentsJA = recordJS.getJSONArray("linked_agents");
+        }
+
+        String nameURI = copyNameRecord(nameType, primaryName, source);
+        if (nameURI != null) {
+            JSONObject linkedAgentJS = new JSONObject();
+
+            linkedAgentJS.put("role", role);
+            linkedAgentJS.put("ref", nameURI);
+
+            linkedAgentsJA.put(linkedAgentJS);
+
+            if (debug) print("Added name to record ...");
+        } else {
+            print("Unable to create name ...");
         }
 
         // if we had any subjects add them parent json record
@@ -1629,22 +1776,20 @@ public class ASpaceCopy implements PrintConsole {
     public static void main(String[] args) throws JSONException {
         String currentDirectory  = System.getProperty("user.dir");
 
-        File excelFile = new File(currentDirectory +"/sample_data/Sample Ingest Data.xlsx");
+        //File excelFile = new File(currentDirectory +"/sample_data/Sample Ingest Data.xlsx");
+        File excelFile = new File(currentDirectory +"/sample_data/Sample_WGC--Mapped.xlsx");
 
-        File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.bsh");
+        //File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.bsh");
+        File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/accession_mapper.bsh");
         File jriMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.rb");
         File pyiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.py");
         File jsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.js");
 
         ASpaceCopy aspaceCopy = new ASpaceCopy("http://localhost:8089", "admin", "admin");
-        aspaceCopy.getSession();
-
-        //aspaceCopy.setSimulateRESTCalls(true);
+        aspaceCopy.setSimulateRESTCalls(true);
+        //aspaceCopy.getSession();
 
         try {
-            // test add custom extent data
-            MapperUtil.addExtent(new JSONArray(), "whole", "1.5", "Custom Extent 1");
-
             // load the mapper scripts
             String bsiMapperScript = FileManager.readTextData(bsiMapperScriptFile);
             String jriMapperScript = FileManager.readTextData(jriMapperScriptFile);
@@ -1655,7 +1800,7 @@ public class ASpaceCopy implements PrintConsole {
             /**
              * Create a new instance for HSSFWorkBook Class
              */
-            /*
+
             System.out.println("Loading excel file " + excelFile);
 
             // set the work book
@@ -1669,7 +1814,7 @@ public class ASpaceCopy implements PrintConsole {
             aspaceCopy.setMapperScriptType(ASpaceMapper.BEANSHELL_SCRIPT);
             aspaceCopy.setMapperScript(bsiMapperScript);
 
-            System.out.println("\n\n");
+            /*System.out.println("\n\n");
             aspaceCopy.copyLocationRecords(0);
 
             System.out.println("\n\n");
@@ -1677,10 +1822,13 @@ public class ASpaceCopy implements PrintConsole {
 
             System.out.println("\n\n");
             aspaceCopy.copyNameRecords(2);
+            */
 
             System.out.println("\n\n");
-            aspaceCopy.copyAccessionRecords(3);
+            //aspaceCopy.copyAccessionRecords(3);
+            aspaceCopy.copyAccessionRecords(2);
 
+            /*
             System.out.println("\n\n");
             aspaceCopy.copyDigitalObjectRecords(4);
 
