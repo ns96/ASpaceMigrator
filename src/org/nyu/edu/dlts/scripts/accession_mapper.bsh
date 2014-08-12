@@ -77,6 +77,8 @@ void convertAccession() {
 		name = getCellData('K');
 		source = getCellData('I');
 		MapperUtil.addName(recordJS, role, nameType, name, source);
+	} else {
+		
 	}
 	
 	// add the description and general note

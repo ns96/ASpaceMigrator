@@ -14,7 +14,6 @@ import org.python.util.PythonInterpreter;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -161,28 +160,32 @@ public class ASpaceMapper {
      * @param recordJS
      * @return
      */
-    private void runInterpreter(XSSFRow headerRow, XSSFRow record, JSONObject recordJS, String recordType) throws EvalError, ScriptException {
+    private void runInterpreter(Object headerRow, Object record, Object childRecord, JSONObject recordJS, String recordType) throws EvalError, ScriptException {
         if (bsi != null) {
             bsi.set("header", headerRow);
             bsi.set("record", record);
+            bsi.set("childRecord", childRecord);
             bsi.set("recordJS", recordJS);
             bsi.set("recordType", recordType);
             bsi.eval(mapperScript);
         } else if(jri != null) {
             jri.put("header", headerRow);
             jri.put("record", record);
+            jri.put("childRecord", childRecord);
             jri.put("recordJS", recordJS);
             jri.put("recordType", recordType);
             jri.eval(mapperScript);
         } else if(pyi != null) {
             pyi.set("header", headerRow);
             pyi.set("record", record);
+            pyi.set("childRecord", childRecord);
             pyi.set("recordJS", recordJS);
             pyi.set("recordType", recordType);
             pyi.exec(mapperScript);
         } else if(jsi != null) {
             jsi.put("header", headerRow);
             jsi.put("record", record);
+            jsi.put("childRecord", childRecord);
             jsi.put("recordJS", recordJS);
             jsi.put("recordType", recordType);
             jsi.eval(mapperScript);
@@ -281,7 +284,7 @@ public class ASpaceMapper {
         String recordId = record.getCell(0).toString().replace(".0", "");
         MapperUtil.addExternalId(recordId, recordJS, "location");
 
-        runInterpreter(header, record, recordJS, "location");
+        runInterpreter(header, record, null, recordJS, "location");
 
         return recordJS;
     }
@@ -296,6 +299,19 @@ public class ASpaceMapper {
      * @throws Exception
      */
     public JSONObject convertSubject(XSSFRow header, XSSFRow record) throws Exception {
+        return convertSubject(header, record, null);
+    }
+
+    /**
+     * Method to convert a subject record
+     *
+     *
+     * @param record
+     * @param header
+     * @return
+     * @throws Exception
+     */
+    public JSONObject convertSubject(XSSFRow header, XSSFRow record, XSSFRow childRecord) throws Exception {
         // Main json object
         JSONObject recordJS = new JSONObject();
         recordJS.put("vocabulary", vocabularyURI);
@@ -304,7 +320,7 @@ public class ASpaceMapper {
         String recordId = record.getCell(0).toString().replace(".0", "");
         MapperUtil.addExternalId(recordId, recordJS, "subject");
 
-        runInterpreter(header, record, recordJS, "subject");
+        runInterpreter(header, record, childRecord, recordJS, "subject");
 
         return recordJS;
     }
@@ -354,14 +370,18 @@ public class ASpaceMapper {
      * @throws Exception
      */
     public JSONObject convertName(XSSFRow header, XSSFRow record) throws Exception {
+        String recordId = record.getCell(0).toString().replace(".0", "");
+        return convertName(header, record, null, recordId);
+    }
+
+    public JSONObject convertName(Object header, Object record, Object childRecord, String recordId) throws Exception {
         // Main json object
         JSONObject recordJS = new JSONObject();
 
-        // add the record Id as an external ID
-        String recordId = record.getCell(0).toString().replace(".0", "");
+        // add the record Id as an external ID;
         MapperUtil.addExternalId(recordId, recordJS, "name");
 
-        runInterpreter(header, record, recordJS, "name");
+        runInterpreter(header, record, childRecord, recordJS, "name");
 
         return recordJS;
     }
@@ -426,14 +446,26 @@ public class ASpaceMapper {
      * @throws Exception
      */
     public JSONObject convertAccession(XSSFRow header, XSSFRow record) throws Exception {
+        String recordId = record.getCell(0).toString().replace(".0", "");
+        return convertAccession(header, record, null, recordId);
+    }
+
+    /**
+     * Method to convert an accession record
+     *
+     * @param  header
+     * @param record
+     * @return
+     * @throws Exception
+     */
+    public JSONObject convertAccession(Object header, Object record, Object childRecord, String recordId) throws Exception {
         // Main json object
         JSONObject recordJS = new JSONObject();
 
         // add the record Id as an external ID
-        String recordId = record.getCell(0).toString().replace(".0", "");
         MapperUtil.addExternalId(recordId, recordJS, "accession");
 
-        runInterpreter(header, record, recordJS, "accession");
+        runInterpreter(header, record, childRecord, recordJS, "accession");
 
         if(makeUnique) {
             recordJS.put("id_0", randomString.nextString());
@@ -453,6 +485,17 @@ public class ASpaceMapper {
      * @return
      */
     public JSONObject convertDigitalObject(XSSFRow header, XSSFRow record) throws Exception {
+        return convertDigitalObject(header, record, null);
+    }
+
+    /**
+     * Method to convert a digital object record
+     *
+     * @param header
+     * @param record
+     * @return
+     */
+    public JSONObject convertDigitalObject(XSSFRow header, XSSFRow record, XSSFRow childRecord) throws Exception {
         // Main json object
         JSONObject recordJS = new JSONObject();
 
@@ -460,7 +503,7 @@ public class ASpaceMapper {
         String recordId = record.getCell(0).toString().replace(".0", "");
         MapperUtil.addExternalId(recordId, recordJS, "digitalObject");
 
-        runInterpreter(header, record, recordJS, "digitalObject");
+        runInterpreter(header, record, childRecord, recordJS, "digitalObject");
 
         if(makeUnique) {
             recordJS.put("digital_object_id", "Digital Object ID ##" + randomString.nextString());
@@ -479,7 +522,7 @@ public class ASpaceMapper {
         // Main json object
         JSONObject recordJS = new JSONObject();
 
-        runInterpreter(header, record, recordJS, "digitalObjectComponent");
+        runInterpreter(header, record, null, recordJS, "digitalObjectComponent");
 
         if(makeUnique) {
             recordJS.put("component_id", "DO Component ID ##" + randomString.nextString());
@@ -499,14 +542,27 @@ public class ASpaceMapper {
      * @throws Exception
      */
     public JSONObject convertResource(XSSFRow header, XSSFRow record) throws Exception {
+        String recordId = record.getCell(0).toString().replace(".0", "");
+        return convertResource(header, record, null, recordId);
+    }
+
+    /**
+     * Method to convert an resource record to json ASpace JSON
+     *
+     * @param header
+     * @param record
+     *
+     * @return
+     * @throws Exception
+     */
+    public JSONObject convertResource(Object header, Object record, Object childRecord, String recordId) throws Exception {
         // Main json object
         JSONObject recordJS = new JSONObject();
 
         // add the record Id as an external ID
-        String recordId = record.getCell(0).toString().replace(".0", "");
         MapperUtil.addExternalId(recordId, recordJS, "resource");
 
-        runInterpreter(header, record, recordJS, "resource");
+        runInterpreter(header, record, childRecord, recordJS, "resource");
 
         if(makeUnique) {
             recordJS.put("id_0", randomString.nextString());
@@ -527,14 +583,27 @@ public class ASpaceMapper {
      * @throws Exception
      */
     public JSONObject convertResourceComponent(XSSFRow header, XSSFRow record) throws Exception {
+        String recordId = record.getCell(0).toString().replace(".0", "");
+        return convertResourceComponent(header, record, null, recordId);
+    }
+
+    /**
+     * Method to convert an resource component record to json ASpace JSON
+     *
+     * @param header
+     * @param record
+     * @param childRecord
+     * @return
+     * @throws Exception
+     */
+    public JSONObject convertResourceComponent(Object header, Object record, Object childRecord, String recordId) throws Exception {
         // Main json object
         JSONObject recordJS = new JSONObject();
 
         // add the record Id as an external ID
-        String recordId = record.getCell(0).toString().replace(".0", "");
         MapperUtil.addExternalId(recordId, recordJS, "resourceComponent");
 
-        runInterpreter(header, record, recordJS, "resourceComponent");
+        runInterpreter(header, record, childRecord, recordJS, "resourceComponent");
 
         if(makeUnique) {
             recordJS.put("component_id", "Component ID ##" + randomString.nextString());

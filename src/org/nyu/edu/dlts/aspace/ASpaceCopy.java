@@ -1,5 +1,8 @@
 package org.nyu.edu.dlts.aspace;
 
+import com.db4o.Db4oEmbedded;
+import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -9,6 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.nyu.edu.dlts.dbCopyFrame;
+import org.nyu.edu.dlts.models.RowRecord;
 import org.nyu.edu.dlts.models.RelatedRowData;
 import org.nyu.edu.dlts.utils.*;
 
@@ -18,6 +22,7 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,48 +34,51 @@ import java.util.Iterator;
  * Utility class for copying data from to Archives Space
  */
 public class ASpaceCopy implements PrintConsole {
+    // the db4o dtatabase for caching excel row records
+    protected ObjectContainer db;
+
     // String to indicate when no ids where return from aspace backend
-    private final String NO_ID = "no id assigned";
+    protected final String NO_ID = "no id assigned";
 
     // the excell workbook object containing all the data
     private XSSFWorkbook workBook = null;
 
     // used to create the Archive Space JSON data
-    private ASpaceMapper mapper;
+    protected ASpaceMapper mapper;
 
     // used to make REST calls to archive space backend service
-    private ASpaceClient aspaceClient = null;
+    protected ASpaceClient aspaceClient = null;
 
     // hashmap that maps repository from old database with copy in new database
-    private HashMap<String, String> repositoryURIMap = new HashMap<String, String>();
+    protected HashMap<String, String> repositoryURIMap = new HashMap<String, String>();
 
     // hasmap to store the repo agents for use in creating event objects
-    private HashMap<String, String> repositoryAgentURIMap = new HashMap<String, String>();
+    protected HashMap<String, String> repositoryAgentURIMap = new HashMap<String, String>();
 
     // hashmap that stores the repository groups from the archive space database
-    private HashMap<String, JSONObject> repositoryGroupURIMap = new HashMap<String, JSONObject>();
+    protected HashMap<String, JSONObject> repositoryGroupURIMap = new HashMap<String, JSONObject>();
 
     // hashmap that maps location from the old database with copy in new database
-    private HashMap<String, String> locationURIMap = new HashMap<String, String>();
+    protected HashMap<String, String> locationURIMap = new HashMap<String, String>();
 
     // hashmap that maps subjects from old database with copy in new database
-    private HashMap<String, String> subjectURIMap = new HashMap<String, String>();
+    protected HashMap<String, String> subjectURIMap = new HashMap<String, String>();
 
     // hashmap that maps names from old database with copy in new database
-    private HashMap<String, String> nameURIMap = new HashMap<String, String>();
+    protected HashMap<String, String> nameURIMap = new HashMap<String, String>();
 
     // hashmap that maps accessions from old database with copy in new database
-    private HashMap<String, String> accessionURIMap = new HashMap<String, String>();
+    protected HashMap<String, String> accessionURIMap = new HashMap<String, String>();
 
     // hashmap that maps digital objects from old database with copy in new database
-    private HashMap<String, String> digitalObjectURIMap = new HashMap<String, String>();
+    protected HashMap<String, String> digitalObjectURIMap = new HashMap<String, String>();
 
     // hashmap that stores the converted digital objects so that they can be save to the correct repo
     // when saving the collection content
-    private HashMap<String, ArrayList<JSONArray>> digitalObjectMap = new HashMap<String, ArrayList<JSONArray>>();
+    protected HashMap<String, ArrayList<JSONArray>> digitalObjectMap = new HashMap<String, ArrayList<JSONArray>>();
 
     // hashmap that maps resource from old database with copy in new database
-    private HashMap<String, String> resourceURIMap = new HashMap<String, String>();
+    protected HashMap<String, String> resourceURIMap = new HashMap<String, String>();
 
     // stop watch object for keeping tract of time
     private StopWatch stopWatch = null;
@@ -79,8 +87,8 @@ public class ASpaceCopy implements PrintConsole {
     private boolean debug = true;
 
     // specify the current record type and ID in case we have fetal error during migration
-    private String currentRecordType = "";
-    private String currentRecordIdentifier = "";
+    protected String currentRecordType = "";
+    protected String currentRecordIdentifier = "";
 
     // These fields are used to track of the number of messages posted to the output console
     // in order to prevent memory usage errors
@@ -100,10 +108,10 @@ public class ASpaceCopy implements PrintConsole {
     private JLabel errorCountLabel;
 
     // used to specify the stop the copying process. Only get checked when copying resources
-    private boolean stopCopy = false;
+    protected boolean stopCopy = false;
 
     // used to specified the the copying process is running
-    private boolean copying = false;
+    protected boolean copying = false;
 
     /* Variables used to save URI mapping to file to make data transfer more efficient */
 
@@ -126,12 +134,12 @@ public class ASpaceCopy implements PrintConsole {
     private ArrayList<String> recordTotals = new ArrayList<String>();
 
     // Specifies whether or not to simulate the REST calls
-    private boolean simulateRESTCalls = false;
+    protected boolean simulateRESTCalls = false;
 
     // Specify whether to run in developer mode in which the Names are Subjects records are copied once
     // and the ids for Accessions, Digital Objects, and Resource records are randomized in order to
     // be able to save the same record over and over.
-    private boolean developerMode = false;
+    protected boolean developerMode = false;
 
     // A string builder object to track errors
     private StringBuilder errorBuffer = new StringBuilder();
@@ -143,12 +151,37 @@ public class ASpaceCopy implements PrintConsole {
     private String aspaceInformation = "";
 
     /**
+     * The default constructor
+     */
+    public ASpaceCopy() {
+        init();
+    }
+
+    /**
      * The main constructor, used when running as a stand alone application
      *
      */
     public ASpaceCopy(String host, String admin, String adminPassword) {
         this.aspaceClient = new ASpaceClient(host, admin, adminPassword);
         init();
+    }
+
+    /**
+     * Method to initialize the db4o database file
+     *
+     * @param databaseFilename
+     */
+    public boolean initializeDB4O(String databaseFilename) {
+        boolean createCache = !(new File(databaseFilename).exists());
+        db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), databaseFilename);
+        return createCache;
+    }
+
+    /**
+     * Method to close the db4o database
+     */
+    public void closeDB4O() {
+        db.close();
     }
 
     /**
@@ -631,7 +664,7 @@ public class ASpaceCopy implements PrintConsole {
      * @param accessionJS
      * @param accessionURI
      */
-    private void addAccessionEvents(String recordId, JSONObject accessionJS, String repoURI, String accessionURI) throws Exception {
+    protected void addAccessionEvents(String recordId, JSONObject accessionJS, String repoURI, String accessionURI) throws Exception {
         String uri = repoURI + ASpaceClient.EVENT_ENDPOINT;
         String agentURI = repositoryAgentURIMap.get(repoURI);
 
@@ -932,7 +965,7 @@ public class ASpaceCopy implements PrintConsole {
      * @param recordJS   The json representation of the AT record
      * @throws Exception
      */
-    private void addSubjects(String recordId, JSONObject recordJS) throws Exception {
+    protected void addSubjects(String recordId, JSONObject recordJS) throws Exception {
         // check to see if there are link subjects
         if(!recordJS.has("linked_subjects") || recordJS.getString("linked_subjects").isEmpty()) {
             return;
@@ -999,7 +1032,7 @@ public class ASpaceCopy implements PrintConsole {
      * @param recordJS
      * @throws Exception
      */
-    private void addNames(String recordId, JSONObject recordJS) throws Exception {
+    protected void addNames(String recordId, JSONObject recordJS) throws Exception {
         // check to see if there are link names
         if(!recordJS.has("linked_names") || recordJS.getString("linked_names").isEmpty()) {
             return;
@@ -1080,7 +1113,7 @@ public class ASpaceCopy implements PrintConsole {
      * @param recordId The title or id of the record
      * @throws Exception
      */
-    private void addInstances(String recordId, JSONObject recordJS) throws Exception {
+    protected void addInstances(String recordId, JSONObject recordJS) throws Exception {
         // array to hold the instances
         JSONArray instancesJA = new JSONArray();
 
@@ -1169,7 +1202,7 @@ public class ASpaceCopy implements PrintConsole {
      * @param recordId
      * @param recordJS
      */
-    private void addRelatedAccessions(String recordId, JSONObject recordJS) throws Exception {
+    protected void addRelatedAccessions(String recordId, JSONObject recordJS) throws Exception {
         // check to see if there are link names
         if(!recordJS.has("linked_accessions") || recordJS.getString("linked_accessions").isEmpty()) {
             return;
@@ -1245,6 +1278,30 @@ public class ASpaceCopy implements PrintConsole {
             }
 
             rowNumber++;
+        }
+
+        return rowList;
+    }
+
+    /**
+     * Method to load row data from a sheet which have an ID for the row
+     *
+     * @param xssfSheet
+     * @return
+     */
+    public ArrayList<XSSFRow> getRowData(XSSFSheet xssfSheet) {
+        ArrayList<XSSFRow> rowList = new ArrayList<XSSFRow>();
+
+        Iterator rowIterator = xssfSheet.rowIterator();
+        while (rowIterator.hasNext()) {
+            if (stopCopy) return null;
+
+            XSSFRow xssfRow = (XSSFRow) rowIterator.next();
+            XSSFCell cell = xssfRow.getCell(0);
+
+            if (cell != null && !cell.toString().trim().isEmpty()) {
+                rowList.add(xssfRow);
+            }
         }
 
         return rowList;
@@ -1368,7 +1425,7 @@ public class ASpaceCopy implements PrintConsole {
      * @param oldIdentifier
      * @param uri
      */
-    private void updateResourceURIMap(String oldIdentifier, String uri) {
+    protected void updateResourceURIMap(String oldIdentifier, String uri) {
         resourceURIMap.put(oldIdentifier, uri);
         saveURIMaps();
     }
@@ -1490,7 +1547,7 @@ public class ASpaceCopy implements PrintConsole {
      * @param total
      * @param count
      */
-    private synchronized void updateProgress(String recordType, int total, int count) {
+    protected synchronized void updateProgress(String recordType, int total, int count) {
         if(progressBar == null) return;
 
         if(count == -1) {
@@ -1517,7 +1574,7 @@ public class ASpaceCopy implements PrintConsole {
      * @param total
      * @param success
      */
-    private void updateRecordTotals(String recordType, int total, int success) {
+    protected void updateRecordTotals(String recordType, int total, int success) {
         float percent = (new Float(success)/new Float(total))*100.0f;
         recordTotals.add(recordType + " : " + success + " / " + total + " (" + String.format("%.2f", percent) + "%)");
     }
@@ -1639,6 +1696,106 @@ public class ASpaceCopy implements PrintConsole {
     public void setCopying(boolean copying) {
         this.copying = copying;
     }
+
+/**
+     * Method to cache the row data
+     *
+     * @param recordType
+     * @param xssfSheet
+     */
+    protected void cacheRowRecord(String recordType, XSSFSheet xssfSheet) {
+        if(db == null) return;
+
+        System.out.println("Caching Row Data for " + recordType + " records");
+
+        ArrayList<XSSFRow> rowList = getRowData(xssfSheet);
+        XSSFRow headerRow = rowList.get(0);
+
+        // store the header first
+        String type = recordType + "_header";
+        RowRecord headerRowRecord = new RowRecord(type, "-1", null, convertRowToArrayList(headerRow));
+        db.store(headerRowRecord);
+
+        /**
+         * Iterate the row data of the spreadsheet
+         */
+        for (int i = 1; i < rowList.size(); i++) {
+            if (stopCopy) return;
+
+            XSSFRow xssfRow = rowList.get(i);
+
+            String rowId = getRecordID(xssfRow);
+
+            RowRecord rowRecord = new RowRecord(recordType, rowId, null, convertRowToArrayList(xssfRow));
+            db.store(rowRecord);
+        }
+    }
+
+    /**
+     * Method to convert a row data into an array list
+     */
+    protected ArrayList<String> convertRowToArrayList(XSSFRow xssfRow) {
+        ArrayList<String> record = new ArrayList<String>();
+
+        for (int i = xssfRow.getFirstCellNum(); i <= xssfRow.getLastCellNum(); i++) {
+            XSSFCell xssfCell = xssfRow.getCell(i);
+
+            if(xssfCell != null) {
+                String value = xssfCell.toString().replace(".0", "");
+                record.add(value.trim());
+            } else {
+                record.add("");
+            }
+        }
+
+        return record;
+    }
+
+    /**
+     * Method to return a list of records stored in the db4o database
+     *
+     * @param recordType
+     * @return
+     */
+    protected List<RowRecord> getRowList(String recordType) {
+        RowRecord proto = new RowRecord(recordType, null, null, null);
+        return db.queryByExample(proto);
+    }
+
+    /**
+     * Method to return all row records of certain type and with same parent id
+     *
+     * @param recordType
+     * @param parentId
+     * @return
+     */
+    protected List<RowRecord> getRowList(String recordType, String parentId) {
+        RowRecord proto = new RowRecord(recordType, null, parentId, null);
+        return db.queryByExample(proto);
+    }
+
+    /**
+     * Method to return data for a single row
+     *
+     * @param recordType
+     * @param rowId
+     * @return
+     */
+    protected RowRecord getRowData(String recordType, String rowId) {
+        RowRecord record = null;
+
+        if (rowId != null) {
+            RowRecord proto = new RowRecord(recordType, rowId, null, null);
+            ObjectSet<RowRecord> result = db.queryByExample(proto);
+
+            if (result.hasNext()) {
+                record = result.next();
+            }
+        }
+
+        return record;
+    }
+
 
     /**
      * Method to try and free some memory by refreshing the hibernate session and running GC
