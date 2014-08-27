@@ -1108,6 +1108,9 @@ public class ASpaceCopy implements PrintConsole {
 
     /**
      * Method to add an instance to resource, or resource component record
+     * The format of this information
+     *
+     * instance_type-barcode*-locationid*: type1-indicator1, type2-indicator2, type3-indicator3)
      *
      * @param recordJS
      * @param recordId The title or id of the record

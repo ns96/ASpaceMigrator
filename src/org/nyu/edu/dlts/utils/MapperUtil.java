@@ -349,10 +349,27 @@ public class MapperUtil {
      * @throws Exception
      */
     public static void addExtent(JSONArray extentJA, String portion, String extent, String type) throws Exception {
+        addExtent(extentJA, portion, extent, type, "", "", "");
+    }
+
+    /**
+     * Method to add extent information
+     *
+     * @param extentJA
+     * @param portion
+     * @param type
+     * @param extent
+     * @throws Exception
+     */
+    public static void addExtent(JSONArray extentJA, String portion, String extent, String type,
+                                 String containerSummary, String physicalDetails, String dimensions) throws Exception {
         JSONObject extentJS = new JSONObject();
         extentJS.put("portion", portion);
         extentJS.put("extent_type", normalizeEnumValue("extent_extent_type", type));
         extentJS.put("number", extent);
+        extentJS.put("container_summary", containerSummary);
+        extentJS.put("physical_details", physicalDetails);
+        extentJS.put("dimensions", dimensions);
         extentJA.put(extentJS);
     }
 
@@ -371,16 +388,63 @@ public class MapperUtil {
     }
 
     /**
+     * Method to add date inclusive date that just consist of date expression
+     *
+     * @param dateJA
+     * @param label
+     * @param dateExpression
+     * @throws Exception
+     */
+    public static void addInclusiveDate(JSONArray dateJA, String label, String dateExpression) throws Exception {
+        addInclusiveDate(dateJA, label, dateExpression, "", "");
+    }
+
+    /**
      * Method to add an inclusive date
      * @param dateJA
      * @param begin
      * @param end
      * @throws Exception
      */
-    public static void addInclusiveDate(JSONArray dateJA, String label, String begin, String end) throws Exception {
+    public static void addInclusiveDate(JSONArray dateJA, String label, String dateExpression, String begin, String end) throws Exception {
+        addDate(dateJA, "inclusive", label, dateExpression, begin, end);
+    }
+
+    /**
+     * Method to add date bulk date that just consist of date expression
+     *
+     * @param dateJA
+     * @param label
+     * @param dateExpression
+     * @throws Exception
+     */
+    public static void addBulkDate(JSONArray dateJA, String label, String dateExpression) throws Exception {
+        addBulkDate(dateJA, label, dateExpression, "", "");
+    }
+
+    /**
+     * Method to add an bulk date
+     * @param dateJA
+     * @param begin
+     * @param end
+     * @throws Exception
+     */
+    public static void addBulkDate(JSONArray dateJA, String label, String dateExpression, String begin, String end) throws Exception {
+        addDate(dateJA, "bulk", label, dateExpression, begin, end);
+    }
+
+    /**
+     * Method to add a date object to the dates array
+     * @param dateJA
+     * @param begin
+     * @param end
+     * @throws Exception
+     */
+    public static void addDate(JSONArray dateJA, String dateType, String label, String dateExpression, String begin, String end) throws Exception {
         JSONObject dateJS = new JSONObject();
-        dateJS.put("date_type", "inclusive");
+        dateJS.put("date_type", dateType);
         dateJS.put("label", label);
+        dateJS.put("expression", dateExpression);
         dateJS.put("begin", begin);
         dateJS.put("end", end);
         dateJA.put(dateJS);
@@ -397,6 +461,21 @@ public class MapperUtil {
         documentJS.put("title", title);
         documentJS.put("location", MapperUtil.fixUrl(location));
         externalDocumentsJA.put(documentJS);
+    }
+
+    /**
+     * Add a collection management object
+     *
+     * @param collectionManagementJA
+     * @param catalogedNote
+     * @param processors
+     * @throws Exception
+     */
+    public static void addCollectionManagement(JSONArray collectionManagementJA, String catalogedNote, String processors) throws Exception {
+        JSONObject collectionManagementJS = new JSONObject();
+        collectionManagementJS.put("cataloged_note", catalogedNote);
+        collectionManagementJS.put("processors", processors);
+        collectionManagementJA.put(collectionManagementJS);
     }
 
     /**
@@ -651,6 +730,20 @@ public class MapperUtil {
     }
 
     /**
+     * Method to return the column number given a string character like AA, or BF
+     *
+     * @param column
+     * @return
+     */
+    public static int getColumnNumber(String column) {
+        int num1 = Character.getNumericValue(column.charAt(0)) - 10;
+        int num2 = Character.getNumericValue(column.charAt(1)) - 10;
+        int index = (num1 + 1) * 26 + num2;
+        //System.out.println("Columns " + num1 + ", " + num2 + "  => " + index);
+        return index;
+    }
+
+    /**
      * Method to set a string that's empty to "unspecified"
      * @param text
      * @return
@@ -734,5 +827,16 @@ public class MapperUtil {
         }
 
         return enumValue;
+    }
+
+    /**
+     * Main method for testing
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        getColumnNumber("AA");
+        getColumnNumber("AB");
+        getColumnNumber("FB");
     }
 }

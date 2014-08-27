@@ -593,11 +593,21 @@ public class ASpaceCopyCustom extends ASpaceCopy {
             aspaceCopy.setMapperScriptType(ASpaceMapper.BEANSHELL_SCRIPT);
             aspaceCopy.setMapperScript(bsiMapperScript);
 
+            // first copy the repository record
+            JSONObject repository = new JSONObject();
+
+            repository.put("ShortName", "CLR");
+            repository.put("Name", "College Repository");
+            repository.put("Code", "5555");
+            repository.put("URL", "http://college.edu/repo");
+
+            aspaceCopy.copyRepositoryRecord(repository);
+
             // copy the name records
-            aspaceCopy.copyNameRecords();
+            //aspaceCopy.copyNameRecords();
 
             // copy the accession records
-            aspaceCopy.copyAccessionRecords();
+            //aspaceCopy.copyAccessionRecords();
 
             // copy the resource records
             aspaceCopy.copyResourceRecords();
