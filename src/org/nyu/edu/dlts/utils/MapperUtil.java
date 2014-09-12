@@ -244,22 +244,22 @@ public class MapperUtil {
         JSONObject instanceJS = new JSONObject();
 
         // set the type
-        instanceJS.put("instance_type", normalizeEnumValue("instance_instance_type", instanceType));
+        instanceJS.put("instance_type", updateEnumValue("instance_instance_type", instanceType));
 
         // add the container now
         JSONObject containerJS = new JSONObject();
 
-        containerJS.put("type_1", normalizeEnumValue("container_type", type1));
+        containerJS.put("type_1", updateEnumValue("container_type", type1));
         containerJS.put("indicator_1", indicator1);
         containerJS.put("barcode_1", barcode);
 
         if(!type2.isEmpty()) {
-            containerJS.put("type_2", normalizeEnumValue("container_type", type2));
+            containerJS.put("type_2", updateEnumValue("container_type", type2));
             containerJS.put("indicator_2", indicator2);
         }
 
         if(!type3.isEmpty()) {
-            containerJS.put("type_3", normalizeEnumValue("container_type",type3));
+            containerJS.put("type_3", updateEnumValue("container_type",type3));
             containerJS.put("indicator_3", indicator3);
         }
 
@@ -365,7 +365,7 @@ public class MapperUtil {
                                  String containerSummary, String physicalDetails, String dimensions) throws Exception {
         JSONObject extentJS = new JSONObject();
         extentJS.put("portion", portion);
-        extentJS.put("extent_type", normalizeEnumValue("extent_extent_type", type));
+        extentJS.put("extent_type", updateEnumValue("extent_extent_type", type));
         extentJS.put("number", extent);
         extentJS.put("container_summary", containerSummary);
         extentJS.put("physical_details", physicalDetails);
@@ -512,11 +512,36 @@ public class MapperUtil {
      * @throws Exception
      */
     public static void addMultipartNote(JSONArray notesJA, String noteType, String noteLabel, String noteContent) throws Exception {
+        addMultipartNoteWithType(notesJA, "note_multipart", noteType, noteLabel, noteContent);;
+    }
+
+    /**
+     * Add a multipart note
+     *
+     * @param notesJA
+     * @param noteLabel
+     * @param noteContent
+     * @throws Exception
+     */
+    public static void addBiogHistNote(JSONArray notesJA, String noteLabel, String noteContent) throws Exception {
+        addMultipartNoteWithType(notesJA, "note_bioghist", "", noteLabel, noteContent);
+    }
+
+    /**
+     * Add a multipart note and specify the type
+     *
+     * @param notesJA
+     * @param noteType
+     * @param noteLabel
+     * @param noteContent
+     * @throws Exception
+     */
+    public static void addMultipartNoteWithType(JSONArray notesJA, String jsonModelType, String noteType, String noteLabel, String noteContent) throws Exception {
         if(noteContent.isEmpty()) return;
 
         JSONObject noteJS = new JSONObject();
 
-        noteJS.put("jsonmodel_type", "note_multipart");
+        noteJS.put("jsonmodel_type", jsonModelType);
         noteJS.put("type", noteType);
         noteJS.put("label", noteLabel);
 
@@ -793,13 +818,23 @@ public class MapperUtil {
     }
 
     /**
+     * Method to normalize a enum value
+     *
+     * @param value
+     * @return
+     */
+    public static String normalizeEnumValue(String value) {
+        return value.toLowerCase().replace(" ", "_");
+    }
+
+    /**
      * Method to normalize, and add to the aspace enum list if necessary.
      *
      * @param enumName
      * @param value
      * @return
      */
-    public static String normalizeEnumValue(String enumName, String value) {
+    public static String updateEnumValue(String enumName, String value) {
         String enumValue = value.toLowerCase().replace(" ", "_");
 
         if (dynamicEnums != null) {
@@ -827,6 +862,39 @@ public class MapperUtil {
         }
 
         return enumValue;
+    }
+
+    /**
+     * Method to normalize, and add to the aspace enum list if necessary.
+     *
+     * @param enumName
+     * @return
+     */
+    public static void updateEnumValues(String enumName, ArrayList<String> enumValues) {
+        if (dynamicEnums != null) {
+            JSONObject enumJS = dynamicEnums.get(enumName);
+
+            if (enumJS != null) {
+                try {
+                    JSONArray valuesJA = enumJS.getJSONArray("values");
+
+                    for(String value: enumValues) {
+                        String enumValue = value.toLowerCase().replace(" ", "_");
+
+                        // Do string comparison to see if has the value or not.
+                        // Not the most efficient way to do this, but it works
+                        if (!valuesJA.toString().contains("\"" + enumValue + "\"")) {
+                            valuesJA.put(enumValue);
+                        }
+                    }
+
+                    // update the enum now
+                    aspaceCopy.updateDynamicEnum(enumJS);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     /**

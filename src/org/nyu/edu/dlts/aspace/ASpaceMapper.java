@@ -267,6 +267,24 @@ public class ASpaceMapper {
         return json.toString();
     }
 
+        /**
+     * Method to create a JSONObject used to creating an ASpace repository record
+     *
+     * @return
+     * @throws Exception
+     */
+    public JSONObject createRepository() throws Exception {
+        // Main json object
+        JSONObject recordJS = new JSONObject();
+
+        // add the record Id as an external ID
+        MapperUtil.addExternalId("repository_1", recordJS, "repository");
+
+        runInterpreter(null, null, null, recordJS, "repository");
+
+        return recordJS;
+    }
+
     /**
      * Method to convert a location record
      *

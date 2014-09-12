@@ -15,6 +15,7 @@ import org.nyu.edu.dlts.utils.MapperUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -36,6 +37,9 @@ public class ASpaceCopyCustom extends ASpaceCopy {
     public static final String SERIES_TYPE = "series";
     public static final String BOX_TYPE = "box";
     public static final String FILE_TYPE = "file";
+
+    // hashmap that stores the related accession for resource records
+    private HashMap<String, ArrayList<String>> relatedAccessionsMap = new HashMap<String, ArrayList<String>>();
 
     // field used for creation of unique ids
     private int nextId = 0;
@@ -64,6 +68,16 @@ public class ASpaceCopyCustom extends ASpaceCopy {
     }
 
     /**
+     * Method to create repository
+     *
+     * @throws Exception
+     */
+    public void createRepository() throws Exception {
+        JSONObject repository = mapper.createRepository();
+        copyRepositoryRecord(repository);
+    }
+
+    /**
      * Method to create a new workbook containing information for creation of agent records
      *
      * @return
@@ -86,6 +100,9 @@ public class ASpaceCopyCustom extends ASpaceCopy {
          */
         for (RowRecord record: rowList) {
             if (stopCopy) return;
+
+            /* DEBUG */
+            //if(count >= 10) return;
 
             String rowId = record.getRowId();
             String recordId = "Creator_" + rowId;
@@ -174,6 +191,9 @@ public class ASpaceCopyCustom extends ASpaceCopy {
         for (RowRecord rowRecord : rowList) {
             if (stopCopy) return;
 
+            /* DEBUG */
+            //if(count >= 10) return;
+
             String recordId = rowRecord.getValue(0);
 
             JSONObject accessionJS = mapper.convertAccession(null, rowRecord, null, recordId);
@@ -194,7 +214,11 @@ public class ASpaceCopyCustom extends ASpaceCopy {
                 // now add the event objects
                 addAccessionEvents(recordId, accessionJS, repoURI, uri);
 
+                // store the related resources information
+                storeRelatedAccessionsInformation(uri, accessionJS);
+
                 accessionURIMap.put(recordId, uri);
+
                 print("Copied Accession: " + recordId + " :: " + id);
                 success++;
             } else {
@@ -206,6 +230,57 @@ public class ASpaceCopyCustom extends ASpaceCopy {
         }
 
         updateRecordTotals("Accessions", total, success);
+    }
+
+    /**
+     * Method to add a dummy instance to the accession json object in order to store
+     * the location information
+     *
+     * @param recordJS
+     * @throws Exception
+     */
+    public void storeRelatedAccessionsInformation(String accessionURI, JSONObject recordJS) throws Exception {
+        // check to see if there are link subjects
+        if(!recordJS.has("related_resource") || recordJS.getString("related_resource").isEmpty()) {
+            return;
+        }
+
+        String resourceId = recordJS.getString("related_resource").toUpperCase();
+
+        // get the array list containing the accession URI or make a new one if needed
+        ArrayList<String> accessionURIs = relatedAccessionsMap.get(resourceId);
+        if(accessionURIs == null) {
+            accessionURIs = new ArrayList<String>();
+            accessionURIs.add(accessionURI);
+            relatedAccessionsMap.put(resourceId, accessionURIs);
+        } else {
+            accessionURIs.add(accessionURI);
+        }
+    }
+
+    /**
+     * Method to add a related accessions to a resource record
+     *
+     * @param recordId
+     * @param recordJS
+     */
+    protected void addRelatedAccessions(String recordId, JSONObject recordJS) throws Exception {
+        // check to see if there are any related accessions
+        if(!relatedAccessionsMap.containsKey(recordId)) {
+            return;
+        }
+
+        JSONArray accessionsJA = new JSONArray();
+
+        recordId = recordId.toUpperCase();
+        ArrayList<String> accessionsURIs = relatedAccessionsMap.get(recordId);
+
+        for(String accessionURI: accessionsURIs) {
+            accessionsJA.put(MapperUtil.getReferenceObject(accessionURI));
+            if (debug) print("Added Accession to Resource: " + recordId);
+        }
+
+        recordJS.put("related_accessions", accessionsJA);
     }
 
     /**
@@ -290,7 +365,7 @@ public class ASpaceCopyCustom extends ASpaceCopy {
             addInstances(recordId, resourceJS);
 
             // add the linked accessions
-            addRelatedAccessions(recordId, resourceJS);
+            addRelatedAccessions(resourceJS.getString("id_0"), resourceJS);
 
             // add the resource to the batch array now
             batchJA.put(resourceJS);
@@ -395,6 +470,7 @@ public class ASpaceCopyCustom extends ASpaceCopy {
             if (stopCopy) return;
 
             String boxId = rowRecord.getValue(0);
+            String boxNumber = rowRecord.getValue(2);
             String uniqueId = rowRecord.getUniqueId();
             String fullPath = parentPath + "->(" + uniqueId + ") " + boxId;
 
@@ -425,12 +501,13 @@ public class ASpaceCopyCustom extends ASpaceCopy {
             print("Copied Box Level Component: " + componentTitle + " :: " + cId + "\n");
 
             // copy any box records
-            copyFileRecords(batchJA, aoEndpoint, boxId, resourceURI, cURI, fullPath);
+            copyFileRecords(batchJA, aoEndpoint, boxId, resourceURI, cURI, fullPath, boxNumber);
         }
     }
 
     /**
      * Method to copy file level record
+     *
      *
      * @param batchJA
      * @param aoEndpoint
@@ -438,10 +515,11 @@ public class ASpaceCopyCustom extends ASpaceCopy {
      * @param resourceURI
      * @param parentURI
      * @param parentPath
+     * @param boxNumber
      * @throws Exception
      */
     private void copyFileRecords(JSONArray batchJA, String aoEndpoint, String boxId, String resourceURI,
-                                String parentURI, String parentPath) throws Exception {
+                                 String parentURI, String parentPath, String boxNumber) throws Exception {
 
         List<RowRecord> rowList = getRowList(FILE_TYPE, boxId);
 
@@ -454,7 +532,7 @@ public class ASpaceCopyCustom extends ASpaceCopy {
             String cId = uniqueId;
             String cURI = aoEndpoint + "/" + cId;
 
-            JSONObject componentJS = mapper.convertResourceComponent(FILE_TYPE, rowRecord, null, fileId);
+            JSONObject componentJS = mapper.convertResourceComponent(FILE_TYPE, rowRecord, boxNumber, fileId);
 
             componentJS.put("uri", cURI);
             componentJS.put("jsonmodel_type", "archival_object");
@@ -515,29 +593,45 @@ public class ASpaceCopyCustom extends ASpaceCopy {
     }
 
     /**
+     * Method to clean things up and print out any messages
+     */
+    public String getMigrationErrors() {
+        cleanUp();
+
+        String errorCount = "" + getSaveErrorCount();
+        String migrationErrors = getSaveErrorMessages() + "\n\nTotal errors: " + errorCount;
+
+        return migrationErrors;
+    }
+
+
+    /**
      * Method to test the conversion without having to startup the gui
      *
      * @param args
      */
     public static void main(String[] args) throws JSONException {
-        String currentDirectory  = System.getProperty("user.home");
+        String homeDirectory  = System.getProperty("user.home");
 
         // the db40 database filename
-        String databaseFilename = currentDirectory +"/temp/TestData/cacheDatabase.db4o";
+        String databaseFilename = homeDirectory +"/temp/TestData/cacheDatabase.db4o";
 
-        File accessionFile = new File(currentDirectory +"/temp/TestData/Accessions.xlsx");
-        File contactFile = new File(currentDirectory +"/temp/TestData/Contacts.xlsx");
-        File creatorFile = new File(currentDirectory +"/temp/TestData/Creator.xlsx");
-        File collectionFile = new File(currentDirectory +"/temp/TestData/CollectionsTable.xlsx");
-        File seriesFile = new File(currentDirectory +"/temp/TestData/Series.xlsx");
-        File boxFile = new File(currentDirectory +"/temp/TestData/Boxes.xlsx");
-        File fileFile = new File(currentDirectory +"/temp/TestData/Files.xlsx");
+        File logFile = new File(homeDirectory +"/temp/TestData/migrationLog.txt");
 
-        File bsiMapperScriptFile = new File(currentDirectory + "/temp/TestData/mapper.bsh");
+        File accessionFile = new File(homeDirectory +"/temp/TestData/Accessions.xlsx");
+        File contactFile = new File(homeDirectory +"/temp/TestData/Contacts.xlsx");
+        File creatorFile = new File(homeDirectory +"/temp/TestData/Creator.xlsx");
+        File collectionFile = new File(homeDirectory +"/temp/TestData/CollectionsTable.xlsx");
+        File seriesFile = new File(homeDirectory +"/temp/TestData/Series.xlsx");
+        File boxFile = new File(homeDirectory +"/temp/TestData/Boxes.xlsx");
+        File fileFile = new File(homeDirectory +"/temp/TestData/Files.xlsx");
 
-        ASpaceCopyCustom aspaceCopy = new ASpaceCopyCustom("http://localhost:8089", "admin", "admin");
-        aspaceCopy.setSimulateRESTCalls(true);
-        //aspaceCopy.getSession();
+        File bsiMapperScriptFile = new File(homeDirectory + "/temp/TestData/mapper.bsh");
+
+        //ASpaceCopyCustom aspaceCopy = new ASpaceCopyCustom("http://localhost:8089", "admin", "admin");
+        ASpaceCopyCustom aspaceCopy = new ASpaceCopyCustom("http://54.235.231.8:8089", "admin", "admin");
+        //aspaceCopy.setSimulateRESTCalls(true);
+        if (!aspaceCopy.getSession()) System.exit(-100);
 
         try {
             // load the mapper scripts
@@ -593,78 +687,26 @@ public class ASpaceCopyCustom extends ASpaceCopy {
             aspaceCopy.setMapperScriptType(ASpaceMapper.BEANSHELL_SCRIPT);
             aspaceCopy.setMapperScript(bsiMapperScript);
 
-            // first copy the repository record
-            JSONObject repository = new JSONObject();
-
-            repository.put("ShortName", "CLR");
-            repository.put("Name", "College Repository");
-            repository.put("Code", "5555");
-            repository.put("URL", "http://college.edu/repo");
-
-            aspaceCopy.copyRepositoryRecord(repository);
+            // first create and copy the repository record
+            aspaceCopy.createRepository();
 
             // copy the name records
+            System.out.println("\n\n");
             //aspaceCopy.copyNameRecords();
 
             // copy the accession records
+            System.out.println("\n\n");
             //aspaceCopy.copyAccessionRecords();
 
             // copy the resource records
+            System.out.println("\n\n");
             aspaceCopy.copyResourceRecords();
 
-            /*System.out.println("\n\n");
-            aspaceCopy.copyLocationRecords(0);
+            // save the log file
+            String migrationErrors = aspaceCopy.getMigrationErrors();
+            FileManager.saveTextData(logFile,migrationErrors);
 
-            System.out.println("\n\n");
-            aspaceCopy.copySubjectRecords(1);
-
-            System.out.println("\n\n");
-            aspaceCopy.copyNameRecords(2);
-            */
-
-            System.out.println("\n\n");
-            //aspaceCopy.copyAccessionRecords(3);
-            //aspaceCopy.copyAccessionRecords(2);
-
-            /*
-            System.out.println("\n\n");
-            aspaceCopy.copyDigitalObjectRecords(4);
-
-            System.out.println("\n\n");
-            aspaceCopy.copyResourceRecords("5,6");
-
-            System.out.println("\n\nTest mapping excel file using Python\n\n");
-            aspaceCopy.setMapperScriptType(ASpaceMapper.JYTHON_SCRIPT);
-            aspaceCopy.setMapperScript(pyiMapperScript);
-            aspaceCopy.copySubjectRecords(1);
-
-            System.out.println("\n\nTest mapping excel file using Javascript\n\n");
-            aspaceCopy.setMapperScriptType(ASpaceMapper.JAVASCRIPT_SCRIPT);
-            aspaceCopy.setMapperScript(jsiMapperScript);
-            aspaceCopy.copySubjectRecords(1);
-
-            System.out.println("\n\nTest mapping excel file using JRuby\n\n");
-            aspaceCopy.setMapperScriptType(ASpaceMapper.JRUBY_SCRIPT);
-            aspaceCopy.setMapperScript(jriMapperScript);
-
-            System.out.println("\n\n");
-            aspaceCopy.copyLocationRecords(0);
-
-            System.out.println("\n\n");
-            aspaceCopy.copySubjectRecords(1);
-
-            System.out.println("\n\n");
-            aspaceCopy.copyNameRecords(2);
-
-            System.out.println("\n\n");
-            aspaceCopy.copyAccessionRecords(3);
-
-            System.out.println("\n\n");
-            aspaceCopy.copyDigitalObjectRecords(4);
-
-            System.out.println("\n\n");
-            aspaceCopy.copyResourceRecords("5,6");
-            */
+            System.out.println("\n\nMigration Log ...\n" + migrationErrors);
         } catch (Exception e) {
             e.printStackTrace();
         }

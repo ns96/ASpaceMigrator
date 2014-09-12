@@ -84,7 +84,7 @@ public class ASpaceCopy implements PrintConsole {
     private StopWatch stopWatch = null;
 
     // specify debug the boolean
-    private boolean debug = true;
+    protected boolean debug = true;
 
     // specify the current record type and ID in case we have fetal error during migration
     protected String currentRecordType = "";
