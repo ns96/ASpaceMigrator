@@ -32,6 +32,8 @@ public class MapperUtil {
     // used to send errors to the UI and add custom enums
     public static ASpaceCopy aspaceCopy;
 
+    public static String dataSource = "Excel File";
+
     // used when adding dynamic enums
     public static HashMap<String, JSONObject> dynamicEnums;
 
@@ -154,7 +156,7 @@ public class MapperUtil {
      * @param source
      */
     public static void addExternalId(String recordID, JSONObject recordJS, String source) throws Exception {
-        source = "Excel File::" + source.toUpperCase();
+        source = dataSource + " :: " + source.toUpperCase();
 
         // id is always the first cell
         JSONArray externalIdsJA = new JSONArray();

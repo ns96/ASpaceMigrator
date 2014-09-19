@@ -317,7 +317,8 @@ public class ASpaceMapper {
      * @throws Exception
      */
     public JSONObject convertSubject(XSSFRow header, XSSFRow record) throws Exception {
-        return convertSubject(header, record, null);
+        String recordId = record.getCell(0).toString().replace(".0", "");
+        return convertSubject(header, record, null, recordId);
     }
 
     /**
@@ -330,12 +331,25 @@ public class ASpaceMapper {
      * @throws Exception
      */
     public JSONObject convertSubject(XSSFRow header, XSSFRow record, XSSFRow childRecord) throws Exception {
+        String recordId = record.getCell(0).toString().replace(".0", "");
+        return convertSubject(header, record, childRecord, recordId);
+    }
+
+    /**
+     * Method to convert a subject record
+     *
+     *
+     * @param record
+     * @param header
+     * @return
+     * @throws Exception
+     */
+    public JSONObject convertSubject(Object header, Object record, Object childRecord, String recordId) throws Exception {
         // Main json object
         JSONObject recordJS = new JSONObject();
         recordJS.put("vocabulary", vocabularyURI);
 
         // add the record Id as an external ID
-        String recordId = record.getCell(0).toString().replace(".0", "");
         MapperUtil.addExternalId(recordId, recordJS, "subject");
 
         runInterpreter(header, record, childRecord, recordJS, "subject");

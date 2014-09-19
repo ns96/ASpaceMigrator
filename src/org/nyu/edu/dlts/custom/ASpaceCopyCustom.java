@@ -161,8 +161,8 @@ public class ASpaceCopyCustom extends ASpaceCopy {
          * Iterate the row data of the spreadsheet
          */
         for (RowRecord rowRecord : rowList) {
-            String creatorId = rowRecord.getValue(2);
-            String contactId = rowRecord.getValue(1);
+            String creatorId = rowRecord.get(2);
+            String contactId = rowRecord.get(1);
 
             if(!creatorId.isEmpty() && !contactId.isEmpty()) {
                 recordMap.put(creatorId, contactId);
@@ -194,7 +194,7 @@ public class ASpaceCopyCustom extends ASpaceCopy {
             /* DEBUG */
             //if(count >= 10) return;
 
-            String recordId = rowRecord.getValue(0);
+            String recordId = rowRecord.get(0);
 
             JSONObject accessionJS = mapper.convertAccession(null, rowRecord, null, recordId);
 
@@ -411,7 +411,7 @@ public class ASpaceCopyCustom extends ASpaceCopy {
         for (RowRecord rowRecord : rowList) {
             if (stopCopy) return;
 
-            String seriesId = rowRecord.getValue(0);
+            String seriesId = rowRecord.get(0);
             String uniqueId = rowRecord.getUniqueId();
             String fullPath = collectionId + "->(" + uniqueId + ") " + seriesId;
 
@@ -469,8 +469,8 @@ public class ASpaceCopyCustom extends ASpaceCopy {
         for (RowRecord rowRecord : rowList) {
             if (stopCopy) return;
 
-            String boxId = rowRecord.getValue(0);
-            String boxNumber = rowRecord.getValue(2);
+            String boxId = rowRecord.get(0);
+            String boxNumber = rowRecord.get(2);
             String uniqueId = rowRecord.getUniqueId();
             String fullPath = parentPath + "->(" + uniqueId + ") " + boxId;
 
@@ -524,7 +524,7 @@ public class ASpaceCopyCustom extends ASpaceCopy {
         List<RowRecord> rowList = getRowList(FILE_TYPE, boxId);
 
         for (RowRecord rowRecord : rowList) {
-            String fileId = rowRecord.getValue(0);
+            String fileId = rowRecord.get(0);
             String uniqueId = rowRecord.getUniqueId();
             String fullPath = parentPath + "->(" + uniqueId + ") " + fileId;
 
@@ -577,7 +577,7 @@ public class ASpaceCopyCustom extends ASpaceCopy {
         System.out.println("Updating ParentIds: " + recordType + " / " + rowList.size() + " records");
 
         for (RowRecord record : rowList) {
-            String parentId = record.getValue(1);
+            String parentId = record.get(1);
 
             if(!parentId.isEmpty()) {
                 record.setParentRowId(parentId);

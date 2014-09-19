@@ -1761,7 +1761,7 @@ public class ASpaceCopy implements PrintConsole {
      * @return
      */
     protected List<RowRecord> getRowList(String recordType) {
-        RowRecord proto = new RowRecord(recordType, null, null, null);
+        RowRecord proto = new RowRecord(recordType, null, null);
         return db.queryByExample(proto);
     }
 
