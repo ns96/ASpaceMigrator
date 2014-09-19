@@ -1,0 +1,6216 @@
+<?xml version = "1.0" encoding="Windows-1252" standalone="yes"?>
+<VFPData>
+	<xsd:schema id="VFPData" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="VFPData" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="export" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="access">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="accessno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="15"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="accruals">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="acqvalue">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="admin">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="appnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="appraisal">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="appraisor">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="archivist">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="archnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="area">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="associate">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="authorx">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="caption">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="catby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="catdate" type="xsd:date"/>
+								<xsd:element name="cattype">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="17"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="classes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="collection">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="75"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="conddate" type="xsd:date"/>
+								<xsd:element name="condexam">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="condition">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="35"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="condnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="containtxt">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="copies">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="creator">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="credit">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="curvalmax">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="curvalue">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="custodial">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dataset">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="15"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="date">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dateaccum">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="datecreate">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="descdate">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="descrip">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dispdate" type="xsd:date"/>
+								<xsd:element name="dispositn">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dispvalue">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="10"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="earlydate">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="4"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="edition">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="elongitude">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="8"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="event">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhibitno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="7"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhlabel1">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhlabel2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhlabel3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhlabel4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhstart" type="xsd:date"/>
+								<xsd:element name="extent">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="findaid">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="flagdate" type="xsd:dateTime"/>
+								<xsd:element name="flagnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="flagreason">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="genre">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="gparent">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="45"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="group">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="homeloc">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="60"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="imageno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="3"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="inscomp">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="insdate" type="xsd:date"/>
+								<xsd:element name="insets">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="insphone">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="inspremium">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="insrep">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="instrument">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="insvalue">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="9"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="interviewr">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="intvdate" type="xsd:date"/>
+								<xsd:element name="intvlength">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="intvplace">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="intvrest">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="invnby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="invndate" type="xsd:date"/>
+								<xsd:element name="label">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="language">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="latdeg">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="8"/>
+											<xsd:fractionDigits value="6"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="latedate">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="4"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="legal">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="level">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="16"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="link">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="loancond">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="loandue" type="xsd:date"/>
+								<xsd:element name="loaninno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="15"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="loanno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="7"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield1">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield5">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield6">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="longdeg">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="9"/>
+											<xsd:fractionDigits value="6"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="maintcycle">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="10"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="maintdate" type="xsd:date"/>
+								<xsd:element name="maintnote">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="media">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="medium">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="mlanguage">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="narrator">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="narratorid">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="6"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="nlatitude">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="8"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="notes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="objectid">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="objname">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="objname2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="objname3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="objnames">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="oldno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="originals">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="otherno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="parent">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="people">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="physchar">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="pmeridian">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="policyno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="projection">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="pubdate">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="publisher">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="pubnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="pubplace">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="quantity">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recas">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recdate">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="10"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recfrom">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="refcode">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="related">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="relnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="reviewed" type="xsd:date"/>
+								<xsd:element name="rights">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="rules">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="scale">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="series">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="sheets">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="signedform" type="xsd:date"/>
+								<xsd:element name="site">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="siteno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="sitesadded">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="size">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="slatitude">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="8"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="status">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="statusby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="statusdate" type="xsd:date"/>
+								<xsd:element name="sterms">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="subjects">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="system">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempauthor">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempdate" type="xsd:date"/>
+								<xsd:element name="temploc">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempreason">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempuntil">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="10"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="title">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield1">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield5">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield6">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="transcribr">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="transdate" type="xsd:date"/>
+								<xsd:element name="transloc">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf1">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf10">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf11">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf12">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf13">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="12"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf14">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf15">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf16">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="3"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf17">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="3"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf18" type="xsd:date"/>
+								<xsd:element name="udf19" type="xsd:date"/>
+								<xsd:element name="udf2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf20" type="xsd:date"/>
+								<xsd:element name="udf21">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf22">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf5">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf6">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf7">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf8">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf9">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="updated" type="xsd:dateTime"/>
+								<xsd:element name="updatedby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="valuedate" type="xsd:date"/>
+								<xsd:element name="webinclude" type="xsd:boolean"/>
+								<xsd:element name="wlongitude">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="8"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+				<xsd:anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<export>
+		<access>Original may be examined and handled by Archives patrons.  Use of cotton gloves required. No pens, pencils or other writing instruments permitted in the exam area without permission of curator. Original item is in very fragile condition and must be handled carefully. Photocopies are available. </access>
+		<accessno>1999.1</accessno>
+		<accruals>None</accruals>
+		<acqvalue>0</acqvalue>
+		<admin>Ernestine McMillan Hilton was an educator and activist for children's rights from 1940 to 1975. She was active in the local, state, and national PTA.  She served as the president of the Washington State PTA in the late 1960's.  During the period  from 1946 to 1999 Ernestine and Earl L. Hilton owned and operated the Rocky Pine Ranch, a dairy operation near Cheney, WA.</admin>
+		<appnotes/>
+		<appraisal>None</appraisal>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate>Catalog # 85.1.2 - Cheney Museum of History - Unpublished Manuscript by Ernestine McMillan Hilton entitled, Fundraising for Education. 1958.</associate>
+		<authorx/>
+		<caption>Autograph Album Cover</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2000-07-12</catdate>
+		<cattype>Archive</cattype>
+		<classes>Diaries
+McMillan
+</classes>
+		<collection>Rocky Pine Ranch Collection</collection>
+		<conddate>2001-05-19</conddate>
+		<condexam>Wilson, Pat</condexam>
+		<condition>Poor</condition>
+		<condnotes>05/18/2001- Examined.  Damage to item noted.  See Detailed Damage Report. PAT</condnotes>
+		<containtxt/>
+		<copies>Photocopies are available for examination at PastPerfect Museum.</copies>
+		<creator/>
+		<credit>In memory of the pioneers of Spokane County</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<custodial>The autograph album was in the possession of Ernestine McMillan Hilton from 1930 to 1999.  In 1999 the album was transferred to the PastPerfect Museum.  </custodial>
+		<dataset/>
+		<date>1930 ca</date>
+		<dateaccum>1930 - 1933</dateaccum>
+		<datecreate/>
+		<descdate/>
+		<descrip>Folded leather cover with 32 leaves.  This autograph album contains poems and greetings written to Ernestine McMillan by her classmates between 1930 and 1933 while in elementary school. She would have been between 10 and 12 years of age when this autograph album was in use.  The pages of the book are blue, pink, and white and are written on both sides.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1930</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 book - Folded leather cover with 32 leaves</extent>
+		<findaid>See:  Guide to Historical Document Holdings at the PastPerfect  Museum.  1999.</findaid>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>10</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2001-04-11</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1933</latedate>
+		<legal>Transferred by Deed of Gift to the PastPerfect Museum.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 1</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>1999.1.15</objectid>
+		<objname>Album, Autograph</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>Original located in PastPerfect Museum Repository.</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Hilton, Ernestine McMillan</people>
+		<physchar>Folded leather cover with 32 leaves.  The word "Autographe"  is printed in gold script across the front cover.- The pages of the book are blue, pink, and white and have hand-written messages on both sides.  The book measures 16 cm x 12 cm.  The cover is one piece of leather which is folded.  There are two perforations that  match perforations in the leaves.  The book is held together with a brown cord threaded through the holes and tied.</physchar>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>03/01/1999</recdate>
+		<recfrom>Hilton, Earl and Ernestine</recfrom>
+		<refcode>US PPM 1999.1.15</refcode>
+		<related>1999.001.0001 - Photograph of Ernestine McMillan Hilton
+1999.001.0002 - Photograph of Ernestine McMillan Hilton</related>
+		<relnotes/>
+		<reviewed/>
+		<rights>All copyrights have been transferred from the original owner to the PastPerfect Museum without restriction.</rights>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>Stable</status>
+		<statusby>Withers,Blanche</statusby>
+		<statusdate>2000-07-12</statusdate>
+		<sterms>McMillan Family
+Rocky Pine Ranch</sterms>
+		<subjects>Poetry
+Autographs
+</subjects>
+		<system>Archives Cabinet 5 contains diaries, letters, correspondence, and other items that are not parts of a larger fonds or collection.  These items are contained in individual file folders and filed by object name / last name and are in alphabetical order.</system>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Autograph Album of Ernestine McMillan Hilton</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:02:40</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>May be used under supervision in the research room. Cotton gloves required.</access>
+		<accessno>1999.1</accessno>
+		<accruals>None</accruals>
+		<acqvalue>0.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal>None</appraisal>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area>Oregon</area>
+		<associate/>
+		<authorx/>
+		<caption/>
+		<catby>Lufkin, Joseph</catby>
+		<catdate>2000-07-13</catdate>
+		<cattype>Map</cattype>
+		<classes>Transportation
+Maps
+Automobiles
+Travel
+</classes>
+		<collection>PastPerfect Museum Maps Collection</collection>
+		<conddate>2000-07-13</conddate>
+		<condexam>Withers, Blanche</condexam>
+		<condition>Fair</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies>None</copies>
+		<creator/>
+		<credit>In memory of the pioneers of Spokane County</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<custodial/>
+		<dataset/>
+		<date>1923</date>
+		<dateaccum/>
+		<datecreate>1923</datecreate>
+		<descdate/>
+		<descrip>Official Automobile Road Map of the State of Oregon was published in 1923 and shows all through trunk highways and main traveled roads, with mileages.  The map's key shows that paved roads are in red and rock or gravel surfaced roads are in yellow.  The year 1923 appears in the center of the map in red outlined letters 1 1/4" in height.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1923</earlydate>
+		<edition/>
+		<elongitude>124 30'</elongitude>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 page map printed on one side only</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets>In the LL quadrant of the map an inset entitled "FOR THE MOTORIST" lays out the rules of the road.</insets>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2000-07-13</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1923</latedate>
+		<legal>This map belongs to the PastPerfect Museum by deed of gift.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Map Storage Cabinet</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium>Paper</medium>
+		<mlanguage>English</mlanguage>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude>46 20'</nlatitude>
+		<notes/>
+		<objectid>1999.1.16</objectid>
+		<objname>Map</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>PastPerfect Museum Map Collection</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people/>
+		<physchar/>
+		<pmeridian>Greenwich, England</pmeridian>
+		<policyno>65 098 07</policyno>
+		<projection>Unknown</projection>
+		<pubdate>1923</pubdate>
+		<publisher>Oregon State Highway Commission</publisher>
+		<pubnotes/>
+		<pubplace>Salem, OR</pubplace>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>03/01/1999</recdate>
+		<recfrom>Hilton, Earl and Ernestine</recfrom>
+		<refcode>US PPM 1999.1.16</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights>Copyrights remain with the Oregon State Highway Commission</rights>
+		<rules/>
+		<scale>Unknown</scale>
+		<series/>
+		<sheets>1</sheets>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size>22" x 14"</size>
+		<slatitude>42 00'</slatitude>
+		<status>OK</status>
+		<statusby>Lufkin, Joseph</statusby>
+		<statusdate>2000-07-13</statusdate>
+		<sterms/>
+		<subjects>Maps
+Transportation
+Travel
+</subjects>
+		<system>Maps are arrange in the flat file in the following manner:
+Drawer 1 contains topo maps &amp; world maps.
+Drawer 2 contains small scale road maps.
+Drawer 3 contains city maps and plans.
+Drawer 4 contains early historic maps and facsimiles.
+Within the drawers the maps are arranged by object ID number with larger numbers on the top going to smaller numbers at the bottom.</system>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason>Condition report</tempreason>
+		<tempuntil/>
+		<title>State Highway department's Official Automobile Road Map of the State of Oregon Showing All Through Trunk Highways and Main Traveled Roads, With Mileages</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2004-07-07T14:01:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+		<wlongitude>117 10'</wlongitude>
+	</export>
+	<export>
+		<access>Archives visitors may examine the original postcard but it must remain in the mylar sleeve.  Cotton gloves are required.                                                                                                  </access>
+		<accessno>2000.2</accessno>
+		<accruals>N/A</accruals>
+		<acqvalue>2.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal>N/A</appraisal>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption>I'm training for this.</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2001-02-19</catdate>
+		<cattype>Archive</cattype>
+		<classes>War
+Military
+</classes>
+		<collection>PastPerfect Museum Postcard Collection</collection>
+		<conddate>2001-04-11</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Fair</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies>None</copies>
+		<creator/>
+		<credit>In memory of my mother, Rosemary Hollis Kittridge</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>5.00</curvalue>
+		<custodial>This item was received by  Mr. Warner Laurence in June of 1918. It was later acquired by Rosemary Hollis Kittridge who gave it to the PastPerfect Museum by bequest in 2000. </custodial>
+		<dataset/>
+		<date>06/05/1918</date>
+		<dateaccum/>
+		<datecreate/>
+		<descdate/>
+		<descrip>This is a WWI era postcard.  This postcard was manufactured by the Illustrated Postal Card &amp; Novelty Co. of New York.  It depicts an American doughboy apprehending a goose-stepping Kaiser Wilhelm with the inscription, "I'm training for this".   The verso of the card bears this handwritten message; "Hoot Mon Well Warner how are you. Am feeling fine drilling hard every day hope you are feeling the Bluest. Charlie"
+It is addressed to Mr. Warner Laurence 74 Third St. Gloversville, N.Y. The card was post marked in Spartanburg, SC at 5 PM on June 5, 1918.
+</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1918</earlydate>
+		<edition/>
+		<elongitude/>
+		<event>World War I</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 postcard</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>3</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Parr, Mary L.</invnby>
+		<invndate>2001-02-19</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1918</latedate>
+		<legal>All rights are presumed to be with PastPerfect Museum.  The Illustrated Postal Card and Novelty Co. is no longer in business.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Postcard Box 1 of 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2000.2.7</objectid>
+		<objname>Postcard</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>PastPerfect Museum</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people/>
+		<physchar>This postcard is made of two pieces of paper laminated together.   The lamination is separating from he right upper corner. There  is a tear in the middle top area of the card that corresponds to  three thumbtack holes.   See close-up photo.</physchar>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Bequest</recas>
+		<recdate>06/15/2000</recdate>
+		<recfrom>Kittridge, George</recfrom>
+		<refcode>US PPM 2000.2.7</refcode>
+		<related>See other WWI era postcards in the Postcard Collection </related>
+		<relnotes/>
+		<reviewed/>
+		<rights>Reproduction must be approved in writing by the Executive Director of the PastPerfect Museum.</rights>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2001-02-19</statusdate>
+		<sterms/>
+		<subjects>Soldiers
+World War I
+Postcards
+</subjects>
+		<system>This postcard is in the Postcard File / Box 3. Postcards are arranged by subject and by Object ID number. This card is in the World War I subject category.</system>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>I'm training for this</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2013-01-09T10:28:48</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2001-02-19</valuedate>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>Original may be examined and handled by Archives patrons.  Use of cotton gloves required. No pens, pencils or other writing instruments permitted in the exam area without permission of curator.</access>
+		<accessno>2000.1</accessno>
+		<accruals>None</accruals>
+		<acqvalue>0</acqvalue>
+		<admin>Whitman Publishing Company  Racine, Wisconsin. Published 1930.</admin>
+		<appnotes/>
+		<appraisal>None</appraisal>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate>Unknown</associate>
+		<authorx/>
+		<caption>Our Baby</caption>
+		<catby>Tanaka, Jeanie</catby>
+		<catdate>2000-02-21</catdate>
+		<cattype>Archive</cattype>
+		<classes>Diaries
+McWilliams
+</classes>
+		<collection>PastPerfect Museum Archival Collection</collection>
+		<conddate>2000-02-21</conddate>
+		<condexam>Tanaka, Jeanie</condexam>
+		<condition>Fair</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies>None</copies>
+		<creator/>
+		<credit>In memory of Ebenezer J. Carter b.1817 - d.1876.</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<custodial>This item was in the custody of John Lawrence McWilliams until his death in 1998.  It was inherited by his cousin Rose Ellen Carter  at that time.  The item was given by deed of gift to the PastPerfect Museum in 2000.</custodial>
+		<dataset/>
+		<date>1930</date>
+		<dateaccum/>
+		<datecreate>1930-1940</datecreate>
+		<descdate/>
+		<descrip>Baby book published by the Whitman Publishing Company.  The baby book has a green hard cover with gold lettering and 26 pages.  The pages are illustrated with black and white drawings. The book contains handwritten notes about the birth, growth, and progress of John Lawrence McWilliams from 1930 to 1940.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1930</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 Book</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>6</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Tanaka, Jeanie</invnby>
+		<invndate>2000-02-21</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1940</latedate>
+		<legal>All rights reside in PastPerfect Museum</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 1</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2008-12-11</maintdate>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2000.1.5</objectid>
+		<objname>Book, Baby</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>PastPerfect Museum Archives</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>McWilliams, John Lawrence IV</people>
+		<physchar>The baby book has a green hard cover with gold lettering and 26 pages.  The pages are illustrated with black and white drawings. It measures 17 cm x 22 cm.</physchar>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>05/06/2000</recdate>
+		<recfrom>Carter, Rose Ellen</recfrom>
+		<refcode>US PPM 2000.1.5</refcode>
+		<related>See Photographs of other McWilliams Family members:
+2000.003.0004
+2000.003.0006</related>
+		<relnotes/>
+		<reviewed/>
+		<rights>May be reproduced with permission of Executive Director.</rights>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Tanaka, Jeanie</statusby>
+		<statusdate>2000-02-21</statusdate>
+		<sterms>McWilliams Family</sterms>
+		<subjects>Childhood &amp; youth
+Logs
+</subjects>
+		<system>Archives Cabinet 5 contains diaries, letters, correspondence, and other items that are not part of a larger fonds or collection.  These items are contained in individual file folders and filed by object name / last name and are in alphabetical order.
+
+</system>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Our Baby John Lawrence McWilliams</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2013-01-30T12:27:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>Archives patrons may handle original postcard while wearing  cotton gloves.</access>
+		<accessno>2000.2</accessno>
+		<accruals>N/A</accruals>
+		<acqvalue>6.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal>N/A</appraisal>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption>Wishing you a joyous Yule-tide</caption>
+		<catby>Lufkin, Joseph</catby>
+		<catdate>2000-01-21</catdate>
+		<cattype>Archive</cattype>
+		<classes>Correspondence
+Postcard
+Holidays
+</classes>
+		<collection>PastPerfect Museum Postcard Collection</collection>
+		<conddate>2000-06-21</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Stable</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies>None</copies>
+		<creator/>
+		<credit>In memory of my mother, Rosemary Hollis Kittridge</credit>
+		<curvalmax>25.00</curvalmax>
+		<curvalue>12.00</curvalue>
+		<custodial>This item was addressed to Mrs. William Bortner.  It was mailed from Hanover PA. It was acquired by Rosemary Hollis Kittridge in 1977 who gave it to the PastPerfect Museum by bequest in 2000.</custodial>
+		<dataset/>
+		<date>1927</date>
+		<dateaccum/>
+		<datecreate/>
+		<descdate/>
+		<descrip>Christmas greeting postcard illustrated with a window surrounded by a wreath of pointsettias. Greeting reads, "Wishing you a joyous Yule-tide".  The verso of the card has a hand-written message and is addressed to Mr. and Mrs. William Bortner.  The postcard has a 2 cent stamp that was cancelled Dec. 23, 1927 in Hanover, PA.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1927</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 - Postcard</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Allen, Arthur</invnby>
+		<invndate>2008-07-20</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1927</latedate>
+		<legal>All rights are presumed to be with PastPerfect Museum.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>5</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Postcard Box 1 of 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2000.2.1</objectid>
+		<objname>Postcard</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>Original held in the PastPerfect Museum.</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Bortner, William</people>
+		<physchar>5 1/2"  x 3 1/2" white cardstock</physchar>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Bequest</recas>
+		<recdate>06/15/2000</recdate>
+		<recfrom>Kittridge, George</recfrom>
+		<refcode>US PPM 2000.2.1</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights>Reproduction must be approved in writing by the Executive Director of the PastPerfect Museum.</rights>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>On Loan</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2008-07-20</statusdate>
+		<sterms/>
+		<subjects>Holiday
+Christmas
+Postcards
+</subjects>
+		<system>This postcard is in the Postcard File / Box 1. Postcards are arranged by subject and by Object ID number. This card is in the classification Correspondence/Postcard/Holidays.</system>
+		<tempauthor>Hilton, Richard</tempauthor>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-01-15</tempdate>
+		<temploc>Brodheadsville Christmas Museum</temploc>
+		<tempnotes/>
+		<tempreason>On loan</tempreason>
+		<tempuntil>01/15/2012</tempuntil>
+		<title>Wishing you a joyous Yule-tide</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2000-06-21T16:42:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2000-08-26</valuedate>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>Archives patrons may handle original postcard while wearing  cotton gloves.</access>
+		<accessno>2000.2</accessno>
+		<accruals>N/A</accruals>
+		<acqvalue>90.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal>N/A</appraisal>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption>With Wishes for a Happy New Ye</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1998-10-21</catdate>
+		<cattype>Archive</cattype>
+		<classes>Correspondence
+Postcard
+Holidays
+</classes>
+		<collection>PastPerfect Museum Postcard Collection</collection>
+		<conddate>2000-06-21</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies>None</copies>
+		<creator/>
+		<credit>In memory of my mother, Rosemary Hollis Kittridge</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>90.00</curvalue>
+		<custodial>This item was addressed to Mr. Harry Smith of York Springs, PA.  It was acquired by Rosemary Hollis Kittridge in 1989 who gave it to the PastPerfect Museum by bequest in 2000.</custodial>
+		<dataset/>
+		<date>1911</date>
+		<dateaccum/>
+		<datecreate/>
+		<descdate/>
+		<descrip>New Year postcard illustrated with golden horseshoe and a scroll that reads, "With wishes for a happy New Year. PAX".  Verso has hand-written note addressed to Mr. Harry Smith of York Springs, PA.  Maker's mark in lower left corner of verso; "Series 200 G".  On front lower left mark indicated copyright by LSC in 1911. There is no stamp and no postmark indicating that the card was never sent.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1911</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 Postcard</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Allen, Arthur</invnby>
+		<invndate>2008-07-20</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1911</latedate>
+		<legal>All rights are presumed to be with PastPerfect Museum.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 1</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Postcard Box 1 of 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2000.2.2</objectid>
+		<objname>Postcard</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>Original held in the PastPerfect Museum.</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Smith, Harry</people>
+		<physchar>5 1/2"  x 3 1/2" white cardstock</physchar>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Bequest</recas>
+		<recdate>06/15/2000</recdate>
+		<recfrom>Kittridge, George</recfrom>
+		<refcode>US PPM 2000.2.2</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights>Reproduction must be approved in writing by the Executive Director of the PastPerfect Museum.</rights>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2008-07-20</statusdate>
+		<sterms/>
+		<subjects>Holiday
+New Year
+Postcards
+</subjects>
+		<system>This postcard is in the Postcard File / Box 1. Postcards are arranged by subject and by Object ID number. This card is in the classification Correspondence/Postcard/Holidays.</system>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>With wishes for a happy New Year. PAX</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2008-07-20T14:43:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>1998-10-21</valuedate>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>Archives patrons may handle original postcard  while wearing  cotton gloves.</access>
+		<accessno>2000.2</accessno>
+		<accruals>N/A</accruals>
+		<acqvalue>9.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal>N/A</appraisal>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption>Christmas Greetings</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1998-10-21</catdate>
+		<cattype>Archive</cattype>
+		<classes>Correspondence
+Postcard
+Holidays
+</classes>
+		<collection>PastPerfect Museum Postcard Collection</collection>
+		<conddate>2000-06-21</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies>None</copies>
+		<creator/>
+		<credit>In memory of my mother, Rosemary Hollis Kittridge</credit>
+		<curvalmax>20.00</curvalmax>
+		<curvalue>10.00</curvalue>
+		<custodial>This item was addressed to Mrs. Burdette Ellsworth and mailed from Lansing, MI.  It was acquired by Rosemary Hollis Kittridge in 1980 who gave it to the PastPerfect Museum by bequest in 2000.</custodial>
+		<dataset/>
+		<date>1912</date>
+		<dateaccum/>
+		<datecreate/>
+		<descdate/>
+		<descrip>Christmas greeting postcard.  Illustration of snow covered meadow with pine trees through a window with a sprig of holly.  Greeting reads, "CHRISTMAS GREETINGS".  Verso of card has hand-written message addressed to Mrs. Burdette Ellsworth of Cincinnatus, New York.  The stamp has been removed but it was cancelled in Lansing Michigan Dec. 23, 1912.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1912</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 Postcard</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Allen, Arthur</invnby>
+		<invndate>2008-07-20</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1912</latedate>
+		<legal>All rights are presumed to be with PastPerfect Museum.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>5</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Postcard Box 1 of 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2000.2.3</objectid>
+		<objname>Postcard</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>Original held in the PastPerfect Museum.</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Ellsworth, Burdette</people>
+		<physchar>5 1/2"  x 3 1/2" white cardstock</physchar>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Bequest</recas>
+		<recdate>06/15/2000</recdate>
+		<recfrom>Kittridge, George</recfrom>
+		<refcode>US PPM 2000.2.3</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights>Reproduction must be approved in writing by the Executive Director of the PastPerfect Museum.</rights>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>On Loan</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2008-07-20</statusdate>
+		<sterms/>
+		<subjects>Holiday
+Christmas
+Postcards
+</subjects>
+		<system>This postcard is in the Postcard File / Box 1. Postcards are arranged by subject and by Object ID number. This card is in the classification Correspondence/Postcard/Holidays.</system>
+		<tempauthor>Hilton, Richard</tempauthor>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-01-15</tempdate>
+		<temploc>Brodheadsville Christmas Museum</temploc>
+		<tempnotes/>
+		<tempreason>On loan</tempreason>
+		<tempuntil>01/15/2012</tempuntil>
+		<title>CHRISTMAS GREETINGS</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2008-07-20T14:59:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>1998-10-21</valuedate>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>Archives patrons may handle original postcard while wearing  cotton gloves.</access>
+		<accessno>2000.2</accessno>
+		<accruals>N/A</accruals>
+		<acqvalue>13.00</acqvalue>
+		<admin/>
+		<appnotes>Christmas postcard.  Illustration of fireplace mantle hung with  two large stockings and one small stocking. Mantle is embellished with a candle and garland of holly.   Verso of card has  hand-written message addressed to Mrs. Schmutz of Ann Arbor, MI.   The stamp has been removed but the postmark is clearly readable  as "Detroit, MI. Dec. 23, 1915".
+Value is mainly based on condition and rarity.  Christmas  postcards are relatively abundant, however this one is in  considered rare.</appnotes>
+		<appraisal>N/A</appraisal>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption>Christmas Postcard</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1998-10-21</catdate>
+		<cattype>Archive</cattype>
+		<classes>Correspondence
+Postcard
+Holidays
+</classes>
+		<collection>PastPerfect Museum Postcard Collection</collection>
+		<conddate>1900-06-22</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Fair</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies>None</copies>
+		<creator/>
+		<credit>In memory of my mother, Rosemary Hollis Kittridge</credit>
+		<curvalmax>35.00</curvalmax>
+		<curvalue>25.00</curvalue>
+		<custodial>This item was addressed and mailed to Mrs. Schmutz.  It was acquired by Rosemary Hollis Kittridge in 1985 who gave it to the PastPerfect Museum by bequest in 2000.</custodial>
+		<dataset/>
+		<date>1915</date>
+		<dateaccum/>
+		<datecreate/>
+		<descdate/>
+		<descrip>Christmas greeting postcard.  Illustration of fireplace mantle hung with two large stockings and one small stocking. Mantle is embellished with a candle and garland of holly.  Greeting reads, "To You--Merry Christmas May your stocking be filled with many a toy, And the song in your heart be, "Joy, Joy, Joy"".  Verso of card has hand-written message addressed to Mrs. Schmutz of Ann Arbor, MI.  The stamp has been removed but it was cancelled in Detroit, MI. Dec. 23, 1915.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1915</earlydate>
+		<edition/>
+		<elongitude/>
+		<event>Christmas 1915</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 Postcard</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Allen, Arthur</invnby>
+		<invndate>2008-07-20</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1915</latedate>
+		<legal>All rights are presumed to be with PastPerfect Museum.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>5</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Postcard Box 1 of 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2000.2.4</objectid>
+		<objname>Postcard</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>Original held in the PastPerfect Museum.</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Schmutz, ?</people>
+		<physchar>5 3/8"  x3 3/8" white cardstock</physchar>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Bequest</recas>
+		<recdate>06/15/2000</recdate>
+		<recfrom>Kittridge, George</recfrom>
+		<refcode>US PPM 2000.2.4</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights>Reproduction must be approved in writing by the Executive Director of the PastPerfect Museum.</rights>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>On Loan</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2008-07-20</statusdate>
+		<sterms/>
+		<subjects>Holiday
+Christmas
+Postcards
+</subjects>
+		<system>This postcard is in the Postcard File / Box 1. Postcards are arranged by subject and by Object ID number. This card is in the classification Correspondence/Postcard/Holidays.</system>
+		<tempauthor>Hilton, Richard</tempauthor>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-10-15</tempdate>
+		<temploc>Brodheadsville Christmas Museum</temploc>
+		<tempnotes/>
+		<tempreason>On loan</tempreason>
+		<tempuntil>01/15/2012</tempuntil>
+		<title>To You--Merry Christmas May your stocking be filled with many a toy, And the song in your heart be, "Joy, Joy, Joy"</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2008-07-21T11:22:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2002-02-26</valuedate>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>Archives patrons may handle original postcard while wearing  cotton gloves.</access>
+		<accessno>2000.2</accessno>
+		<accruals>N/A</accruals>
+		<acqvalue>90.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal>N/A</appraisal>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption>Christmas card</caption>
+		<catby>Allen, Arthur</catby>
+		<catdate>1998-10-21</catdate>
+		<cattype>Archive</cattype>
+		<classes>Correspondence
+Postcard
+Holidays
+</classes>
+		<collection>PastPerfect Museum Postcard Collection</collection>
+		<conddate>2001-02-18</conddate>
+		<condexam>Parr, Mary</condexam>
+		<condition>Fair</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies>None</copies>
+		<creator/>
+		<credit>In memory of my mother, Rosemary Hollis Kittridge</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>90.00</curvalue>
+		<custodial>This item was addressed to Charlie. it was never sent.  It was acquired by Rosemary Hollis Kittridge in 1978 who gave it to the PastPerfect Museum by bequest in 2000.</custodial>
+		<dataset/>
+		<date>1915</date>
+		<dateaccum/>
+		<datecreate/>
+		<descdate/>
+		<descrip>Christmas postcard. Illustration of pointsettia flowers on cream background.  Verse reads, "A Happy Christmas be yours." Verso of card has no message but is addressed  in pencil to Charlie.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1910</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 Postcard</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Allen, Arthur</invnby>
+		<invndate>2008-07-20</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1920</latedate>
+		<legal>All rights are presumed to be with PastPerfect Museum.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 1</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Postcard Box 1 of 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2000.2.5</objectid>
+		<objname>Postcard</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>Original held in PastPerfect Museum archives</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Teare, F. P.</people>
+		<physchar>5 1/2"  x 3 1/2" beige cardstock that is somewhat brittle with age.  The lower corners have been creased.  The right corner has become detached.  See detailed condition report.                                                                                                    </physchar>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Bequest</recas>
+		<recdate>06/15/2000</recdate>
+		<recfrom>Kittridge, George</recfrom>
+		<refcode>US PPM 2000.2.5</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights>Reproduction must be approved in writing by the Executive Director of the PastPerfect Museum.</rights>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2008-07-20</statusdate>
+		<sterms/>
+		<subjects>Holiday
+New Year
+Postcards
+</subjects>
+		<system>This postcard is in the Postcard File / Box 1. Postcards are arranged by subject and by Object ID number. This card is in the classification Correspondence/Postcard/Holidays. </system>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>A Happy Christmas be yours</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2008-07-21T23:50:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>1998-10-21</valuedate>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>Researchers may listen to the tape or use the transcript in the museum study room.   </access>
+		<accessno>1995.1</accessno>
+		<accruals>N/A</accruals>
+		<acqvalue>0.00</acqvalue>
+		<admin>Ernestine Hilton was an educator and activist for children's rights from 1940 to 1970.  She was active in the local, state, and national PTA.  She served as the president of the Washington State PTA in the late 1960's.  During the period from 1946 to 1999 Ernestine and Earl Hilton ran the Rocky Pine Ranch, a dairy operation near Cheney, Wa.</admin>
+		<appnotes/>
+		<appraisal>N/A</appraisal>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate>None</associate>
+		<authorx/>
+		<caption>Hilton, Ernestine McMillan</caption>
+		<catby>Allen, Arthur</catby>
+		<catdate>2001-05-24</catdate>
+		<cattype>Oral History</cattype>
+		<classes>Agriculture
+Domestic Life
+World War II
+</classes>
+		<collection>Rocky Pine Ranch Collection</collection>
+		<conddate>2008-04-01</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies>Transcript located in Oral History file cabinet, alphabetically arranged by subjects' last names.</copies>
+		<creator>Paulette Nordquist</creator>
+		<credit/>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<custodial>N/A</custodial>
+		<dataset/>
+		<date>05/24/1995</date>
+		<dateaccum>1994-1995</dateaccum>
+		<datecreate/>
+		<descdate/>
+		<descrip>1 hour audio tape containing the voices of Ernestine McMillan  Hilton and interviewer, Paulette Nordquist.
+
+Topics
+1.  Memories of growing up on a wheat ranch in Eastern Washington  during the 1920's.
+2. Recollections of having polio as a very young child.
+3. Courtship and marriage during World War Two.
+5. Life on a dairy ranch 1950-1970.
+6. Description of Christmas and other holiday traditions at the  ranch.
+
+
+</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1920</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 - 60 minute audio tape of oral history interview</extent>
+		<findaid>N/A</findaid>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>6: T&amp;E For Communication</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr>Norquist, Paulette</interviewr>
+		<intvdate>1995-05-22</intvdate>
+		<intvlength>45 minutes</intvlength>
+		<intvplace>Rocky Pine Ranch</intvplace>
+		<intvrest>All copyrights belong to the PastPerfect Museum. Any reproduction or use of this material must be approved by the Curator of Collections.</intvrest>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2001-06-04</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1970</latedate>
+		<legal>Oral History Project tapes belong to the PastPerfect Museum.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Oral History Tape Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media>Cassette Tape</media>
+		<medium/>
+		<mlanguage/>
+		<narrator>Hilton, Ernestine McMillan</narrator>
+		<narratorid>41</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>1995.1.4</objectid>
+		<objname>Tape, Magnetic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>Original tape resides in the archives at the PastPerfect Museum.</originals>
+		<otherno/>
+		<parent>Data Processing T&amp;E</parent>
+		<people>Hilton, Ernestine McMillan
+Hilton, Lura Cox</people>
+		<physchar>Cassette tape.</physchar>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes>None</pubnotes>
+		<pubplace/>
+		<quantity>1</quantity>
+		<recas>Produced by Staff</recas>
+		<recdate>05/15/1995</recdate>
+		<recfrom>Oral History Project</recfrom>
+		<refcode>US PPM 1995.1.4</refcode>
+		<related>See related objects field under Condition Tab. </related>
+		<relnotes/>
+		<reviewed>1995-07-30</reviewed>
+		<rights>All rights belong to the PastPerfect Museum. See signed waiver of rights in accession file.</rights>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform>1995-07-30</signedform>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Wilson, Pat</statusby>
+		<statusdate>1996-05-24</statusdate>
+		<sterms>Rocky Pine Ranch
+McMillan Family</sterms>
+		<subjects>Ranches
+Diseases
+World War II
+Poliomyelitis
+</subjects>
+		<system>All oral history tapes are contained in storage boxes in the archives. They are organized by year and by object id number within the boxes. </system>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Oral History Tape of Ernestine McMillan Hilton</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr>Parr, Mary L.</transcribr>
+		<transdate>1995-07-25</transdate>
+		<transloc>File Cabinet 2 Drawer 3 "McMillan, Ernestine"</transloc>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2013-08-14T10:28:12</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access/>
+		<accessno>2003.1</accessno>
+		<accruals/>
+		<acqvalue>0.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption>page 1</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2002-10-16</catdate>
+		<cattype>Archive</cattype>
+		<classes/>
+		<collection>Hanley Family Collection</collection>
+		<conddate/>
+		<condexam/>
+		<condition/>
+		<condnotes/>
+		<containtxt/>
+		<copies/>
+		<creator>Hanley, Harold W.</creator>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<custodial/>
+		<dataset/>
+		<date>01/16/1916</date>
+		<dateaccum/>
+		<datecreate>01/27/1916</datecreate>
+		<descdate/>
+		<descrip>Letter from Major Harold W. Hanley to his son, Warren Hanley, regarding life in the  remote mining town of Camp Bird in the mountains of Colorado.  The author recounts two incidents.  The first is of a young man, Wilfred Noel, attempting to ski and snowshoe to town to cash his paycheck and getting lost along the way.  The second incident is about a man who became ill with a high fever and had to be treated using "heroic measures".</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1916</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 letter comprised of 5 pages of 8" x 10" parchment paper.</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>5</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Allen, Arthur</invnby>
+		<invndate>2010-01-12</invndate>
+		<label/>
+		<language/>
+		<latdeg>0.000000</latdeg>
+		<latedate>1916</latedate>
+		<legal/>
+		<level>Item</level>
+		<link>2003.1.2</link>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 3</locfield4>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes>Camp Bird is named after just that, "Camp Birds", a common bird that ate many a miners lunch. When this mine was discovered by Andy Richardson, hired by Thomas Walsh, his lunch had just been eaten by the birds; hence the name Camp Bird. The Camp Bird mine site soon covered 900 acres. It eventually was the second largest gold mine in the state of Colorado. Walsh sold the property for 5.2 million in 1902. Walsh eventually purchased the "Hope" diamond and later died in 1909. The mine produced between 30 and 50 million and is still producing today. Upper Camp Bird was where some of the other mines were located and a tramway system carried men and ore up and down. </notes>
+		<objectid>2003.1.3</objectid>
+		<objname>Letter</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals/>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Hanley, Warren T.</people>
+		<physchar/>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<refcode>US PPM 2003.1.3</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2010-01-12</statusdate>
+		<sterms>Hanley Family</sterms>
+		<subjects>Mining
+Snowshoes &amp; snowshoeing
+
+</subjects>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Letter from Major Harold W. Hanley to Warren Hanley</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:41:58</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access/>
+		<accessno>2003.1</accessno>
+		<accruals/>
+		<acqvalue>0.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx>Warren T. Hanley
+Clair Norton Hanley
+</authorx>
+		<caption/>
+		<catby/>
+		<catdate>2002-10-16</catdate>
+		<cattype>Archive</cattype>
+		<classes/>
+		<collection>Hanley Family Collection</collection>
+		<conddate/>
+		<condexam/>
+		<condition/>
+		<condnotes/>
+		<containtxt/>
+		<copies/>
+		<creator/>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<custodial/>
+		<dataset/>
+		<date>1925 ca.</date>
+		<dateaccum>1916-1945</dateaccum>
+		<datecreate>1916-1945</datecreate>
+		<descdate/>
+		<descrip>The earliest of these family papers include a letter from Grandpa Hanley to his son Warren T Hanley.  The bulk of the material  deal with the World War II memorabilia of Warren's son, Clair  Norton Hanley, who was an ensign in the navy and served in the  Pacific Fleet. His small vessel was involved in several defining  operations, including the invasion of Japan and the Philipines.  The fonds includes the following:
+3 - Letters
+3 - Certificates
+10 - B&amp;W photographs - Naval subjects WWII
+1 - Uniform bar with 3 stars
+1 - Diary 1945</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1916</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>3 - Letters
+3- Certificates
+10 - B&amp;W photographs - Naval subjects WWII
+1 - Uniform bar with 3 stars
+1 - Diary 1945</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby/>
+		<invndate/>
+		<label/>
+		<language/>
+		<latdeg>0.000000</latdeg>
+		<latedate>1945</latedate>
+		<legal/>
+		<level>Fonds/Collection</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 3</locfield4>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes>Camp Bird is named after just that, "Camp Birds", a common bird that ate many a miners lunch. When this mine was discovered by Andy Richardson, hired by Thomas Walsh, his lunch had just been eaten by the birds; hence the name Camp Bird. The Camp Bird mine site soon covered 900 acres. It eventually was the second largest gold mine in the state of Colorado. Walsh sold the property for 5.2 million in 1902. Walsh eventually purchased the "Hope" diamond and later died in 1909. The mine produced between 30 and 50 million and is still producing today. Upper Camp Bird was where some of the other mines were located and a tramway system carried men and ore up and down. </notes>
+		<objectid>2003.1.1</objectid>
+		<objname>Fonds</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals/>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people/>
+		<physchar/>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<refcode>US PPM 2003.1.1</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status/>
+		<statusby/>
+		<statusdate/>
+		<sterms/>
+		<subjects/>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Hanley Family Collection</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2013-01-09T10:33:39</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access/>
+		<accessno>2003.1</accessno>
+		<accruals/>
+		<acqvalue>0.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption/>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2002-10-16</catdate>
+		<cattype>Archive</cattype>
+		<classes>Political Campaigns
+</classes>
+		<collection>Hanley Family Collection</collection>
+		<conddate/>
+		<condexam/>
+		<condition/>
+		<condnotes/>
+		<containtxt>Shelf 2 Document Case 3 Folder 1 Hoover Letter ot Warren Hanley A one-page letter, typewritten, from Herbert Hoover to Warren T. Hanley. It is dated 12/28/1938. 1938/12/28 Hoover, Herbert Politics </containtxt>
+		<copies>Photocopies are also available from: 
+The Herbert Hoover Presidential Library-Museum
+P.O. Box 488
+210 Parkside Dr.
+West Branch, IA 52358
+319-643-5301.</copies>
+		<creator>Hoover, Herbert</creator>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<custodial/>
+		<dataset/>
+		<date>12/28/1938</date>
+		<dateaccum/>
+		<datecreate>12/28/1938</datecreate>
+		<descdate/>
+		<descrip>A one-page letter, typewritten, from Herbert Hoover to Warren T. Hanley. It is dated 12/28/1938. The letter is a response to a letter sent by Mr. Hanley on 12/24/1938. Hoover discusses the fact that people are tired of politics after an election.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1938</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 letter on one sheet of paper 7.25" x 10.5" </extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Parr, Mary L.</invnby>
+		<invndate>2010-01-12</invndate>
+		<label/>
+		<language/>
+		<latdeg>0.000000</latdeg>
+		<latedate>1938</latedate>
+		<legal>All rights of reproduction belong to the PastPerfect Museum.</legal>
+		<level>Item</level>
+		<link>2003.1.2</link>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 3</locfield4>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2003.1.5</objectid>
+		<objname>Letter</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>The original letter resides in the PastPerfect Archives.</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Hanley, Warren T.
+Hoover, Herbert</people>
+		<physchar/>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<refcode>US PPM 2003.1.5</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2010-01-12</statusdate>
+		<sterms>Hanley Family</sterms>
+		<subjects>Presidents
+Political elections
+</subjects>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Letter to Warren T. Hanley from Herbert Hoover</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:42:04</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>Unrestricted access.</access>
+		<accessno>2004.1</accessno>
+		<accruals/>
+		<acqvalue>30.00</acqvalue>
+		<admin>The Office of Price Administration or OPA was a U.S. federal agency in World War II, established to prevent wartime inflation. The OPA issued (April, 1942) a general maximum-price regulation that made prices charged in March, 1942, the ceiling prices for most commodities. Ceilings were also imposed on residential rents. These regulations were gradually modified and extended by OPA administrators—notably Leon Henderson (1941-42), Prentiss H. Brown (1943), and Chester B. Bowles (1943-46)—until almost 90% of the retail food prices were frozen. Prices continued to rise, however, and new drives to secure compliance resulted; ultimately the OPA succeeded in keeping consumer prices relatively stable during the remaining war years. Besides controlling prices, the OPA was also empowered to ration scarce consumer goods in wartime. Tires, automobiles, sugar, gasoline, fuel oil, coffee, meats, and processed foods were ultimately rationed. At the end of the war rationing was abandoned, and price controls were gradually abolished. The agency was finally disbanded in 1947. </admin>
+		<appnotes>U.S. Government War Ration Book Four. This book was issued to  Charlotte E. Spencer of Torrington, Wyoming.  This item is  extremely fragile and friable. Although the book contains many of its original stamps they have become detached.  The poor  condition of the book has a negative effects on value. However,  due to the relative rarity of the item (most books were either  used up or returned to the OPA) it is worth between $30.00 and  $60.00 at the time of  this appraisal.</appnotes>
+		<appraisal>This item to be held in perpetuity at the PastPerfect Museum.</appraisal>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<archivist>Peterson, Paul D.</archivist>
+		<archnotes>Description prepared by S. Odum, September 2001. </archnotes>
+		<area/>
+		<associate>More examples of War Ration Books are available at the World War Two Museum of Pottstown, 1234 S. Union Street, Pottstown, PA. 19342. 610-555-5678. 
+
+</associate>
+		<authorx>United States Office of Price Administration</authorx>
+		<caption/>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2004-01-12</catdate>
+		<cattype>Archive</cattype>
+		<classes>War
+World War II
+</classes>
+		<collection>PastPerfect Museum Archival Collection</collection>
+		<conddate>2004-01-12</conddate>
+		<condexam>Withers,Blanche</condexam>
+		<condition>Poor</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies>Photocopy in the collection of the World War Two Museum of Pottstown, 1234 S. Union Street, Pottstown, PA. 19342. 610-555-5678. 
+
+</copies>
+		<creator>U.S. Government Printing Office</creator>
+		<credit/>
+		<curvalmax>60.00</curvalmax>
+		<curvalue>30.00</curvalue>
+		<custodial>1943 - Issued to Charlotte E. Spencer
+1945-1967 - Owned by Charlotte E. Spencer
+1968-1986 - Owned by Evelyn P. Argyle (Daughter of Charlotte Spencer)
+1986-2003 - Owned by Harrison Spencer (brother of Charlotte Spencer)
+2004 - Donated to the PastPerfect Museum
+</custodial>
+		<dataset/>
+		<date>1943</date>
+		<dateaccum>2004</dateaccum>
+		<datecreate>1943</datecreate>
+		<descdate>Description prepared September 2001. 
+Description revised January 2004.</descdate>
+		<descrip>U.S. Government War Ration Book Four. This book was issued to Charlotte E. Spencer of Torrington, Wyoming.  Charlotte Spencer was four years old in 1943. The book was signed for by her mother, Esther E. Spencer. Books such as this were the mechanism by which commodities were rationed during World War II. Resources such as gas, coffee, and sugar were regulated. This book was issued in 1943 and still contains many of the original stamps.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1943</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>Folded brown paper cover printed on both sides to form a booklet. Inside  contains stamps with perforations to facilitate removal. Several loose stamps are attached to the front cover with straight pins. There is a white string sewn along the spine of the covers. </extent>
+		<findaid>See: Guide to the Archival Collections of the PastPerfect Museum. 2004.</findaid>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>4</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Allen, Arthur</invnby>
+		<invndate>2004-02-04</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1943</latedate>
+		<legal>May be photographed by permission of the Curator of Collections, PastPerfect Archives.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 4</locfield4>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2004-01-12</maintdate>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes>This item belonged to the donor's sister Charlotte who was 4 years old at the time it was issued. It was signed for by the child's mother Esther E. Spencer.</notes>
+		<objectid>2004.1.1</objectid>
+		<objname>Stamp, Ration</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>Original resides in the PastPerfect Museum Archives. See Location Information.</originals>
+		<otherno/>
+		<parent>Exchange Medium</parent>
+		<people>Spencer, Charlotte E.</people>
+		<physchar>This item is extremely fragile and friable. Handling shall be minimized by using digital images and photocopies. Anyone handling the item must wear cotton gloves.</physchar>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>01/14/2004</recdate>
+		<recfrom>Spencer, Harrison</recfrom>
+		<refcode>US PPM 2004.1.1</refcode>
+		<related>See Accession #2003.1 for WWII related materials.</related>
+		<relnotes/>
+		<reviewed/>
+		<rights>May be photographed by permission of the Curator of Collections, PastPerfect Archives.</rights>
+		<rules>Description based on the International Council on Archives ISAD(G) Standard Adopted by the Committee on Descriptive Standards Stockholm, Sweden, 19-22 September 1999.</rules>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Hilton, Richard</statusby>
+		<statusdate>2004-01-12</statusdate>
+		<sterms>WWII
+World War II</sterms>
+		<subjects>World War II
+Home economics
+Food prices
+</subjects>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>War Ration Book Four</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:10:39</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2004-01-14</valuedate>
+		<webinclude>true</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access/>
+		<accessno>2003.1</accessno>
+		<accruals/>
+		<acqvalue>0.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption/>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2002-10-16</catdate>
+		<cattype>Archive</cattype>
+		<classes/>
+		<collection>Hanley Family Collection</collection>
+		<conddate/>
+		<condexam/>
+		<condition/>
+		<condnotes/>
+		<containtxt/>
+		<copies/>
+		<creator>Hanley, Warren T.</creator>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<custodial/>
+		<dataset/>
+		<date>07/18/1944</date>
+		<dateaccum/>
+		<datecreate>July 18, 1944</datecreate>
+		<descdate/>
+		<descrip>A one-page letter, from Warren T. Hanley to his son, Clair, on the occasion of his marriage to Helen Torgeson. </descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1944</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 letter on one sheet of paper 7.25" x 10.5" </extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Parr, Mary L.</invnby>
+		<invndate>2010-01-12</invndate>
+		<label/>
+		<language/>
+		<latdeg>0.000000</latdeg>
+		<latedate>1944</latedate>
+		<legal>All rights of reproduction belong to the PastPerfect Museum.</legal>
+		<level>Item</level>
+		<link>2003.1.2</link>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 3</locfield4>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2002-10-16</maintdate>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2003.1.12</objectid>
+		<objname>Letter</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>The original letter resides in the PastPerfect Archives.</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Hanley, Warren T.
+Hanley, Clair Norton
+Hanley, Helen Torgeson</people>
+		<physchar/>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<refcode>US PPM 2003.1.12</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2010-01-12</statusdate>
+		<sterms>Hanley Family
+World War II
+WWII</sterms>
+		<subjects>World War II
+Marriage
+</subjects>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Letter from Warren T. Hanley to his son Clair Norton Hanley</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:42:11</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access/>
+		<accessno>2003.1</accessno>
+		<accruals/>
+		<acqvalue>0.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption>Camp Bird Letter pg 1</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2002-10-16</catdate>
+		<cattype>Archive</cattype>
+		<classes/>
+		<collection>Hanley Family Collection</collection>
+		<conddate/>
+		<condexam/>
+		<condition/>
+		<condnotes/>
+		<containtxt>Room 200, Shelf 2 MS Box 12 Folder 6 Camp Bird Letter 2003.1.3 Life in a remote Colorado mining camp 1916/01/27 Hanley, Harold W.  Room 200, Shelf 2 MS Box 12 Folder 6 Hoover Letter 2003.1.5 Aftermath of elections 1938/12/28 Hoover, Herbert Politics Room 200, Shelf 2 MS Box 12 Folder 6 A father's thoughts on marriage 2003.1.12 Advice about marriage 1944/07/18 Hanley, Warren T. Marriage </containtxt>
+		<copies/>
+		<creator/>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<custodial/>
+		<dataset/>
+		<date>01/16/1916</date>
+		<dateaccum>1916-1944</dateaccum>
+		<datecreate>01/27/1916, 12/28/1938, 07/18/1944</datecreate>
+		<descdate/>
+		<descrip>3 Letters
+ 
+1916 Letter from Major Harold W. Hanley to his son, Warren Hanley, regarding life in the  remote mining town of Camp Bird in the mountains of Colorado.  The author recounts two incidents.  The first is of a young man, Wilfred Noel, attempting to ski and snowshoe to town to cash his paycheck and getting lost along the way.  The second incident is about a man who became ill with a high fever and had to be treated using "heroic measures".
+
+1938 A one-page letter, typewritten, from Herbert Hoover to Warren T. Hanley. It is dated 12/28/1938. The letter is a response to a letter sent by Mr. Hanley on 12/24/1938. Hoover discusses the fact that people are tired of politics after an election.
+
+1944 A one-page letter, from Warren T. Hanley to his son, Clair, on the occasion of his marriage to Helen Torgeson.  The father offers marriage advice to his son.
+
+
+
+
+</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1916</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent/>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>7</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Allen, Arthur</invnby>
+		<invndate>2010-01-12</invndate>
+		<label/>
+		<language/>
+		<latdeg>0.000000</latdeg>
+		<latedate>1916</latedate>
+		<legal/>
+		<level>Series</level>
+		<link>2003.1.1</link>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 3</locfield4>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2002-10-16</maintdate>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes>Camp Bird is named after just that, "Camp Birds", a common bird that ate many a miners lunch. When this mine was discovered by Andy Richardson, hired by Thomas Walsh, his lunch had just been eaten by the birds; hence the name Camp Bird. The Camp Bird mine site soon covered 900 acres. It eventually was the second largest gold mine in the state of Colorado. Walsh sold the property for 5.2 million in 1902. Walsh eventually purchased the "Hope" diamond and later died in 1909. The mine produced between 30 and 50 million and is still producing today. Upper Camp Bird was where some of the other mines were located and a tramway system carried men and ore up and down. </notes>
+		<objectid>2003.1.2</objectid>
+		<objname>Series, Archival</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals/>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Hanley, Warren T.</people>
+		<physchar/>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<refcode>US PPM 2003.1.2</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2010-01-12</statusdate>
+		<sterms>Hanley Family</sterms>
+		<subjects>Mining
+Snowshoes &amp; snowshoeing
+
+</subjects>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Hanley Correspondence</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2012-07-10T15:38:38</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access/>
+		<accessno>2003.1</accessno>
+		<accruals/>
+		<acqvalue>0.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption>Discharge Certificate</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2002-10-16</catdate>
+		<cattype>Archive</cattype>
+		<classes/>
+		<collection>Hanley Family Collection</collection>
+		<conddate/>
+		<condexam/>
+		<condition/>
+		<condnotes/>
+		<containtxt>Archives Room 201 MS Box 12 Folder 8 Thanks of a Grateful Nation... 8" x 10.5" certificate signed by Harry Truman and bearing the seal of the president. The certificate thanks Clair N. Hanley for his service during war time. 02/25/1946 U.S. Government World War II Archives Room 201 MS Box 12 Folder 8 Certificate of Satisfactory Service 8" x 10" certificate signed by James Forestal and bearing the seal of the Navy Deaprtment. The certificate thanks Clair N. Hanley for his naval service during World War II and gives his separation date as February 25, 1946. 02/25/1946 U.S. Government World War II Archives Room 201 MS Box 12 Folder 8 Notice of Separation from U.S. Naval Service 8" x 10.5" form that details Lt. (jg)  Clair N. Hanley's naval service, lists his medals and awards, and lists the ships upon which he served. 02/25/1946 U.S. Government World War II </containtxt>
+		<copies>
+</copies>
+		<creator/>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<custodial/>
+		<dataset/>
+		<date>02/25/1946</date>
+		<dateaccum>1946</dateaccum>
+		<datecreate/>
+		<descdate/>
+		<descrip>Three certificates dealing with Clair Hanley's separation from service.
+1. Thanks of a grateful nation... 
+2. Certificate of Satisfactory Service
+3. Notice of Separation from U.S. Naval Service</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1946</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>3 certificates received by Clair N. Hanley upon separation from active naval duty at the conclusion of WWII. </extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>3</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument/>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Parr, Mary L.</invnby>
+		<invndate>2010-01-12</invndate>
+		<label/>
+		<language/>
+		<latdeg>0.000000</latdeg>
+		<latedate>1946</latedate>
+		<legal>All rights of reproduction belong to the PastPerfect Museum.</legal>
+		<level>Series</level>
+		<link>2003.1.1</link>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 3</locfield4>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2002-10-16</maintdate>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2003.1.14</objectid>
+		<objname>Discharge, Military</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>The original  resides in the PastPerfect Archives.</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people/>
+		<physchar/>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<refcode>US PPM 2003.1.14</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2010-01-12</statusdate>
+		<sterms>Hanley Family
+World War II
+WWII</sterms>
+		<subjects>World War II
+Military discharges</subjects>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Thanks of a grateful nation... 
+Certificate of Satisfactory Service
+Notice of Separation from U.S. Naval Service</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-08-30T14:24:49</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access/>
+		<accessno>2004.3</accessno>
+		<accruals/>
+		<acqvalue>0.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx>Juneau Hargity - Vocals, Piano, Dulcimer, Fiddle
+Silent Jim Smith - Bass
+Shadow Wilson - Harmonica
+Milo Portnoy - Drums</authorx>
+		<caption>Hard Times CD Cover</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2004-02-14</catdate>
+		<cattype>Music Collection</cattype>
+		<classes/>
+		<collection>Ethnomusicology Collection</collection>
+		<conddate>2004-02-14</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Excellent</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies/>
+		<creator>Hargity, Robert Blaine                                                          </creator>
+		<credit/>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<custodial/>
+		<dataset/>
+		<date>12/10/2003</date>
+		<dateaccum/>
+		<datecreate/>
+		<descdate/>
+		<descrip>Original tape recording of Wichita Bob and the Mountain Blues Boys containing 6 songs recorded at the PastPerfect Museum's  "Museum Unplugged Benefit Concert" held on December 10, 2003. The live recording was later released as a CD entitled, Let the Hard Times Roll.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>0</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent/>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre>Blues</genre>
+		<gparent>6: T&amp;E For Communication</gparent>
+		<group>Wichita Bob and the Mountain Blues Boys</group>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<instrument>Guitar, Vocals</instrument>
+		<insvalue>1000000.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2004-02-16</invndate>
+		<label>Mountain Tunes</label>
+		<language/>
+		<latdeg>0.000000</latdeg>
+		<latedate>0</latedate>
+		<legal>Copyrights for all compositions recorded on this tape belong to  the original creators. For copyright information contact Mountain Tunes Recording Company.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 4</locfield4>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media>1" Open Reel</media>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2004.3.1</objectid>
+		<objname>Tape, Magnetic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals/>
+		<otherno/>
+		<parent>Data Processing T&amp;E</parent>
+		<people>Hargity, Robert B.
+Hargity, Juneau</people>
+		<physchar/>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>02/14/2004</recdate>
+		<recfrom>PastPerfect Museum</recfrom>
+		<refcode>US PPM 2004.3.1</refcode>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2004-02-14</statusdate>
+		<sterms/>
+		<subjects>Music festivals
+Musicians
+</subjects>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Let the Hard Times Roll</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2004-02-14T14:09:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>This film is in the public domain.</access>
+		<accessno>2004.1</accessno>
+		<accruals>None</accruals>
+		<acqvalue>0.00</acqvalue>
+		<admin>This film was made on December 8, 1941. It shows Franklin D. Roosevelt, President of the United States, making a speech to Congress following the attack by the Japanese on Pearl Harbor, Hawaii.
+
+Pearl Harbor, on the Island of O'ahu, Hawaii, (then a territory of the United States) was attacked by the Japanese Imperial Navy, at approximately 8:00 A.M., Sunday morning, December 7, 1941. The surprise attack had been conceived by Admiral Isoroku Yamamoto. The striking force of 353 Japanese aircraft was led by Commander Mitsuo Fuchida. There had been no formal declaration of war.
+
+Approximately 100 ships of the U.S. Navy were present that morning, consisting of battleships, destroyers, cruisers and various support ships.
+
+USS Arizona (BB39)          Battleship
+USS West Virginia (BB48)     Battleship
+USS California (BB44)        Battleship
+USS Oklahoma (BB37)       Battleship
+USS Nevada (BB36)          Battleship
+USS Pennsylvania (BB38)     Battleship (in dry dock #1)
+USS Tennessee (BB43)       Battleship
+USS Maryland (BB46)         Battleship
+USS Vestal (AR4)             Repair ship
+USS Neosho (AO23)          Oiler
+USS Detroit (CL8)            Light cruiser
+USS Raleigh (CL7)           Light cruiser
+USS Utah (AG16)             Target Ship
+USS Tangier (AV8)            Seaplane Tender
+
+
+Two destroyers, the USS Cassin (DD372) and the USS Downes (DD375) were in dry dock #1 (with the USS Pennsylvania) and the destroyer USS Shaw (DD373) was in floating dry dock #2, approximately two hundred yards to the west. The USS Ogala (CM-4) was moored next to the USS Helena (CL50) near the "1010" dock, Naval Ship yard. Two heavy cruisers, the USS New Orleans (CA32) and the San Francisco (CA38) were in the Navy Yard Repair Basin
+
+Over half the U.S. Pacific fleet was out to sea, including the carriers.
+
+Simultaneously, nearby Hickam Field was also the victim of the surprise attack by the Japanese.
+18 Army Aircorps aircraft including bombers and fighters and attack bombers were destroyed or damaged on the ground. A few U.S. fighters struggled into the air against the invaders and gave a good account of themselves.
+
+A total of twenty-nine Japanese aircraft were shot down by ground fire and U.S pilots from various military installations on O'ahu.</admin>
+		<appnotes/>
+		<appraisal>To be held permanently in the PastPerfect Museum.</appraisal>
+		<appraisor/>
+		<archivist>Parr, Melissa</archivist>
+		<archnotes/>
+		<area/>
+		<associate>More World War II films are available at the World War Two Museum of Pottstown, 1234 S. Union Street, Pottstown, PA. 19342. 610-555-5678. </associate>
+		<authorx>Film maker unknown.</authorx>
+		<caption/>
+		<catby>Patterson, Nancy</catby>
+		<catdate>2004-04-30</catdate>
+		<cattype>Archive</cattype>
+		<classes>World War II
+War
+</classes>
+		<collection>PastPerfect Museum Archival Collection</collection>
+		<conddate>2004-04-30</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies>The film is available on videotape or in digital format through this repository.</copies>
+		<creator>Roosevelt, Franklin D.                                                          </creator>
+		<credit/>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<custodial>This film was acquired by donation and has been in the archives of PastPerfect Museum since 2004.</custodial>
+		<dataset/>
+		<date>12/08/1941</date>
+		<dateaccum/>
+		<datecreate>1941</datecreate>
+		<descdate>05/08/2004</descdate>
+		<descrip>16mm film of Franklin Roosevelt asking congress to declare war on Japan, December 8, 1941.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1941</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>Six-minute film of FDR speech to congress December 8, 1941. </extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp/>
+		<insdate/>
+		<insets/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<instrument/>
+		<insvalue>0.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby>Parr, Mary L.</invnby>
+		<invndate>2004-04-30</invndate>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1941</latedate>
+		<legal>This film is in the public domain. Copies of the film may be obtained from this repository.  A use fee and reproduction costs may be charged.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Film Vault</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2004-04-30</maintdate>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2004.1.2</objectid>
+		<objname>Film, Motion Picture</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>Original film resides in the Smithsonian Institution Film Archives.</originals>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Roosevelt, Franklin D.</people>
+		<physchar>To view the entire film requires the use of a 16mm film projector. The 30 second film clip may be viewed through the PastPerfect Software program.</physchar>
+		<pmeridian/>
+		<policyno/>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>01/14/2004</recdate>
+		<recfrom>Spencer, Harrison</recfrom>
+		<refcode>US PPM 2004.1.2</refcode>
+		<related>See accession# 2003.1 for WWII archival materials and photographs.
+</related>
+		<relnotes/>
+		<reviewed/>
+		<rights>Copies of the film may be obtained from this repository.  A use fee and reproduction costs may be charged.</rights>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Patterson, Nancy</statusby>
+		<statusdate>2004-04-30</statusdate>
+		<sterms>World War II
+WWII</sterms>
+		<subjects>Legislative bodies
+World War II
+Presidents &amp; the Congress
+Naval yards &amp; naval stations
+</subjects>
+		<system>This item is stored with other films in the climate-controlled film vault of the PastPerfect Museum.</system>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>US Enters World War II</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2013-01-09T12:20:51</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access/>
+		<accessno/>
+		<accruals/>
+		<acqvalue>0.00</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption>45 rpm record</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2004-07-07</catdate>
+		<cattype>Music Collection</cattype>
+		<classes/>
+		<collection>Loans In Collection</collection>
+		<conddate/>
+		<condexam/>
+		<condition/>
+		<condnotes/>
+		<containtxt/>
+		<copies/>
+		<creator>Original TV voices</creator>
+		<credit/>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<custodial/>
+		<dataset/>
+		<date>1963</date>
+		<dateaccum/>
+		<datecreate/>
+		<descdate/>
+		<descrip>45 rpm phonograph record. Produced by Little Golden Record, a Division of Affiliated Publishers.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1960</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>2</exhibitno>
+		<exhlabel1>Flintstones Dino the Dino</exhlabel1>
+		<exhlabel2>L2000.1.6</exhlabel2>
+		<exhlabel3>45 rpm phonograph record. Produced by Little Golden Record, a Division of Affiliated Publishers.</exhlabel3>
+		<exhlabel4>On loan from the Bridgeville Museum of Toys</exhlabel4>
+		<exhstart>2009-06-01</exhstart>
+		<extent/>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre>Children’s Music</genre>
+		<gparent>6: T&amp;E For Communication</gparent>
+		<group>The Flintstones</group>
+		<homeloc>PastPerfect Museum Main</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriters Inc.</inscomp>
+		<insdate>2015-07-31</insdate>
+		<insets/>
+		<insphone>610/555-7878</insphone>
+		<inspremium>120.00 per year</inspremium>
+		<insrep>Page, William</insrep>
+		<instrument/>
+		<insvalue>0.00</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby/>
+		<invndate/>
+		<label>Little Golden Record</label>
+		<language/>
+		<latdeg>0.000000</latdeg>
+		<latedate>1965</latedate>
+		<legal/>
+		<level/>
+		<link/>
+		<loancond/>
+		<loandue>2007-06-24</loandue>
+		<loaninno>L2000.1</loaninno>
+		<loanno>0</loanno>
+		<locfield1>Main Gallery</locfield1>
+		<locfield2/>
+		<locfield3/>
+		<locfield4/>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2004-07-07</maintdate>
+		<maintnote/>
+		<media>45 rpm Vinyl</media>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>L2000.1.6</objectid>
+		<objname>Record, Phonograph</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals/>
+		<otherno/>
+		<parent>Sound Communication T&amp;E</parent>
+		<people/>
+		<physchar/>
+		<pmeridian/>
+		<policyno>65 098 07</policyno>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Loan</recas>
+		<recdate>06/16/2000</recdate>
+		<recfrom>Bridgeville Museum of Toys</recfrom>
+		<refcode/>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2004-07-07</statusdate>
+		<sterms/>
+		<subjects/>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Flintstones Dino the Dino</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2013-01-09T12:23:05</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access/>
+		<accessno>2000.5</accessno>
+		<accruals/>
+		<acqvalue>0</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption/>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2000-07-28</catdate>
+		<cattype/>
+		<classes/>
+		<collection/>
+		<conddate>2000-07-28</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies/>
+		<creator>Gregory, Ethel</creator>
+		<credit/>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<custodial/>
+		<dataset/>
+		<date>1888/02/10</date>
+		<dateaccum/>
+		<datecreate/>
+		<descdate/>
+		<descrip>Letter from Ethel Gregory to Neil Packwood, Sr., February 10, 1888. This letter is between the courting couple, who would marry in March 1902.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1888</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent/>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>0</imageno>
+		<inscomp/>
+		<insdate/>
+		<insets/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<instrument/>
+		<insvalue>0</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby/>
+		<invndate/>
+		<label/>
+		<language/>
+		<latdeg>0.000000</latdeg>
+		<latedate>1888</latedate>
+		<legal/>
+		<level/>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4/>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2000.5.3</objectid>
+		<objname>Letter</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals/>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Packwood, Ethel Gregory
+Packwood, Neil Sr.</people>
+		<physchar/>
+		<pmeridian/>
+		<policyno/>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>01/04/2000</recdate>
+		<recfrom>Packwood, Neil Jr.</recfrom>
+		<refcode/>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2000-07-28</statusdate>
+		<sterms>Packwood Family</sterms>
+		<subjects/>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title/>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2000-07-28T13:36:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access/>
+		<accessno>2000.6</accessno>
+		<accruals/>
+		<acqvalue>0</acqvalue>
+		<admin>Materials passed from the Chester Paper Box Company owner, Horace Jefferson, directly to his grandson, Humphrey Jefferson.</admin>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx>Horace Jefferson</authorx>
+		<caption/>
+		<catby>Smith, Elizabeth</catby>
+		<catdate>2000-09-12</catdate>
+		<cattype/>
+		<classes/>
+		<collection/>
+		<conddate/>
+		<condexam/>
+		<condition>Not Rated</condition>
+		<condnotes/>
+		<containtxt/>
+		<copies/>
+		<creator>Chester Paper Box Company</creator>
+		<credit/>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<custodial/>
+		<dataset/>
+		<date/>
+		<dateaccum/>
+		<datecreate>1875-1911</datecreate>
+		<descdate/>
+		<descrip>Corporate records for Chester Paper Box Company.  This company operated from 1875 to 1911.  It was a major employer in the Chester County area.  Horace Jefferson was the original owner of the company.  At his death the collection (15 linear feet of documents, photographs, blueprints, correspondence) were bequeathed to his grandson Humphrey Jefferson.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1875</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>15 linear feet</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent>8: Communication Artifact</gparent>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>0</imageno>
+		<inscomp/>
+		<insdate/>
+		<insets/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<instrument/>
+		<insvalue>0</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby/>
+		<invndate/>
+		<label/>
+		<language>English</language>
+		<latdeg>0.000000</latdeg>
+		<latedate>1911</latedate>
+		<legal/>
+		<level>Collection</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4/>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2000.6.1</objectid>
+		<objname>Records</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals/>
+		<otherno/>
+		<parent>Documentary Artifact</parent>
+		<people>Jefferson, Horace</people>
+		<physchar/>
+		<pmeridian/>
+		<policyno/>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Bequest</recas>
+		<recdate>06/15/2000</recdate>
+		<recfrom>Jefferson, Humphrey</recfrom>
+		<refcode/>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2000-09-12</statusdate>
+		<sterms/>
+		<subjects/>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Corporate Records, 1875-1911</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2000-09-12T13:56:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access/>
+		<accessno>2011.2</accessno>
+		<accruals/>
+		<acqvalue>0</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx/>
+		<caption/>
+		<catby>Smith, Elizabeth</catby>
+		<catdate>2011-06-07</catdate>
+		<cattype>Archive</cattype>
+		<classes/>
+		<collection/>
+		<conddate>2011-06-27</conddate>
+		<condexam>Smith, Elizabeth</condexam>
+		<condition>Fair</condition>
+		<condnotes>Due to condition, this piece should be photographed with a digital camera and not scanned.</condnotes>
+		<containtxt/>
+		<copies/>
+		<creator/>
+		<credit>In memory of my grandfather, Thomas Greene, who loved old photographs.</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<custodial/>
+		<dataset/>
+		<date>1858</date>
+		<dateaccum/>
+		<datecreate>1858</datecreate>
+		<descdate/>
+		<descrip>Account ledger, 1858 -- accounts of business transactions for transporting goods in the Philadelphia area. This ledger has entries starting in the front and back. It appears that the children of the Marshall family practiced handwriting and mathematics in this book as well. There are also a couple of cooking recipes.</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>0</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 leather bound book, 7 1/2 x 5"</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent/>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>0</imageno>
+		<inscomp/>
+		<insdate/>
+		<insets/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<instrument/>
+		<insvalue>0</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby/>
+		<invndate/>
+		<label/>
+		<language/>
+		<latdeg>0.000000</latdeg>
+		<latedate>0</latedate>
+		<legal/>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1>Room 200</locfield1>
+		<locfield2/>
+		<locfield3/>
+		<locfield4/>
+		<locfield5>Drawer 4</locfield5>
+		<locfield6>Document Case 4</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2011-06-07</maintdate>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2011.2.6</objectid>
+		<objname>Ledger</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals/>
+		<otherno/>
+		<parent/>
+		<people>Marshall, Elizabeth
+Marshall, Katherine (Katie)</people>
+		<physchar/>
+		<pmeridian/>
+		<policyno/>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas>Gift</recas>
+		<recdate>05/20/2011</recdate>
+		<recfrom>Cherry Hill Realty</recfrom>
+		<refcode/>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2011-06-27</statusdate>
+		<sterms/>
+		<subjects/>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Marshall Account Ledger</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2013-01-09T12:21:47</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>Archives patrons may handle original postcard while wearing cotton gloves.</access>
+		<accessno/>
+		<accruals/>
+		<acqvalue>0</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx>Majestic Publishing Co., Indianapolis, IN</authorx>
+		<caption>Postcard front</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2014-04-21</catdate>
+		<cattype>Archive</cattype>
+		<classes>Correspondence/Postcard</classes>
+		<collection>PastPerfect Museum Postcard Collection</collection>
+		<conddate>2014-04-21</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes>Edges of the postcard are a bit worn, particularly at the corners.</condnotes>
+		<containtxt/>
+		<copies>None</copies>
+		<creator>Simmons, Mabel</creator>
+		<credit/>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<custodial>Postcard is addressed to Ruth Pratt, and mailed from Indianapolis, IN on March 13, 1912. Found in the museum's collection in 2014 with unknown provenance.</custodial>
+		<dataset/>
+		<date>March 1912</date>
+		<dateaccum/>
+		<datecreate>March 1912</datecreate>
+		<descdate/>
+		<descrip>Color postcard of the Indianapolis Motor Speedway sent to Ruth Pratt from her sister, Mabel. The postcard was cancelled on Mar 13 1912, 4:30 PM, Indianapolis, IND. A one cent postage stamp is affixed to the upper right corner of the back side.
+
+Front of postcard is a watercolor-like depiction of the speedway. Several cars are going around the track. The grand stands and boxes are at the far end of the track. There are quite a few small buildings on the infield, across from the grand stands. Surrounding landscape is rural.
+
+Handwritten message says: "The pictures of you at the piana [sic] were very good. Did you have them taken while Mamma was here? Be a good girl. Your sister, Mabel."</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1912</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 Postcard</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent/>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp/>
+		<insdate/>
+		<insets/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<instrument/>
+		<insvalue>0</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby/>
+		<invndate/>
+		<label/>
+		<language>English</language>
+		<latdeg>39.802844</latdeg>
+		<latedate>1913</latedate>
+		<legal>Postcard was found in the attic. It was located in a box with other archival items that had been cataloged, but no number was found on this item. We were also unable to locate any relevant paperwork for this postcard.</legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 3</locfield4>
+		<locfield5/>
+		<locfield6>Postcard Box 2 of 2</locfield6>
+		<longdeg>86.235097</longdeg>
+		<maintcycle/>
+		<maintdate>2014-04-21</maintdate>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes>Printed text on the postcard back includes: The Speedway has an area of 328 acres.  Total cost over $700,000.  Circumference of track 2 ½ miles.  Grand Stands and Boxes will accommodate 40,000.  Entire grounds will accommodate 200,000.  Ten thousand automobiles can be parked on the grounds.</notes>
+		<objectid>2014.FIC.2</objectid>
+		<objname>Postcard</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>Originals held in the PastPerfect Museum</originals>
+		<otherno/>
+		<parent/>
+		<people>Pratt, Ruth Elizabeth Simmons
+Simmons, Mabel</people>
+		<physchar>Dimensions: 5.44" x 3.44"</physchar>
+		<pmeridian/>
+		<policyno/>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas/>
+		<recdate/>
+		<recfrom/>
+		<refcode/>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2014-04-21</statusdate>
+		<sterms>Indianapolis Motor Speedway</sterms>
+		<subjects>Racetracks
+Postcards</subjects>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Indianapolis Motor Speedway, The Greatest Race Course in the World</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2014-04-24T11:45:07</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+	<export>
+		<access>Archives patrons may handle original postcard while wearing cotton gloves.</access>
+		<accessno/>
+		<accruals/>
+		<acqvalue>0</acqvalue>
+		<admin/>
+		<appnotes/>
+		<appraisal/>
+		<appraisor/>
+		<archivist/>
+		<archnotes/>
+		<area/>
+		<associate/>
+		<authorx>Braun Post Card Co, Cleveland, OH</authorx>
+		<caption>Postcard front</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2014-04-21</catdate>
+		<cattype>Archive</cattype>
+		<classes>Correspondence/Postcard</classes>
+		<collection>PastPerfect Museum Postcard Collection</collection>
+		<conddate>2014-04-21</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Stable</condition>
+		<condnotes>Corners are a bit worn and frayed.  The bottom left corner (when viewing from front) has a small crease.  </condnotes>
+		<containtxt/>
+		<copies>None</copies>
+		<creator/>
+		<credit/>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<custodial>Postcard is addressed to Mr. Peter Petersen, and mailed from Cleveland, OH in Feb 1914.  Found in the museum's collection in 2014 with unknown provenance. </custodial>
+		<dataset/>
+		<date>February 1914</date>
+		<dateaccum/>
+		<datecreate>February 1914</datecreate>
+		<descdate/>
+		<descrip>Color postcard of the Motordrome at Luna Park from 1914.  The front of the postcard depicts spectators in the infield watching a motorcylce race.  Stands on the far side of the track are full of people.  Infield is more sparsely populated and includes several cars.  
+
+The postcard was mailed to Peter Peterson from his mother and includes a handwritten note on the back side.  It was postmarked Feb, 1914 from Cleveland, Ohio, and has a one cent postage stamp affixed to the back.
+
+Handwritten message says: "Cleveland d 8th Feb 1914.  Dear Sam, Well, how are you?  We are pretty well here exept [sic] a cold some of us have, it is quite cold here now.  I suppose it is winter out by you too now, we have just one chicken and our roster now.  Something was in the coop and killed all the others Friday night. There is 10 dead laying around in the yard.  Pa think it was a dog or fox.  Love from all, write soon.  Mother."</descrip>
+		<dispdate/>
+		<dispositn/>
+		<dispvalue/>
+		<earlydate>1914</earlydate>
+		<edition/>
+		<elongitude/>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<extent>1 Postcard</extent>
+		<findaid/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<genre/>
+		<gparent/>
+		<group/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp/>
+		<insdate/>
+		<insets/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<instrument/>
+		<insvalue>0</insvalue>
+		<interviewr/>
+		<intvdate/>
+		<intvlength/>
+		<intvplace/>
+		<intvrest/>
+		<invnby/>
+		<invndate/>
+		<label/>
+		<language>English</language>
+		<latdeg>0</latdeg>
+		<latedate>1915</latedate>
+		<legal>Postcard was found in the attic.  It was located in a box with other archival items that had been cataloged, but no number was found on this item.  We were also unable to locate any relevant paperwork for this postcard. </legal>
+		<level>Item</level>
+		<link/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 3</locfield4>
+		<locfield5/>
+		<locfield6>Postcard Box 2 of 2</locfield6>
+		<longdeg>0</longdeg>
+		<maintcycle/>
+		<maintdate>2014-04-21</maintdate>
+		<maintnote/>
+		<media/>
+		<medium/>
+		<mlanguage/>
+		<narrator/>
+		<narratorid>0</narratorid>
+		<nlatitude/>
+		<notes/>
+		<objectid>2014.FIC.1</objectid>
+		<objname>Postcard</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<originals>Original held in the PastPerfect Museum</originals>
+		<otherno/>
+		<parent/>
+		<people>Petersen, Peter</people>
+		<physchar>Dimensions: 5.38" x 3.44"</physchar>
+		<pmeridian/>
+		<policyno/>
+		<projection/>
+		<pubdate/>
+		<publisher/>
+		<pubnotes/>
+		<pubplace/>
+		<quantity/>
+		<recas/>
+		<recdate/>
+		<recfrom/>
+		<refcode/>
+		<related/>
+		<relnotes/>
+		<reviewed/>
+		<rights/>
+		<rules/>
+		<scale/>
+		<series/>
+		<sheets/>
+		<signedform/>
+		<site/>
+		<siteno/>
+		<sitesadded/>
+		<size/>
+		<slatitude/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2014-04-21</statusdate>
+		<sterms>Motordrome
+Luna Park</sterms>
+		<subjects>Racetracks
+Motorcycle racing
+Postcards</subjects>
+		<system/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Motordrome at Luna Park</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<transcribr/>
+		<transdate/>
+		<transloc/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2014-04-21T15:02:35</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+		<wlongitude/>
+	</export>
+</VFPData>

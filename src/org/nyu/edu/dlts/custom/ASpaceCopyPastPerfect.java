@@ -460,25 +460,25 @@ public class ASpaceCopyPastPerfect extends ASpaceCopy {
      * @param args
      */
     public static void main(String[] args) throws JSONException {
-        String homeDirectory  = System.getProperty("user.home");
+        String homeDirectory  = System.getProperty("user.dir");
 
         // the db40 database filename
-        String databaseFilename = homeDirectory +"/temp/TestData/PPSData/cacheXMLDatabase.db4o";
+        String databaseFilename = homeDirectory +"/sample_data/PPSData/cacheXMLDatabase.db4o";
 
-        File logFile = new File(homeDirectory +"/temp/TestData/PPSData/migrationLog.txt");
+        File logFile = new File(homeDirectory +"/sample_data/PPSData/migrationLog.txt");
 
-        File accessionFile = new File(homeDirectory +"/temp/TestData/PPSData/PPSdata_Accession.xml");
-        File archiveFile = new File(homeDirectory +"/temp/TestData/PPSData/PPSdata_Archive.xml");
-        File libraryFile = new File(homeDirectory +"/temp/TestData/PPSData/PPSdata_Library.xml");
-        File objectFile = new File(homeDirectory +"/temp/TestData/PPSData/PPSdata_Object.xml");
-        File photoFile = new File(homeDirectory +"/temp/TestData/PPSData/PPSdata_Photos.xml");
+        File accessionFile = new File(homeDirectory +"/sample_data/PPSData/PPSdata_Accession.xml");
+        File archiveFile = new File(homeDirectory +"/sample_data/PPSData/PPSdata_Archive.xml");
+        File libraryFile = new File(homeDirectory +"/sample_data/PPSData/PPSdata_Library.xml");
+        File objectFile = new File(homeDirectory +"/sample_data/PPSData/PPSdata_Object.xml");
+        File photoFile = new File(homeDirectory +"/sample_data/PPSData/PPSdata_Photos.xml");
 
-        File bsiMapperScriptFile = new File(homeDirectory + "/temp/TestData/PPSData/mapper.bsh");
+        File bsiMapperScriptFile = new File(homeDirectory + "/sample_data/PPSData/mapper.bsh");
 
         ASpaceCopyPastPerfect aspaceCopy = new ASpaceCopyPastPerfect("http://localhost:8089", "admin", "admin");
         //ASpaceCopyPastPerfect aspaceCopy = new ASpaceCopyPastPerfect("http://54.235.231.8:8089", "admin", "admin");
-        //aspaceCopy.setSimulateRESTCalls(true);
-        if (!aspaceCopy.getSession()) System.exit(-100);
+        aspaceCopy.setSimulateRESTCalls(true);
+        //if (!aspaceCopy.getSession()) System.exit(-100);
 
         try {
             // load the mapper scripts

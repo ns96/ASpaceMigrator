@@ -1,0 +1,4052 @@
+<?xml version = "1.0" encoding="Windows-1252" standalone="yes"?>
+<VFPData>
+	<xsd:schema id="VFPData" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="VFPData" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="export" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="accby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="accdate" type="xsd:date"/>
+								<xsd:element name="accessno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="15"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="addname">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="addname2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="addname3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="addname4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="address1">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="address12">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="address13">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="address14">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="address2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="address22">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="address23">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="address24">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="city">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="city2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="city3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="city4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="contact">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="contact2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="contact3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="contact4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="country">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="country2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="country3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="country4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="county">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="county2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="county3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="county4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="credit">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dataset">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="15"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="deacdate" type="xsd:date"/>
+								<xsd:element name="dearname">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dearname2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dearname3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dearname4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="descrip">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dgname">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dgrecdate" type="xsd:date"/>
+								<xsd:element name="dgsentdat" type="xsd:date"/>
+								<xsd:element name="doglegal">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dogsent" type="xsd:boolean"/>
+								<xsd:element name="dogsigned" type="xsd:boolean"/>
+								<xsd:element name="email">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="email2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="email3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="email4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="faxno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="faxno2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="faxno3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="faxno4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="idno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="6"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="idno2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="6"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="idno3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="6"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="idno4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="6"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="inmemory">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="100"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="instruct">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="invndate" type="xsd:date"/>
+								<xsd:element name="notes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="offerdate" type="xsd:date"/>
+								<xsd:element name="otherno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phonecell">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phonecell2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phonecell3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phonecell4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phoneh">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phoneh2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phoneh3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phoneh4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phonew">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phonew2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phonew3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="phonew4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="photodate" type="xsd:date"/>
+								<xsd:element name="price">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recas">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recdate">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="10"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recfrom">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recfrom2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recfrom3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recfrom4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="120"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recptno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="9"/>
+											<xsd:fractionDigits value="1"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="redeacdate" type="xsd:date"/>
+								<xsd:element name="restrict">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="state">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="state2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="state3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="state4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tyldate" type="xsd:date"/>
+								<xsd:element name="tyldate2" type="xsd:date"/>
+								<xsd:element name="tyldate3" type="xsd:date"/>
+								<xsd:element name="tyldate4" type="xsd:date"/>
+								<xsd:element name="updated" type="xsd:dateTime"/>
+								<xsd:element name="updatedby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="website">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="60"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="website2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="60"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="website3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="60"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="website4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="60"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="zip">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="13"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="zip2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="13"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="zip3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="13"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="zip4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="13"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+				<xsd:anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<export>
+		<accby>Hilton, Richard</accby>
+		<accdate>1997-06-03</accdate>
+		<accessno>1997.1</accessno>
+		<addname>AltaMira Press</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>1630 North Main Street, Suite 367</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Walnut Creek</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>                                                                                                    </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. Allen</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>4 -  Books purchased for the Library
+          Registration Methods for the Small Museum
+          Revised Nomenclature for Museum Cataloging 
+          Introduction to Museum Work
+          Exhibit Labels: An Interpretive Approach
+</descrip>
+		<dgname>AltaMira Press</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno>925/933-9720</faxno>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>925/938-7243</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>150.00</price>
+		<recas>Produced by Staff</recas>
+		<recby>Parr, Mary L.</recby>
+		<recdate>06/03/1997</recdate>
+		<recfrom>AltaMira Press</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>CA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1997-06-03</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>1997-06-03T23:02:00</updated>
+		<updatedby/>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>94596</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>1997-08-28</accdate>
+		<accessno>1997.2</accessno>
+		<addname>University of Washington</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>Burke Museum of Natural and Cultural History</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2>Box 352180</address2>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Seattle</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact>Laura Phillips</contact>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>                                                                                                    </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Ms. Phillips</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>2 - projectile points</descrip>
+		<dgname>University of Washington</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>true</dogsent>
+		<dogsigned>true</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno>206/555-1245</faxno>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>206/555-4890</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>0</price>
+		<recas>Field Collection</recas>
+		<recby>Allen, Arthur</recby>
+		<recdate>08/28/1997</recdate>
+		<recfrom>University of Washington</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>WA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1997-08-28</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>1997-09-01T17:31:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>98195</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Hilton, Richard</accby>
+		<accdate>1998-03-10</accdate>
+		<accessno>1998.1</accessno>
+		<addname>Margaret K. Krantz</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>23654 Chestnut Street</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Perfectown</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>Gift of Margaret K. Krantz                                                                          </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mrs. Krantz</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>1 - Painting (acrylic on canvas)
+1 - Woodcut print
+1 - Oil Painting 
+1 - Book, Furniture Care and Conservation
+</descrip>
+		<dgname>Margaret K. Krantz</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>true</dogsent>
+		<dogsigned>true</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes>These paintings were acquired by the donor while on vacation in Florida in 1990.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell>610/555-6789</phonecell>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>610/555-4312</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>3000.00</price>
+		<recas>Gift</recas>
+		<recby>Parr, Mary L.</recby>
+		<recdate>1998</recdate>
+		<recfrom>Krantz, Margaret K.</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1998-03-10</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>1998-05-01T17:04:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website>www.fineart.kom</website>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19677</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>1999-03-05</accdate>
+		<accessno>1999.1</accessno>
+		<addname>Earl and Ernestine Hilton</addname>
+		<addname2>Kate Baker, Owner</addname2>
+		<addname3/>
+		<addname4/>
+		<address1>W. 6108 Depot Springs Road</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Cheney</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>In memory of the pioneers of Spokane County                                                         </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. and Mrs. Hilton</dearname>
+		<dearname2>Ms. Baker</dearname2>
+		<dearname3/>
+		<dearname4/>
+		<descrip>10 - Black and white photographs depicting life from 1930 through 1960 on Rocky Pine Ranch, a 1,280 acre ranch 15 miles southwest of Spokane, Washington.
+1 - Quilt
+1- Funnel
+1 - Sifter
+1 - Candlestick
+1 - Autograph book ca. 1930
+1 - Map, Oregon
+1 - Cream pitcher shaped like a cat by Shawnee Pottery</descrip>
+		<dgname>Earl and Ernestine Hilton</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>earl_ernie@wideworld.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2>/   -</faxno2>
+		<faxno3/>
+		<faxno4/>
+		<idno>11</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes>04/06/2001 Cream pitcher shaped like a cat by Shawnee Pottery- item 1999.1.17 was dropped by the collections manager and shattered into approximately 200 pieces.  It was determined that repair or restoration is impossible. The item was deaccessioned by authorization of Richard L. Hilton, Executive Director.  See deaccession form attached to paper Accession File.
+
+</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>509/555-4343</phoneh>
+		<phoneh2>/   -</phoneh2>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>/   -</phonew>
+		<phonew2>/   -</phonew2>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>5000.00</price>
+		<recas>Gift</recas>
+		<recby>Parr, Mary L.</recby>
+		<recdate>03/01/1999</recdate>
+		<recfrom>Hilton, Earl and Ernestine</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict>None</restrict>
+		<state>WA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1999-03-05</tyldate>
+		<tyldate2>2004-03-16</tyldate2>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>1999-03-05T15:58:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>99004</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary</accby>
+		<accdate>2000-05-06</accdate>
+		<accessno>2000.1</accessno>
+		<addname>Rose Ellen Carter</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>3452 Hipkins Lane</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Pastville</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>In memory of Ebenezer J. Carter b.1817 - d.1876.                                                    </credit>
+		<dataset/>
+		<deacdate>2001-04-06</deacdate>
+		<dearname>Ms. Carter</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>4 - photographs of Carter family
+1 - Book - Guide for a Small Map Collection
+1 - Book - Forties Fabric
+1 - Baby book 1930 (McWilliams Family)</descrip>
+		<dgname>Rose Ellen Carter</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>true</dogsent>
+		<dogsigned>true</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>15</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory>John Wesley Carter</inmemory>
+		<instruct/>
+		<invndate/>
+		<notes>Item #2000.1.6 was deaccessioned 04/06/2001 due to severe water damage.  See deaccession form attached to paper Accession File.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>610/555-6543</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Parr, Mary</recby>
+		<recdate>05/06/2000</recdate>
+		<recfrom>Carter, Rose Ellen</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2000-05-06</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2000-05-07T15:58:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>10222</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>2000-11-18</accdate>
+		<accessno>2000.2</accessno>
+		<addname>George Kittridge</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>2345 Main Street #1101</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Perfectown</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>In memory of my mother, Rosemary Hollis Kittridge                                                         </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. Kittridge</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>4 - Christmas greeting postcards
+1 - New Years greeting postcards
+2 - Photo postcards
+1 - WWI postcard</descrip>
+		<dgname>George Kittridge</dgname>
+		<dgrecdate>2009-02-05</dgrecdate>
+		<dgsentdat>2008-11-19</dgsentdat>
+		<doglegal/>
+		<dogsent>true</dogsent>
+		<dogsigned>true</dogsigned>
+		<email>boss@kittridgeranch.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>9</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes>Rosemary Kittridge died June 8, 2000.  She has bequeathed her postcard collection to the PastPerfect Museum.  She was a long-time member of the Pastville Historical Society and was an avid collector of antiques.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>000/555-4321</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>50.00</price>
+		<recas>Bequest</recas>
+		<recby>Hilton, Richard</recby>
+		<recdate>06/15/2000</recdate>
+		<recfrom>Kittridge, George</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>3.0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2000-06-20</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2000-11-20T14:35:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19588</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>2000-06-28</accdate>
+		<accessno>2000.3</accessno>
+		<addname>Mrs. Millicent V. Carter</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>3456 South Parkview Drive</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Perfectown</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>In memory of Rev. John L. McWilliams                                                                </credit>
+		<dataset>Main</dataset>
+		<deacdate/>
+		<dearname>Mrs. Carter</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>6 - Family photographs 1860 - 1910
+
+</descrip>
+		<dgname>Millicent Vivian Carter</dgname>
+		<dgrecdate>2000-08-14</dgrecdate>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>true</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>millie@perfectshoes.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>16</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>2000-07-03</invndate>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell>610/555-1918</phonecell>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>610/555-3434</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>0</price>
+		<recas>Bequest</recas>
+		<recby>Parr, Mary L.</recby>
+		<recdate>06/22/2000</recdate>
+		<recfrom>Carter, Millicent Vivian</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>16.0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2000-06-29</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2000-07-03T13:54:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19876</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>1998-10-11</accdate>
+		<accessno>1998.2</accessno>
+		<addname>Erwin J. Tucker</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>5611 Elmwood Drive</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Pastville</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>In memory of Elwood W. Tucker b.1900 - d.1998.                                                      </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. Tucker</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>1 - Fish fossilized in sandstone matrix (Purchased 1983)
+1 - Skull from a small raccoon (collected San Juan Island, WA 1981)
+1 - Amethyst crystal hand specimen (collected in Brazil 1973)
+1 - Shell - Strombus pugilus (collected 1966)
+2 - Books - Geology </descrip>
+		<dgname>Erwin J. Tucker</dgname>
+		<dgrecdate>1998-11-17</dgrecdate>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>tuck@netlink.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>29</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>1998-10-23</invndate>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>610/555-8915</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>1998-10-23</photodate>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Hilton, Richard</recby>
+		<recdate>09/23/1998</recdate>
+		<recfrom>Tucker, Erwin J.</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1998-10-11</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>1998-11-11T12:49:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website>www.deadthings.kom</website>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19873</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>1999-07-14</accdate>
+		<accessno>1999.2</accessno>
+		<addname>American Association of Museums</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>1575 Eye Street N. W. Suite 400</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Washington</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>                                                                                                    </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>American Association of Museums</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>1 - Book - New Museum Registration Methods</descrip>
+		<dgname>American Association of Museums</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno>202/289-6578</faxno>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>202/289-1818</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>45.00</price>
+		<recas>Donation</recas>
+		<recby>Parr, Mary L.</recby>
+		<recdate>07/14/1999</recdate>
+		<recfrom>American Association of Museums</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>DC</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1999-07-14</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>1999-07-15T23:04:00</updated>
+		<updatedby/>
+		<website>http://www.aam-us.org</website>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>20005</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>1997-05-22</accdate>
+		<accessno>1997.3</accessno>
+		<addname>Hazleton College</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>Department of Anthropology</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2>PO Box 1344</address2>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Hazleton</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>                                                                                                    </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Hazleton College</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>34 unglazed ceramic beads strung on dental floss.</descrip>
+		<dgname>Hazleton College</dgname>
+		<dgrecdate>1997-07-08</dgrecdate>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno>610/555-7812</faxno>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>1997-05-22</invndate>
+		<notes>All human remains and other items subject to repatriation have been transferred from Hazleton College, Department of Anthropology to the PastPerfect Museum for inventory and repatriation.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>610/555-7811</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>1997-06-12</photodate>
+		<price>0</price>
+		<recas>Transfer</recas>
+		<recby>Lufkin, Joseph</recby>
+		<recdate>04/28/1997</recdate>
+		<recfrom>Hazleton College</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict>Associated funerary object: subject to repatriation. See object id#1997.3.1 under Legal / Detailed Repatriation Info.</restrict>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1997-05-22</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>1997-09-01T13:30:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website>www.hazletoncollege.edu</website>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19665</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Allen, Arthur</accby>
+		<accdate>1997-02-12</accdate>
+		<accessno>1997.4</accessno>
+		<addname>Chiyono Kobayashi</addname>
+		<addname2>Henry T. Hanover</addname2>
+		<addname3/>
+		<addname4/>
+		<address1>4566 Mountain Highway</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Hilo</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>In memory of Yosoto &amp; Fusae Kobayashi                                                               </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Chiyono Kobayashi</dearname>
+		<dearname2>Mr. Hanover</dearname2>
+		<dearname3/>
+		<dearname4/>
+		<descrip>4 linear feet of archival records contained in 8 document cases - Company records of the Kobayashi Sodaworks of Hilo Hawaii, 1918-1941.  The files contain correspondence relating to business affairs, personal correspondence, immigration documents, shipping and receiving invoices.  Files also contain information relating to the U.S. Government shutdown of Japanese-owned businesses in Hawaii.</descrip>
+		<dgname>Chiyono Kobayashi</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2>/   -</faxno2>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes>Yosoto Kobayashi was a Japanese farmer born at Hiroshima, Japan in 1882.  He died in California at Santa Barbara in 1943.  He arrived in Hawaii in 1898 at the age of 16,  having signed a three year sugar plantation contract.  He worked at the Hamakua Sugar Mill on the Island of Hawaii from 1898 to 1910.  He started the Kobayashi Sodaworks in Hilo and ran it as a small family business until 1941 when the company was ordered to cease operations after the Japanese bombing of Pearl Harbor.  He married his cousin, Fusae Taneko in 1919.  They had 8 children, raising 5 to adulthood.  Kobayashi died of a heart attack in 1943 while in an internment camp in California. </notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2>/   -</phonecell2>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>808/555-1199</phoneh>
+		<phoneh2>/   -</phoneh2>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>808/555-4343</phonew>
+		<phonew2>/   -</phonew2>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Hilton, Richard</recby>
+		<recdate>09/01/1996</recdate>
+		<recfrom>Kobayashi, Chiyono</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict>None</restrict>
+		<state>HI</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1997-02-12</tyldate>
+		<tyldate2>2009-11-28</tyldate2>
+		<tyldate3>2009-11-28</tyldate3>
+		<tyldate4>2009-11-28</tyldate4>
+		<updated>1998-02-01T14:37:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>96712</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Allen, Arthur</accby>
+		<accdate>1998-04-06</accdate>
+		<accessno>1998.3</accessno>
+		<addname>Harold J. Harvey</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>5609 East 56th Ave #201</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>West Chester</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>For my mother, Jane O'Leary Harvey                                                                  </credit>
+		<dataset/>
+		<deacdate>2006-05-11</deacdate>
+		<dearname>Mr. Harvey</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>4 - Stereoscope photographs entitled:
+   "Tell me story, Grandpa"
+   "Military Parade"
+   "R. W. Sears at his desk"
+   "Indian Expeditionary Force"</descrip>
+		<dgname>Harold J. Harvey</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>true</dogsent>
+		<dogsigned>true</dogsigned>
+		<email>harv@cityfolks.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct>At the time of donation, Harold Harvey informed Mary Parr that the museum should use the stereoscope photographs for educational purposes in the permanent or teaching collection.</instruct>
+		<invndate/>
+		<notes>Item #1998.3.1 "Tell me story, Grandpa" was deaccessioned due to faded condition. 
+Item #1998.3.2 "Military Parade" was deaccessioned due to damage.
+Item #1998.3.4 "Indian Expeditionary Force" deaccessioned. Item destroyed in living history program.
+See deaccession forms attached to paper Accession File.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>610/555-1266</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>610/555-9988</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Parr, Mary L.</recby>
+		<recdate>04/06/1998</recdate>
+		<recfrom>Harvey, Harold J.</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict>None</restrict>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1998-04-06</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>1998-05-30T15:58:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19767</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Hilton, Richard</accby>
+		<accdate>1997-04-06</accdate>
+		<accessno>1997.5</accessno>
+		<addname>Henry Hanover</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>Caliber Software</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2>1254 Pomeroy Ave.</address2>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Cambridge</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>                                                                                                    </credit>
+		<dataset/>
+		<deacdate>2005-06-18</deacdate>
+		<dearname>Mr. Hanover</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>1 - Postcard Invitation to an anniversary entertainment at the post in Washington City.</descrip>
+		<dgname>Henry Hanover</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>true</dogsent>
+		<dogsigned>true</dogsigned>
+		<email>hhanover@calibersoftware.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno>/   -</faxno>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>27</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes>The postcard - 1997.5.1 was deaccessioned 04/06/2001.  It was reported missing form the archives during the inventory of 1998. Subsequent searches failed to turn up the item. See deaccession form attached to paper Accession File.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>212/555-7687</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>212/555-6767</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>16.00</price>
+		<recas>Gift</recas>
+		<recby>Hilton, Richard</recby>
+		<recdate>04/06/1997</recdate>
+		<recfrom>Hanover, Henry</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>MA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1997-04-06</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>1998-01-06T15:57:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>34322</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>1995-05-24</accdate>
+		<accessno>1995.1</accessno>
+		<addname>Oral History Project</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>PastPerfect Museum</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2>312 Main Street</address2>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Pastville</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>                                                                                                    </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Oral History Project</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>15 - Oral History cassette tapes made by Paulette Nordquist, interviews of local pioneers. </descrip>
+		<dgname>Oral History Project</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>425/555-1256</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>0</price>
+		<recas>Produced by Staff</recas>
+		<recby>Parr, Mary L.</recby>
+		<recdate>05/15/1995</recdate>
+		<recfrom>Oral History Project</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1995-05-24</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>1995-07-01T14:32:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>10234</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Allen, Arthur</accby>
+		<accdate>1997-09-04</accdate>
+		<accessno>1997.6</accessno>
+		<addname>Jean Anne Johnson</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>56433 Newgrove Avenue</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Westgrove</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>For my mother, Aretha Jane Harvey  1925-1989                                                                                                    </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Ms. Johnson</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>3 - Rock and mineral hand samples</descrip>
+		<dgname>Jean Anne Johnson</dgname>
+		<dgrecdate>1997-12-03</dgrecdate>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>jj@pennet.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno>000/555-2109</faxno>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>4</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>0997-09-07</invndate>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell>000/444-2323</phonecell>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>000/555-3410</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>000/557-8743</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>0997-09-23</photodate>
+		<price>50.00</price>
+		<recas>Gift</recas>
+		<recby>Wilson, Pat</recby>
+		<recdate>07/04/1997</recdate>
+		<recfrom>Johnson, Jean Anne</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict>None</restrict>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>1997-09-04</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>1997-10-01T12:37:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19345</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>2003-01-16</accdate>
+		<accessno>2003.1</accessno>
+		<addname>Mr. Kristopher K. Hanley</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>1051 Central Street S.E.</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Olympia</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>For my father, Clair Norton Hanley                                                                 </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. Hanley</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>3 - Letters
+10 - B&amp;W photographs - Naval subjects WWII
+1  - set of  Naval uniform epaulets
+1 - Dogtag
+1 - Uniform bar with 3 stars
+1 - Medal American eagle with anchors
+1 - Passport 1919
+1 - Diary 1915</descrip>
+		<dgname>Kristopher K. Hanley</dgname>
+		<dgrecdate>2003-03-25</dgrecdate>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>2003-01-18</invndate>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>360/352-4477</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew/>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>2003-02-16</photodate>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Parr, Mary L.</recby>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>WA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2003-01-16</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2003-02-01T17:53:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>98501</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>2004-01-15</accdate>
+		<accessno>2003.2</accessno>
+		<addname>Aaron G. Barrett</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>451 High Street</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Torrinton</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>Courtesy of Aaron &amp; Mona Barrett</credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. Barrett</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>1 - Hitchcock Chair
+1 - Teapot (red transferware)
+1 - Telephone
+</descrip>
+		<dgname>Aaron G. Barrett</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>agb_24@hotmail.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>2004-01-15</invndate>
+		<notes>Donations for the Carter family Homestead House</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell>860/556-7890</phonecell>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>860/555-1290</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew/>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>2004-01-15</photodate>
+		<price>110.00</price>
+		<recas>Donation</recas>
+		<recby>Lufkin, Joseph</recby>
+		<recdate>12/10/2003</recdate>
+		<recfrom>Barrett, Aaron G.</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>23.1</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>CT</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2004-01-16</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2004-01-15T13:44:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>06790</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Wilson, Pat</accby>
+		<accdate>2003-12-23</accdate>
+		<accessno>2003.3</accessno>
+		<addname>Mr. Jones</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>3456 N. Palfrey Ave.</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Malvern</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>In memory of  Hannah B. Washington.    </credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. Jones</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>3 - BW Photographs</descrip>
+		<dgname>Abraham Washington Jones</dgname>
+		<dgrecdate>2004-01-04</dgrecdate>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>2004-01-06</invndate>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell>611/555-3212</phonecell>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>611/555-4790</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew/>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>2004-01-06</photodate>
+		<price>100.00</price>
+		<recas>Gift</recas>
+		<recby>Wilson, Pat</recby>
+		<recdate>12/15/2003</recdate>
+		<recfrom>Jones, Abraham Washington</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2003-12-15</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2004-01-21T10:22:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19776</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>2003-12-28</accdate>
+		<accessno>2003.4</accessno>
+		<addname>Jennifer Grimes</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>5321 151st S.W.</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Tamaqua</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact>Jennifer Grimes</contact>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country>USA</country>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit/>
+		<dataset/>
+		<deacdate/>
+		<dearname>Ms. Grimes</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>1 - Cabinet Card photograph of Yosette Dupuis</descrip>
+		<dgname>Jennifer Grimes</dgname>
+		<dgrecdate>2004-01-20</dgrecdate>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>jennifer@canterburypublishing.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>20</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>2003-12-29</invndate>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>000/555-7900</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>000/555-5604</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>2003-12-26</photodate>
+		<price>200.00</price>
+		<recas>Gift</recas>
+		<recby>Meyers, Pamela</recby>
+		<recdate>12/26/2003</recdate>
+		<recfrom>Grimes, Jennifer</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2003-12-26</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2010-01-05T17:29:27</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19378</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Patterson, Nancy</accby>
+		<accdate>2004-01-15</accdate>
+		<accessno>2004.1</accessno>
+		<addname>Harrison Spencer</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>6789 Oakleaf Drive</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Tamaqua</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit/>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. Spencer</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>1 - War Ration Book Four issued to Charlotte E. Spencer
+1 - 16 mm film of Franklin Roosevelt asking congress to declare war on Japan, Dec. 8, 1941.</descrip>
+		<dgname>Harrison Spencer</dgname>
+		<dgrecdate>2004-02-28</dgrecdate>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>harry@mufflerman.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>38</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>2004-01-16</invndate>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>611/555-6743</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>611/555-7812</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>2004-01-16</photodate>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Hilton, Richard</recby>
+		<recdate>01/14/2004</recdate>
+		<recfrom>Spencer, Harrison</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>25.0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2004-01-15</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2004-03-31T17:18:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website>www.mufflerman.kom</website>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19345</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>2004-03-15</accdate>
+		<accessno>2004.2</accessno>
+		<addname>Harrison Spencer</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>6789 Oakleaf Drive</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Tamaqua</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit/>
+		<dataset>Main</dataset>
+		<deacdate/>
+		<dearname>Mr. Spencer</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>Book - 1906 The World's Famous Orations
+Book - 1883 The Autocrat at the Breakfast Table</descrip>
+		<dgname>Harrison Spencer</dgname>
+		<dgrecdate>2004-04-23</dgrecdate>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>harry@mufflerman.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>38</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>2004-03-15</invndate>
+		<notes>These books were acquired by the donor's grandfather, Horace Spencer.  The donor inherited them in 1987.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>611/555-6743</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>611/555-7812</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>2004-03-11</photodate>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Lufkin, Joseph</recby>
+		<recdate>02/03/2004</recdate>
+		<recfrom>Spencer, Harrison</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>26.0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2004-03-15</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2004-03-31T17:27:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website>www.mufflerman.kom</website>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19345</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>2004-02-14</accdate>
+		<accessno>2004.3</accessno>
+		<addname>PastPerfect Museum</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>300 North Pottstown Pike</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2>Suite #200</address2>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Exton</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact>Gomez, Brian</contact>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit/>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. Gomez</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>1 - Tape recording of the Wichita Bob and the Mountain Blues Boys. Recorded at the annual PastPerfect Concert featuring local musicians. Ethnomusicology Collection.  </descrip>
+		<dgname>PastPerfect Museum</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>brian@museumsoftware.com</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno>610/363-7845</faxno>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>2004-02-14</invndate>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>610/304-0973</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>2004-02-14</photodate>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Parr, Mary L.</recby>
+		<recdate>02/14/2004</recdate>
+		<recfrom>PastPerfect Museum</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2004-02-14</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2004-02-14T12:51:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website>www.museumsoftware.com</website>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19341</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Lufkin, Joseph</accby>
+		<accdate>2004-10-20</accdate>
+		<accessno>2004.4</accessno>
+		<addname>Ms. Barbara Wright Adams</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>2343 Harvard Avenue</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Perfectown</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit/>
+		<dataset/>
+		<deacdate/>
+		<dearname>Ms. Adams</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>2 - B&amp;W photographs of Adams Family members</descrip>
+		<dgname>Adams, Barbara Wright</dgname>
+		<dgrecdate>2004-10-18</dgrecdate>
+		<dgsentdat>2004-08-04</dgsentdat>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>lizz@perfectserve.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>2004-10-20</invndate>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>610/555-6789</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew/>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>2004-10-20</photodate>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Hilton, Richard</recby>
+		<recdate>10/20/2004</recdate>
+		<recfrom>Adams, Barbara Wright</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2004-10-20</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2004-11-20T17:27:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19340</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby/>
+		<accdate>2000-06-30</accdate>
+		<accessno>2000.4</accessno>
+		<addname>Fiona W. Blaine</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>3456 3rd Ave.</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2>Apt. #67B</address2>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Tamaqua</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit/>
+		<dataset/>
+		<deacdate/>
+		<dearname>Ms. Blaine</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>3  - Books:
+Dating Fabrics: A Color Guide 1800-1960
+Collector's Gude to Early Photographs
+Guide to the Use of Books and Libraries
+</descrip>
+		<dgname>Blaine, Fiona W.</dgname>
+		<dgrecdate>2000-07-12</dgrecdate>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate>2000-09-20</invndate>
+		<notes>
+</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell>610/555-3211</phonecell>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>610/555-9812</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate>2000-09-20</photodate>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Hilton, Richard</recby>
+		<recdate>06/26/2000</recdate>
+		<recfrom>Blaine, Fiona W.</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>18.0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2000-06-30</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2000-07-25T12:33:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>10334</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Hilton, Richard</accby>
+		<accdate>2009-06-21</accdate>
+		<accessno>2009.15</accessno>
+		<addname>Ms. Patricia Babbitt</addname>
+		<addname2>Christopher N. Babbitt</addname2>
+		<addname3/>
+		<addname4/>
+		<address1>6751 West River Street</address1>
+		<address12>1299 W 5th Avenue</address12>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Tamaqua</city>
+		<city2>New York</city2>
+		<city3/>
+		<city4/>
+		<contact>Babbitt, Patricia J.</contact>
+		<contact2>Christopher N. Babbitt</contact2>
+		<contact3/>
+		<contact4/>
+		<country>US</country>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>In memory of my grandfather, Patrick Carter Babbitt</credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Ms. Babbitt</dearname>
+		<dearname2>Mr. Babbitt</dearname2>
+		<dearname3/>
+		<dearname4/>
+		<descrip>1 - 1970 Tourist Brochure - Local interest
+1 - Muzzle loading rifle 1790 ca.
+4 - Print, Photographic - Historic subjects 1860 - 1912</descrip>
+		<dgname>Babbitt, Patricia J.</dgname>
+		<dgrecdate>2009-06-15</dgrecdate>
+		<dgsentdat>2009-05-11</dgsentdat>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>pat@babbittinc.kom</email>
+		<email2>cbabbitt@aol.kom</email2>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>45</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory>My grandfather, Patrick Carter Babbitt</inmemory>
+		<instruct/>
+		<invndate/>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell>111/555-1212</phonecell>
+		<phonecell2>000/555-3400</phonecell2>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>000/555-7801</phoneh>
+		<phoneh2>000/555-6754</phoneh2>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew/>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>2000.00</price>
+		<recas>Gift</recas>
+		<recby>Parr, Mary L.</recby>
+		<recdate>05/11/2009</recdate>
+		<recfrom>Babbitt, Patricia J.</recfrom>
+		<recfrom2>Babbitt, Christopher N.</recfrom2>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>28.0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2>NY</state2>
+		<state3/>
+		<state4/>
+		<tyldate>2009-05-11</tyldate>
+		<tyldate2>2010-01-05</tyldate2>
+		<tyldate3>2010-01-05</tyldate3>
+		<tyldate4>2010-01-05</tyldate4>
+		<updated>2009-06-21T17:19:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website>www.babbittinc.kom</website>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19444</zip>
+		<zip2>11234</zip2>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>2000-07-22</accdate>
+		<accessno>2000.5</accessno>
+		<addname>Neil Packwood Jr.</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>12343 Elmwood Drive</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Perfectown</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit/>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. Packwood</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>1 Engagement Ring, 19th century diamond
+1 Book, Bread from God 1901
+1 Letter Ethel Gregory to Neil Packwood Sr. 1888
+1 Photo Ethel &amp; Neil Packwood Sr. wedding 1902</descrip>
+		<dgname>Neil Packwood Jr.</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>paker@yahoo.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno>000/555-6788</faxno>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>23</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes>The Packwood family has been prominent in the Perfectown area since the Revolutionary War Period.  The family patriarch, Horace W. Packwood, was a pioneer in the area, receiving a land grant in 1770. Neil Packwood Sr. was a Chester County Justice of the Peace from 1875 to 1915.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell>000/555-8473</phonecell>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>000/555-2356</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>000/555-6789 Ext 210</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Lufkin, Joseph</recby>
+		<recdate>01/04/2000</recdate>
+		<recfrom>Packwood, Neil Jr.</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>1.0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate/>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2000-07-25T13:10:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19822</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Smith, Elizabeth</accby>
+		<accdate>2000-08-22</accdate>
+		<accessno>2000.6</accessno>
+		<addname>Humphrey Jefferson</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>8891 Drummond Street</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Pastville</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact/>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit/>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. Jefferson</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>Corporate records for Chester Paper Box Company.  This company operated from 1875 to 1911.  It was a major employer in the Chester County area.  Horace Jefferson was the original owner of the company.  At his death the collection (15 linear feet of documents, photographs, blueprints, correspondence) were bequeathed to his grandson Humphrey Jefferson.</descrip>
+		<dgname>Humphrey Jefferson</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>0</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes>Collection Committee will meet 04/15/2009 to consider this archival collection. Richard L. Hilton 01/11/2009.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>000/555-9076</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>0</price>
+		<recas>Bequest</recas>
+		<recby>Parr, Mary L.</recby>
+		<recdate>06/15/2000</recdate>
+		<recfrom>Jefferson, Humphrey</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>17.0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate/>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2000-11-10T13:51:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19833</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby/>
+		<accdate/>
+		<accessno>2010.1</accessno>
+		<addname>William Lawrence</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>6733 E Poplar Ave</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Perfectown</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact>William Lawrence</contact>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit/>
+		<dataset/>
+		<deacdate/>
+		<dearname>Mr. Lawrence</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>Doctor's bag that belonged to Dr. Perry Clayton.</descrip>
+		<dgname>William Lawrence</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email/>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>47</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes/>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>000/555-2490</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew/>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Smith, Elizabeth</recby>
+		<recdate>01/25/2010</recdate>
+		<recfrom>Lawrence, William</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>29.0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate/>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2010-02-15T10:22:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19334</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>2011-04-04</accdate>
+		<accessno>2011.1</accessno>
+		<addname>Barbara Margolis</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>5466 S. 65th Ave.</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Armbruster</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact>Barbara Margolis</contact>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit/>
+		<dataset/>
+		<deacdate/>
+		<dearname>Barbara</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>Kitchen dresser for the Carter Homestead House kitchen from a local farm in Pastville, PA.</descrip>
+		<dgname>Barbara Margolis</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>barmarg@museumsoftware.com</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno>000/555-8910</faxno>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>36</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes>Barbara found this dresser in an auction and felt it is appropriate for interpreting the Carter Homestead. It came from the nearby George C Alberts farmstead which was torn down in January 2010.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>000/555-8909</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>750.00</price>
+		<recas>Gift</recas>
+		<recby>Smith, Elizabeth</recby>
+		<recdate>03/01/2011</recdate>
+		<recfrom>Margolis &amp; Blumberg Antiques</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate/>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2011-04-14T12:55:00</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19887</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>2011-06-20</accdate>
+		<accessno>2011.2</accessno>
+		<addname>Barbara Fitzgibbon</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>9890 W. Broadway Ave.</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>West Chester</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact>Barbara Fitzgibbon</contact>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>In memory of my grandfather, Thomas Greene, who loved old photographs.</credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Barbara</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>4 - carte de visite portraits from the late 1800s taken at Philadelphia studios.
+1 - carte de visite portrait taken at Grotecloss Studio in Paterson, NJ
+1 - account ledger, 1858 -- accounts of business transactions for transporting goods in the Phildelphia area. This ledger has entries in the front and back. It appears that the children of the Marshall family practiced handwriting and mathematics in this book as well.</descrip>
+		<dgname>Barbara Fitzgibbon</dgname>
+		<dgrecdate/>
+		<dgsentdat/>
+		<doglegal/>
+		<dogsent>false</dogsent>
+		<dogsigned>false</dogsigned>
+		<email>babfitz@museumsoftware.com</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno>000/555-6798</faxno>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>26</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes>Barbara purchased these photographic prints and ledger at a local auction.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh/>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew>000/555-6799</phonew>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Smith, Elizabeth</recby>
+		<recdate>05/20/2011</recdate>
+		<recfrom>Cherry Hill Realty</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate/>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2013-01-09T12:22:05</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19352</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+	<export>
+		<accby>Parr, Mary L.</accby>
+		<accdate>2012-01-15</accdate>
+		<accessno>2012.1</accessno>
+		<addname>Cindy Baker-Hartford</addname>
+		<addname2/>
+		<addname3/>
+		<addname4/>
+		<address1>4005 West Philadelphia Avenue #201</address1>
+		<address12/>
+		<address13/>
+		<address14/>
+		<address2/>
+		<address22/>
+		<address23/>
+		<address24/>
+		<city>Perfectown</city>
+		<city2/>
+		<city3/>
+		<city4/>
+		<contact>Cindy Baker-Hartford</contact>
+		<contact2/>
+		<contact3/>
+		<contact4/>
+		<country/>
+		<country2/>
+		<country3/>
+		<country4/>
+		<county/>
+		<county2/>
+		<county3/>
+		<county4/>
+		<credit>Donated by the Hartford Family</credit>
+		<dataset/>
+		<deacdate/>
+		<dearname>Cindy</dearname>
+		<dearname2/>
+		<dearname3/>
+		<dearname4/>
+		<descrip>1 photo of the Harper triplets, 1911
+1 stereograph of a parade with men on horseback
+1 cabinet card of Elisabeth Edwards, first female student of Pastville University, 1890s
+
+
+</descrip>
+		<dgname>Cynthia Baker-Hartford</dgname>
+		<dgrecdate>2012-03-14</dgrecdate>
+		<dgsentdat>2012-01-15</dgsentdat>
+		<doglegal/>
+		<dogsent>true</dogsent>
+		<dogsigned>true</dogsigned>
+		<email>CBH@perfectnet.kom</email>
+		<email2/>
+		<email3/>
+		<email4/>
+		<faxno/>
+		<faxno2/>
+		<faxno3/>
+		<faxno4/>
+		<idno>49</idno>
+		<idno2>0</idno2>
+		<idno3>0</idno3>
+		<idno4>0</idno4>
+		<inmemory/>
+		<instruct/>
+		<invndate/>
+		<notes>Cindy had collected these items at auctions in Pastville during the years from 1997-2010. She has included a word document of some of biographical information of some of the people featured in the photographs.</notes>
+		<offerdate/>
+		<otherno/>
+		<phonecell/>
+		<phonecell2/>
+		<phonecell3/>
+		<phonecell4/>
+		<phoneh>610/555-9652</phoneh>
+		<phoneh2/>
+		<phoneh3/>
+		<phoneh4/>
+		<phonew/>
+		<phonew2/>
+		<phonew3/>
+		<phonew4/>
+		<photodate/>
+		<price>0</price>
+		<recas>Gift</recas>
+		<recby>Smith, Elizabeth</recby>
+		<recdate>01/05/2012</recdate>
+		<recfrom>Baker-Hartford, Cindy</recfrom>
+		<recfrom2/>
+		<recfrom3/>
+		<recfrom4/>
+		<recptno>32.0</recptno>
+		<redeacdate/>
+		<restrict/>
+		<state>PA</state>
+		<state2/>
+		<state3/>
+		<state4/>
+		<tyldate>2012-01-15</tyldate>
+		<tyldate2/>
+		<tyldate3/>
+		<tyldate4/>
+		<updated>2013-07-09T14:45:20</updated>
+		<updatedby>Unknown</updatedby>
+		<website/>
+		<website2/>
+		<website3/>
+		<website4/>
+		<zip>19324</zip>
+		<zip2/>
+		<zip3/>
+		<zip4/>
+	</export>
+</VFPData>

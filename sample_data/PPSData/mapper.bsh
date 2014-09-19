@@ -1,0 +1,443 @@
+/**
+Demo Beanshell script to demonstrate importing PastPerfect data
+into an Archives Space Instance
+
+It is executed within the data migration tool
+
+@author Nathan Stevens
+@version 0.1 09/19/2014
+
+Specify the mapping functionality the script provides. change # to @ to 
+specify that a certain record type is supported
+
+@name
+@accession
+@resource
+*/
+
+// import Java classes we need
+import org.json.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import org.nyu.edu.dlts.utils.*;
+import org.nyu.edu.dlts.model.*;
+import org.nyu.edu.dlts.custom.*;
+
+// The date formatter
+DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+
+// Method to return a Java date object
+Date getDate(String dateString) {
+	try {
+		return df.parse(dateString);
+	} catch(Exception e) {
+		return null;
+	}
+}
+
+// Method to get the data in a certain column 
+String getValue(String key) {
+	record.get(key);	
+}
+
+// Method to get the data in a certain column 
+String getChildValue(String key) {
+	childRecord.get(key);	
+}
+
+
+// Method to create a repository record
+void createRepository() {
+	recordJS.put("ShortName", "PastPerfect");
+    	recordJS.put("Name", "Past Perfect Repository");
+    	recordJS.put("Code", "5555");
+    	recordJS.put("URL", "http://pastperfect.org/repo");	
+}
+
+// Method to check to see if name is a person or a corporate entity
+boolean isPerson(String primaryName) {
+	name = primaryName.toLowerCase();
+	if(name.contains("government")) {
+		return false;
+	} else if (name.contains("company")) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+// Method to convert a subject record
+void convertSubject() {
+	// set the subject source
+	recordJS.put("source", "local");
+
+	sa = record.split("\\s*--\\s*");
+	termsJA = new JSONArray();
+
+	for(String term: sa) {
+		termJS = new JSONObject();
+
+		termJS.put("term", term);
+		termJS.put("term_type","topical");
+		termJS.put("vocabulary", "/vocabularies/1");
+
+		termsJA.put(termJS);
+	}
+
+	recordJS.put("terms", termsJA);
+	recordJS.put("vocabulary", "/vocabularies/1");
+}
+
+// Method to convert a name record
+void convertName() {    
+	// holds name information
+	namesJA = new JSONArray();
+	namesJS = new JSONObject();
+    
+    // set values for abstract_name.rb schema
+    namesJS.put("source", "local");
+    namesJS.put("rules", "local");
+    namesJS.put("dates", "UNKNOWN");
+    	
+    // get the name which is just the record in this case
+	primaryName = record;
+	
+    if(isPerson(primaryName)) {
+    		// set the agent type
+    		recordJS.put("agent_type", "agent_person");
+    		
+    		// set values for name_person.rb schema
+    		namesJS.put("primary_name", primaryName);
+    		namesJS.put("name_order", "direct");
+    		namesJS.put("sort_name", primaryName);
+    } else {
+    		// set the agent type
+    		recordJS.put("agent_type", "agent_corporate_entity");
+    		
+    		// set values for name_corporate_entity.rb schema
+    		namesJS.put("primary_name", primaryName);
+    		namesJS.put("sort_name", primaryName);
+    }
+    
+    // add the names array and names json objects to main record
+    namesJA.put(namesJS);
+    recordJS.put("names", namesJA);
+}
+
+// Method to convert an accession record
+void convertAccession() {
+	title = getCellData('Y') + " " + getCellData('Y');
+	recordJS.put("title", title.trim());
+	
+	date = getDate(getCellData('P'));
+	if(date == null) {
+		date = getDate("2100/01/01");	
+	}
+	recordJS.put("accession_date", date);
+	
+	recordJS.put("id_0", getCellData('D'));
+	
+	recordJS.put("content_description", getCellData("AR"));
+	recordJS.put("condition_description", getCellData("BC"));
+	
+	recordJS.put("disposition", getCellData("AY"));
+	recordJS.put("inventory", "flat inventory EAD or PDF link");
+	
+	recordJS.put("provenance", getCellData("AX"));
+	
+	recordJS.put("general_note", getCellData("BB"));
+	
+	// set the acquisition type
+	atype = getCellData("AU");
+	if(atype != null && atype.isEmpty()) {
+		atype = atype.trim().toLowerCase();
+		if(atype.equals("purchase on")) {
+			recordJS.put("acquisition_type", "purchase");
+		} else if(atype.equals("Transfer from")) {
+			recordJS.put("acquisition_type", "transfer");
+		} else {
+			recordJS.put("acquisition_type", "gift");	
+		}
+	}
+	
+	// set the access restriction
+	/*Missing Mapping*/
+	
+	// set the use restrictions
+	restrictionNote = getCellData("AS");
+	if(restrictionNote != null && !restrictionNote.isEmpty()) {
+		recordJS.put("use_restrictions_note", restrictionNote);
+		
+		if(!restrictionNote.equalsIgnoreCase("Unrestricted")) {
+			recordJS.put("use_restrictions", true);
+			recordJS.put("restrictions_apply", true);
+		}
+	}
+	
+	// add the bulk and inclusive dates
+	dateJA = new JSONArray();
+	
+	bulkDate = (getCellData('H') + " - " + getCellData('I')).trim();
+	if(!bulkDate.equals("-")) {
+		MapperUtil.addBulkDate(dateJA, "creation", bulkDate);
+	}
+	
+	inclusiveDate = (getCellData('T') + " - " + getCellData('U')).trim();
+	if(!inclusiveDate.equals("-")) {
+		MapperUtil.addInclusiveDate(dateJA, "creation", inclusiveDate);
+	}
+	
+	if(dateJA.length() != 0) {
+		recordJS.put("dates", dateJA);		
+	}
+	
+	// add the processed and right transfer date
+	date = getDate(getCellData('H'));
+	recordJS.put("processed_date", date);
+	
+	date = getDate(getCellData('I'));
+	recordJS.put("copyright_transfer_date", date);
+	recordJS.put("copyright_transfer_note", getCellData('J'));
+	
+	// add the location id and location note
+	recordJS.put("location_id", getCellData('K'));
+	recordJS.put("location_note", getCellData('L'));
+	
+	// add the extents
+	extentJA = new JSONArray();
+	
+	extentSum = getCellData("AD");
+	extentPhy = getCellData("AD");
+	extentDim = getCellData("AH");
+	extentType = "linear_feet"; //getCellData("AM");
+	
+	if(extentSum != null && !extentSum.isEmpty()) {
+		MapperUtil.addExtent(extentJA, "part", "1", extentType,
+                             extentSum, extentPhy, "");	
+	}
+	
+	if(extentDim != null && !extentDim.isEmpty()) {
+		MapperUtil.addExtent(extentJA, "part", "1", extentType,
+                             "", "", extentDim);	
+	}
+	
+	if(extentJA.length() != 0) {
+		recordJS.put("extents", extentJA);
+	}
+	
+	// add the collection management record
+	collectionManagementJS = new JSONObject();
+	
+	processors = (getCellData("BD") + ", " + getCellData("BF")).trim();
+	if(!processors.equals(",")) {
+		collectionManagementJS.put("processors", processors);	
+	}
+	
+	catalogeNote = getCellData('J');
+	formerlyKnownAs = getCellData('R');
+	if(!formerlyKnownAs.isEmpty()) {
+		catalogeNote = "Formerly Known As: " + formerlyKnownAs + "\n\n" + catalogeNote;		
+	}
+	
+	collectionManagementJS.put("cataloged_note", catalogeNote);
+	recordJS.put("collection_management", collectionManagementJS);
+	
+	// add the user defined object holding additional information that doesn't fit 
+	// into the accession data model
+	userDefinedJS = new JSONObject();
+	
+	userDefinedJS.put("string_1", getCellData('K'));  // catalog location
+	userDefinedJS.put("string_2", getCellData("BH"));  // temp location
+	userDefinedJS.put("string_3", getCellData("AW"));  // finding aid available
+	
+	recordJS.put("user_defined", userDefinedJS);
+	
+	// add the linked names data. This is not used
+	// by aspace, just by the data migrator to create the links
+	linkedNames = getCellData('C');
+	if(linkedNames != null && !linkedNames.isEmpty()) {
+		linkedNames += linkedNames + ", creator";
+		recordJS.put("linked_names", linkedNames);
+	}
+	
+	// add the linked resource data. Note used by aspace but by the
+	// migration tool
+	recordJS.put("related_resource", getCellData('M'));
+}
+
+// Method to add notes
+void addResourceNotes() {
+	notesJA = new JSONArray();
+	
+	MARC561a = getCellData("AU");
+	if(MARC561a != null && !MARC561a.isEmpty()) {
+		MapperUtil.addMultipartNote(notesJA, "custodhist", "Custodial History", MARC561a);				
+	}
+	
+	MARC518a = getCellData("AM");
+	if(MARC518a != null && !MARC518a.isEmpty()) {
+		MapperUtil.addMultipartNote(notesJA, "odd", "Date and Time of Event", MARC518a);				
+	}
+	
+	MARC555a2 = getCellData("AT");
+	if(MARC555a2 != null && !MARC555a2.isEmpty()) {
+		MapperUtil.addSinglePartNote(notesJA, "physdesc", "Tape Log", MARC555a2);				
+	}
+	
+	MARC520a = getCellData("AN");
+	if(MARC520a != null && !MARC520a.isEmpty()) {
+		MapperUtil.addSinglePartNote(notesJA, "abstract", "Abstract", MARC520a);				
+	}
+	
+	relatedMaterial = getCellData("BB");
+	if(relatedMaterial != null && !relatedMaterial.isEmpty()) {
+		MapperUtil.addMultipartNote(notesJA, "relatedmaterial", "Related Material", relatedMaterial);		
+	}
+	
+	scopeContent = getCellData("BD");
+	if(scopeContent != null && !scopeContent.isEmpty()) {
+		MapperUtil.addMultipartNote(notesJA, "scopecontent", "Scope and Content", scopeContent);				
+	}
+	
+	currentLocation = getCellData('H');
+	if(currentLocation != null && !currentLocation.isEmpty()) {
+		MapperUtil.addSinglePartNote(notesJA, "physloc", "Current Location", currentLocation);				
+	}
+	
+	accessRestriction = getCellData("AL");
+	if(accessRestriction != null && !accessRestriction.isEmpty()) {
+		MapperUtil.addMultipartNote(notesJA, "accessrestrict", "Access Restriction", accessRestriction);				
+	}
+	
+	useRestriction = getCellData("AO");
+	if(useRestriction != null && !useRestriction.isEmpty()) {
+		MapperUtil.addMultipartNote(notesJA, "userestrict", "Use Restriction", useRestriction);				
+	}
+	
+	processingInfo = getCellData("BA") + "\n\n" + getCellData("AZ");
+	processingInfo = processingInfo.trim();
+	if(!processingInfo.isEmpty()) {
+		MapperUtil.addMultipartNote(notesJA, "processinfo", "Processing Information", processingInfo);				
+	}
+	
+	// add any notes to this record
+	if(notesJA.length() != 0) {
+		recordJS.put("notes", notesJA);
+	}
+}
+
+// Method to convert a resource record
+void convertResource() {
+	// check to make sure we have a title
+	title = (getCellData('T') + " " + getCellData('T')).trim();
+	if(title.isEmpty()) {
+		title = "COLLECTION " + 	getCellData('A');
+	}
+	recordJS.put("title", title);
+
+	// add the language code
+	langauge = getCellData('R');
+	if(langauge == null || langauge.isEmpty()) {
+		langauge = "eng";
+	}
+	recordJS.put("language", langauge);
+	
+	// add the extent array containing
+	extentJA = new JSONArray();
+	extentSum = getCellData('Y');
+	extentPhy = getCellData("AK");
+	extentDim = getCellData("AC");
+	MapperUtil.addExtent(extentJA, "whole", "1", "linear_feet", extentSum, extentPhy, extentDim);
+	recordJS.put("extents", extentJA);
+	
+	// add the date array containing the dates json objects
+	dateJA = new JSONArray();
+	
+	// add the bulk and inclusive dates
+	bulkDate = getCellData('E') + "-" + getCellData('F');
+	if(!bulkDate.equals("-")) {
+		MapperUtil.addBulkDate(dateJA, "creation", bulkDate);
+	}
+	
+	inclusiveDate = getCellData('P') + "-" + getCellData('O');
+	if(!inclusiveDate.equals("-")) {
+		MapperUtil.addInclusiveDate(dateJA, "creation", inclusiveDate);
+	}
+	
+	recordJS.put("dates", dateJA);
+	
+	// set the ids
+	id0 = getCellData("AY");
+	if(id0 == null || id0.isEmpty()) {
+		id0 = "COL_" + getCellData('A');
+	}
+	recordJS.put("id_0", id0);
+	
+	// set the level to collection
+	recordJS.put("level", "collection");
+	
+	// set the type to papers
+	type = getCellData('X');
+	if(type != null && !type.isEmpty()) {
+		recordJS.put("resource_type", type.toLowerCase());
+	}
+	
+	// set the publish flag to true
+	recordJS.put("publish", true);
+	
+	// add the linked subjects, names, and accession data. This is not used
+	// by aspace, just by the data migrator to create the links
+	//recordJS.put("linked_subjects", getCellData('J'));
+	linkedNames = getCellData('B');
+	if(linkedNames != null && !linkedNames.isEmpty()) {
+		linkedNames += linkedNames + ", creator";
+		recordJS.put("linked_names", linkedNames);
+	}
+	//recordJS.put("linked_accessions", getCellData('L'));
+	
+	// add the instance now
+	//recordJS.put("analog_instances", getCellData('M'));
+	//recordJS.put("digital_instances", getCellData('N'));
+	
+	// add the resource notes
+	addResourceNotes();
+	
+	// set the publish flag to true
+	recordJS.put("publish", true);
+}
+
+
+// Method to convert a resource record
+void convertResourceComponent() {
+	print("Component Type Not Supported ...\n");
+}
+
+/*
+ * This is where code execution starts by first checking that the 
+ * recordType is not null.
+ * All functions being called must be above this point.
+ */
+if(recordType != null) {	
+    if(recordType.equals("repository")) {
+    		print("\nCreating Repository ...\n");
+    		createRepository();
+    } else if(recordType.equals("subject")) {
+    		print("\nConverting Subject ...\n");
+    		convertSubject();
+    } else if(recordType.equals("name")) {
+    		print("\nConverting Name ...\n");
+    		convertName();
+    } else if(recordType.equals("accession")) {
+    		print("\nConverting Accession ...\n");
+    		convertAccession();
+    } else if(recordType.equals("resource")) {
+    		print("\nConverting Resource ...\n");
+    		convertResource();
+    } else if(recordType.equals("resourceComponent")) {
+    		print("\nConverting Resource Component... (" + header + ")\n");
+    		convertResourceComponent();
+    } else {
+    		// print error message to say that the record type is not supported
+    		print("Record type not supported ... " + recordType);
+    }
+}

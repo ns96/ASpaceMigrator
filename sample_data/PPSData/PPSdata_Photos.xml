@@ -1,0 +1,7154 @@
+<?xml version = "1.0" encoding="Windows-1252" standalone="yes"?>
+<VFPData>
+	<xsd:schema id="VFPData" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="VFPData" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="export" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="accessno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="15"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="acqvalue">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="appnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="appraisor">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="caption">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="catby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="catdate" type="xsd:date"/>
+								<xsd:element name="classes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="collection">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="75"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="conddate" type="xsd:date"/>
+								<xsd:element name="condexam">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="condition">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="35"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="condnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="copyright">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="creator">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="credit">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="curvalmax">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="curvalue">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dataset">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="15"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="date">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="50"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="descrip">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dimnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="dispvalue">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="10"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="earlydate">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="4"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="event">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhibitno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="7"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhlabel1">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhlabel2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhlabel3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhlabel4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="exhstart" type="xsd:date"/>
+								<xsd:element name="filmsize">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="35"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="flagdate" type="xsd:dateTime"/>
+								<xsd:element name="flagnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="flagreason">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="frame">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="frameno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="gparent">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="45"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="homeloc">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="60"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="imageno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="3"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="inscomp">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="insdate" type="xsd:date"/>
+								<xsd:element name="insphone">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="inspremium">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="insrep">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="insvalue">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="9"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="invnby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="invndate" type="xsd:date"/>
+								<xsd:element name="latdeg">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="8"/>
+											<xsd:fractionDigits value="6"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="latedate">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="4"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="legal">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="loancond">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="loandue" type="xsd:date"/>
+								<xsd:element name="loaninno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="15"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="loanno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="7"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield1">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield5">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="locfield6">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="longdeg">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="9"/>
+											<xsd:fractionDigits value="6"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="maintcycle">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="10"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="maintdate" type="xsd:date"/>
+								<xsd:element name="maintnote">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="medium">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="negloc">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="negno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="notes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="objectid">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="objname">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="objname2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="objname3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="objnames">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="oldno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="origcopy">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="15"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="otherno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="outdate" type="xsd:date"/>
+								<xsd:element name="parent">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="people">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="place">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="policyno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="printsize">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="35"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="process">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="provenance">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="pubnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recas">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recdate">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="10"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="recfrom">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="relnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="site">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="siteno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="30"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="slideno">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="status">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="statusby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="statusdate" type="xsd:date"/>
+								<xsd:element name="sterms">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="studio">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="subjects">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempauthor">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempdate" type="xsd:date"/>
+								<xsd:element name="temploc">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempnotes">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempreason">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tempuntil">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="10"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="title">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield1">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield5">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="tlocfield6">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="40"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf1">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf10">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf11">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf12">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="20"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf13">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="12"/>
+											<xsd:fractionDigits value="0"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf14">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf15">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="2"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf16">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="3"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf17">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:decimal">
+											<xsd:totalDigits value="11"/>
+											<xsd:fractionDigits value="3"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf18" type="xsd:date"/>
+								<xsd:element name="udf19" type="xsd:date"/>
+								<xsd:element name="udf2">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf20" type="xsd:date"/>
+								<xsd:element name="udf21">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf22">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf3">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf4">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf5">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf6">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf7">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf8">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="udf9">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="2147483647"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="updated" type="xsd:dateTime"/>
+								<xsd:element name="updatedby">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:maxLength value="25"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:element>
+								<xsd:element name="valuedate" type="xsd:date"/>
+								<xsd:element name="webinclude" type="xsd:boolean"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+				<xsd:anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<export>
+		<accessno>1999.1</accessno>
+		<acqvalue>0</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Earl &amp; Ernie's Wedding,1942</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1999-03-05</catdate>
+		<classes>Domestic Life
+Weddings
+</classes>
+		<collection>Rocky Pine Ranch Collection</collection>
+		<conddate>2000-06-14</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes>03/05/1999 - Photograph has been cut down from a larger size.  MLP</condnotes>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator/>
+		<credit>In memory of the pioneers of Spokane County</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<dataset/>
+		<date>1942</date>
+		<descrip>Earl L. Hilton and Ernestine McMillan Hilton stand in front of a fireplace shortly after their wedding.  She is wearing a white satin wedding dress and holding a bouquet of roses.  He is wearing a dark suit. </descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1942</earlydate>
+		<event>1943 Hilton Wedding</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>47.488000</latdeg>
+		<latedate>1942</latedate>
+		<legal/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>117.585000</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>1999-03-05</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc/>
+		<negno>C0987</negno>
+		<notes/>
+		<objectid>1999.1.1</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Copy</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Art</parent>
+		<people>Hilton, Earl L.
+Hilton, Ernestine McMillan</people>
+		<place>Washington/Spokane County/Cheney</place>
+		<policyno>65 098 07</policyno>
+		<printsize>2 1/2" x 3 1/2"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>03/01/1999</recdate>
+		<recfrom>Hilton, Earl and Ernestine</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Tanaka, Jeanie</statusby>
+		<statusdate>2001-04-11</statusdate>
+		<sterms>Hilton Family
+McMillan Family</sterms>
+		<studio/>
+		<subjects>Marriage
+Brides
+Grooms
+Bouquets
+</subjects>
+		<tempauthor>Parr, Mary L.</tempauthor>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-12-05</tempdate>
+		<temploc/>
+		<tempnotes/>
+		<tempreason>Pulled for World War II Exhibit</tempreason>
+		<tempuntil/>
+		<title>A Hilton Wedding</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4>Exhibit Prep</tlocfield4>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2014-03-23T13:34:38</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>1999.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Granny's Turkeys</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1999-03-05</catdate>
+		<classes>Agriculture
+Poultry
+</classes>
+		<collection>Rocky Pine Ranch Collection</collection>
+		<conddate>2001-04-11</conddate>
+		<condexam>Wilson, Pat</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator/>
+		<credit>In memory of the pioneers of Spokane County</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1935</date>
+		<descrip>Lura Cox Hilton (Granny) feeding her turkeys in the yard at Rocky Pine Ranch.  She is wearing a housedress and apron and is surrounded by a flock of about 50 turkeys.  There are pine trees in the background.  </descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1930</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>47.463134</latdeg>
+		<latedate>1940</latedate>
+		<legal/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>117.502156</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2001-04-07</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc/>
+		<negno>C0989</negno>
+		<notes/>
+		<objectid>1999.1.3</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Art</parent>
+		<people>Hilton, Lura Cox</people>
+		<place>Washington/Spokane County/Cheney</place>
+		<policyno>65 098 07</policyno>
+		<printsize>4" x 6"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>03/01/1999</recdate>
+		<recfrom>Hilton, Earl and Ernestine</recfrom>
+		<relnotes/>
+		<site>Grover Farm</site>
+		<siteno>Grover - 1</siteno>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Wilson, Pat</statusby>
+		<statusdate>2001-04-11</statusdate>
+		<sterms>Rocky Pine Ranch</sterms>
+		<studio/>
+		<subjects>Women
+Turkeys
+Trees
+Fences
+Roads
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Granny's Turkeys</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2014-03-18T15:00:58</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>1999.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Earl mowing hay</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1999-03-05</catdate>
+		<classes>Agriculture
+Horses
+</classes>
+		<collection>Rocky Pine Ranch Collection</collection>
+		<conddate>2001-04-11</conddate>
+		<condexam>Tanaka, Jeanie</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator/>
+		<credit>In memory of the pioneers of Spokane County</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1937</date>
+		<descrip>Earl Hilton driving the horse-drawn mower.  The mower wagon is hitched to two horses.  The horses were named Fanny and Katie. Fanny had been a cavalry horse and was purchased from the army at Fort George Wright in Spokane.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1937</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>47.471345</latdeg>
+		<latedate>1937</latedate>
+		<legal/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>117.509585</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2001-04-07</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc/>
+		<negno>C0994</negno>
+		<notes/>
+		<objectid>1999.1.8</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Copy</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Art</parent>
+		<people>Hilton, Earl L.</people>
+		<place>Washington/Spokane County/Cheney</place>
+		<policyno>65 098 07</policyno>
+		<printsize>5" x 7"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>03/01/1999</recdate>
+		<recfrom>Hilton, Earl and Ernestine</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Tanaka, Jeanie</statusby>
+		<statusdate>2001-04-11</statusdate>
+		<sterms>Rocky Pine Ranch
+Hilton Family</sterms>
+		<studio/>
+		<subjects>Farming
+Horse teams
+Hay
+Farmers
+Mowing
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Putting Up Hay</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2014-03-23T13:22:39</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>1999.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Barn 1995</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1999-03-05</catdate>
+		<classes>Agriculture
+Farms &amp; Farming
+</classes>
+		<collection>Rocky Pine Ranch Collection</collection>
+		<conddate>2001-04-11</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes>03/05/1999 - This print has been trimmed along the edges with a decorative border. MLP</condnotes>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator/>
+		<credit>In memory of the pioneers of Spokane County</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1995</date>
+		<descrip>The 1902 barn after being painted in 1995.</descrip>
+		<dimnotes/>
+		<dispvalue>Fair</dispvalue>
+		<earlydate>1995</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>47.463800</latdeg>
+		<latedate>1995</latedate>
+		<legal/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>117.503700</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2001-04-07</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc/>
+		<negno>C0990</negno>
+		<notes/>
+		<objectid>1999.1.5</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Art</parent>
+		<people/>
+		<place>Washington/Spokane County/Cheney</place>
+		<policyno>65 098 07</policyno>
+		<printsize>5" x 7"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>03/01/1999</recdate>
+		<recfrom>Hilton, Earl and Ernestine</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2001-04-11</statusdate>
+		<sterms>Rocky Pine Ranch</sterms>
+		<studio>None</studio>
+		<subjects>Barns
+Agricultural facilities
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>The barn</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2014-03-23T13:19:49</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>1999.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Hay Truck</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1999-03-05</catdate>
+		<classes>Agriculture
+Children
+Transportation
+</classes>
+		<collection>Rocky Pine Ranch Collection</collection>
+		<conddate>2001-04-11</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator/>
+		<credit>In memory of the pioneers of Spokane County</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1949</date>
+		<descrip>Three children pose on the front bumper of a fully-loaded hay truck.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1949</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>47.464285</latdeg>
+		<latedate>1949</latedate>
+		<legal/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>117.505900</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2001-04-07</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc/>
+		<negno>C0991</negno>
+		<notes/>
+		<objectid>1999.1.10</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Art</parent>
+		<people>Hilton, Nancy L.
+Hilton, Earl L. Jr.
+Hilton, Richard L.</people>
+		<place>Washington/Spokane County/Cheney</place>
+		<policyno>65 098 07</policyno>
+		<printsize>5" x 7"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>03/01/1999</recdate>
+		<recfrom>Hilton, Earl and Ernestine</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Wilson, Pat</statusby>
+		<statusdate>2001-04-11</statusdate>
+		<sterms>Hilton Family
+Rocky Pine Ranch</sterms>
+		<studio/>
+		<subjects>Agriculture
+Children
+Trucks
+Hay
+
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Hay Truck</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2014-03-23T13:31:09</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>1999.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Return to the ranch</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1999-03-05</catdate>
+		<classes>Domestic Life
+Family
+</classes>
+		<collection>Rocky Pine Ranch Collection</collection>
+		<conddate>2000-06-14</conddate>
+		<condexam>Tanaka, Jeanie</condexam>
+		<condition>Good</condition>
+		<condnotes>03/05/1999 - Photograph has been cut down from a larger size.  MLP</condnotes>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator/>
+		<credit>In memory of the pioneers of Spokane County</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1945</date>
+		<descrip>Earl L. Hilton and Ernestine McMillan Hilton standing beside a truck at the ranch with their infant son, Earl Jr. (Sunny).  </descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1945</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>47.463754</latdeg>
+		<latedate>1945</latedate>
+		<legal/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>117.502594</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>1999-03-05</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc/>
+		<negno>C0988</negno>
+		<notes/>
+		<objectid>1999.1.2</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Art</parent>
+		<people>Hilton, Ernestine McMillan
+Hilton, Earl L. Jr.
+Hilton, Earl L.</people>
+		<place>Washington/Seattle</place>
+		<policyno>65 098 07</policyno>
+		<printsize>2 1/2" x 3 1/2"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>03/01/1999</recdate>
+		<recfrom>Hilton, Earl and Ernestine</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Wilson, Pat</statusby>
+		<statusdate>2001-04-11</statusdate>
+		<sterms>Hilton Family
+Rocky Pine Ranch</sterms>
+		<studio/>
+		<subjects>Soldiers
+Women
+Children
+Automobiles
+Trees
+</subjects>
+		<tempauthor>Parr, Mary L.</tempauthor>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-12-05</tempdate>
+		<temploc/>
+		<tempnotes/>
+		<tempreason>Pulled for World War II Exhibit</tempreason>
+		<tempuntil/>
+		<title>Our Family</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4>Exhibit Prep</tlocfield4>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2014-03-23T13:17:28</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>1999.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Mowing with tractor</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1999-03-05</catdate>
+		<classes>Agriculture
+Farms &amp; Farming
+</classes>
+		<collection>Rocky Pine Ranch Collection</collection>
+		<conddate>2001-04-11</conddate>
+		<condexam>Wilson, Pat</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator/>
+		<credit>In memory of the pioneers of Spokane County</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1977</date>
+		<descrip>Earl Hilton cutting hay with the new mower purchased in 1977.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1977</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2001-04-11</invndate>
+		<latdeg>47.460973</latdeg>
+		<latedate>1977</latedate>
+		<legal/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>117.514124</longdeg>
+		<maintcycle>Two Year</maintcycle>
+		<maintdate>2001-04-07</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc/>
+		<negno>C0995</negno>
+		<notes/>
+		<objectid>1999.1.9</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Art</parent>
+		<people>Hilton, Earl L.</people>
+		<place>Washington/Spokane County/Cheney</place>
+		<policyno>65 098 07</policyno>
+		<printsize>3" x 5"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>03/01/1999</recdate>
+		<recfrom>Hilton, Earl and Ernestine</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Wilson, Pat</statusby>
+		<statusdate>2001-04-11</statusdate>
+		<sterms>Hilton Family
+Hilton Family</sterms>
+		<studio/>
+		<subjects>Farming
+Agricultural machinery &amp; implements
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Mowing Hay</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2014-03-23T13:27:08</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>1999.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Rocky Pine Ranch Barn</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1999-10-05</catdate>
+		<classes>Agriculture
+Buildings
+</classes>
+		<collection>Rocky Pine Ranch Collection</collection>
+		<conddate>2001-04-11</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator/>
+		<credit>In memory of the pioneers of Spokane County</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1970</date>
+		<descrip>Color photograph of the barn at Rocky Pine Ranch taken after a snowfall 1970.  The barn was built in 1902.   The barnyard and cattle corrals are in the foreground. </descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1970</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>47.464000</latdeg>
+		<latedate>1970</latedate>
+		<legal/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>117.504135</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2001-04-07</maintdate>
+		<maintnote>04/11/21999 - Placed in mylar sleeve. MLP
+04/15/2000 - Examined found in good condition. No treatment applied. MLP
+05/15/2001- No treatment applied.  MLP
+ 
+</maintnote>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Storage Box 1</negloc>
+		<negno>C0996</negno>
+		<notes/>
+		<objectid>1999.1.4</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Art</parent>
+		<people/>
+		<place>Washington/Spokane County/Cheney</place>
+		<policyno>65 098 07</policyno>
+		<printsize>2 1/2" x 3 1/2"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>03/01/1999</recdate>
+		<recfrom>Hilton, Earl and Ernestine</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Wilson, Pat</statusby>
+		<statusdate>2001-04-11</statusdate>
+		<sterms>Rocky Pine Ranch</sterms>
+		<studio/>
+		<subjects>Barns
+Fences
+Snow
+Trees
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Rocky Pine Ranch Barn</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2014-03-23T13:18:10</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2000.1</accessno>
+		<acqvalue>8.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption/>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2000-05-06</catdate>
+		<classes>People
+Carter
+</classes>
+		<collection>Carter Family Collection</collection>
+		<conddate>2000-06-13</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator>Unknown</creator>
+		<credit>In memory of Ebenezer J. Carter b.1817 - d.1876.</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>8.00</curvalue>
+		<dataset/>
+		<date>1865</date>
+		<descrip>Hand-colored tintype of two young women, Beatrice Schmidt and Bernadette Mary Carter, standing next to a decorative pillar.  </descrip>
+		<dimnotes/>
+		<dispvalue>Good</dispvalue>
+		<earlydate>1850</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc/>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1870</latedate>
+		<legal/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2000-05-06</maintdate>
+		<maintnote>06/13/2000 - Examined and placed in mylar sleeve.  MLP</maintnote>
+		<medium>Iron/Varnish</medium>
+		<negloc/>
+		<negno>C1004</negno>
+		<notes>Tintype is a negative image produced on a thin iron plate, viewed as positive due to an undercoationg of black Japan varnish. Also called melainotype. Introduced in 1856. Peak years: 1860-1863.</notes>
+		<objectid>2000.1.1</objectid>
+		<objname>Tintype</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Schmidt, Beatrice
+Carter, Bernadette Mary</people>
+		<place>Pennsylvania/Chester County</place>
+		<policyno>65 098 07</policyno>
+		<printsize>2" x 3.25"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>05/06/2000</recdate>
+		<recfrom>Carter, Rose Ellen</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Parr, Mary</statusby>
+		<statusdate>2000-06-13</statusdate>
+		<sterms>Carter Family
+McWilliams Family</sterms>
+		<studio>Unknown</studio>
+		<subjects>Women
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Beatrice and Bernadette</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:21:55</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2000-05-06</valuedate>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2000.2</accessno>
+		<acqvalue>0</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Postcard</caption>
+		<catby>Wilson, Pat</catby>
+		<catdate>2000-06-21</catdate>
+		<classes>Domestic Life
+Family
+</classes>
+		<collection>PastPerfect Museum Postcard Collection</collection>
+		<conddate>2000-06-21</conddate>
+		<condexam>Wilson, Pat</condexam>
+		<condition>Good</condition>
+		<condnotes>05/05/2001 Examined.  Found in good condition. MLP</condnotes>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator/>
+		<credit>In memory of my mother, Rosemary Hollis Kittridge</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<dataset/>
+		<date>1900</date>
+		<descrip>Outdoor photograph of woman sitting on chair with little girl resting on the arm of the chair.  There are trees in the background. Hand-written message reads; "Not very gud (sic) but I guess you can make out".</descrip>
+		<dimnotes/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1890</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1910</latedate>
+		<legal/>
+		<loancond/>
+		<loandue>2000-03-01</loandue>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2000-06-21</maintdate>
+		<maintnote/>
+		<medium>Cardstock/Photographic Emulsion</medium>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno>C1007</negno>
+		<notes/>
+		<objectid>2000.2.6</objectid>
+		<objname>Postcard</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Kilpatrick, Elsie
+Bortner, Frances</people>
+		<place>Pennsylvania/Holtsville</place>
+		<policyno>65 098 07</policyno>
+		<printsize>3.5" x 5.5"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Bequest</recas>
+		<recdate>06/15/2000</recdate>
+		<recfrom>Kittridge, George</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Wilson, Pat</statusby>
+		<statusdate>2001-04-11</statusdate>
+		<sterms/>
+		<studio>Unknown</studio>
+		<subjects>Children &amp; adults
+Chairs
+Trees
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Sunday Afternoon</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:21:55</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2000.3</accessno>
+		<acqvalue>50.00</acqvalue>
+		<appnotes>This photograph is in good condition with very little damage to  the emulsion side. The photo is glued to a backing material that  shows some water stains along the lower  edge.  The photo is very grainy and printed on poor quality paper. The value of this  photograph is in its Civil War Era provenance and the Union  Revenue Stamp on the back.</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption/>
+		<catby>Withers,Blanche</catby>
+		<catdate>2000-06-28</catdate>
+		<classes>People
+Carter
+</classes>
+		<collection>Carter Family Collection</collection>
+		<conddate>2000-06-28</conddate>
+		<condexam>Wilson, Pat</condexam>
+		<condition>Good</condition>
+		<condnotes>This photograph is in good condition with very little damage to the emulsion side. The photo is glued to a backing material that shows some water stains along the lower  edge.  The photo is very grainy and printed on poor quality paper.</condnotes>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator/>
+		<credit>In memory of Rev. John L. McWilliams</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>50.00</curvalue>
+		<dataset/>
+		<date>1866</date>
+		<descrip>Portrait of husband and wife with baby. They are seated on backless stools.  The woman holds a very young infant on her lap. The baby is dressed in a white gown.  This carte-de-visite has a hand-cancelled Civil War revenue stamp on the reverse side.  
+
+From August 1964 to August 1866 the U.S. government instituted a law requiring that a tax stamp be attached to the backs of certain types of photograph and that it be cancelled by the selling establishment at the time of sale.  The 2 cent revenue stamp was required for images costing less than 25 cents each.  The blue 2 cent "playing cards" stamp was used during the summer of 1866.  Images with this stamp can be specifically dated to the summer of that year.
+
+The stamp is hand-cancelled with the initials, H E C. and dated Jan 7.
+
+</descrip>
+		<dimnotes/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1866</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame>4" x 2.5" Photograph attached to thin cardboard.</frame>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2000-06-29</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1866</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Two Year</maintcycle>
+		<maintdate>2000-06-28</maintdate>
+		<maintnote>07/13/2000 - Examined and placed in mylar sleeve. MLP
+06/29/2002 - Examined. No defects observed. JT</maintnote>
+		<medium>Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Box 2</negloc>
+		<negno>C1200</negno>
+		<notes/>
+		<objectid>2000.3.1</objectid>
+		<objname>Carte-de-visite</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Carter, John L.
+Carter, Honoria Page
+Carter, Lisbeth Anne</people>
+		<place>Connecticut, Danbury</place>
+		<policyno>65 098 07</policyno>
+		<printsize>3 3/8 x 2 1/8</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Bequest</recas>
+		<recdate>06/22/2000</recdate>
+		<recfrom>Carter, Millicent Vivian</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Wilson, Pat</statusby>
+		<statusdate>2000-06-28</statusdate>
+		<sterms>Carter Family</sterms>
+		<studio>Union Gallery</studio>
+		<subjects>Children &amp; adults
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Captain Carter and Family</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:21:55</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2000-06-29</valuedate>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2000.3</accessno>
+		<acqvalue>50.00</acqvalue>
+		<appnotes>Leo Feldstein is the owner of the Incunabula &amp; Ephemera Shoppe located in Philadelphia, PA. The shop specialized in antique documents and photographs.  He is a member of the International Association of Antique Appraisers (IAAA).</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption>Armin Carter</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2000-06-28</catdate>
+		<classes>People
+Carter
+</classes>
+		<collection>Carter Family Collection</collection>
+		<conddate>2000-06-29</conddate>
+		<condexam>Lufkin, Joseph</condexam>
+		<condition>Fair</condition>
+		<condnotes>The mounting cardboard and the backing paper both have creases.  The lower left corner is bent.  The backing paper has been torn along the left side and about halfway across the bottom.  Although the paper is creased and torn there does not appear to be any loss.</condnotes>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator/>
+		<credit>In memory of Rev. John L. McWilliams</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>50.00</curvalue>
+		<dataset/>
+		<date>1860</date>
+		<descrip>Tintype of Armin Carter at about 6 years old.  He is standing with one hand resting on a table with a fringed cloth.  In the rear is a white column.  In the right foreground, there is a footstool with a bowler hat on it.  The tintype is framed as a carte-de-visite, with a very thin arched cardboard mat.  The tintype is held in place by a paper backing.  The name "Armin" is written in pencil on the back.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1856</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame>2.5" x 4" Cardboard frame with paper backing.  Red lines with decorative co</frame>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2000-06-28</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1865</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Two Year</maintcycle>
+		<maintdate>2000-06-28</maintdate>
+		<maintnote>06/28/2000 Repairs to backing material made by conservator.  MLP.</maintnote>
+		<medium>Iron/Varnish/Paper</medium>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno>C1201</negno>
+		<notes/>
+		<objectid>2000.3.2</objectid>
+		<objname>Tintype</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Carter, Armin</people>
+		<place>Unknown</place>
+		<policyno>65 098 07</policyno>
+		<printsize>2" x 3"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Bequest</recas>
+		<recdate>06/22/2000</recdate>
+		<recfrom>Carter, Millicent Vivian</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Lufkin, Joseph</statusby>
+		<statusdate>2000-06-29</statusdate>
+		<sterms>Carter Family
+McWilliams Family</sterms>
+		<studio>Unknown</studio>
+		<subjects>Boys
+Hats
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Armin Carter</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:21:55</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2000-06-29</valuedate>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2000.3</accessno>
+		<acqvalue>10.00</acqvalue>
+		<appnotes/>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption/>
+		<catby>Wilson, Pat</catby>
+		<catdate>2000-06-29</catdate>
+		<classes>People
+Carter
+</classes>
+		<collection>Carter Family Collection</collection>
+		<conddate>2000-06-29</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator/>
+		<credit>In memory of Rev. John L. McWilliams</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>25.00</curvalue>
+		<dataset/>
+		<date>1900</date>
+		<descrip>Portrait of Mrs. Thelma McWilliams.  Taken in 1900.  She was the widow of Rev. John L. McWilliams. The photograph is mounted to a black card with the inscription "Baily Tamaqua PA" across the bottom.</descrip>
+		<dimnotes/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1900</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame>4.5 x 7" Brown cardstock with imprint of photographer in lower right corner</frame>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Parr, Mary L.</invnby>
+		<invndate>2000-06-29</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1900</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Two Year</maintcycle>
+		<maintdate>2000-06-29</maintdate>
+		<maintnote>No treatment or cleaning applied. MLP 06/29/2000</maintnote>
+		<medium>Cardstock/Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Box 2</negloc>
+		<negno>C1205</negno>
+		<notes/>
+		<objectid>2000.3.4</objectid>
+		<objname>Photograph, Cabinet</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>McWilliams, Thelma Josephine</people>
+		<place>Pennsylvania/Tamaqua</place>
+		<policyno>65 098 07</policyno>
+		<printsize>5.25" x 3.75"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Bequest</recas>
+		<recdate>06/22/2000</recdate>
+		<recfrom>Carter, Millicent Vivian</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Wilson, Pat</statusby>
+		<statusdate>2000-07-03</statusdate>
+		<sterms>Carter Family
+McWilliams Family</sterms>
+		<studio>Baily Studio</studio>
+		<subjects>Women
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Mother McWilliams</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-08-30T14:07:24</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2000-06-29</valuedate>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2000.3</accessno>
+		<acqvalue>10.00</acqvalue>
+		<appnotes>Leo Feldstein is the owner of the Incunabula &amp; Ephemera Shoppe located in Philadelphia, PA. The shop specialized in antique documents and photographs.  He is a member of the International Association of Antique Appraisers (IAAA).</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption>Joh L. McWilliams &amp; son</caption>
+		<catby>Tanaka, Jeanie</catby>
+		<catdate>2000-06-29</catdate>
+		<classes>People
+McWilliams
+</classes>
+		<collection>Carter Family Collection</collection>
+		<conddate>2000-06-29</conddate>
+		<condexam>Lufkin, Joseph</condexam>
+		<condition>Excellent</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator/>
+		<credit>In memory of Rev. John L. McWilliams</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>10.00</curvalue>
+		<dataset/>
+		<date>1863</date>
+		<descrip>Reverend John L. McWilliams as a young man.  He is holding his son, John Jr..  He is seated on a settee with a low back and rolled arms.  The baby boy is seated on the arm of the settee with the man's arm around him. 
+
+</descrip>
+		<dimnotes/>
+		<dispvalue>Fair</dispvalue>
+		<earlydate>1863</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2000-06-29</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1863</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Two Year</maintcycle>
+		<maintdate>2000-06-29</maintdate>
+		<maintnote/>
+		<medium>Cardstock/Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Box 2</negloc>
+		<negno>C1207</negno>
+		<notes>Note: Boy children usually wore dresses until school age. This practice continued up until about 1900. Boy's dresses can often be distinguished by being made of plaid fabric with a dropped waste.
+
+For more information on children's fashion, See:
+The Child in Fashion 1750-1920. Harris,Kristina. Schiffer Publishing Ltd. Atglen, PA. 1999.
+</notes>
+		<objectid>2000.3.6</objectid>
+		<objname>Carte-de-visite</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>McWilliams, John Lawrence
+McWilliams, John L. Jr.</people>
+		<place>Pennsylvania</place>
+		<policyno>65 098 07</policyno>
+		<printsize>2.5" x 4"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Bequest</recas>
+		<recdate>06/22/2000</recdate>
+		<recfrom>Carter, Millicent Vivian</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Tanaka, Jeanie</statusby>
+		<statusdate>2000-07-03</statusdate>
+		<sterms>Carter Family
+McWilliams Family</sterms>
+		<studio>Unknown</studio>
+		<subjects>Children &amp; adults
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Reverend McWilliams and Little Jack</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:21:55</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2000-06-29</valuedate>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2000.3</accessno>
+		<acqvalue>10.00</acqvalue>
+		<appnotes>Leo Feldstein is the owner of the Incunabula &amp; Ephemera Shoppe located in Philadelphia, PA. The shop specialized in antique documents and photographs.  He is a member of the International Association of Antique Appraisers (IAAA).</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption/>
+		<catby>Allen, Arthur</catby>
+		<catdate>2000-06-29</catdate>
+		<classes>People
+Clayton
+</classes>
+		<collection>Carter Family Collection</collection>
+		<conddate>2000-06-29</conddate>
+		<condexam>Lufkin, Joseph</condexam>
+		<condition>Excellent</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator/>
+		<credit>In memory of Rev. John L. McWilliams</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>10.00</curvalue>
+		<dataset/>
+		<date>1908</date>
+		<descrip>Formal portrait of Perry Clayton.  He is resting one arm on a table with a book.  He is dressed in a suit with only the top button closed showing his watch chain.  This photograph was taken when he graduated from Medical School at Madison, WI at the young age of 17.  The watch and chain were a graduation gift from his father, John Paul Clayton.</descrip>
+		<dimnotes/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1908</earlydate>
+		<event>Perry Clayton Medical school graduation 1908</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame>6 1/2" x 4" Black card with photographer name at bottom in gold</frame>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2000-06-29</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1908</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Two Year</maintcycle>
+		<maintdate>2000-06-29</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Box 2</negloc>
+		<negno>C1206</negno>
+		<notes/>
+		<objectid>2000.3.5</objectid>
+		<objname>Photograph, Cabinet</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Clayton, Perry</people>
+		<place>Wisconsin/Madison</place>
+		<policyno>65 098 07</policyno>
+		<printsize>4" x 5 3/4"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes>Zablonski, Robert A., Prominent Men of Medicine, University Press. Madison, WI. 1925. (p.255).</pubnotes>
+		<recas>Bequest</recas>
+		<recdate>06/22/2000</recdate>
+		<recfrom>Carter, Millicent Vivian</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Lufkin, Joseph</statusby>
+		<statusdate>2000-06-29</statusdate>
+		<sterms>Carter Family
+McWilliams Family
+Clayton Family</sterms>
+		<studio>Thomas Studio</studio>
+		<subjects>Men
+Books
+
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Dr. Perry Clayton</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-08-30T14:08:42</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2000-06-29</valuedate>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2000.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Family portrait</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2000-07-21</catdate>
+		<classes>People
+Clayton
+</classes>
+		<collection>Clayton Family Collection</collection>
+		<conddate>2000-07-21</conddate>
+		<condexam>Withers, Blanch</condexam>
+		<condition>Excellent</condition>
+		<condnotes>05/05/2001 Examined.  Found in excellent condition.  MLP</condnotes>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator/>
+		<credit>In memory of Ebenezer J. Carter b.1817 - d.1876.</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1911</date>
+		<descrip>Photograph of nine people.  The four adults are seated in the front row and five children are standing behind them (left to right - Patricia, Margaret, Anne Marie, Jennie, John Paul, Jr.).  The two adults in the middle are John and Pauline Clayton, the parents of all five children.  Seated to the left of John Clayton is his cousin, Perry Clayton.  Seated to the right of Pauline is her brother, Horace Gray.  The photo was taken at the high school graduation party held in honor of Margaret Clayton. </descrip>
+		<dimnotes>This photograph came with a tinplate frame with a lithographed wood-grain design. The frame was removed and is stored separately. See #2000.1.18</dimnotes>
+		<dispvalue>Fair</dispvalue>
+		<earlydate>1911</earlydate>
+		<event>Margaret Clayton's High School Graduation 1911</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame>None</frame>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1911</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2000-07-21</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno>C1209</negno>
+		<notes>The Carter and Clayton families were important pioneers in the establishment of Pastville and Perfectown.  They were prominent citizens throughout the 19th and early 20th centuries.  Pauline Carter Fisk was a founding member of the PastPerfect Museum in 1989.</notes>
+		<objectid>2000.1.4</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Art</parent>
+		<people>Clayton, Patricia
+Clayton, Margaret "Peg"
+Clayton, Anne Marie
+Clayton, Jennie
+Clayton, John Paul Jr.
+Clayton, Perry
+Clayton, John Paul Sr.
+Clayton, Pauline Gray
+Gray, Horace W.</people>
+		<place>Pennsylvania/Chester County</place>
+		<policyno>65 098 07</policyno>
+		<printsize>5" x 7"</printsize>
+		<process/>
+		<provenance>This photograph was found in the personal effects of Margaret Clayton Morgan at her death in 1951.  It became the property of  Rose Ellen Carter, Margaret Clayton's cousin. The photo came into possession of the PastPerfect Museum by deed of gift in 2000.</provenance>
+		<pubnotes>See: Carter, Rose Ellen.  The Carters and the Claytons: Our Family Story. Vanity Press. 1985.</pubnotes>
+		<recas>Gift</recas>
+		<recdate>05/06/2000</recdate>
+		<recfrom>Carter, Rose Ellen</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Tanaka, Jeanie</statusby>
+		<statusdate>2000-07-21</statusdate>
+		<sterms>Clayton Family
+Carter Family</sterms>
+		<studio>Bachman Studio</studio>
+		<subjects>Children &amp; adults
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Peg's Graduation</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:21:55</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2000.2</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption/>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2001-02-19</catdate>
+		<classes>Correspondence
+Postcard
+</classes>
+		<collection>Postcard Collection</collection>
+		<conddate>2001-02-19</conddate>
+		<condexam>Hilton, Richard</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator/>
+		<credit>In memory of my mother, Rosemary Hollis Kittridge</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1915</date>
+		<descrip>Photo postcard of a young girl.  The card has an illustration of a bunch of lilacs with a small oval opening for the photograph and the words "Regards From" written in glue and glitter.  The oval opening is 3 cm x 2.2 cm. The photo is attached to the card by pasting a paper backing over the entire back of the card. The verso of the card has a handwritten message, "Greetings from Coney Island. Your friend, Betty".  The card is addressed to Peg Carter.</descrip>
+		<dimnotes/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1910</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>3</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1920</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2001-02-19</maintdate>
+		<maintnote/>
+		<medium>Paper/Photographic Emulsion/Glitter</medium>
+		<negloc/>
+		<negno>C1012</negno>
+		<notes/>
+		<objectid>2000.2.9</objectid>
+		<objname>Postcard</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Smith, Betty</people>
+		<place>New York/Coney Island</place>
+		<policyno>65 098 07</policyno>
+		<printsize>1 1/2 x 2</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Bequest</recas>
+		<recdate>06/15/2000</recdate>
+		<recfrom>Kittridge, George</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>Stable</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2001-02-19</statusdate>
+		<sterms>Carter Family</sterms>
+		<studio>Unknown</studio>
+		<subjects>Children
+Bouquets
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Regards From Betty</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:21:55</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>1998.3</accessno>
+		<acqvalue>0</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Richard W. Sears</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>1998-04-06</catdate>
+		<classes>People
+Sears
+</classes>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate>1998-04-06</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright/>
+		<creator/>
+		<credit>For my mother, Jane O'Leary Harvey</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<dataset/>
+		<date>1900</date>
+		<descrip>Stereograph of R. W. Sears, President of Sears Roebuck &amp; Co.  He is seated at his rolltop desk.  There is a telephone and a Sears Catalog on the desk. R.W. Sears was born in 1863 and died in 1914.</descrip>
+		<dimnotes/>
+		<dispvalue>Excellent</dispvalue>
+		<earlydate>1893</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1>Stereograph</exhlabel1>
+		<exhlabel2>Mr. R. W. Sears at his Desk</exhlabel2>
+		<exhlabel3>Stereograph of R. W. Sears, President of Sears Roebuck &amp; Co.  He is seated at his rolltop desk.  There is a telephone and a Sears Catalog on the desk. R.W. Sears was born in 1863 and died in 1914.</exhlabel3>
+		<exhlabel4/>
+		<exhstart>2004-01-15</exhstart>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1909</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>1998-04-06</maintdate>
+		<maintnote>04/06/1998 - Examined and found in good condition. MLP</maintnote>
+		<medium/>
+		<negloc/>
+		<negno/>
+		<notes/>
+		<objectid>1998.3.3</objectid>
+		<objname>Stereograph</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy/>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Sears, Richard W.</people>
+		<place/>
+		<policyno>65 098 07</policyno>
+		<printsize>3" x 3"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>04/06/1998</recdate>
+		<recfrom>Harvey, Harold J.</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>1998-04-06</statusdate>
+		<sterms/>
+		<studio/>
+		<subjects>Business people
+</subjects>
+		<tempauthor>Hilton, Richard</tempauthor>
+		<tempby>Hilton, Richard</tempby>
+		<tempdate>1999-04-06</tempdate>
+		<temploc>Carter Homestead House</temploc>
+		<tempnotes>Hands-On Victorian Parlor Exhibit. Stereographic Viewer and stereographs are available for careful use and handling by museum visitors.</tempnotes>
+		<tempreason>On Exhibit</tempreason>
+		<tempuntil>04/06/2002</tempuntil>
+		<title>Mr. R. W. Sears at his Desk</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:21:55</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2003.1</accessno>
+		<acqvalue>10.00</acqvalue>
+		<appnotes>Leo Feldstein is the owner of the Incunabula &amp; Ephemera Shoppe located in Philadelphia, PA. The shop specialized in antique documents and photographs.  He is a member of the International Association of Antique Appraisers (IAAA).</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption/>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2003-09-17</catdate>
+		<classes>World War II
+Navy
+People
+</classes>
+		<collection>Hanley Family Collection</collection>
+		<conddate>2000-06-29</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Excellent</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator>Hanley, Clair N.</creator>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>10.00</curvalue>
+		<dataset/>
+		<date>1944</date>
+		<descrip>Crew of the Old "01" U.S.S. PC (C) 1601.  Known to the crew as the P.I.B. (Pig Iron Bastard). 
+
+PC-1601 (USS Fierce)
+PC-1568 class Submarine Chaser (ex Adroit class Minesweeper): 
+Displacement: 450 tons 
+Length: 173'8" 
+Beam: 23' 
+Draft: 11'7" 
+Speed: 17 knots 
+Armament: 1 3"/50, 1 40mm 
+Complement: 105 
+Alco diesel engine, twin screws, 1,440 shaft hp. 
+Built at Nashville Bridge and commissioned as AM-97 1943 
+Converted to Sub Chaser (PC-1601) 1944 
+</descrip>
+		<dimnotes/>
+		<dispvalue>Fair</dispvalue>
+		<earlydate>1944</earlydate>
+		<event>World War II</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Smith, Elizabeth</invnby>
+		<invndate>2012-06-15</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1945</latedate>
+		<legal>All rights belong to the PastPerfect Museum without restriction.</legal>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Two Year</maintcycle>
+		<maintdate>2000-06-29</maintdate>
+		<maintnote/>
+		<medium>Cardstock/Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Storage Box 1</negloc>
+		<negno>C1999</negno>
+		<notes>
+</notes>
+		<objectid>2003.1.4</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno>PIB 12</otherno>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people/>
+		<place>SouthPacific</place>
+		<policyno>65 098 07</policyno>
+		<printsize>2" x 3"</printsize>
+		<process/>
+		<provenance>The photographer of these WWII Pacific Theater photographs is Claire Norton Hanley. Claire Hanley was a young naval officer  during WWII. He served on the ship as Lieut. (jg) in the Pacific  Theater. His ship, the USS Fierce, participated in major naval  operations at the end of WWII including the invasions at Okinawa  and Akashima Japan and Leyte and Luzon in the Philipines.</provenance>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2003-09-17</statusdate>
+		<sterms>Hanley Family</sterms>
+		<studio>None</studio>
+		<subjects>Naval operations
+Naval warfare
+Naval personnel
+</subjects>
+		<tempauthor>Parr, Mary L.</tempauthor>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-12-05</tempdate>
+		<temploc/>
+		<tempnotes/>
+		<tempreason>Pulled for World War II Exhibit</tempreason>
+		<tempuntil/>
+		<title>Crew of the P.I.B.</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4>Exhibit Prep</tlocfield4>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2013-01-30T12:26:20</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2000-06-29</valuedate>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2003.3</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes>Cabinet card photos are quite common. However, the subject, an African-American child, makes this a rare photograph and adds to its value.</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption/>
+		<catby/>
+		<catdate>2003-12-15</catdate>
+		<classes>People
+Washington
+</classes>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate/>
+		<condexam/>
+		<condition/>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator>Foreman, ?</creator>
+		<credit>In memory of  Hannah B. Washington.</credit>
+		<curvalmax>50.00</curvalmax>
+		<curvalue>30.00</curvalue>
+		<dataset/>
+		<date>1890</date>
+		<descrip>Cabinet card portrait of Hannah Bea Washington taken during a trip out west to Denver to visit family member. </descrip>
+		<dimnotes>Cardboard mount is 4 1/4" x 6 1/2"</dimnotes>
+		<dispvalue/>
+		<earlydate>1885</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame>Black cardboard mount with gold bevelled edges.</frame>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Parr, Mary L.</invnby>
+		<invndate>2004-04-30</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1892</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2003-12-15</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Box 1</negloc>
+		<negno>C2399</negno>
+		<notes/>
+		<objectid>2003.3.1</objectid>
+		<objname>Photograph, Cabinet</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Washington, Hannah Bea</people>
+		<place>Colorado/Denver</place>
+		<policyno>65 098 07</policyno>
+		<printsize>4" x 5 1/2"</printsize>
+		<process>Albumen Print</process>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>12/15/2003</recdate>
+		<recfrom>Jones, Abraham Washington</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status/>
+		<statusby/>
+		<statusdate/>
+		<sterms>Washington Family</sterms>
+		<studio>I. X. L. Gallery</studio>
+		<subjects>Girls
+African Americans
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Hannah B. Washington</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-08-30T14:09:04</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2004-03-08</valuedate>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2003.3</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes>This small photograph is in fair condition. There is a significant amount of silvering on the darkest portion of the picture. However, because photographic portraits of African Americans are quite rare from this time period, the photograph has increased value.</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption/>
+		<catby>Lufkin, Joseph</catby>
+		<catdate>2003-12-15</catdate>
+		<classes/>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate>2004-02-01</conddate>
+		<condexam>Withers,Blanche</condexam>
+		<condition>Fair</condition>
+		<condnotes>The photo is in stable condition.</condnotes>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator>Unknown</creator>
+		<credit>In memory of  Hannah B. Washington.</credit>
+		<curvalmax>80.00</curvalmax>
+		<curvalue>40.00</curvalue>
+		<dataset/>
+		<date>1910</date>
+		<descrip>Small oval portrait of Dominique Rose Washington.  The portrait was taken in New Orleans, Louisiana when Dominique was 19 years old.</descrip>
+		<dimnotes>The cardboard mount for this photograph measures 5.3 cm wide and 6.8 cm height</dimnotes>
+		<dispvalue/>
+		<earlydate>1910</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2004-02-01</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1910</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2003-12-15</maintdate>
+		<maintnote/>
+		<medium>Photographic Emulsion/Photographic Paper</medium>
+		<negloc>Copy Negative Box 3</negloc>
+		<negno>C2400</negno>
+		<notes/>
+		<objectid>2003.3.2</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Washinton, Dominique Rose</people>
+		<place>Louisiana/New Orleans</place>
+		<policyno>65 098 07</policyno>
+		<printsize>1 1/4" x 1"</printsize>
+		<process>Albumen Print</process>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>12/15/2003</recdate>
+		<recfrom>Jones, Abraham Washington</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Lufkin, Joseph</statusby>
+		<statusdate>2004-02-01</statusdate>
+		<sterms>Washington Family</sterms>
+		<studio>Unknown</studio>
+		<subjects>Hats
+African Americans
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Dominique Rose Washington</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:21:55</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2004-03-08</valuedate>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2003.4</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes>Cabinet card photos are quite common. However, the subject, an American Indian woman, makes this a rare photograph and adds to its value.</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption/>
+		<catby>Meyers, Pamela</catby>
+		<catdate>2003-12-24</catdate>
+		<classes>Native Americans
+</classes>
+		<collection/>
+		<conddate>2004-07-06</conddate>
+		<condexam>Meyers, Pamela</condexam>
+		<condition>Fair</condition>
+		<condnotes>Materials are stable. There is a considerable amount of soil and grime on the surface.</condnotes>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator>Wiggins, S. T.                                                                  </creator>
+		<credit/>
+		<curvalmax>50.00</curvalmax>
+		<curvalue>30.00</curvalue>
+		<dataset/>
+		<date>1885</date>
+		<descrip>Cabinet Card portrait of Yosette Kihega Dupuis taken in Cedar Rapids, Iowa at the age of 19. </descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1880</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1890</latedate>
+		<legal>All rights of reproduction belong to the PastPerfect Museum.</legal>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2003-12-24</maintdate>
+		<maintnote>07/06/2004 - Examined placed in storage in mylar sleeve. </maintnote>
+		<medium>Photographic Paper</medium>
+		<negloc>Copy Negative Storage Box 1</negloc>
+		<negno>C2402</negno>
+		<notes/>
+		<objectid>2003.4.1</objectid>
+		<objname>Photograph, Cabinet</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Dupuis, Yosette Kihega</people>
+		<place>Iowa/Cedar Rapids</place>
+		<policyno>65 098 07</policyno>
+		<printsize>4" x 5 1/2"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>12/26/2003</recdate>
+		<recfrom>Grimes, Jennifer</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby/>
+		<statusdate>2003-12-24</statusdate>
+		<sterms/>
+		<studio>S.T. Wiggins Photographer</studio>
+		<subjects>Indians of North America
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Portrait of Yosette Dupuis</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-08-30T14:09:17</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2004-03-08</valuedate>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2000.3</accessno>
+		<acqvalue>10.00</acqvalue>
+		<appnotes>The condition of the postcard is fair and stable. There are 4 holes in the upper part of the card from pins or staples. There is pronounced yellowing and fading  in the center of the photograph.</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption>Graduate Nurses</caption>
+		<catby>Lufkin, Joseph</catby>
+		<catdate>2000-06-29</catdate>
+		<classes>People
+
+
+</classes>
+		<collection>Carter Family Collection</collection>
+		<conddate>2000-06-26</conddate>
+		<condexam>Withers,Blanche</condexam>
+		<condition>Fair</condition>
+		<condnotes>The condition of the postcard is fair and stable. There are 4 holes in the upper part of the card from pins or staples. There is pronounced yellowing and fading  in the center of the photograph.</condnotes>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator>Unknown</creator>
+		<credit>In memory of Rev. John L. McWilliams</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>10.00</curvalue>
+		<dataset/>
+		<date>05/28/1909</date>
+		<descrip>Group portrait of 8 young women. They are the 1909 graduating class of the Lancaster General Hospital's School of Nursing founded in 1903. 
+
+</descrip>
+		<dimnotes/>
+		<dispvalue>Fair</dispvalue>
+		<earlydate>1909</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2000-06-29</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1909</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Two Year</maintcycle>
+		<maintdate>2000-06-29</maintdate>
+		<maintnote>06/30/2000 - Examined and placed in mylar sleeve. MLP
+07/02/2002 - Examined found in stable condition. AAA
+</maintnote>
+		<medium>Cardstock/Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Box 2</negloc>
+		<negno>C1209</negno>
+		<notes>
+</notes>
+		<objectid>2000.3.3</objectid>
+		<objname>Postcard</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Denter, Mable Jo
+McWilliams, Josephine
+Unknown
+Smith, Thelma Marlene
+Carter, Abigail Rose
+Pritchard, Ethel Jean
+Raleigh, Marguerite Mae
+Clayton, Matilda Leona</people>
+		<place>Pennsylvania, Lancaster</place>
+		<policyno>65 098 07</policyno>
+		<printsize>3.5" x 5.5"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Bequest</recas>
+		<recdate>06/22/2000</recdate>
+		<recfrom>Carter, Millicent Vivian</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby/>
+		<statusdate>2000-07-03</statusdate>
+		<sterms>McWilliams Family
+Carter Family</sterms>
+		<studio>Unknown</studio>
+		<subjects>Women
+Nurses
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Graduate Nurses</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:21:55</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2000-06-29</valuedate>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2003.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>japanese plane at Luzon Airfie</caption>
+		<catby>Meyers, Pamela</catby>
+		<catdate>2004-01-15</catdate>
+		<classes>War
+
+</classes>
+		<collection>Hanley Family Collection</collection>
+		<conddate>2004-01-15</conddate>
+		<condexam>Meyers, Pamela</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright/>
+		<creator>Hanley, Clair N.</creator>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1945</date>
+		<descrip>An American naval officer, Jack Tangney, examines an abandoned  Japanese aircraft on the Luzon Airfield after it was captured in 1945. The plane is in very poor condition and there are palm  trees in the background.  Handwritten note in pencil on back of  photo reads, "Luzon Air strip - Jan 1945".</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1945</earlydate>
+		<event>WHOA</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Smith, Elizabeth</invnby>
+		<invndate>2012-06-15</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1945</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<medium/>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno>C2001</negno>
+		<notes/>
+		<objectid>2003.1.6</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Tangney, Jack</people>
+		<place>Phillipines, Luzon</place>
+		<policyno>65 098 07</policyno>
+		<printsize>2" x 3"</printsize>
+		<process/>
+		<provenance>The photographer of these WWII Pacific Theater photographs is Claire Norton Hanley. Claire Hanley was a young naval officer  during WWII. He served on the ship in the above photograph as  Lieut. (jg) in the Pacific Theater. His ship participated in  major naval operations at the end of WWII including the invasions at Okinawa and Akashima Japan and Leyte and Luzon in the  Philipines.</provenance>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Meyers, Pamela</statusby>
+		<statusdate>2004-01-15</statusdate>
+		<sterms>Hanley Family
+World War II
+WWII</sterms>
+		<studio/>
+		<subjects>World War II
+Naval warfare
+Air bases
+Air warfare
+Aircraft
+Palms
+</subjects>
+		<tempauthor>Parr, Mary L.</tempauthor>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-12-05</tempdate>
+		<temploc/>
+		<tempnotes/>
+		<tempreason>Pulled for World War II Exhibit</tempreason>
+		<tempuntil/>
+		<title>Japanese Plane at Luzon Airfield</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4>Exhibit Prep</tlocfield4>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:28:55</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2003.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Sailors on board</caption>
+		<catby>Meyers, Pamela</catby>
+		<catdate>2004-01-15</catdate>
+		<classes>War
+U.S. Navy
+</classes>
+		<collection>Hanley Family Collection</collection>
+		<conddate>2004-01-15</conddate>
+		<condexam>Meyers, Pamela</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright/>
+		<creator>Hanley, Clair N.</creator>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1945</date>
+		<descrip>Unidentified crewmen aboard the U.S.S. PC (C) 1601.
+
+PC-1601 (USS Fierce)
+PC-1568 class Submarine Chaser (ex Adroit class Minesweeper): 
+Displacement: 450 tons 
+Length: 173'8" 
+Beam: 23' 
+Draft: 11'7" 
+Speed: 17 knots 
+Armament: 1 3"/50, 1 40mm 
+Complement: 105 
+Alco diesel engine, twin screws, 1,440 shaft hp. 
+Built at Nashville Bridge and commissioned as AM-97 1943 
+Converted to Sub Chaser (PC-1601) 1944 
+</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1945</earlydate>
+		<event>WWII</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2004-04-30</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1945</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2004-01-15</maintdate>
+		<maintnote/>
+		<medium/>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno>C2003</negno>
+		<notes/>
+		<objectid>2003.1.7</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people/>
+		<place/>
+		<policyno>65 098 07</policyno>
+		<printsize>2" x 3"</printsize>
+		<process/>
+		<provenance>The photographer of these WWII Pacific Theater photographs is Claire Norton Hanley. Claire Hanley was a young naval officer  during WWII. He served on the ship in the above photograph as  Lieut. (jg) in the Pacific Theater. His ship participated in  major naval operations at the end of WWII including the invasions at Okinawa and Akashima Japan and Leyte and Luzon in the  Philipines.</provenance>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Meyers, Pamela</statusby>
+		<statusdate>2004-01-15</statusdate>
+		<sterms>World War II
+WWII
+Hanley Family</sterms>
+		<studio/>
+		<subjects>World War II
+Naval warfare
+</subjects>
+		<tempauthor>Parr, Mary L.</tempauthor>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-12-05</tempdate>
+		<temploc/>
+		<tempnotes/>
+		<tempreason>Pulled for World War II Exhibit</tempreason>
+		<tempuntil/>
+		<title>Sailors</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4>Exhibit Prep</tlocfield4>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-09-03T22:42:59</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2003.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Gunner on the 1601</caption>
+		<catby>Meyers, Pamela</catby>
+		<catdate>2004-01-15</catdate>
+		<classes>War
+</classes>
+		<collection>Hanley Family Collection</collection>
+		<conddate>2004-01-15</conddate>
+		<condexam>Meyers, Pamela</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright/>
+		<creator>Hanley, Clair N.</creator>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1945</date>
+		<descrip>Gunner at battle station on the 1601.
+
+PC-1601 (USS Fierce)
+PC-1568 class Submarine Chaser (ex Adroit class Minesweeper): 
+Displacement: 450 tons 
+Length: 173'8" 
+Beam: 23' 
+Draft: 11'7" 
+Speed: 17 knots 
+Armament: 1 3"/50, 1 40mm 
+Complement: 105 
+Alco diesel engine, twin screws, 1,440 shaft hp. 
+Built at Nashville Bridge and commissioned as AM-97 1943 
+Converted to Sub Chaser (PC-1601) 1944 
+</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1945</earlydate>
+		<event>WWII</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2004-04-30</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1945</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2004-01-15</maintdate>
+		<maintnote/>
+		<medium/>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno>C2004</negno>
+		<notes/>
+		<objectid>2003.1.8</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people/>
+		<place/>
+		<policyno>65 098 07</policyno>
+		<printsize>2" x 3"</printsize>
+		<process/>
+		<provenance>The photographer of these WWII Pacific Theater photographs is Claire Norton Hanley. Claire Hanley was a young naval officer  during WWII. He served on the ship in the above photograph as  Lieut. (jg) in the Pacific Theater. His ship participated in  major naval operations at the end of WWII including the invasions at Okinawa and Akashima Japan and Leyte and Luzon in the  Philipines.</provenance>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Meyers, Pamela</statusby>
+		<statusdate>2004-01-15</statusdate>
+		<sterms>World War II
+WWII
+Hanley Family</sterms>
+		<studio/>
+		<subjects>World War II
+Naval warfare
+</subjects>
+		<tempauthor>Parr, Mary L.</tempauthor>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-12-05</tempdate>
+		<temploc/>
+		<tempnotes/>
+		<tempreason>Pulled for World War II Exhibit</tempreason>
+		<tempuntil/>
+		<title>Gunner</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4>Exhibit Prep</tlocfield4>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:29:43</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2003.1</accessno>
+		<acqvalue>20.00</acqvalue>
+		<appnotes>The photograph is in fair condition. There is a water stain on the upper top portion of the picture. There are a number of small  (less than 1 mm) spots that are presumed to be foxing. Yellowing is evident over the entire image. Because of the vintage of the image as well as the provenance and subject matter (WWII ship) a relatively high value is placed on the item.</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption>USS Fierce</caption>
+		<catby>Meyers, Pamela</catby>
+		<catdate>2004-01-15</catdate>
+		<classes>Military
+War
+</classes>
+		<collection>Hanley Family Collection</collection>
+		<conddate>2003-04-02</conddate>
+		<condexam>Withers,Blanche</condexam>
+		<condition>Fair</condition>
+		<condnotes/>
+		<copyright/>
+		<creator>Hanley, Clair N.</creator>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>50.00</curvalmax>
+		<curvalue>20.00</curvalue>
+		<dataset/>
+		<date>1945</date>
+		<descrip>The U.S.S. PC (C) 1601 coming into an unidentified port. This ship was known to its crew as the P.I.B. (Pig Iron Bastard).
+
+PC-1601 (USS Fierce)
+PC-1568 class Submarine Chaser (ex Adroit class Minesweeper): 
+Displacement: 450 tons 
+Length: 173'8" 
+Beam: 23' 
+Draft: 11'7" 
+Speed: 17 knots 
+Armament: 1 3"/50, 1 40mm 
+Complement: 105 
+Alco diesel engine, twin screws, 1,440 shaft hp. 
+Built at Nashville Bridge and commissioned as AM-97 1943 
+Converted to Sub Chaser (PC-1601) 1944 
+</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1945</earlydate>
+		<event>WWII</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2004-04-30</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1945</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2004-01-15</maintdate>
+		<maintnote/>
+		<medium/>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno>C2005</negno>
+		<notes>Invasion of Luzon
+Naval Historical Center
+--Southwest Pacific Force operations against Luzon were directly supported by Seventh Fleet escort carriers in Task Group 77.4 (Rear Admiral C. T. Durgin) and indirectly by the fast carriers in Task Force 38 (Vice Admiral J. S. McCain) of Third Fleet and Central Pacific Forces. Task Group 77.4, with 17 escort carriers, covered the approach of the Luzon Attack Force against serious enemy air opposition from Kamikaze pilots which sank Ommaney Bay (4 Jan), and damaged several ships including escort carriers Manila Bay and Savo Island (5 Jan). It conducted preliminary strikes in the assault area (7-9 Jan), covered the landings in Lingayen Gulf (9 Jan), and supported the inland advance of troops ashore (9-17 Jan). Among the ships damaged by Kamikaze pilots opposing the landings were the escort carriers Kadashan Bay and Kitkun Bay (8 Jan), and Salamaua (13 Jan). Task Force 38, with seven heavy and four light carriers in three groups and one heavy and one light carrier in a night group, and accompanied by a Replenishment Group with one hunter-killer and seven escort carriers, concentrated on the destruction of enemy air power and air installations in surrounding areas. In spite of almost continuous bad weather which hampered flight operations during the entire month, this force launched offensive strikes on Formosa and the Ryukyus (3-4 Jan), a 2-day attack on Luzon (6-7 Jan) and on fields in the Formosa-Pescadores-Ryukyus area (9 Jan), destroying over 100 enemy aircraft and sinking 40,000 tons of merchant and small combatant ships in 1 week of preliminary action. During the night (9-10 Jan) Task Force 38 made a high-speed run through Luzon Strait followed by the Replenishment Group which passed through Balintang Channel, for Operations in the South China Sea (9-20 Jan). Strikes (12 Jan), over 420 miles of the Indo-China coast, reached south to Saigon and caught ships in the harbor and in coastal convoys with devastating results, sinking 12 tankers, 20 passenger and cargo vessels and numerous small combatant ships, totalling 149,000 tons. Moving northward to evade a typhoon, the force hit targets at Hong Kong, the China Coast, and Formosa (15 Jan) and next day concentrated on the Hong Kong area damaging enemy shore installations and sinking another 62,000 tons of shipping. As inclement weather persisted, the force left the South China Sea with an after dark run through Balintang Channel (20 Jan) and hit Formosa, the Pescadores, and Okinawa against enemy air opposition which damaged the Ticonderoga and Langley (20 Jan) and repeated the attack in the Ryukyus next day to finish off 3 weeks of action with an aerial score of over 600 enemy aircraft destroyed and 325,000 tons of enemy shipping sunk.
+</notes>
+		<objectid>2003.1.9</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people/>
+		<place/>
+		<policyno>65 098 07</policyno>
+		<printsize>2" x 3"</printsize>
+		<process/>
+		<provenance>The photographer of these WWII Pacific Theater photographs is Claire Norton Hanley. Claire Hanley was a young naval officer  during WWII. He served on the ship in the above photograph as  Lieut. (jg) in the Pacific Theater. His ship participated in  major naval operations at the end of WWII including the invasions at Okinawa and Akashima Japan and Leyte and Luzon in the  Philipines.</provenance>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Meyers, Pamela</statusby>
+		<statusdate>2004-01-15</statusdate>
+		<sterms>World War II
+WWII
+Hanley Family</sterms>
+		<studio/>
+		<subjects>World War II
+Naval warfare
+Ships
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>USS Fierce</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:36:46</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2003-02-14</valuedate>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2003.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Officers of the 1601</caption>
+		<catby>Meyers, Pamela</catby>
+		<catdate>2004-01-15</catdate>
+		<classes>War
+</classes>
+		<collection>Hanley Family Collection</collection>
+		<conddate>2004-01-15</conddate>
+		<condexam>Meyers, Pamela</condexam>
+		<condition>Fair</condition>
+		<condnotes/>
+		<copyright/>
+		<creator>Hanley, Clair N.</creator>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1945</date>
+		<descrip>Officers of the "1601" known to its crew as the P.I.B. (Pig Iron Bastard). left to right: Bill Crane, Frank Picard, Jack Tangney, Bert Hearn, Dick Newell. 
+
+PC-1601 (USS Fierce)
+PC-1568 class Submarine Chaser (ex Adroit class Minesweeper): 
+Displacement: 450 tons 
+Length: 173'8" 
+Beam: 23' 
+Draft: 11'7" 
+Speed: 17 knots 
+Armament: 1 3"/50, 1 40mm 
+Complement: 105 
+Alco diesel engine, twin screws, 1,440 shaft hp. 
+Built at Nashville Bridge and commissioned as AM-97 1943 
+Converted to Sub Chaser (PC-1601) 1944 
+</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1945</earlydate>
+		<event>WWII</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2004-04-30</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1945</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2004-01-15</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno>C2006</negno>
+		<notes/>
+		<objectid>2003.1.10</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Crane, Bill
+Picard, Frank
+Tangney, Jack
+Hearn, Bert
+Newell, Dick</people>
+		<place>Pacific Theater</place>
+		<policyno>65 098 07</policyno>
+		<printsize>2" x 3"</printsize>
+		<process/>
+		<provenance>This WWII Pacific Theater photograph was taken by Claire Norton Hanley. Claire Hanley was a young naval officer  during WWII.  His ship participated in  major naval operations at the end of WWII including the invasions at Okinawa and Akashima Japan and Leyte and Luzon in the  Philipines.</provenance>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Meyers, Pamela</statusby>
+		<statusdate>2004-01-15</statusdate>
+		<sterms>Hanley Family
+World War II
+WWII</sterms>
+		<studio/>
+		<subjects>World War II
+</subjects>
+		<tempauthor/>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-12-05</tempdate>
+		<temploc/>
+		<tempnotes/>
+		<tempreason>Pulled for World War II Exhibit</tempreason>
+		<tempuntil/>
+		<title>Officers of the 1601</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4>Exhibit Prep</tlocfield4>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:30:18</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2003.1</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>The Invaders</caption>
+		<catby>Meyers, Pamela</catby>
+		<catdate>2004-01-15</catdate>
+		<classes>War
+</classes>
+		<collection>Hanley Family Collection</collection>
+		<conddate>2004-01-15</conddate>
+		<condexam>Meyers, Pamela</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright/>
+		<creator>Hanley, Clair N.</creator>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1945</date>
+		<descrip>Crew member from the "1601" in village at Luzon.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1945</earlydate>
+		<event>WWII</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Lufkin, Joseph</invnby>
+		<invndate>2004-04-30</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1945</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2004-01-15</maintdate>
+		<maintnote/>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno>C2007</negno>
+		<notes>Invasion of Luzon
+Naval Historical Center
+--Southwest Pacific Force operations against Luzon were directly supported by Seventh Fleet escort carriers in Task Group 77.4 (Rear Admiral C. T. Durgin) and indirectly by the fast carriers in Task Force 38 (Vice Admiral J. S. McCain) of Third Fleet and Central Pacific Forces. Task Group 77.4, with 17 escort carriers, covered the approach of the Luzon Attack Force against serious enemy air opposition from Kamikaze pilots which sank Ommaney Bay (4 Jan), and damaged several ships including escort carriers Manila Bay and Savo Island (5 Jan). It conducted preliminary strikes in the assault area (7-9 Jan), covered the landings in Lingayen Gulf (9 Jan), and supported the inland advance of troops ashore (9-17 Jan). Among the ships damaged by Kamikaze pilots opposing the landings were the escort carriers Kadashan Bay and Kitkun Bay (8 Jan), and Salamaua (13 Jan). Task Force 38, with seven heavy and four light carriers in three groups and one heavy and one light carrier in a night group, and accompanied by a Replenishment Group with one hunter-killer and seven escort carriers, concentrated on the destruction of enemy air power and air installations in surrounding areas. In spite of almost continuous bad weather which hampered flight operations during the entire month, this force launched offensive strikes on Formosa and the Ryukyus (3-4 Jan), a 2-day attack on Luzon (6-7 Jan) and on fields in the Formosa-Pescadores-Ryukyus area (9 Jan), destroying over 100 enemy aircraft and sinking 40,000 tons of merchant and small combatant ships in 1 week of preliminary action. During the night (9-10 Jan) Task Force 38 made a high-speed run through Luzon Strait followed by the Replenishment Group which passed through Balintang Channel, for Operations in the South China Sea (9-20 Jan). Strikes (12 Jan), over 420 miles of the Indo-China coast, reached south to Saigon and caught ships in the harbor and in coastal convoys with devastating results, sinking 12 tankers, 20 passenger and cargo vessels and numerous small combatant ships, totalling 149,000 tons. Moving northward to evade a typhoon, the force hit targets at Hong Kong, the China Coast, and Formosa (15 Jan) and next day concentrated on the Hong Kong area damaging enemy shore installations and sinking another 62,000 tons of shipping. As inclement weather persisted, the force left the South China Sea with an after dark run through Balintang Channel (20 Jan) and hit Formosa, the Pescadores, and Okinawa against enemy air opposition which damaged the Ticonderoga and Langley (20 Jan) and repeated the attack in the Ryukyus next day to finish off 3 weeks of action with an aerial score of over 600 enemy aircraft destroyed and 325,000 tons of enemy shipping sunk.
+</notes>
+		<objectid>2003.1.11</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people/>
+		<place>Pacific Theater</place>
+		<policyno>65 098 07</policyno>
+		<printsize>2" x 3"</printsize>
+		<process/>
+		<provenance>This WWII Pacific Theater photograph was taken by Claire Norton Hanley. Claire Hanley was a young naval officer.  His ship participated in major naval operations at the end of WWII including the invasions at Okinawa and Akashima, Japan and Leyte and Luzon in the Philipines.</provenance>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Meyers, Pamela</statusby>
+		<statusdate>2004-01-15</statusdate>
+		<sterms>Hanley Family
+World War II
+WWII</sterms>
+		<studio/>
+		<subjects>World War II
+</subjects>
+		<tempauthor/>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-12-05</tempdate>
+		<temploc/>
+		<tempnotes/>
+		<tempreason>Pulled for World War II Exhibit</tempreason>
+		<tempuntil/>
+		<title>The Invaders</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4>Exhibit Prep</tlocfield4>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:30:32</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2003.1</accessno>
+		<acqvalue>10.00</acqvalue>
+		<appnotes>Leo Feldstein is the owner of the Incunabula &amp; Ephemera Shoppe located in Philadelphia, PA. The shop specialized in antique documents and photographs.  He is a member of the International Association of Antique Appraisers (IAAA).</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption>Bud &amp; Helen Hanley</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2003-09-17</catdate>
+		<classes>People
+Navy
+</classes>
+		<collection>Hanley Family Collection</collection>
+		<conddate>2000-06-29</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Excellent</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum without restriction.</copyright>
+		<creator>Unknown</creator>
+		<credit>For my father, Clair Norton Hanley</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>10.00</curvalue>
+		<dataset/>
+		<date>1944</date>
+		<descrip>Lt. Clair Hanley and his bride, Helen. 1944.</descrip>
+		<dimnotes/>
+		<dispvalue>Fair</dispvalue>
+		<earlydate>1944</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Smith, Elizabeth</invnby>
+		<invndate>2012-06-15</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1944</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Two Year</maintcycle>
+		<maintdate>2000-06-29</maintdate>
+		<maintnote/>
+		<medium>Cardstock/Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno>C1998</negno>
+		<notes>
+</notes>
+		<objectid>2003.1.16</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno>PIB 12</otherno>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Hanley, Clair Norton
+Hanley, Helen Torgeson</people>
+		<place>North Dakota, Grand Falls</place>
+		<policyno>65 098 07</policyno>
+		<printsize>2 1/2" x 4"</printsize>
+		<process/>
+		<provenance>1944-1985 Belonged to Helen Hanley.
+1985-2003 Belonged to Kristopher K. Hanley, her son.
+2003 --Donated to PastPerfect Museum
+</provenance>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>01/10/2003</recdate>
+		<recfrom>Hanley, Kristopher K.</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2003-09-17</statusdate>
+		<sterms>Hanley Family</sterms>
+		<studio/>
+		<subjects>Naval personnel
+Marriage
+Weddings
+</subjects>
+		<tempauthor/>
+		<tempby>Parr, Mary L.</tempby>
+		<tempdate>2009-12-05</tempdate>
+		<temploc/>
+		<tempnotes/>
+		<tempreason>Pulled for World War II Exhibit</tempreason>
+		<tempuntil/>
+		<title>Blushing Bride</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4>Exhibit Prep</tlocfield4>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-01-21T14:30:52</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2000-06-29</valuedate>
+		<webinclude>true</webinclude>
+	</export>
+	<export>
+		<accessno>2003.3</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes>Cabinet card photos are quite common. However, the subject, an African-American child, makes this a rare photograph and adds to its value.</appnotes>
+		<appraisor>Feldstein, Leo, Appraiser</appraisor>
+		<caption>Viola Rose</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2004-07-06</catdate>
+		<classes>People
+Washington
+</classes>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate>2004-07-06</conddate>
+		<condexam>Meyers, Pamela</condexam>
+		<condition>Good</condition>
+		<condnotes>This cabinet card is in good condition. The image is printed on glossy paper which exhibits some scratches to the glossy surface.</condnotes>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator>Gaites, Hillman T.                                                              </creator>
+		<credit>In memory of  Hannah B. Washington.</credit>
+		<curvalmax>45.00</curvalmax>
+		<curvalue>20.00</curvalue>
+		<dataset/>
+		<date>1890</date>
+		<descrip>Cabinet card portrait of Viola Rose Washington taken during a trip to Illinois to visit relatives. The Washington Family was a prominent African-American family in Chester County from the late 18th century to the present.</descrip>
+		<dimnotes>Cardboard mount is 4.25" x 6.5"</dimnotes>
+		<dispvalue/>
+		<earlydate>1885</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame>Cardboard mount with scalloped edges</frame>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp>Pastville Underwriter's Assoc.</inscomp>
+		<insdate>2006-12-31</insdate>
+		<insphone>610/555-7878</insphone>
+		<inspremium>$ 1,858.00/year</inspremium>
+		<insrep>Page Williams</insrep>
+		<insvalue>1000000.00</insvalue>
+		<invnby>Wilson, Pat</invnby>
+		<invndate>2013-01-04</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1895</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 1</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Yearly</maintcycle>
+		<maintdate>2003-12-15</maintdate>
+		<maintnote>07/06/2004 - Examined and placed in mylar sleeve.</maintnote>
+		<medium>Photographic Paper/Photographic Emulsion</medium>
+		<negloc>Copy Negative Box 1</negloc>
+		<negno>C2401</negno>
+		<notes/>
+		<objectid>2003.3.3</objectid>
+		<objname>Photograph, Cabinet</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Washington, Viola Rose</people>
+		<place>Illinois/Macomb</place>
+		<policyno>65 098 07</policyno>
+		<printsize>3.75" x 5 .5"</printsize>
+		<process>Albumen Print</process>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>12/15/2003</recdate>
+		<recfrom>Jones, Abraham Washington</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2004-07-06</statusdate>
+		<sterms>Washington Family</sterms>
+		<studio>Gaites</studio>
+		<subjects>Girls
+African Americans
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Viola Rose</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-08-30T14:09:38</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate>2004-07-06</valuedate>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2004.4</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption/>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2004-10-20</catdate>
+		<classes>Children
+</classes>
+		<collection>Adams Family Collection</collection>
+		<conddate>2004-10-20</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Fair</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator/>
+		<credit/>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1890</date>
+		<descrip>Sepia-toned cabinet card of small boy. The boy is wearing a striped sailor suit and standing on a chair. His blond hair is arranged in curls.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1880</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp/>
+		<insdate/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<insvalue>0.00</insvalue>
+		<invnby>Parr, Mary L.</invnby>
+		<invndate>2004-10-20</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1900</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<medium>Photographic Emulsion/Photographic Paper</medium>
+		<negloc>Copy Negative Storage Box 1</negloc>
+		<negno/>
+		<notes/>
+		<objectid>2004.4.1</objectid>
+		<objname>Photograph, Cabinet</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Adams, Phillip Wright</people>
+		<place>Pennsylvania/Chester County</place>
+		<policyno/>
+		<printsize>3.5" x 5.5"</printsize>
+		<process>Albumen Print</process>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>10/20/2004</recdate>
+		<recfrom>Adams, Barbara Wright</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2004-10-20</statusdate>
+		<sterms>Adams Family
+Auden Family</sterms>
+		<studio/>
+		<subjects>Boys
+Children
+</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Phillip Wright Adams, age 6</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2010-08-30T14:09:51</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2004.4</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Mary Cullen Auden</caption>
+		<catby>Parr, Mary L.</catby>
+		<catdate>2004-10-20</catdate>
+		<classes/>
+		<collection>Adams Family Collection</collection>
+		<conddate>2004-10-20</conddate>
+		<condexam>Patterson, Nancy</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright>All rights belong to the PastPerfect Museum.</copyright>
+		<creator>Edwards, A. R.</creator>
+		<credit/>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1874</date>
+		<descrip>Carte-de-visite portrait of Mary Cullen Auden taken in London in 1974. Mary Cullen Auden arrived in Perfectown, PA in 1885. She worked as a domestic in the home of Captain Horace B. Carter.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1870</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp/>
+		<insdate/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<insvalue>0.00</insvalue>
+		<invnby>Parr, Mary L.</invnby>
+		<invndate>2004-10-20</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1880</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate>2004-10-20</maintdate>
+		<maintnote/>
+		<medium/>
+		<negloc>Copy Negative Storage Box 1</negloc>
+		<negno/>
+		<notes/>
+		<objectid>2004.4.2</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Auden, Mary Cullen</people>
+		<place>England/London</place>
+		<policyno/>
+		<printsize>2 1/2" x 4"</printsize>
+		<process>Albumen Print</process>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>10/20/2004</recdate>
+		<recfrom>Adams, Barbara Wright</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2004-10-20</statusdate>
+		<sterms/>
+		<studio>Selkirk and Jedburgh</studio>
+		<subjects/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Mary Cullen Auden</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2004-10-20T15:32:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2009.15</accessno>
+		<acqvalue>0</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Babbitt Home</caption>
+		<catby>Wilson, Pat</catby>
+		<catdate>2009-07-16</catdate>
+		<classes>Architecture/Vernacular
+Domestic Life/Family</classes>
+		<collection/>
+		<conddate>2009-09-11</conddate>
+		<condexam>Withers,Blanche</condexam>
+		<condition>Fair</condition>
+		<condnotes>Slight scratch on print Upper Right Quadrant
+Corners of mounting cardstock are bent and frayed.</condnotes>
+		<copyright>All rights belong to PastPerfect Museum</copyright>
+		<creator>Unknown</creator>
+		<credit>In memory of my grandfather, Patrick Carter Babbitt</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<dataset/>
+		<date>1875</date>
+		<descrip>Two story white clapboard house with white fence. Two newly planted trees outside the fence are surrounded by pickets. There is a water storage tank in the background as well as a church and a small barn or shed. There are four people on the upper balcony.</descrip>
+		<dimnotes>Overall dimensions including cardstock mount: 9" x 6"</dimnotes>
+		<dispvalue/>
+		<earlydate>1875</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame>Cardstock frame</frame>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp/>
+		<insdate/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<insvalue>0</insvalue>
+		<invnby/>
+		<invndate/>
+		<latdeg>0.000000</latdeg>
+		<latedate>1890</latedate>
+		<legal>All copyrights belong to the PastPerfect Museum.</legal>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1>Room 200</locfield1>
+		<locfield2/>
+		<locfield3>Cabinet 2</locfield3>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Two Year</maintcycle>
+		<maintdate>2009-07-11</maintdate>
+		<maintnote/>
+		<medium>Photographic Emulsion/Photographic Emulsion</medium>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno/>
+		<notes/>
+		<objectid>2009.15.2</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people/>
+		<place>Schuylkill County, PA</place>
+		<policyno/>
+		<printsize>6 5/8" x 4 5/8"</printsize>
+		<process>Unknown</process>
+		<provenance>Item has been in the possession of the Babbitt Family since it was taken.
+Acquired by Deed of Gift by PastPerfect Museum 2009.</provenance>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>05/11/2009</recdate>
+		<recfrom>Babbitt, Patricia J.</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Parr, Mary L.</statusby>
+		<statusdate>2009-08-21</statusdate>
+		<sterms>Babbitt Family</sterms>
+		<studio>None</studio>
+		<subjects>Architecture
+Homes
+Churches
+Barns
+Water tanks</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Babbitt House</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2009-09-11T11:39:00</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2000.5</accessno>
+		<acqvalue>0</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Wedding Day</caption>
+		<catby>Smith, Elizabeth</catby>
+		<catdate>2000-07-28</catdate>
+		<classes/>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate>2000-07-28</conddate>
+		<condexam>Parr, Mary L.</condexam>
+		<condition>Excellent</condition>
+		<condnotes>Photograph is in excellent condition. No tears, stains, or foxing. No evidence of  fading or other deterioration.</condnotes>
+		<copyright/>
+		<creator>Brantnor, Octavius                                                              </creator>
+		<credit/>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<dataset/>
+		<date>1902/03/21</date>
+		<descrip>This photograph depicts Ethel (Gregory) and Neil Packwood, Sr. on their wedding day, March 21, 1902.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1902</earlydate>
+		<event>Ehtel and Neil Packwood Sr. Wedding</event>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent>8: Communication Artifact</gparent>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp/>
+		<insdate/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<insvalue>0</insvalue>
+		<invnby>Smith, Elizabeth</invnby>
+		<invndate>2005-09-14</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1902</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Photo Storage Box 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Five Year</maintcycle>
+		<maintdate>2000-09-01</maintdate>
+		<maintnote>Examine photograph and make sure mylar sleeve is in good condition.</maintnote>
+		<medium>Photographic Emulsion/Paper</medium>
+		<negloc>Copy Negative Storage Box 3</negloc>
+		<negno/>
+		<notes/>
+		<objectid>2000.5.4</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent>Documentary Artifact</parent>
+		<people>Packwood, Ethel Gregory
+Packwood, Neil Sr.</people>
+		<place>Pastville Methodist Church</place>
+		<policyno/>
+		<printsize>3" x 5.25"</printsize>
+		<process>Unknown</process>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>01/04/2000</recdate>
+		<recfrom>Packwood, Neil Jr.</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2000-07-28</statusdate>
+		<sterms>Packwood Family</sterms>
+		<studio>Brantnor Studio                                             </studio>
+		<subjects>Weddings
+Wedding clothing &amp; dress</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Ehtel and Neil Packwood Sr. Wedding</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2013-07-09T11:07:09</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2011.2</accessno>
+		<acqvalue>0</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption/>
+		<catby>Smith, Elizabeth</catby>
+		<catdate>2011-06-26</catdate>
+		<classes/>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate>2011-06-26</conddate>
+		<condexam>Smith, Elizabeth</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright/>
+		<creator/>
+		<credit>In memory of my grandfather, Thomas Greene, who loved old photographs.</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<dataset/>
+		<date>1875 c.</date>
+		<descrip>Portrait of a young woman with dark hair parted down the middle with curled bangs. She is wearing a dress with beaded yoke at the neck and on on the outer skirt. Her collar is velvet and she is wearing a lace choker and cameo pin. Her chatelaine has a cross. Her arm is resting on a late 19th century primitive style chair.
+
+Marked on back of card "17356".</descrip>
+		<dimnotes>Adhered to card which is 4 1/4" x 6 1/2".</dimnotes>
+		<dispvalue/>
+		<earlydate>0</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp/>
+		<insdate/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<insvalue>0</insvalue>
+		<invnby/>
+		<invndate/>
+		<latdeg>0.000000</latdeg>
+		<latedate>0</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 4</locfield4>
+		<locfield5/>
+		<locfield6>Photo Storage Box 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Quarterly</maintcycle>
+		<maintdate>2011-06-01</maintdate>
+		<maintnote/>
+		<medium/>
+		<negloc/>
+		<negno/>
+		<notes/>
+		<objectid>2011.2.1</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent/>
+		<people/>
+		<place>Philadelphia</place>
+		<policyno/>
+		<printsize>4" w x 5 3/4" h</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>05/20/2011</recdate>
+		<recfrom>Cherry Hill Realty</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2011-06-26</statusdate>
+		<sterms/>
+		<studio>A &amp; G Taylor Photographers                                </studio>
+		<subjects/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title/>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2012-12-27T13:47:20</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2011.2</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption/>
+		<catby>Smith, Elizabeth</catby>
+		<catdate>2011-06-26</catdate>
+		<classes/>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate>2011-06-26</conddate>
+		<condexam>Smith, Elizabeth</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright/>
+		<creator/>
+		<credit>In memory of my grandfather, Thomas Greene, who loved old photographs.</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1890 c.</date>
+		<descrip>Portrait of a woman with a Spanish comb. She has leg of mutton sleeves, a high collar, and beading on the bodice of her dress.
+
+Marked on back of card in pencil  "40417/Annie Graben".</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>0</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp/>
+		<insdate/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<insvalue>0.00</insvalue>
+		<invnby/>
+		<invndate/>
+		<latdeg>0.000000</latdeg>
+		<latedate>0</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 4</locfield4>
+		<locfield5/>
+		<locfield6>Photo Storage Box 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Quarterly</maintcycle>
+		<maintdate>2011-06-26</maintdate>
+		<maintnote/>
+		<medium/>
+		<negloc/>
+		<negno/>
+		<notes/>
+		<objectid>2011.2.2</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent/>
+		<people/>
+		<place>Philadelphia</place>
+		<policyno/>
+		<printsize/>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>05/20/2011</recdate>
+		<recfrom>Cherry Hill Realty</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2011-06-26</statusdate>
+		<sterms/>
+		<studio>Harrison Krips                                              </studio>
+		<subjects/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title/>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2012-12-27T13:47:04</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2011.2</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption/>
+		<catby>Smith, Elizabeth</catby>
+		<catdate>2011-06-26</catdate>
+		<classes/>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate>2011-06-26</conddate>
+		<condexam>Smith, Elizabeth</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright/>
+		<creator/>
+		<credit>In memory of my grandfather, Thomas Greene, who loved old photographs.</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1900 c.</date>
+		<descrip>Portrait of a woman with glasses a curly gray hair. She is wearing a dress with beaded shoulders and large ruffled collar. 
+
+Marked on back of card "46165".</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>0</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp/>
+		<insdate/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<insvalue>0.00</insvalue>
+		<invnby/>
+		<invndate/>
+		<latdeg>0.000000</latdeg>
+		<latedate>0</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 4</locfield4>
+		<locfield5/>
+		<locfield6>Photo Storage Box 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Quarterly</maintcycle>
+		<maintdate>2011-06-26</maintdate>
+		<maintnote/>
+		<medium/>
+		<negloc/>
+		<negno/>
+		<notes/>
+		<objectid>2011.2.3</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent/>
+		<people/>
+		<place>Pastville, PA</place>
+		<policyno/>
+		<printsize/>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>05/20/2011</recdate>
+		<recfrom>Cherry Hill Realty</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2011-06-26</statusdate>
+		<sterms/>
+		<studio>Harrison Krips</studio>
+		<subjects/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title/>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2012-12-27T13:46:57</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2011.2</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption/>
+		<catby>Smith, Elizabeth</catby>
+		<catdate>2011-06-26</catdate>
+		<classes/>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate>2011-06-26</conddate>
+		<condexam>Smith, Elizabeth</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright/>
+		<creator/>
+		<credit>In memory of my grandfather, Thomas Greene, who loved old photographs.</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1878/11/20</date>
+		<descrip>Portrait of a man wearing a dark suit. He is sitting in an armchair and is holding a newspaper. The man also has facial hair along both jawbones.
+
+At the bottom of the card printed in metallic gold is the photographer’s name of Broadbent &amp;
+Taylor, 914 Chestnut Street. On the back of the card in black print shows the Broadbent &amp;
+Taylor signature and logos. At the top of the card, there is a handwritten note of “Nov 20 1878/
+Property of Lawrence Johnson”. Two other markings are in pencil "3 00/SUE" and "S0611'.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>0</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp/>
+		<insdate/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<insvalue>0.00</insvalue>
+		<invnby/>
+		<invndate/>
+		<latdeg>0.000000</latdeg>
+		<latedate>0</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 4</locfield4>
+		<locfield5/>
+		<locfield6>Photo Storage Box 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Quarterly</maintcycle>
+		<maintdate>2011-06-26</maintdate>
+		<maintnote/>
+		<medium/>
+		<negloc/>
+		<negno/>
+		<notes/>
+		<objectid>2011.2.4</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent/>
+		<people/>
+		<place>Philadelphia</place>
+		<policyno/>
+		<printsize/>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>05/20/2011</recdate>
+		<recfrom>Cherry Hill Realty</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2011-06-26</statusdate>
+		<sterms/>
+		<studio>Broadbent &amp; Taylor</studio>
+		<subjects/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title/>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2012-12-27T13:46:51</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2011.2</accessno>
+		<acqvalue>0.00</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption/>
+		<catby>Smith, Elizabeth</catby>
+		<catdate>2011-06-26</catdate>
+		<classes/>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate>2011-06-26</conddate>
+		<condexam>Smith, Elizabeth</condexam>
+		<condition>Good</condition>
+		<condnotes/>
+		<copyright/>
+		<creator/>
+		<credit>In memory of my grandfather, Thomas Greene, who loved old photographs.</credit>
+		<curvalmax>0.00</curvalmax>
+		<curvalue>0.00</curvalue>
+		<dataset/>
+		<date>1900 c.</date>
+		<descrip>Portrait of a young man in a suit with a waistcoat and white tie. 
+
+Printed on the bottom on the front of the card "Grotecloss/Extra Finish/144 &amp; 146 Market St./Paterson, N.J.".
+
+Printed on back of card "Grotecloss/Photographer/114 &amp; 146 Market Street/Paterson/N.J./Negatives kept - /Copies can be had at any time."
+Also an illustration with a lens with a painter's palette, brushes, ribbon and camera on legs. It says "Solar/Phot's/Crayons/ect." in the palette.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>0</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>2</imageno>
+		<inscomp/>
+		<insdate/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<insvalue>0.00</insvalue>
+		<invnby/>
+		<invndate/>
+		<latdeg>0.000000</latdeg>
+		<latedate>0</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4>Shelf 4</locfield4>
+		<locfield5/>
+		<locfield6>Photo Storage Box 2</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Quarterly</maintcycle>
+		<maintdate>2011-06-26</maintdate>
+		<maintnote/>
+		<medium/>
+		<negloc/>
+		<negno/>
+		<notes/>
+		<objectid>2011.2.5</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent/>
+		<people/>
+		<place>Paterson, NJ</place>
+		<policyno/>
+		<printsize/>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>05/20/2011</recdate>
+		<recfrom>Cherry Hill Realty</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>Need to Photograph</status>
+		<statusby>Smith, Elizabeth</statusby>
+		<statusdate>2011-06-26</statusdate>
+		<sterms/>
+		<studio>Grotecloss</studio>
+		<subjects/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title/>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0.00</udf14>
+		<udf15>0.00</udf15>
+		<udf16>0.000</udf16>
+		<udf17>0.000</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2012-12-27T13:46:42</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2012.1</accessno>
+		<acqvalue>0</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Harper Triplets</caption>
+		<catby>Wilson, Pat</catby>
+		<catdate>2012-01-15</catdate>
+		<classes/>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate>2012-01-15</conddate>
+		<condexam>Smith, Elizabeth</condexam>
+		<condition>Excellent</condition>
+		<condnotes>Overall condition of photo is excellent. No tears or creases. The emulsion layer is in good condition without fading or other deterioration.</condnotes>
+		<copyright/>
+		<creator>unknown</creator>
+		<credit>Donated by the Hartford Family</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<dataset/>
+		<date>1877</date>
+		<descrip>Photo of the Harper Triplets, 1911. The Harper triplets were the first known set of triplets born in Pastville, Pennsylvania, Born in 1851 the sisters were a sensation throughout the region because of the rarity of triple births. In the photo, the three sisters are seated on the porch of the house believed to belong to Olga. The eldest, Olivia is wearing glasses. Olga is in the middle. On the far right is Octavia who is identifiable because of the head scarf she was known to wear. In the foreground is Olga's granddaughter, Jilly Jean Mortenson.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1875</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent/>
+		<homeloc>PastPerfect Museum Archives</homeloc>
+		<imageno>1</imageno>
+		<inscomp/>
+		<insdate/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<insvalue>0</insvalue>
+		<invnby>Parr, Mary L.</invnby>
+		<invndate>2012-11-13</invndate>
+		<latdeg>0.000000</latdeg>
+		<latedate>1879</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4/>
+		<locfield5/>
+		<locfield6>Folder G-I</locfield6>
+		<longdeg>0.000000</longdeg>
+		<maintcycle>Five Year</maintcycle>
+		<maintdate>2012-01-15</maintdate>
+		<maintnote>Check condition of photograph and condition of mylar sleeve.</maintnote>
+		<medium>Photographic Emulsion/Paper</medium>
+		<negloc>Copy Negative Storage Box 2</negloc>
+		<negno/>
+		<notes/>
+		<objectid>2012.1.2</objectid>
+		<objname>Print, Photographic</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent/>
+		<people>Harper, Octavia
+Harper, Olga
+Harper, Olivia</people>
+		<place>Olga Harper Washington's house</place>
+		<policyno/>
+		<printsize/>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>01/05/2012</recdate>
+		<recfrom>Baker-Hartford, Cindy</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Withers,Blanche</statusby>
+		<statusdate>2012-01-15</statusdate>
+		<sterms>Washington Family
+Harper Family</sterms>
+		<studio/>
+		<subjects>Triplets</subjects>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Harper Twins</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2013-07-09T14:40:45</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+	<export>
+		<accessno>2012.1</accessno>
+		<acqvalue>0</acqvalue>
+		<appnotes/>
+		<appraisor/>
+		<caption>Parade</caption>
+		<catby>Wilson, Pat</catby>
+		<catdate>2012-01-15</catdate>
+		<classes/>
+		<collection>PastPerfect Museum Photograph Collection</collection>
+		<conddate/>
+		<condexam/>
+		<condition/>
+		<condnotes/>
+		<copyright/>
+		<creator/>
+		<credit>Donated by the Hartford Family</credit>
+		<curvalmax>0</curvalmax>
+		<curvalue>0</curvalue>
+		<dataset/>
+		<date>1922</date>
+		<descrip>Stereograph of a parade. Men on horseback in fancy dress uniforms.</descrip>
+		<dimnotes/>
+		<dispvalue/>
+		<earlydate>1920</earlydate>
+		<event/>
+		<exhibitno>0</exhibitno>
+		<exhlabel1/>
+		<exhlabel2/>
+		<exhlabel3/>
+		<exhlabel4/>
+		<exhstart/>
+		<filmsize/>
+		<flagdate/>
+		<flagnotes/>
+		<flagreason/>
+		<frame/>
+		<frameno/>
+		<gparent/>
+		<homeloc/>
+		<imageno>1</imageno>
+		<inscomp/>
+		<insdate/>
+		<insphone/>
+		<inspremium/>
+		<insrep/>
+		<insvalue>0</insvalue>
+		<invnby/>
+		<invndate/>
+		<latdeg>0.000000</latdeg>
+		<latedate>1925</latedate>
+		<legal/>
+		<loancond/>
+		<loandue/>
+		<loaninno/>
+		<loanno>0</loanno>
+		<locfield1/>
+		<locfield2/>
+		<locfield3/>
+		<locfield4/>
+		<locfield5/>
+		<locfield6/>
+		<longdeg>0.000000</longdeg>
+		<maintcycle/>
+		<maintdate/>
+		<maintnote/>
+		<medium/>
+		<negloc/>
+		<negno/>
+		<notes/>
+		<objectid>2012.1.1</objectid>
+		<objname>Stereograph</objname>
+		<objname2/>
+		<objname3/>
+		<objnames/>
+		<oldno/>
+		<origcopy>Original</origcopy>
+		<otherno/>
+		<outdate/>
+		<parent/>
+		<people/>
+		<place>Pennsylvania/Pastville</place>
+		<policyno/>
+		<printsize>3 1/2" x 7"</printsize>
+		<process/>
+		<provenance/>
+		<pubnotes/>
+		<recas>Gift</recas>
+		<recdate>01/05/2012</recdate>
+		<recfrom>Baker-Hartford, Cindy</recfrom>
+		<relnotes/>
+		<site/>
+		<siteno/>
+		<slideno/>
+		<status>OK</status>
+		<statusby>Wilson, Pat</statusby>
+		<statusdate>2012-01-15</statusdate>
+		<sterms>Pastville University</sterms>
+		<studio/>
+		<subjects/>
+		<tempauthor/>
+		<tempby/>
+		<tempdate/>
+		<temploc/>
+		<tempnotes/>
+		<tempreason/>
+		<tempuntil/>
+		<title>Parade</title>
+		<tlocfield1/>
+		<tlocfield2/>
+		<tlocfield3/>
+		<tlocfield4/>
+		<tlocfield5/>
+		<tlocfield6/>
+		<udf1/>
+		<udf10/>
+		<udf11/>
+		<udf12/>
+		<udf13>0</udf13>
+		<udf14>0</udf14>
+		<udf15>0</udf15>
+		<udf16>0</udf16>
+		<udf17>0</udf17>
+		<udf18/>
+		<udf19/>
+		<udf2/>
+		<udf20/>
+		<udf21/>
+		<udf22/>
+		<udf3/>
+		<udf4/>
+		<udf5/>
+		<udf6/>
+		<udf7/>
+		<udf8/>
+		<udf9/>
+		<updated>2013-07-09T14:28:01</updated>
+		<updatedby>Unknown</updatedby>
+		<valuedate/>
+		<webinclude>false</webinclude>
+	</export>
+</VFPData>
