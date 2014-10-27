@@ -1,6 +1,7 @@
 package org.nyu.edu.dlts.custom;
 
 
+import org.apache.poi.ss.usermodel.Row;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -64,20 +65,25 @@ public class ASpaceCopyPastPerfect extends ASpaceCopy {
      * @param xmlFile
      * @param recordType
      */
-    public void storeXMLRecords(File xmlFile, String recordType) {
-        ArrayList<RowRecord> records = RowRecordUtil.getRowRecordFromXML(xmlFile, recordType, "export");
+    public void storeXMLRecords(File xmlFile, String recordType, String elementName) {
+        ArrayList<RowRecord> records = RowRecordUtil.getRowRecordFromXML(xmlFile, recordType, elementName);
 
         // now process each record and extract the names and subjects records
         for(RowRecord record: records) {
-            // get the creator and people
+            // we need to extract names here and de-dup
+            String name = record.get("name");
+            if(name != null && !name.isEmpty()) {
+                addNames(recordType, name);
+            }
+
             String people = record.get("people");
             if(people != null && !people.isEmpty()) {
-                addNames("person", people);
+                addNames(recordType, people);
             }
 
             String creator = record.get("creator");
             if(creator != null && !creator.isEmpty()) {
-                addNames("creator", creator);
+                addNames(recordType, creator);
             }
 
             // get the subjects
@@ -97,17 +103,21 @@ public class ASpaceCopyPastPerfect extends ASpaceCopy {
 
     /**
      * Method to add names to the hash map
-     * @param nameType person, or creator for now
+     * @param recordType The type of record where the name record was found
      * @param names
      */
-    private void addNames(String nameType, String names) {
+    private void addNames(String recordType, String names) {
         if(names.contains("\n")) {
             String[] sa = names.split("\n");
             for(String name: sa) {
-                namesMap.put(name, nameType);
+                if(!namesMap.containsKey(name)) {
+                    namesMap.put(name, recordType);
+                }
             }
         } else {
-            namesMap.put(names, nameType);
+            if(!namesMap.containsKey(names)) {
+                namesMap.put(names, recordType);
+            }
         }
     }
 
@@ -131,13 +141,27 @@ public class ASpaceCopyPastPerfect extends ASpaceCopy {
      * Method to store the names and subjects
      */
     private void storeNamesAndSubjects() {
-        RowRecord namesRecord = new RowRecord(NAME_TYPE, "-1", namesMap);
-        db.store(namesRecord);
+        System.out.println("Total Number of Names: " + namesMap.size());
+        int namesAdded = 0;
+
+        for (Map.Entry<String, String> entry: namesMap.entrySet()) {
+            String name = entry.getKey();
+            String recordType = entry.getValue();
+
+            if(!recordType.equals(NAME_TYPE)) {
+                HashMap<String, String> recordMap = new HashMap<String, String>();
+                recordMap.put("name", name);
+                RowRecord nameRecord = new RowRecord(NAME_TYPE, "-1", recordMap);
+                db.store(nameRecord);
+                namesAdded++;
+            }
+        }
+
+        System.out.println("Names Added: " + namesAdded);
 
         RowRecord subjectsRecord = new RowRecord(SUBJECT_TYPE, "-1", subjectsMap);
         db.store(subjectsRecord);
 
-        System.out.println("Number of Names: " + namesMap.size());
         System.out.println("Number of Subjects: " + subjectsMap.size());
     }
 
@@ -214,30 +238,22 @@ public class ASpaceCopyPastPerfect extends ASpaceCopy {
 
         // now iterate through the creator records and create the Agent JSON objects
         List<RowRecord> rowList = getRowList(NAME_TYPE);
-        if(rowList.size() == 0) {
-            print("No names to copy ...");
-            return;
-        }
 
-        RowRecord nameRecord = rowList.get(0);
-        HashMap<String, String> names = nameRecord.getRecordMap();
-
-        int total = names.size();
+        int total = rowList.size();
         int count = 0;
         int success = 0;
 
         /**
          * Iterate the row data of the spreadsheet
          */
-        for (Map.Entry<String, String> entry: names.entrySet()) {
+        for (RowRecord rowRecord: rowList) {
             if (stopCopy) return;
 
-            String name = entry.getKey();
-            String nameType = entry.getValue();
-            String recordId = name + " (" + nameType + ")";
+            String name = rowRecord.get("name");
+            String recordId = name;
 
             // get the contact information in the row
-            JSONObject recordJS = mapper.convertName(null, name, null, recordId);
+            JSONObject recordJS = mapper.convertName(null, rowRecord, null, recordId);
             String jsonText = recordJS.toString();
 
             // based on the type of name copy to the correct location
@@ -472,13 +488,14 @@ public class ASpaceCopyPastPerfect extends ASpaceCopy {
         File libraryFile = new File(homeDirectory +"/sample_data/PPSData/PPSdata_Library.xml");
         File objectFile = new File(homeDirectory +"/sample_data/PPSData/PPSdata_Object.xml");
         File photoFile = new File(homeDirectory +"/sample_data/PPSData/PPSdata_Photos.xml");
+        File peopleFile = new File(homeDirectory +"/sample_data/PPSData/PPSdata_People.xml");
 
         File bsiMapperScriptFile = new File(homeDirectory + "/sample_data/PPSData/mapper.bsh");
 
         ASpaceCopyPastPerfect aspaceCopy = new ASpaceCopyPastPerfect("http://localhost:8089", "admin", "admin");
         //ASpaceCopyPastPerfect aspaceCopy = new ASpaceCopyPastPerfect("http://54.235.231.8:8089", "admin", "admin");
-        aspaceCopy.setSimulateRESTCalls(true);
-        //if (!aspaceCopy.getSession()) System.exit(-100);
+        //aspaceCopy.setSimulateRESTCalls(true);
+        if (!aspaceCopy.getSession()) System.exit(-100);
 
         try {
             // load the mapper scripts
@@ -490,21 +507,25 @@ public class ASpaceCopyPastPerfect extends ASpaceCopy {
             boolean createCache = aspaceCopy.initializeDB4O(databaseFilename);
             //createCache = true;
             if (createCache) {
+                System.out.println("Loading People file " + peopleFile);
+                aspaceCopy.storeXMLRecords(peopleFile, NAME_TYPE, "reportdata");
+
                 System.out.println("Loading Accessions file " + accessionFile);
-                aspaceCopy.storeXMLRecords(accessionFile, ACCESSION_TYPE);
+                aspaceCopy.storeXMLRecords(accessionFile, ACCESSION_TYPE, "export");
 
                 System.out.println("Loading Archive file " + archiveFile);
-                aspaceCopy.storeXMLRecords(archiveFile, ARCHIVE_TYPE);
+                aspaceCopy.storeXMLRecords(archiveFile, ARCHIVE_TYPE, "export");
 
                 System.out.println("Loading Library file " + libraryFile);
-                aspaceCopy.storeXMLRecords(libraryFile, LIBRARY_TYPE);
+                aspaceCopy.storeXMLRecords(libraryFile, LIBRARY_TYPE, "export");
 
                 System.out.println("Loading Object file " + objectFile);
-                aspaceCopy.storeXMLRecords(objectFile, OBJECT_TYPE);
+                aspaceCopy.storeXMLRecords(objectFile, OBJECT_TYPE, "export");
 
                 System.out.println("Loading Photo file " + photoFile);
-                aspaceCopy.storeXMLRecords(photoFile, PHOTO_TYPE);
+                aspaceCopy.storeXMLRecords(photoFile, PHOTO_TYPE, "export");
 
+                // store company names and subjects
                 aspaceCopy.storeNamesAndSubjects();
             }
 

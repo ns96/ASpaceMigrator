@@ -31,7 +31,7 @@ import java.io.StringWriter;
  * @author Nathan Stevens
  */
 public class dbCopyFrame extends JFrame {
-    public static final String VERSION = "Archives Space Excel Data Migrator v0.5.0 (07-14-2014)";
+    public static final String VERSION = "Archives Space Data Migrator v0.5.0 (10-27-2014)";
 
     // used for viewing the mapper scripts
     private CodeViewerDialog codeViewerDialogBeanshell;
@@ -669,6 +669,7 @@ public class dbCopyFrame extends JFrame {
         saveErrorsLabel = new JLabel();
         errorCountLabel = new JLabel();
         stopButton = new JButton();
+        utillitiesButton = new JButton();
         okButton = new JButton();
         CellConstraints cc = new CellConstraints();
 
@@ -725,7 +726,7 @@ public class dbCopyFrame extends JFrame {
                     }));
 
                 //---- apiLabel ----
-                apiLabel.setText("  Archives Space Version: v1.0.7");
+                apiLabel.setText("  Archives Space Version: v1.1.0");
                 apiLabel.setHorizontalTextPosition(SwingConstants.CENTER);
                 apiLabel.setFont(new Font("Lucida Grande", Font.BOLD, 14));
                 contentPanel.add(apiLabel, cc.xy(1, 1));
@@ -734,11 +735,11 @@ public class dbCopyFrame extends JFrame {
                 {
                     panel4.setLayout(new FormLayout(
                         new ColumnSpec[] {
-                            FormFactory.DEFAULT_COLSPEC,
+                            new ColumnSpec(ColumnSpec.FILL, Sizes.DEFAULT, FormSpec.DEFAULT_GROW),
                             FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
                             new ColumnSpec(ColumnSpec.FILL, Sizes.DEFAULT, FormSpec.DEFAULT_GROW),
                             FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
-                            FormFactory.DEFAULT_COLSPEC,
+                            new ColumnSpec(ColumnSpec.FILL, Sizes.DEFAULT, FormSpec.DEFAULT_GROW),
                             FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
                             new ColumnSpec(ColumnSpec.FILL, Sizes.DEFAULT, FormSpec.DEFAULT_GROW),
                             FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
@@ -1075,6 +1076,8 @@ public class dbCopyFrame extends JFrame {
                         FormFactory.GLUE_COLSPEC,
                         FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
                         FormFactory.DEFAULT_COLSPEC,
+                        FormFactory.LABEL_COMPONENT_GAP_COLSPEC,
+                        FormFactory.DEFAULT_COLSPEC,
                         FormFactory.DEFAULT_COLSPEC,
                         FormFactory.DEFAULT_COLSPEC,
                         FormFactory.BUTTON_COLSPEC
@@ -1111,6 +1114,10 @@ public class dbCopyFrame extends JFrame {
                 });
                 buttonBar.add(stopButton, cc.xy(9, 1));
 
+                //---- utillitiesButton ----
+                utillitiesButton.setText("Utilities");
+                buttonBar.add(utillitiesButton, cc.xy(11, 1));
+
                 //---- okButton ----
                 okButton.setText("Close");
                 okButton.addActionListener(new ActionListener() {
@@ -1118,7 +1125,7 @@ public class dbCopyFrame extends JFrame {
                         okButtonActionPerformed();
                     }
                 });
-                buttonBar.add(okButton, cc.xy(12, 1));
+                buttonBar.add(okButton, cc.xy(14, 1));
             }
             dialogPane.add(buttonBar, BorderLayout.SOUTH);
         }
@@ -1206,6 +1213,7 @@ public class dbCopyFrame extends JFrame {
     private JLabel saveErrorsLabel;
     private JLabel errorCountLabel;
     private JButton stopButton;
+    private JButton utillitiesButton;
     private JButton okButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 

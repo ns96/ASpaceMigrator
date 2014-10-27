@@ -51,7 +51,7 @@
             <string>javax.swing.JLabel</string> 
             <void method="setProperty"> 
              <string>text</string> 
-             <string>  Archives Space Version: v1.0.7</string> 
+             <string>  Archives Space Version: v1.1.0</string> 
             </void> 
             <void method="setProperty"> 
              <string>horizontalTextPosition</string> 
@@ -80,7 +80,7 @@
              <class>com.jgoodies.forms.layout.FormLayout</class> 
              <void method="setProperty"> 
               <string>$columnSpecs</string> 
-              <string>default, labelcompgap, default:grow, labelcompgap, default, labelcompgap, default:grow, labelcompgap, default:grow</string> 
+              <string>default:grow, labelcompgap, default:grow, labelcompgap, default:grow, labelcompgap, default:grow, labelcompgap, default:grow</string> 
              </void> 
              <void method="setProperty"> 
               <string>$rowSpecs</string> 
@@ -1625,7 +1625,7 @@
            <class>com.jgoodies.forms.layout.FormLayout</class> 
            <void method="setProperty"> 
             <string>$columnSpecs</string> 
-            <string>labelcompgap, default, labelcompgap, default, labelcompgap, default, glue, labelcompgap, default, default, default, button</string> 
+            <string>labelcompgap, default, labelcompgap, default, labelcompgap, default, glue, labelcompgap, default, labelcompgap, default, default, default, button</string> 
            </void> 
            <void method="setProperty"> 
             <string>$rowSpecs</string> 
@@ -1757,6 +1757,25 @@
              <string>gridX</string> 
              <int>9</int> 
             </void> 
+           </object> 
+          </void> 
+          <void method="add"> 
+           <object class="com.jformdesigner.model.FormComponent"> 
+            <string>javax.swing.JButton</string> 
+            <void method="setProperty"> 
+             <string>text</string> 
+             <string>Utilities</string> 
+            </void> 
+            <void property="name"> 
+             <string>utillitiesButton</string> 
+            </void> 
+           </object> 
+           <object class="com.jformdesigner.model.FormLayoutConstraints"> 
+            <class>com.jgoodies.forms.layout.CellConstraints</class> 
+            <void method="setProperty"> 
+             <string>gridX</string> 
+             <int>11</int> 
+            </void> 
             <void method="setProperty"> 
              <string>gridY</string> 
              <int>1</int> 
@@ -1786,7 +1805,7 @@
             <class>com.jgoodies.forms.layout.CellConstraints</class> 
             <void method="setProperty"> 
              <string>gridX</string> 
-             <int>12</int> 
+             <int>14</int> 
             </void> 
             <void method="setProperty"> 
              <string>gridY</string> 
