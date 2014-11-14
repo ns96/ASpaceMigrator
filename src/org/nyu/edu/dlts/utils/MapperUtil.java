@@ -1,5 +1,7 @@
 package org.nyu.edu.dlts.utils;
 
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,6 +30,10 @@ public class MapperUtil {
 
     private static RandomString randomStringLong = new RandomString(6);
     private static RandomString randomString = new RandomString(3);
+
+    // A hash map used to keep running count of some some value. For example used
+    // when generating ids based on the year
+    private static HashMap<String, Integer> countMap = new HashMap<String, Integer>();
 
     // used to send errors to the UI and add custom enums
     public static ASpaceCopy aspaceCopy;
@@ -734,7 +740,7 @@ public class MapperUtil {
 
     /**
      * Method to create and add a single subject. It just calls the same method in
-     * the ascopy object
+     * the ASpaceCopy object
      *
      * @param recordJS
      * @param source
@@ -744,6 +750,18 @@ public class MapperUtil {
      */
     public static void addSubject(JSONObject recordJS, String source, String termType, String terms) throws Exception {
         aspaceCopy.createAndAddSubject(recordJS, source.toLowerCase(), termType.toLowerCase(), terms.trim());
+    }
+
+    /**
+     * Method to add a classification record
+     *
+     * @param recordJS
+     * @param identifier
+     * @param title
+     * @throws Exception
+     */
+    public static void addClassification(JSONObject recordJS, String identifier, String title) throws Exception {
+        aspaceCopy.createAndAddClassification(recordJS, identifier, title);
     }
 
     /**
@@ -763,11 +781,16 @@ public class MapperUtil {
      * @return
      */
     public static int getColumnNumber(String column) {
-        int num1 = Character.getNumericValue(column.charAt(0)) - 10;
-        int num2 = Character.getNumericValue(column.charAt(1)) - 10;
-        int index = (num1 + 1) * 26 + num2;
-        //System.out.println("Columns " + num1 + ", " + num2 + "  => " + index);
-        return index;
+        if(column.length() == 1) {
+            return getColumnNumber(column.charAt(0));
+        } else {
+            int num1 = Character.getNumericValue(column.charAt(0)) - 10;
+            int num2 = Character.getNumericValue(column.charAt(1)) - 10;
+            int index = (num1 + 1) * 26 + num2;
+
+            //System.out.println("Columns " + num1 + ", " + num2 + "  => " + index);
+            return index;
+        }
     }
 
     /**
@@ -900,13 +923,57 @@ public class MapperUtil {
     }
 
     /**
-     * Main method for testing
+     * A method to get the next integer value for a particular key
      *
-     * @param args
+     * @param key
+     * @return
      */
-    public static void main(String[] args) {
-        getColumnNumber("AA");
-        getColumnNumber("AB");
-        getColumnNumber("FB");
+    public static String getNextCountValue(String key, int zeroPadding) {
+        int value = 1;
+
+        if(countMap.containsKey(key)) {
+            value = countMap.get(key) + 1;
+        }
+
+        // update the value now
+        countMap.put(key, value);
+
+        if(zeroPadding == 0) {
+            return "" + value;
+        } else {
+            return String.format("%0"+ zeroPadding + "d", value);
+        }
+    }
+
+    /**
+     * Method to merge data from one column in the row to another
+     *
+     * @param column
+     * @param header
+     * @param record
+     * @param delimiter
+     */
+    public static void mergeCellData(String column, XSSFRow header, XSSFRow record, String delimiter) {
+        int index = getColumnNumber(column);
+
+        XSSFCell headerCell = header.getCell(index);
+        XSSFCell recordCell = record.getCell(index);
+
+        String value = "";
+        if(headerCell != null && !headerCell.toString().isEmpty()) {
+            value = headerCell.toString() + delimiter;
+        } else {
+            headerCell = header.createCell(index);
+        }
+
+        if(recordCell != null && !recordCell.toString().isEmpty()) {
+            value += recordCell.toString();
+        } else {
+            // add a blank space so we don't throw any array index out of bounds
+            // exceptions
+            value += " ";
+        }
+
+        headerCell.setCellValue(value);
     }
 }

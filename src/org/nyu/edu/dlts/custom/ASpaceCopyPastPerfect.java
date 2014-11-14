@@ -166,16 +166,6 @@ public class ASpaceCopyPastPerfect extends ASpaceCopy {
     }
 
     /**
-     * Method to create repository
-     *
-     * @throws Exception
-     */
-    public void createRepository() throws Exception {
-        JSONObject repository = mapper.createRepository();
-        copyRepositoryRecord(repository);
-    }
-
-    /**
      * Method to create a new workbook containing information for creation of agent records
      *
      * @return
@@ -462,11 +452,7 @@ public class ASpaceCopyPastPerfect extends ASpaceCopy {
      */
     public String getMigrationErrors() {
         cleanUp();
-
-        String errorCount = "" + getSaveErrorCount();
-        String migrationErrors = getSaveErrorMessages() + "\n\nTotal errors: " + errorCount;
-
-        return migrationErrors;
+        return super.getMigrationErrors();
     }
 
 

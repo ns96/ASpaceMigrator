@@ -31,7 +31,7 @@ import java.io.StringWriter;
  * @author Nathan Stevens
  */
 public class dbCopyFrame extends JFrame {
-    public static final String VERSION = "Archives Space Data Migrator v0.5.0 (10-27-2014)";
+    public static final String VERSION = "Archives Space Data Migrator v0.5.1 (11-13-2014)";
 
     // used for viewing the mapper scripts
     private CodeViewerDialog codeViewerDialogBeanshell;
@@ -66,6 +66,8 @@ public class dbCopyFrame extends JFrame {
     private boolean supportsAccessions = false;
     private boolean supportsDigitalObjects = false;
     private boolean supportsResources = false;
+    private boolean supportsPreProcessing = false;
+    private boolean supportsRepository = false;
 
     /**
      * The main constructor
@@ -170,6 +172,9 @@ public class dbCopyFrame extends JFrame {
                     boolean developerMode = developerModeCheckBox.isSelected();
 
                     ascopy = new ASpaceCopy(host, admin, adminPassword);
+
+                    ascopy.setPreProcessing(supportsPreProcessing);
+
                     ascopy.setMapperScriptType(getMapperScriptType());
 
                     if(mapperScript.isEmpty()) {
@@ -210,7 +215,10 @@ public class dbCopyFrame extends JFrame {
                     // see whether to create a repository record or use the one entered by user
                     String repositoryURI = repositoryURITextField.getText();
 
-                    if(createRepositoryCheckBox.isSelected()) {
+                    if(supportsRepository) {
+                        repositoryURI = ascopy.createRepository();
+                        repositoryURITextField.setText(repositoryURI);
+                    } else if(createRepositoryCheckBox.isSelected()) {
                         JSONObject repository = createRepositoryRecord();
                         repositoryURI = ascopy.copyRepositoryRecord(repository);
                         repositoryURITextField.setText(repositoryURI);
@@ -383,6 +391,12 @@ public class dbCopyFrame extends JFrame {
         }
 
         // now indicate what's supported by this mapper script
+        if (script.contains(ASpaceMapper.REPOSITORY_MAPPER)) {
+            supportsRepository = true;
+        } else {
+            supportsRepository = false;
+        }
+
         if (script.contains(ASpaceMapper.LOCATION_MAPPER)) {
             locationsLabel.setText("supported");
             supportsLocations = true;
@@ -429,6 +443,13 @@ public class dbCopyFrame extends JFrame {
         } else {
             resourcesLabel.setText("not supported");
             supportsResources = false;
+        }
+
+        // some scripts supports pre-prossing of the data rows
+        if (script.contains(ASpaceMapper.PRE_PROCESS_MAPPER)) {
+            supportsPreProcessing = true;
+        } else {
+            supportsPreProcessing = false;
         }
     }
 

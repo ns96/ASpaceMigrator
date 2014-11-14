@@ -74,6 +74,7 @@ public class ASpaceMapper {
     public static final String RESOURCE_MAPPER = "@resource";
     public static final String DIGITAL_OBJECT_MAPPER = "@digitalobject";
     public static final String NOTE_MAPPER = "@note";
+    public static final String PRE_PROCESS_MAPPER = "@preprocess";
 
     /**
      *  Main constructor
@@ -389,6 +390,24 @@ public class ASpaceMapper {
 
         recordJS.put("terms", termsJA);
         recordJS.put("vocabulary", vocabularyURI);
+
+        return recordJS;
+    }
+
+    /**
+     * Method to create a classification JSON Object
+     *
+     *
+     * @param identifier
+     * @param title
+     * @return
+     */
+    public JSONObject createClassification(String identifier, String title) throws Exception {
+        // Main json object
+        JSONObject recordJS = new JSONObject();
+
+        recordJS.put("identifier", identifier);
+        recordJS.put("title", title);
 
         return recordJS;
     }

@@ -1,5 +1,6 @@
 package org.nyu.edu.dlts.aspace;
 
+import bsh.EvalError;
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
@@ -16,6 +17,7 @@ import org.nyu.edu.dlts.models.RowRecord;
 import org.nyu.edu.dlts.models.RelatedRowData;
 import org.nyu.edu.dlts.utils.*;
 
+import javax.script.ScriptException;
 import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
@@ -63,6 +65,9 @@ public class ASpaceCopy implements PrintConsole {
 
     // hashmap that maps subjects from old database with copy in new database
     protected HashMap<String, String> subjectURIMap = new HashMap<String, String>();
+
+    // hashmap that maps classification from old database with copy in new database
+    protected HashMap<String, String> classificationURIMap = new HashMap<String, String>();
 
     // hashmap that maps names from old database with copy in new database
     protected HashMap<String, String> nameURIMap = new HashMap<String, String>();
@@ -125,6 +130,7 @@ public class ASpaceCopy implements PrintConsole {
     private final String USER_KEY = "userURIMap";
     private final String SUBJECT_KEY = "subjectURIMap";
     private final String NAME_KEY = "nameURIMap";
+    private final String CLASSIFICATION_KEY = "classificationURIMap";
     private final String ACCESSION_KEY = "accessionURIMap";
     private final String DIGITAL_OBJECT_KEY = "digitalObjectURIMap";
     private final String RESOURCE_KEY = "resourceURIMap";
@@ -149,6 +155,12 @@ public class ASpaceCopy implements PrintConsole {
 
     // store information about the ASpace version
     private String aspaceInformation = "";
+
+    // variable to state that pre-processing should be done
+    private boolean supportsPreProcessing = false;
+
+    // used to performing pre-processing
+    private ExcelUtils excelUtils;
 
     /**
      * The default constructor
@@ -191,6 +203,10 @@ public class ASpaceCopy implements PrintConsole {
      */
     public void setMapperScript(String mapperScript) {
         mapper.setMapperScript(mapperScript);
+
+        if(supportsPreProcessing) {
+            excelUtils.setMapperScript(mapperScript);
+        }
     }
 
     /**
@@ -199,6 +215,24 @@ public class ASpaceCopy implements PrintConsole {
      */
     public void setMapperScriptType(String type) {
         mapper.initializeScriptInterpreter(type);
+
+        if(supportsPreProcessing) {
+            excelUtils.initializeScriptInterpreter(type);
+        }
+    }
+
+    /**
+     * Method to state that pre-processing is to be done
+     *
+     * @param supportsPreProcessing
+     */
+    public void setPreProcessing(boolean supportsPreProcessing) {
+        this.supportsPreProcessing = supportsPreProcessing;
+
+        if(supportsPreProcessing) {
+            excelUtils = new ExcelUtils();
+            excelUtils.setASpaceCopy(this);
+        }
     }
 
     /**
@@ -208,6 +242,10 @@ public class ASpaceCopy implements PrintConsole {
      */
     public void setWorkbook(XSSFWorkbook workBook) {
         this.workBook = workBook;
+
+        if(supportsPreProcessing) {
+            excelUtils.setWorkbook(workBook);
+        }
     }
     /**
      * Method to initiate certain variables that are needed to work
@@ -271,6 +309,16 @@ public class ASpaceCopy implements PrintConsole {
         } else {
             print("Fail to update dynamic Enum:" + endpoint);
         }
+    }
+
+    /**
+     * Method to create repository
+     *
+     * @throws Exception
+     */
+    public String createRepository() throws Exception {
+        JSONObject repository = mapper.createRepository();
+        return copyRepositoryRecord(repository);
     }
 
     /**
@@ -419,7 +467,14 @@ public class ASpaceCopy implements PrintConsole {
         // load the current spreadsheet from the work book
         XSSFSheet xssfSheet = workBook.getSheetAt(sheetNumber);
         XSSFRow headerRow = null;
-        ArrayList<XSSFRow> rowList = getRowData(headerRow, xssfSheet);
+        ArrayList<XSSFRow> rowList;
+
+        if(supportsPreProcessing) {
+            print("Pre-Processing records ...");
+            rowList = excelUtils.cleanRowData(sheetNumber, "subjects");
+        } else {
+            rowList = getRowData(headerRow, xssfSheet);
+        }
 
         int total = rowList.size();
         int count = 0;
@@ -433,17 +488,32 @@ public class ASpaceCopy implements PrintConsole {
             String recordId = getFullRecordID(xssfSheet, xssfRow);
 
             JSONObject recordJS = mapper.convertSubject(headerRow, xssfRow);
-            String jsonText = recordJS.toString();
+            String terms = recordJS.getString("terms_original");
+            String uri;
 
-            String id = saveRecord(ASpaceClient.SUBJECT_ENDPOINT, jsonText, "Subject->" + recordId);
-
-            if (!id.equalsIgnoreCase(NO_ID)) {
-                String uri = ASpaceClient.SUBJECT_ENDPOINT + "/" + id;
+            if(terms != null && subjectURIMap.containsKey(terms)) {
+                uri = subjectURIMap.get(terms);
                 subjectURIMap.put(getRecordID(xssfRow), uri);
-                print("Copied Subject: " + recordId + " :: " + id);
+                print("Duplicate Subject: " + terms + " :: " + recordId);
                 success++;
             } else {
-                print("Fail -- Subject: " + recordId);
+                String jsonText = recordJS.toString();
+
+                String id = saveRecord(ASpaceClient.SUBJECT_ENDPOINT, jsonText, "Subject->" + recordId);
+
+                if (!id.equalsIgnoreCase(NO_ID)) {
+                    uri = ASpaceClient.SUBJECT_ENDPOINT + "/" + id;
+                    subjectURIMap.put(getRecordID(xssfRow), uri);
+
+                    if(terms != null) {
+                        subjectURIMap.put(terms, uri);
+                    }
+
+                    print("Copied Subject: " + recordId + " :: " + id);
+                    success++;
+                } else {
+                    print("Fail -- Subject: " + recordId);
+                }
             }
 
             count++;
@@ -513,7 +583,14 @@ public class ASpaceCopy implements PrintConsole {
         // load the current spreadsheet from the work book
         XSSFSheet xssfSheet = workBook.getSheetAt(sheetNumber);
         XSSFRow headerRow = null;
-        ArrayList<XSSFRow> rowList = getRowData(headerRow, xssfSheet);
+        ArrayList<XSSFRow> rowList;
+
+        if(supportsPreProcessing) {
+            print("Pre-Processing records ...");
+            rowList = excelUtils.cleanRowData(sheetNumber, "names");
+        } else {
+            rowList = getRowData(headerRow, xssfSheet);
+        }
 
         int total = rowList.size();
         int count = 0;
@@ -531,26 +608,42 @@ public class ASpaceCopy implements PrintConsole {
 
             // based on the type of name copy to the correct location
             String type = recordJS.getString("agent_type");
+            String primaryName = recordJS.getString("primary_name");
             String id;
             String uri;
 
-            if (type.equals("agent_person")) {
-                id = saveRecord(ASpaceClient.AGENT_PEOPLE_ENDPOINT, jsonText, "Name_Person->" + recordId);
-                uri = ASpaceClient.AGENT_PEOPLE_ENDPOINT + "/" + id;
-            } else if (type.equals("agent_family")) {
-                id = saveRecord(ASpaceClient.AGENT_FAMILY_ENDPOINT, jsonText, "Name_Family->" + recordId);
-                uri = ASpaceClient.AGENT_FAMILY_ENDPOINT + "/" + id;
-            } else { // must be a corporate name
-                id = saveRecord(ASpaceClient.AGENT_CORPORATE_ENTITY_ENDPOINT, jsonText, "Name_Corporate->" + recordId);
-                uri = ASpaceClient.AGENT_CORPORATE_ENTITY_ENDPOINT + "/" + id;
-            }
-
-            if (!id.equalsIgnoreCase(NO_ID)) {
+            // check for duplicates based on the primary name, and if one is found
+            // then just link that ID to the same name
+            if(primaryName != null && nameURIMap.containsKey(primaryName)) {
+                uri = nameURIMap.get(primaryName);
                 nameURIMap.put(getRecordID(xssfRow), uri);
-                print("Copied Name: " + recordId + " :: " + id);
+                print("Duplicate Name: " + primaryName + " :: " + recordId);
                 success++;
             } else {
-                print("Failed -- Name: " + recordId);
+                if (type.equals("agent_person")) {
+                    id = saveRecord(ASpaceClient.AGENT_PEOPLE_ENDPOINT, jsonText, "Name_Person->" + recordId);
+                    uri = ASpaceClient.AGENT_PEOPLE_ENDPOINT + "/" + id;
+                } else if (type.equals("agent_family")) {
+                    id = saveRecord(ASpaceClient.AGENT_FAMILY_ENDPOINT, jsonText, "Name_Family->" + recordId);
+                    uri = ASpaceClient.AGENT_FAMILY_ENDPOINT + "/" + id;
+                } else { // must be a corporate name
+                    id = saveRecord(ASpaceClient.AGENT_CORPORATE_ENTITY_ENDPOINT, jsonText, "Name_Corporate->" + recordId);
+                    uri = ASpaceClient.AGENT_CORPORATE_ENTITY_ENDPOINT + "/" + id;
+                }
+
+                // store the URI keyed by the original ID and by the primary name
+                if (!id.equalsIgnoreCase(NO_ID)) {
+                    nameURIMap.put(getRecordID(xssfRow), uri);
+
+                    if(primaryName != null) {
+                        nameURIMap.put(primaryName, uri);
+                    }
+
+                    print("Copied Name: " + recordId + " :: " + id);
+                    success++;
+                } else {
+                    print("Failed -- Name: " + recordId);
+                }
             }
 
             count++;
@@ -569,12 +662,19 @@ public class ASpaceCopy implements PrintConsole {
      * @throws Exception
      */
     public void copyAccessionRecords(int sheetNumber) throws Exception {
-        print("Copying Accession records ...");
+        print("Copying Accession records ...\n");
 
         // load the current spreadsheet from the work book
         XSSFSheet xssfSheet = workBook.getSheetAt(sheetNumber);
         XSSFRow headerRow = null;
-        ArrayList<XSSFRow> rowList = getRowData(headerRow, xssfSheet);
+        ArrayList<XSSFRow> rowList;
+
+        if(supportsPreProcessing) {
+            print("Pre-Processing records ...");
+            rowList = excelUtils.cleanRowData(sheetNumber, "accession");
+        } else {
+           rowList = getRowData(headerRow, xssfSheet);
+        }
 
         int total = rowList.size();
         int count = 0;
@@ -1026,6 +1126,62 @@ public class ASpaceCopy implements PrintConsole {
     }
 
     /**
+     * Method to copy a classifications record to ASpace
+     *
+     *
+     * @param identifier
+     * @param title
+     * @return
+     * @throws Exception
+     */
+    public String copyClassification(String identifier, String title) throws Exception {
+        print("Copying Classification record ...");
+
+        // first check to see if this subject doesn't already exist
+        if(classificationURIMap.containsKey(identifier)) {
+            return classificationURIMap.get(identifier);
+        }
+
+        JSONObject recordJS = mapper.createClassification(identifier, title);
+        String jsonText = recordJS.toString();
+
+        String repoURI = getRepositoryURI();
+        String endpoint = repoURI + ASpaceClient.CLASSIFICATION_ENDPOINT;
+        String id = saveRecord(endpoint, jsonText, "Classification->" + title);
+
+        String uri = null;
+        if (!id.equalsIgnoreCase(NO_ID)) {
+            uri = endpoint + "/" + id;
+            classificationURIMap.put(identifier, uri);
+            print("Copied Classification: " + title + " :: " + id);
+        } else {
+            print("Fail -- Classification: " + title);
+        }
+
+        return uri;
+    }
+
+    /**
+     * Method to create and add a single classification record
+     *
+     *
+     * @param recordJS
+     * @param identifier
+     * @param title
+     * @throws Exception
+     */
+    public void createAndAddClassification(JSONObject recordJS, String identifier, String title) throws Exception {
+        String classificationURI = copyClassification(identifier, title);
+
+        if (classificationURI != null) {
+            recordJS.put("classification", MapperUtil.getReferenceObject(classificationURI));
+            if (debug) print("Added classification to record");
+        } else {
+            print("No mapped classification found ...");
+        }
+    }
+
+    /**
      * Add the names to the ASpace record
      *
      * @param recordId
@@ -1087,6 +1243,7 @@ public class ASpaceCopy implements PrintConsole {
         }
 
         String nameURI = copyNameRecord(nameType, primaryName, source);
+
         if (nameURI != null) {
             JSONObject linkedAgentJS = new JSONObject();
 
@@ -1349,6 +1506,16 @@ public class ASpaceCopy implements PrintConsole {
                 if (idCell != null && !idCell.toString().isEmpty()) {
                     String idString = idCell.toString().replace(".0", "");
                     String pidString = pidCell.toString().replace(".0", "");
+
+                    // check to see if to cleanup the row data before hand
+                    if(supportsPreProcessing) {
+                        try {
+                            print("Pre-Processing record ...");
+                            excelUtils.cleanRowData(xssfRow, "row data");
+                        } catch (Exception e) {
+                            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                        }
+                    }
 
                     // we have a parent row
                     if(pidString.equals("0")) {
@@ -1700,7 +1867,7 @@ public class ASpaceCopy implements PrintConsole {
         this.copying = copying;
     }
 
-/**
+    /**
      * Method to cache the row data
      *
      * @param recordType
@@ -1837,6 +2004,7 @@ public class ASpaceCopy implements PrintConsole {
         uriMap.put(REPOSITORY_AGENT_KEY, repositoryAgentURIMap);
         uriMap.put(LOCATION_KEY, locationURIMap);
         uriMap.put(SUBJECT_KEY, subjectURIMap);
+        uriMap.put(CLASSIFICATION_KEY, classificationURIMap);
         uriMap.put(NAME_KEY, nameURIMap);
         uriMap.put(ACCESSION_KEY, accessionURIMap);
         uriMap.put(DIGITAL_OBJECT_KEY, digitalObjectURIMap);
@@ -1866,6 +2034,7 @@ public class ASpaceCopy implements PrintConsole {
             repositoryAgentURIMap = (HashMap<String,String>)uriMap.get(REPOSITORY_AGENT_KEY);
             locationURIMap = (HashMap<String,String>)uriMap.get(LOCATION_KEY);
             subjectURIMap = (HashMap<String,String>)uriMap.get(SUBJECT_KEY);
+            classificationURIMap = (HashMap<String,String>)uriMap.get(CLASSIFICATION_KEY);
             nameURIMap = (HashMap<String,String>)uriMap.get(NAME_KEY);
             accessionURIMap = (HashMap<String,String>)uriMap.get(ACCESSION_KEY);
             digitalObjectURIMap = (HashMap<String,String>)uriMap.get(DIGITAL_OBJECT_KEY);
@@ -1929,32 +2098,48 @@ public class ASpaceCopy implements PrintConsole {
     }
 
     /**
+     * Method to clean things up and print out any messages
+     */
+    public String getMigrationErrors() {
+        String errorCount = "" + getSaveErrorCount();
+
+        String migrationErrors = getSaveErrorMessages() + "\n\nTotal errors: " + errorCount;
+
+        return migrationErrors;
+    }
+
+    /**
      * Method to test the conversion without having to startup the gui
      *
      * @param args
      */
     public static void main(String[] args) throws JSONException {
         String currentDirectory  = System.getProperty("user.dir");
+        String homeDirectory  = System.getProperty("user.home");
 
-        //File excelFile = new File(currentDirectory +"/sample_data/Sample Ingest Data.xlsx");
-        File excelFile = new File(currentDirectory +"/sample_data/Sample_WGC--Mapped.xlsx");
+        File logFile = new File(homeDirectory +"/temp/TestData/sample01/migrationLog.txt");
 
-        //File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.bsh");
-        File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/accession_mapper.bsh");
-        File jriMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.rb");
-        File pyiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.py");
-        File jsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.js");
+        //File excelFile = new File(currentDirectory +"/sample_data/Sample_WGC--Mapped.xlsx");
+        File excelFile = new File(homeDirectory +"/temp/TestData/sample01/Accessions.xlsx");
 
-        ASpaceCopy aspaceCopy = new ASpaceCopy("http://localhost:8089", "admin", "admin");
-        aspaceCopy.setSimulateRESTCalls(true);
-        //aspaceCopy.getSession();
+        File bsiMapperScriptFile = new File(homeDirectory + "/temp/TestData/sample01/mapper.bsh");
+        //File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/accession_mapper.bsh");
+        //File jriMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.rb");
+        //File pyiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.py");
+        //File jsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.js");
+
+        //ASpaceCopy aspaceCopy = new ASpaceCopy("http://localhost:8089", "admin", "admin");
+        ASpaceCopy aspaceCopy = new ASpaceCopy("http://54.235.231.8:8089", "admin", "admin");
+        //aspaceCopy.setSimulateRESTCalls(true);
+        aspaceCopy.setPreProcessing(true);
+        aspaceCopy.getSession();
 
         try {
             // load the mapper scripts
             String bsiMapperScript = FileManager.readTextData(bsiMapperScriptFile);
-            String jriMapperScript = FileManager.readTextData(jriMapperScriptFile);
-            String pyiMapperScript = FileManager.readTextData(pyiMapperScriptFile);
-            String jsiMapperScript = FileManager.readTextData(jsiMapperScriptFile);
+            //String jriMapperScript = FileManager.readTextData(jriMapperScriptFile);
+            //String pyiMapperScript = FileManager.readTextData(pyiMapperScriptFile);
+            //String jsiMapperScript = FileManager.readTextData(jsiMapperScriptFile);
 
 
             /**
@@ -1974,6 +2159,9 @@ public class ASpaceCopy implements PrintConsole {
             aspaceCopy.setMapperScriptType(ASpaceMapper.BEANSHELL_SCRIPT);
             aspaceCopy.setMapperScript(bsiMapperScript);
 
+            System.out.println("\n\n");
+            aspaceCopy.createRepository();
+
             /*System.out.println("\n\n");
             aspaceCopy.copyLocationRecords(0);
 
@@ -1986,7 +2174,7 @@ public class ASpaceCopy implements PrintConsole {
 
             System.out.println("\n\n");
             //aspaceCopy.copyAccessionRecords(3);
-            aspaceCopy.copyAccessionRecords(2);
+            aspaceCopy.copyAccessionRecords(0);
 
             /*
             System.out.println("\n\n");
@@ -2027,6 +2215,9 @@ public class ASpaceCopy implements PrintConsole {
             System.out.println("\n\n");
             aspaceCopy.copyResourceRecords("5,6");
             */
+
+            String migrationErrors = aspaceCopy.getMigrationErrors();
+            FileManager.saveTextData(logFile,migrationErrors);
         } catch (Exception e) {
             e.printStackTrace();
         }

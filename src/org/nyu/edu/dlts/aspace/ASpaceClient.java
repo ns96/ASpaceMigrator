@@ -35,6 +35,7 @@ public class ASpaceClient {
     public static final String VOCABULARY_ENDPOINT = "/vocabularies";
     public static final String ACCESSION_ENDPOINT = "/accessions";
     public static final String EVENT_ENDPOINT = "/events";
+    public static final String CLASSIFICATION_ENDPOINT = "/classifications";
     public static final String COLLECTION_MANAGEMENT_RECORD_ENDPOINT = "/collection_management";
     public static final String RESOURCE_ENDPOINT = "/resources";
     public static final String ARCHIVAL_OBJECT_ENDPOINT = "/archival_objects";
