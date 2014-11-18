@@ -471,7 +471,8 @@ public class ASpaceCopy implements PrintConsole {
 
         if(supportsPreProcessing) {
             print("Pre-Processing records ...");
-            rowList = excelUtils.cleanRowData(sheetNumber, "subjects");
+            updateProgress("Subjects", 0, -2);
+            rowList = excelUtils.cleanRowData(sheetNumber, "Subjects");
         } else {
             rowList = getRowData(headerRow, xssfSheet);
         }
@@ -587,7 +588,8 @@ public class ASpaceCopy implements PrintConsole {
 
         if(supportsPreProcessing) {
             print("Pre-Processing records ...");
-            rowList = excelUtils.cleanRowData(sheetNumber, "names");
+            updateProgress("Names", 0, -2);
+            rowList = excelUtils.cleanRowData(sheetNumber, "Names");
         } else {
             rowList = getRowData(headerRow, xssfSheet);
         }
@@ -671,7 +673,8 @@ public class ASpaceCopy implements PrintConsole {
 
         if(supportsPreProcessing) {
             print("Pre-Processing records ...");
-            rowList = excelUtils.cleanRowData(sheetNumber, "accession");
+            updateProgress("Accessions", 0, -2);
+            rowList = excelUtils.cleanRowData(sheetNumber, "Accession");
         } else {
            rowList = getRowData(headerRow, xssfSheet);
         }
@@ -1720,7 +1723,11 @@ public class ASpaceCopy implements PrintConsole {
     protected synchronized void updateProgress(String recordType, int total, int count) {
         if(progressBar == null) return;
 
-        if(count == -1) {
+        if(count == -2) {
+            progressBar.setMinimum(0);
+            progressBar.setMaximum(1);
+            progressBar.setString("Pre-Processing " + recordType);
+        } else if(count == -1) {
             progressBar.setMinimum(0);
             progressBar.setMaximum(total);
             progressBar.setString("Deleting " + total + " " + recordType);
@@ -2129,7 +2136,7 @@ public class ASpaceCopy implements PrintConsole {
         //File jsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.js");
 
         //ASpaceCopy aspaceCopy = new ASpaceCopy("http://localhost:8089", "admin", "admin");
-        ASpaceCopy aspaceCopy = new ASpaceCopy("http://54.235.231.8:8089", "admin", "admin");
+        ASpaceCopy aspaceCopy = new ASpaceCopy("http://54.235.231.8:9289", "admin", "admin");
         //aspaceCopy.setSimulateRESTCalls(true);
         aspaceCopy.setPreProcessing(true);
         aspaceCopy.getSession();

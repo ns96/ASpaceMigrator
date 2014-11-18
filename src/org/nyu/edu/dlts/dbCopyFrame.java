@@ -31,7 +31,7 @@ import java.io.StringWriter;
  * @author Nathan Stevens
  */
 public class dbCopyFrame extends JFrame {
-    public static final String VERSION = "Archives Space Data Migrator v0.5.1 (11-13-2014)";
+    public static final String VERSION = "Archives Space Data Migrator v0.5.1 (11-14-2014)";
 
     // used for viewing the mapper scripts
     private CodeViewerDialog codeViewerDialogBeanshell;
@@ -248,6 +248,7 @@ public class dbCopyFrame extends JFrame {
                     }
 
                     if(!copyStopped && accessionSheet >= 0 && supportsAccessions) ascopy.copyAccessionRecords(accessionSheet);
+
                     if(!copyStopped && digitalObjectSheet >= 0 && supportsDigitalObjects) ascopy.copyDigitalObjectRecords(digitalObjectSheet);
 
                     // save the record maps for possible future use
