@@ -31,7 +31,7 @@ import java.io.StringWriter;
  * @author Nathan Stevens
  */
 public class dbCopyFrame extends JFrame {
-    public static final String VERSION = "Archives Space Data Migrator v0.5.1 (11-14-2014)";
+    public static final String VERSION = "Archives Space Data Migrator v0.5.2 (01-22-2015)";
 
     // used for viewing the mapper scripts
     private CodeViewerDialog codeViewerDialogBeanshell;
@@ -211,6 +211,9 @@ public class dbCopyFrame extends JFrame {
                     if(developerMode && ascopy.uriMapFileExist()) {
                         globalRecordsExists = ascopy.loadURIMaps();
                     }
+
+                    // load the subjects and agent records that are already in the ASpace backend
+                    ascopy.loadAgentsAndSubjects();
 
                     // see whether to create a repository record or use the one entered by user
                     String repositoryURI = repositoryURITextField.getText();

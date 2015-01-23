@@ -11,6 +11,7 @@ import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
 import org.apache.commons.httpclient.methods.multipart.Part;
 import org.apache.commons.httpclient.methods.multipart.StringPart;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
@@ -62,6 +63,9 @@ public class ASpaceClient {
     // boolean to use when one once debug stuff
     private boolean debug = false;
 
+    // indicated whether we got a valid session from the ASpace backend
+    boolean haveSession = false;
+
     /**
      * The main constructor
      *
@@ -100,7 +104,7 @@ public class ASpaceClient {
      * Method to get the session using the admin login
      */
     public boolean getSession() {
-        boolean haveSession = false;
+        haveSession = false;
 
         // get a session id using the admin login
         Part[] parts = new Part[2];
@@ -126,6 +130,15 @@ public class ASpaceClient {
         }
 
         // session was generated so return true
+        return haveSession;
+    }
+
+    /**
+     * Use to indicate if we are connected to ASpace
+     *
+     * @return
+     */
+    public boolean isConnected() {
         return haveSession;
     }
 
@@ -536,5 +549,117 @@ public class ASpaceClient {
      */
     public synchronized void appendToErrorBuffer(String errorMessage) {
         errorBuffer.append(errorMessage);
+    }
+
+    /**
+     * Method to load Agent and Subjects from the backend so we are not trying to create
+     * duplicates on the backend
+     *
+     * @param nameURIMap
+     * @param subjectURIMap
+     */
+    public void loadAgentsAndSubjects(HashMap<String, String> nameURIMap, HashMap<String, String> subjectURIMap) {
+        System.out.println("Loading existing Names and Subject Records ...");
+
+        try {
+            NameValuePair[] params = new NameValuePair[1];
+            String jsonText;
+            JSONObject jsonObject;
+            JSONArray resultsJA;
+
+
+            // add the people agents
+            int i = 1;
+            do {
+                params[0] = new NameValuePair("page", "" + i);
+                jsonText = get(AGENT_PEOPLE_ENDPOINT, params);
+
+                if(!jsonText.contains("\"results\":[]")) {
+                    jsonObject = new JSONObject(jsonText);
+                    resultsJA = jsonObject.getJSONArray("results");
+                    addValuesToMap(resultsJA, nameURIMap, "title");
+                } else {
+                    break;
+                }
+
+                i++;
+            } while (true);
+
+            // add the family agents
+            i = 1;
+            do {
+                params[0] = new NameValuePair("page", "" + i);
+                jsonText = get(AGENT_FAMILY_ENDPOINT, params);
+
+                if(!jsonText.contains("\"results\":[]")) {
+                    jsonObject = new JSONObject(jsonText);
+                    resultsJA = jsonObject.getJSONArray("results");
+                    addValuesToMap(resultsJA, nameURIMap, "title");
+                } else {
+                    break;
+                }
+
+                i++;
+            } while (true);
+
+            // add the corporate agents
+            i = 1;
+            do {
+                params[0] = new NameValuePair("page", "" + i);
+                jsonText = get(AGENT_CORPORATE_ENTITY_ENDPOINT, params);
+
+                if(!jsonText.contains("\"results\":[]")) {
+                    jsonObject = new JSONObject(jsonText);
+                    resultsJA = jsonObject.getJSONArray("results");
+                    addValuesToMap(resultsJA, nameURIMap, "title");
+                } else {
+                    break;
+                }
+
+                i++;
+            } while (true);
+
+            // add the subjects
+            i = 1;
+            do {
+                params[0] = new NameValuePair("page", "" + i);
+                jsonText = get(SUBJECT_ENDPOINT, params);
+
+                if(!jsonText.contains("\"results\":[]")) {
+                    jsonObject = new JSONObject(jsonText);
+                    resultsJA = jsonObject.getJSONArray("results");
+                    addValuesToMap(resultsJA, subjectURIMap, "title");
+                    i++;
+                } else {
+                    break;
+                }
+
+                i++;
+            } while (true);
+
+            // display the number of subject records loaded
+            System.out.println("Agent URI Map Size: " + nameURIMap.size());
+            System.out.println("Subject URI Map Size: " + subjectURIMap.size());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Method to interate a JSONArray and add it to a particular uriMap
+     *
+     * @param resultsJA
+     * @param uriMap
+     * @param key
+     */
+    private void addValuesToMap(JSONArray resultsJA, HashMap<String, String> uriMap, String key) throws JSONException {
+        for(int i = 0; i < resultsJA.length(); i++) {
+            JSONObject jsonObject = resultsJA.getJSONObject(i);
+            String uriKey = jsonObject.getString(key).trim();
+            String uri = jsonObject.getString("uri");
+            uriMap.put(uriKey, uri);
+        }
+
     }
 }

@@ -1,6 +1,5 @@
 package org.nyu.edu.dlts.aspace;
 
-import bsh.EvalError;
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
@@ -13,11 +12,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.nyu.edu.dlts.dbCopyFrame;
-import org.nyu.edu.dlts.models.RowRecord;
 import org.nyu.edu.dlts.models.RelatedRowData;
+import org.nyu.edu.dlts.models.RowRecord;
 import org.nyu.edu.dlts.utils.*;
 
-import javax.script.ScriptException;
 import javax.swing.*;
 import java.io.File;
 import java.io.FileInputStream;
@@ -187,6 +185,15 @@ public class ASpaceCopy implements PrintConsole {
         boolean createCache = !(new File(databaseFilename).exists());
         db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), databaseFilename);
         return createCache;
+    }
+
+    /**
+     * This method to
+     */
+    public void loadAgentsAndSubjects() {
+        if(aspaceClient.isConnected()) {
+            aspaceClient.loadAgentsAndSubjects(nameURIMap, subjectURIMap);
+        }
     }
 
     /**
@@ -489,6 +496,11 @@ public class ASpaceCopy implements PrintConsole {
             String recordId = getFullRecordID(xssfSheet, xssfRow);
 
             JSONObject recordJS = mapper.convertSubject(headerRow, xssfRow);
+
+            // check to see if not to skip this data. This is useful for loading
+            // data from the same table where an ID exist but no data in a particular column
+            if(recordJS.has("skip")) continue;
+
             String terms = recordJS.getString("terms_original");
             String uri;
 
@@ -606,6 +618,11 @@ public class ASpaceCopy implements PrintConsole {
             String recordId = getFullRecordID(xssfSheet,xssfRow);
 
             JSONObject recordJS = mapper.convertName(headerRow, xssfRow);
+
+            // check to see if not to skip this data. This is useful for loading
+            // data from the same table where an ID exist but no data in a particular column
+            if(recordJS.has("skip")) continue;
+
             String jsonText = recordJS.toString();
 
             // based on the type of name copy to the correct location
@@ -2127,7 +2144,7 @@ public class ASpaceCopy implements PrintConsole {
         File logFile = new File(homeDirectory +"/temp/TestData/sample01/migrationLog.txt");
 
         //File excelFile = new File(currentDirectory +"/sample_data/Sample_WGC--Mapped.xlsx");
-        File excelFile = new File(homeDirectory +"/temp/TestData/sample01/Accessions.xlsx");
+        File excelFile = new File(homeDirectory +"/temp/TestData/sample01/accessions.xlsx");
 
         File bsiMapperScriptFile = new File(homeDirectory + "/temp/TestData/sample01/mapper.bsh");
         //File bsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/accession_mapper.bsh");
@@ -2136,10 +2153,11 @@ public class ASpaceCopy implements PrintConsole {
         //File jsiMapperScriptFile = new File(currentDirectory + "/src/org/nyu/edu/dlts/scripts/mapper.js");
 
         //ASpaceCopy aspaceCopy = new ASpaceCopy("http://localhost:8089", "admin", "admin");
-        ASpaceCopy aspaceCopy = new ASpaceCopy("http://54.235.231.8:9289", "admin", "admin");
+        ASpaceCopy aspaceCopy = new ASpaceCopy("http://54.227.35.51:9289", "admin", "admin");
         //aspaceCopy.setSimulateRESTCalls(true);
         aspaceCopy.setPreProcessing(true);
         aspaceCopy.getSession();
+        aspaceCopy.loadAgentsAndSubjects();
 
         try {
             // load the mapper scripts
@@ -2148,10 +2166,6 @@ public class ASpaceCopy implements PrintConsole {
             //String pyiMapperScript = FileManager.readTextData(pyiMapperScriptFile);
             //String jsiMapperScript = FileManager.readTextData(jsiMapperScriptFile);
 
-
-            /**
-             * Create a new instance for HSSFWorkBook Class
-             */
 
             System.out.println("Loading excel file " + excelFile);
 
@@ -2169,18 +2183,16 @@ public class ASpaceCopy implements PrintConsole {
             System.out.println("\n\n");
             aspaceCopy.createRepository();
 
-            /*System.out.println("\n\n");
-            aspaceCopy.copyLocationRecords(0);
+            //System.out.println("\n\n");
+            //aspaceCopy.copyLocationRecords(0);
+
+            //System.out.println("\n\n");
+            //aspaceCopy.copySubjectRecords(1);
 
             System.out.println("\n\n");
-            aspaceCopy.copySubjectRecords(1);
+            aspaceCopy.copyNameRecords(0);
 
-            System.out.println("\n\n");
-            aspaceCopy.copyNameRecords(2);
-            */
-
-            System.out.println("\n\n");
-            //aspaceCopy.copyAccessionRecords(3);
+            //System.out.println("\n\n");
             aspaceCopy.copyAccessionRecords(0);
 
             /*
@@ -2221,6 +2233,7 @@ public class ASpaceCopy implements PrintConsole {
 
             System.out.println("\n\n");
             aspaceCopy.copyResourceRecords("5,6");
+
             */
 
             String migrationErrors = aspaceCopy.getMigrationErrors();
