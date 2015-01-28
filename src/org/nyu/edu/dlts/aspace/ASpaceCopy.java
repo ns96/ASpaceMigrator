@@ -192,6 +192,8 @@ public class ASpaceCopy implements PrintConsole {
      */
     public void loadAgentsAndSubjects() {
         if(aspaceClient.isConnected()) {
+            print("Loading Agent and Subject records ...\n");
+            updateProgress("Agent and Subjects", 0, 0);
             aspaceClient.loadAgentsAndSubjects(nameURIMap, subjectURIMap);
         }
     }
@@ -280,6 +282,7 @@ public class ASpaceCopy implements PrintConsole {
      */
     public void setOutputConsole(JTextArea outputConsole) {
         this.outputConsole = outputConsole;
+        aspaceClient.setOutputConsole(outputConsole);
     }
 
     /**

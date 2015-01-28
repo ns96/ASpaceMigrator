@@ -438,6 +438,18 @@ public class ASpaceMapper {
     }
 
     /**
+     * Method to create a name object with the default name order of direct
+     * @param type
+     * @param primaryName
+     * @param nameSource
+     * @return
+     * @throws Exception
+     */
+    public JSONObject createName(String type, String primaryName, String nameSource) throws Exception {
+        return createName(type, primaryName, nameSource, "direct");
+    }
+
+    /**
      * Method to create the most basic name record possible
      *
      * @param type
@@ -446,7 +458,7 @@ public class ASpaceMapper {
      * @return
      * @throws Exception
      */
-    public JSONObject createName(String type, String primaryName, String nameSource) throws Exception {
+    public JSONObject createName(String type, String primaryName, String nameSource, String nameOrder) throws Exception {
         // holds name information
         JSONObject recordJS = new JSONObject();
         JSONArray namesJA = new JSONArray();
@@ -469,7 +481,7 @@ public class ASpaceMapper {
         if (type.equalsIgnoreCase("person")) {
             recordJS.put("agent_type", "agent_person");
             namesJS.put("primary_name", primaryName);
-            namesJS.put("name_order", "direct");
+            namesJS.put("name_order", nameOrder);
             namesJS.put("sort_name", primaryName);
         } else if (type.equalsIgnoreCase("family")) {
             recordJS.put("agent_type", "agent_family");

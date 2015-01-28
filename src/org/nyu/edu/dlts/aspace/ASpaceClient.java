@@ -14,7 +14,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
+import javax.swing.*;
 import java.util.HashMap;
 
 /**
@@ -22,7 +22,7 @@ import java.util.HashMap;
  * User: nathan
  * Date: 9/6/12
  * Time: 3:59 PM
- *
+ * <p/>
  * This class hanldes all posting and reading from the ASpace project
  */
 public class ASpaceClient {
@@ -66,6 +66,9 @@ public class ASpaceClient {
     // indicated whether we got a valid session from the ASpace backend
     boolean haveSession = false;
 
+    // a JTextArea for outputting text to the UI
+    private JTextArea outputConsole;
+
     /**
      * The main constructor
      *
@@ -90,6 +93,16 @@ public class ASpaceClient {
         this.session = session;
     }
 
+
+    /**
+     * Method to set the output console so we can print to the client
+     *
+     * @param outputConsole
+     */
+    public void setOutputConsole(JTextArea outputConsole) {
+        this.outputConsole = outputConsole;
+    }
+
     /**
      * Method to return the host name
      *
@@ -100,7 +113,6 @@ public class ASpaceClient {
     }
 
     /**
-
      * Method to get the session using the admin login
      */
     public boolean getSession() {
@@ -121,7 +133,7 @@ public class ASpaceClient {
         try {
             String id = executePost(post, "session", "N/A", "N/A");
 
-            if(!id.isEmpty()) {
+            if (!id.isEmpty()) {
                 session = id;
                 haveSession = true;
             }
@@ -144,6 +156,7 @@ public class ASpaceClient {
 
     /**
      * Method to do a post to the json
+     *
      * @param route
      * @param jsonText
      * @return
@@ -158,12 +171,12 @@ public class ASpaceClient {
         post.setRequestEntity(new StringRequestEntity(jsonText, "application/json", null));
 
         // set any parameters
-        if(params != null) {
+        if (params != null) {
             post.setQueryString(params);
         }
 
         // add session to the header if it's not null
-        if(session != null) {
+        if (session != null) {
             post.setRequestHeader("X-ArchivesSpace-Session", session);
         }
 
@@ -171,12 +184,12 @@ public class ASpaceClient {
 
         // set the idName depending on the type of record being posted
         String idName = "id";
-        if(route.contains(BATCH_IMPORT_ENDPOINT)) {
+        if (route.contains(BATCH_IMPORT_ENDPOINT)) {
             idName = "saved";
 
             // since we dont want to keep large files around if text is bigger than 10 MB then
             // then reset jsonText
-            if (jsonText.length() > 1048576*10) {
+            if (jsonText.length() > 1048576 * 10) {
                 jsonText = "{ /* Record greater than 10 MB */}";
             }
         }
@@ -188,11 +201,10 @@ public class ASpaceClient {
      * Method to actually execute the post method
      *
      * @param post
-     * @param idName used to specify what the name of the id is in json text
-     * @param atId A quick way to identify the record that generated any errors
+     * @param idName   used to specify what the name of the id is in json text
+     * @param atId     A quick way to identify the record that generated any errors
      * @param jsonText Only used to return with the error message if needed
      * @return The id or session
-     *
      * @throws Exception
      */
     private String executePost(PostMethod post, String idName, String atId, String jsonText) throws Exception {
@@ -225,23 +237,23 @@ public class ASpaceClient {
 
                 if (responseBody.contains("\"errors\":[")) {
                     JSONArray responseJA = new JSONArray(responseBody);
-                    response = responseJA.getJSONObject(responseJA.length() -1);
+                    response = responseJA.getJSONObject(responseJA.length() - 1);
 
                     errorBuffer.append("Endpoint: ").append(post.getURI()).append("\n").
-                        append("Record Identifier:").append(atId).append("\n").
-                        append(statusMessage).append("\n\n").append(response.toString(2)).append("\n");
+                            append("Record Identifier:").append(atId).append("\n").
+                            append(statusMessage).append("\n\n").append(response.toString(2)).append("\n");
 
                     throw new Exception(response.toString(2));
-                } else if(responseBody.contains("{\"saved\":")) {
+                } else if (responseBody.contains("{\"saved\":")) {
                     JSONArray responseJA = new JSONArray(responseBody);
-                    response = responseJA.getJSONObject(responseJA.length() -1);
+                    response = responseJA.getJSONObject(responseJA.length() - 1);
                 } else {
                     response = new JSONObject(responseBody);
                 }
 
                 id = response.getString(idName);
 
-                if(id == null || id.trim().isEmpty()) {
+                if (id == null || id.trim().isEmpty()) {
                     errorBuffer.append("Endpoint: ").append(post.getURI()).append("\n").
                             append("Record Identifier:").append(atId).append("\n").
                             append(statusMessage).append("\n\n").append(response.toString(2)).append("\n").
@@ -253,7 +265,7 @@ public class ASpaceClient {
                 if (debug) System.out.println(response.toString(2));
             } else {
                 // if it a 500 error the ASpace then we need to add the JSON text
-                if(statusCode == HttpStatus.SC_INTERNAL_SERVER_ERROR) {
+                if (statusCode == HttpStatus.SC_INTERNAL_SERVER_ERROR) {
                     responseBody = "JSON: " + jsonText + "\n\n" + responseBody;
                 }
 
@@ -284,20 +296,20 @@ public class ASpaceClient {
         GetMethod get = new GetMethod(fullUrl);
 
         // set any parameters
-        if(params != null) {
+        if (params != null) {
             get.setQueryString(params);
         }
 
         // add session to the header if it's not null
-        if(session != null) {
+        if (session != null) {
             get.setRequestHeader("X-ArchivesSpace-Session", session);
         }
 
-		// set the token in the header
-		//get.setRequestHeader("Authorization", "OAuth " + accessToken);
+        // set the token in the header
+        //get.setRequestHeader("Authorization", "OAuth " + accessToken);
         String responseBody = null;
 
-		try {
+        try {
             if (debug) System.out.println("get: " + fullUrl);
 
             int statusCode = httpclient.executeMethod(get);
@@ -305,22 +317,22 @@ public class ASpaceClient {
             String statusMessage = "Status code: " + statusCode +
                     "\nStatus text: " + get.getStatusText();
 
-			if (get.getStatusCode() == HttpStatus.SC_OK) {
+            if (get.getStatusCode() == HttpStatus.SC_OK) {
                 try {
-					responseBody = get.getResponseBodyAsString();
+                    responseBody = get.getResponseBodyAsString();
 
                     if (debug) System.out.println("response: " + responseBody);
-				} catch (Exception e) {
+                } catch (Exception e) {
                     errorBuffer.append(statusMessage).append("\n\n").append(responseBody).append("\n");
-					e.printStackTrace();
-					throw e;
-				}
-			} else {
+                    e.printStackTrace();
+                    throw e;
+                }
+            } else {
                 errorBuffer.append(statusMessage).append("\n");
             }
-		} finally {
-			get.releaseConnection();
-		}
+        } finally {
+            get.releaseConnection();
+        }
 
         return responseBody;
     }
@@ -336,14 +348,14 @@ public class ASpaceClient {
         DeleteMethod delete = new DeleteMethod(fullUrl);
 
         // add session to the header if it's not null
-        if(session != null) {
+        if (session != null) {
             delete.setRequestHeader("X-ArchivesSpace-Session", session);
         }
 
         int statusCode = httpclient.executeMethod(delete);
 
         String statusMessage = "Status code: " + statusCode +
-                    "\nStatus text: " + delete.getStatusText();
+                "\nStatus text: " + delete.getStatusText();
 
         if (debug) {
             System.out.println("delete: " + fullUrl + "\n" + statusMessage);
@@ -356,6 +368,7 @@ public class ASpaceClient {
 
     /**
      * Method to return the repositories in the ASpace database
+     *
      * @return
      */
     public HashMap<String, String> loadRepositories() {
@@ -363,14 +376,14 @@ public class ASpaceClient {
 
         try {
             String jsonText = get(REPOSITORY_ENDPOINT, null);
-            JSONArray jsonArray =  new JSONArray(jsonText);
+            JSONArray jsonArray = new JSONArray(jsonText);
 
-            if(jsonArray.length() != 0) {
-                for(int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject json = (JSONObject)jsonArray.get(i);
-                    String shortName = (String)json.get("repo_code");
-                    String uri = (String)json.get("uri");
-                    repos.put(shortName,uri);
+            if (jsonArray.length() != 0) {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject json = (JSONObject) jsonArray.get(i);
+                    String shortName = (String) json.get("repo_code");
+                    String uri = (String) json.get("uri");
+                    repos.put(shortName, uri);
                 }
 
                 return repos;
@@ -415,12 +428,12 @@ public class ASpaceClient {
 
         try {
             String jsonText = get(ENUM_ENDPOINT, null);
-            JSONArray jsonArray =  new JSONArray(jsonText);
+            JSONArray jsonArray = new JSONArray(jsonText);
 
-            if(jsonArray.length() != 0) {
-                for(int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject json = (JSONObject)jsonArray.get(i);
-                    String name = (String)json.get("name");
+            if (jsonArray.length() != 0) {
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject json = (JSONObject) jsonArray.get(i);
+                    String name = (String) json.get("name");
                     dynamicEnums.put(name, json);
                 }
 
@@ -469,8 +482,8 @@ public class ASpaceClient {
 
             String jsonText = get(uri, params);
 
-            if(jsonText != null && !jsonText.isEmpty()) {
-                if(jsonText.startsWith("[{")) {
+            if (jsonText != null && !jsonText.isEmpty()) {
+                if (jsonText.startsWith("[{")) {
                     JSONArray json = new JSONArray(jsonText);
                     return json.toString(4);
                 } else {
@@ -485,7 +498,7 @@ public class ASpaceClient {
         return null;
     }
 
-     /**
+    /**
      * Method to get a record as a json object
      *
      * @param endpoint
@@ -512,20 +525,20 @@ public class ASpaceClient {
      * @param paramString
      * @return
      */
-    private  NameValuePair[] getParams(String paramString) {
+    private NameValuePair[] getParams(String paramString) {
         String[] parts = paramString.split("\\s*,\\s*");
 
         // make sure we have parameters, otherwise exit
-        if(paramString.isEmpty() || parts.length < 1) {
+        if (paramString.isEmpty() || parts.length < 1) {
             return null;
         } else {
             NameValuePair[] params = new NameValuePair[parts.length];
 
-            for(int i = 0; i < parts.length; i++) {
+            for (int i = 0; i < parts.length; i++) {
                 try {
                     String[] sa = parts[i].split("\\s*=\\s*");
                     params[i] = new NameValuePair(sa[0], sa[1]);
-                } catch(Exception e) {
+                } catch (Exception e) {
                     return null;
                 }
             }
@@ -545,6 +558,7 @@ public class ASpaceClient {
 
     /**
      * Method to allow child aspace clients to append error messages
+     *
      * @param errorMessage
      */
     public synchronized void appendToErrorBuffer(String errorMessage) {
@@ -559,107 +573,88 @@ public class ASpaceClient {
      * @param subjectURIMap
      */
     public void loadAgentsAndSubjects(HashMap<String, String> nameURIMap, HashMap<String, String> subjectURIMap) {
-        System.out.println("Loading existing Names and Subject Records ...");
-
         try {
-            NameValuePair[] params = new NameValuePair[1];
-            String jsonText;
-            JSONObject jsonObject;
-            JSONArray resultsJA;
-
-
             // add the people agents
-            int i = 1;
-            do {
-                params[0] = new NameValuePair("page", "" + i);
-                jsonText = get(AGENT_PEOPLE_ENDPOINT, params);
-
-                if(!jsonText.contains("\"results\":[]")) {
-                    jsonObject = new JSONObject(jsonText);
-                    resultsJA = jsonObject.getJSONArray("results");
-                    addValuesToMap(resultsJA, nameURIMap, "title");
-                } else {
-                    break;
-                }
-
-                i++;
-            } while (true);
+            print("Loading person agents ...");
+            pageThroughNameAndSubjectsResults(nameURIMap, AGENT_PEOPLE_ENDPOINT);
 
             // add the family agents
-            i = 1;
-            do {
-                params[0] = new NameValuePair("page", "" + i);
-                jsonText = get(AGENT_FAMILY_ENDPOINT, params);
-
-                if(!jsonText.contains("\"results\":[]")) {
-                    jsonObject = new JSONObject(jsonText);
-                    resultsJA = jsonObject.getJSONArray("results");
-                    addValuesToMap(resultsJA, nameURIMap, "title");
-                } else {
-                    break;
-                }
-
-                i++;
-            } while (true);
+            print("Loading family agents ...");
+            pageThroughNameAndSubjectsResults(nameURIMap, AGENT_FAMILY_ENDPOINT);
 
             // add the corporate agents
-            i = 1;
-            do {
-                params[0] = new NameValuePair("page", "" + i);
-                jsonText = get(AGENT_CORPORATE_ENTITY_ENDPOINT, params);
-
-                if(!jsonText.contains("\"results\":[]")) {
-                    jsonObject = new JSONObject(jsonText);
-                    resultsJA = jsonObject.getJSONArray("results");
-                    addValuesToMap(resultsJA, nameURIMap, "title");
-                } else {
-                    break;
-                }
-
-                i++;
-            } while (true);
+            print("Loading corporate agents ...");
+            pageThroughNameAndSubjectsResults(nameURIMap, AGENT_CORPORATE_ENTITY_ENDPOINT);
 
             // add the subjects
-            i = 1;
-            do {
-                params[0] = new NameValuePair("page", "" + i);
-                jsonText = get(SUBJECT_ENDPOINT, params);
-
-                if(!jsonText.contains("\"results\":[]")) {
-                    jsonObject = new JSONObject(jsonText);
-                    resultsJA = jsonObject.getJSONArray("results");
-                    addValuesToMap(resultsJA, subjectURIMap, "title");
-                    i++;
-                } else {
-                    break;
-                }
-
-                i++;
-            } while (true);
+            print("Loading subjects ...");
+            pageThroughNameAndSubjectsResults(subjectURIMap, SUBJECT_ENDPOINT);
 
             // display the number of subject records loaded
-            System.out.println("Agent URI Map Size: " + nameURIMap.size());
-            System.out.println("Subject URI Map Size: " + subjectURIMap.size());
+            print("Agents loaded: " + nameURIMap.size());
+            print("Subjects loaded: " + subjectURIMap.size());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     /**
-     * Method to interate a JSONArray and add it to a particular uriMap
+     * Method to page through the name and subject results return from the REST call
+     *
+     * @param uriMap
+     * @param endpoint
+     */
+    private void pageThroughNameAndSubjectsResults(HashMap<String, String> uriMap, String endpoint) throws Exception {
+        NameValuePair[] params = new NameValuePair[1];
+        String jsonText;
+        JSONObject jsonObject;
+        JSONArray resultsJA;
+
+        // iterate through the page results
+        int i = 1;
+        do {
+            params[0] = new NameValuePair("page", "" + i);
+            jsonText = get(endpoint, params);
+
+            if (!jsonText.contains("\"results\":[]")) {
+                jsonObject = new JSONObject(jsonText);
+                resultsJA = jsonObject.getJSONArray("results");
+                addValuesToMap(resultsJA, uriMap, "title");
+            } else {
+                // we have empty result so break out of loop
+                break;
+            }
+
+            i++;
+        } while (true);
+    }
+
+    /**
+     * Method to iterate a JSONArray and add it to a particular uriMap
      *
      * @param resultsJA
      * @param uriMap
      * @param key
      */
     private void addValuesToMap(JSONArray resultsJA, HashMap<String, String> uriMap, String key) throws JSONException {
-        for(int i = 0; i < resultsJA.length(); i++) {
+        for (int i = 0; i < resultsJA.length(); i++) {
             JSONObject jsonObject = resultsJA.getJSONObject(i);
             String uriKey = jsonObject.getString(key).trim();
             String uri = jsonObject.getString("uri");
             uriMap.put(uriKey, uri);
         }
 
+    }
+
+    /**
+     * Method to print to the JTextArea console if it's not null
+     * @param message
+     */
+    private void print(String message) {
+        if(outputConsole != null) {
+            outputConsole.append(message);
+        } else {
+            System.out.println(message);
+        }
     }
 }
