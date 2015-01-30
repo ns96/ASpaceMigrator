@@ -188,13 +188,16 @@ public class ASpaceCopy implements PrintConsole {
     }
 
     /**
-     * This method to
+     * This method to load agent subjects and locations from the ASpace instance
      */
-    public void loadAgentsAndSubjects() {
+    public boolean loadGlobalRecords() {
         if(aspaceClient.isConnected()) {
-            print("Loading Agent and Subject records ...\n");
-            updateProgress("Agent and Subjects", 0, 0);
-            aspaceClient.loadAgentsAndSubjects(nameURIMap, subjectURIMap);
+            print("\nLoading Repository, Agent, Subject, and Location records ...\n");
+            updateProgress("Agents, Subjects, Locations", 0, 0);
+            aspaceClient.loadGlobalRecords(repositoryURIMap, nameURIMap, subjectURIMap, locationURIMap);
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -2160,7 +2163,7 @@ public class ASpaceCopy implements PrintConsole {
         //aspaceCopy.setSimulateRESTCalls(true);
         aspaceCopy.setPreProcessing(true);
         aspaceCopy.getSession();
-        aspaceCopy.loadAgentsAndSubjects();
+        aspaceCopy.loadGlobalRecords();
 
         try {
             // load the mapper scripts

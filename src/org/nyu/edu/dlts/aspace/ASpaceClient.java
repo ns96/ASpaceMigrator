@@ -371,9 +371,7 @@ public class ASpaceClient {
      *
      * @return
      */
-    public HashMap<String, String> loadRepositories() {
-        HashMap<String, String> repos = new HashMap<String, String>();
-
+    public void loadRepositories(HashMap<String, String> repositoryURIMap) {
         try {
             String jsonText = get(REPOSITORY_ENDPOINT, null);
             JSONArray jsonArray = new JSONArray(jsonText);
@@ -383,15 +381,12 @@ public class ASpaceClient {
                     JSONObject json = (JSONObject) jsonArray.get(i);
                     String shortName = (String) json.get("repo_code");
                     String uri = (String) json.get("uri");
-                    repos.put(shortName, uri);
+                    repositoryURIMap.put(shortName, uri);
                 }
-
-                return repos;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
     }
 
     /**
@@ -572,27 +567,40 @@ public class ASpaceClient {
      * @param nameURIMap
      * @param subjectURIMap
      */
-    public void loadAgentsAndSubjects(HashMap<String, String> nameURIMap, HashMap<String, String> subjectURIMap) {
+    public void loadGlobalRecords(HashMap<String, String> repositoryURIMap,
+                                            HashMap<String, String> nameURIMap,
+                                            HashMap<String, String> subjectURIMap,
+                                            HashMap<String, String> locationURIMap) {
         try {
+            // add the repositories
+            print("Loading repository records ...\n");
+            loadRepositories(repositoryURIMap);
+
             // add the people agents
-            print("Loading person agents ...");
-            pageThroughNameAndSubjectsResults(nameURIMap, AGENT_PEOPLE_ENDPOINT);
+            print("Loading person agents ...\n");
+            pageThroughResults(nameURIMap, AGENT_PEOPLE_ENDPOINT);
 
             // add the family agents
-            print("Loading family agents ...");
-            pageThroughNameAndSubjectsResults(nameURIMap, AGENT_FAMILY_ENDPOINT);
+            print("Loading family agents ...\n");
+            pageThroughResults(nameURIMap, AGENT_FAMILY_ENDPOINT);
 
             // add the corporate agents
-            print("Loading corporate agents ...");
-            pageThroughNameAndSubjectsResults(nameURIMap, AGENT_CORPORATE_ENTITY_ENDPOINT);
+            print("Loading corporate agents ...\n");
+            pageThroughResults(nameURIMap, AGENT_CORPORATE_ENTITY_ENDPOINT);
 
             // add the subjects
-            print("Loading subjects ...");
-            pageThroughNameAndSubjectsResults(subjectURIMap, SUBJECT_ENDPOINT);
+            print("Loading subjects ...\n");
+            pageThroughResults(subjectURIMap, SUBJECT_ENDPOINT);
+
+            // load any locations
+            print("Loading locations ...\n");
+            pageThroughResults(locationURIMap, LOCATION_ENDPOINT);
 
             // display the number of subject records loaded
-            print("Agents loaded: " + nameURIMap.size());
-            print("Subjects loaded: " + subjectURIMap.size());
+            System.out.println("Repositories loaded: " + repositoryURIMap.size() + "\n");
+            System.out.println("Agents loaded: " + nameURIMap.size() + "\n");
+            System.out.println("Subjects loaded: " + subjectURIMap.size() + "\n");
+            System.out.println("Locations loaded: " + locationURIMap.size() + "\n");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -604,7 +612,7 @@ public class ASpaceClient {
      * @param uriMap
      * @param endpoint
      */
-    private void pageThroughNameAndSubjectsResults(HashMap<String, String> uriMap, String endpoint) throws Exception {
+    private void pageThroughResults(HashMap<String, String> uriMap, String endpoint) throws Exception {
         NameValuePair[] params = new NameValuePair[1];
         String jsonText;
         JSONObject jsonObject;
@@ -642,6 +650,7 @@ public class ASpaceClient {
             String uriKey = jsonObject.getString(key).trim();
             String uri = jsonObject.getString("uri");
             uriMap.put(uriKey, uri);
+            print(uriKey + " > " + uri + "\n");
         }
 
     }

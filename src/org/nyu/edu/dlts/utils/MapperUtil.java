@@ -390,7 +390,7 @@ public class MapperUtil {
     public static void addDateExpression(JSONArray dateJA, String dateExpression) throws Exception {
         JSONObject dateJS = new JSONObject();
         dateJS.put("date_type", "single");
-        dateJS.put("label", "created");
+        dateJS.put("label", "creation");
         dateJS.put("expression", dateExpression);
         dateJA.put(dateJS);
     }
